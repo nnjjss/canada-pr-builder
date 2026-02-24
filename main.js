@@ -12,7 +12,7 @@ function calculateCRS() {
     else if(age > 40) agePoints = 40;
 
     let total = agePoints + education + language + canadianExp;
-    document.getElementById("crsResult").innerText = "Estimated CRS Score: " + total;
+    document.getElementById("crsResult").innerText = "Total Points: " + total;
 }
 
 function addPost() {

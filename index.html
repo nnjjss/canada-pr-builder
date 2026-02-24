@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-adsense-account" content="ca-pub-7667199502336658">
-    <title>Express Entry & CRS Calculator</title>
+    <title>Canada Express Entry Guide & CRS Score Calculator</title>
+    <meta name="description" content="Calculate your CRS score for Canada Express Entry and learn how to improve it with our comprehensive guide.">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7667199502336658"
      crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
@@ -12,69 +13,108 @@
 <body>
 
 <header>
-    <h1>Express Entry & CRS Calculator</h1>
+    <h1>Canada Immigration: Express Entry & CRS</h1>
     <button class="theme-toggle" id="themeToggle">🌙 Dark Mode</button>
 </header>
 
+<nav>
+    <a href="#home">Home</a>
+    <a href="#calculator">CRS Calculator</a>
+    <a href="#guide">EE Guide</a>
+    <a href="#blog">Blog</a>
+    <a href="#contact">Contact</a>
+</nav>
+
 <div class="container">
 
+    <!-- Introduction Section -->
+    <div class="card" id="home">
+        <h2>Welcome to Canada PR Builder</h2>
+        <p>Your ultimate resource for navigating the Canadian immigration landscape. We provide tools and information to help you understand the Express Entry system and optimize your Comprehensive Ranking System (CRS) score.</p>
+        <p>Whether you are a skilled worker, a student, or a professional looking to call Canada home, our platform is designed to simplify your journey.</p>
+    </div>
+
     <!-- CRS Calculator -->
-    <div class="card">
+    <div class="card" id="calculator">
         <h2>CRS Score Calculator</h2>
+        <p>Use our calculator to estimate your CRS score for the Express Entry pool. Please fill in all fields accurately for the best estimation.</p>
 
-        <label>Age</label>
-        <input type="number" id="age" />
+        <label for="age">Current Age</label>
+        <input type="number" id="age" placeholder="Enter your age" />
 
-        <label>Education</label>
+        <label for="education">Highest Level of Education</label>
         <select id="education">
-            <option value="0">Select</option>
-            <option value="90">High School (90)</option>
-            <option value="120">Bachelor (120)</option>
-            <option value="135">Master (135)</option>
-            <option value="150">PhD (150)</option>
+            <option value="0">Select Education Level</option>
+            <option value="90">Secondary school (high school diploma)</option>
+            <option value="120">Bachelor's degree OR a three or more year program</option>
+            <option value="135">Master's degree, OR professional degree</option>
+            <option value="150">Doctoral level university degree (PhD)</option>
         </select>
 
-        <label>IELTS CLB Level</label>
+        <label for="language">Official Language Proficiency (IELTS/CELPIP CLB Level)</label>
         <select id="language">
-            <option value="0">Select</option>
-            <option value="80">CLB 7 (80)</option>
-            <option value="100">CLB 9 (100)</option>
-            <option value="120">CLB 10 (120)</option>
+            <option value="0">Select CLB Level</option>
+            <option value="80">CLB 7 (Minimum for EE)</option>
+            <option value="100">CLB 9 (Advanced)</option>
+            <option value="120">CLB 10 (Expert)</option>
         </select>
 
-        <label>Canadian Work Experience (Years)</label>
+        <label for="canadianExp">Canadian Work Experience (Last 10 Years)</label>
         <select id="canadianExp">
-            <option value="0">0</option>
-            <option value="40">1</option>
-            <option value="53">2</option>
-            <option value="64">3+</option>
+            <option value="0">None</option>
+            <option value="40">1 year</option>
+            <option value="53">2 years</option>
+            <option value="64">3 years or more</option>
         </select>
 
-        <button onclick="calculateCRS()">Calculate Score</button>
+        <button onclick="calculateCRS()">Calculate My Score</button>
 
-        <div class="result" id="crsResult"></div>
+        <div class="result" id="crsResult">Total Points: -</div>
+    </div>
+
+    <!-- Comprehensive Guide Section -->
+    <div class="card" id="guide">
+        <h2>What is Express Entry?</h2>
+        <p>Express Entry is a system used by the Canadian government to manage applications for permanent residence from skilled workers. It covers three main programs:</p>
+        <ul>
+            <li><strong>Federal Skilled Worker Program:</strong> For skilled workers with foreign work experience.</li>
+            <li><strong>Federal Skilled Trades Program:</strong> For skilled workers in specific trades.</li>
+            <li><strong>Canadian Experience Class:</strong> For skilled workers who have Canadian work experience.</li>
+        </ul>
+        <h3>How to Improve Your CRS Score?</h3>
+        <p>If your score is lower than the recent cut-offs, consider these strategies:</p>
+        <ul>
+            <li><strong>Improve Language Scores:</strong> Retaking IELTS or CELPIP to reach CLB 9 or 10 can significantly boost your score.</li>
+            <li><strong>Provincial Nominee Program (PNP):</strong> A nomination from a province gives you an automatic 600 points.</li>
+            <li><strong>Gain Work Experience:</strong> Additional years of skilled work experience, especially in Canada, will add points.</li>
+            <li><strong>Higher Education:</strong> Completing a Master's or PhD can provide more points for human capital.</li>
+        </ul>
     </div>
 
     <!-- Blog Section -->
-    <div class="card">
-        <h2>Write Blog Post</h2>
-        <input type="text" id="title" placeholder="Title" />
-        <textarea id="content" rows="4" placeholder="Write your article..."></textarea>
-        <button onclick="addPost()">Publish</button>
+    <div class="card" id="blog">
+        <h2>Immigration Insights & Community Blog</h2>
+        <p>Share your experiences or read stories from other applicants.</p>
+        <input type="text" id="title" placeholder="Post Title" />
+        <textarea id="content" rows="4" placeholder="Share your story or ask a question..."></textarea>
+        <button onclick="addPost()">Post to Community</button>
 
         <div id="blogList"></div>
     </div>
 
     <!-- Partnership Inquiry Form -->
-    <div class="card">
-        <h2>Partnership Inquiry</h2>
-        <p>Interested in collaborating? Send us a message!</p>
+    <div class="card" id="contact">
+        <h2>Contact & Partnership</h2>
+        <p>Interested in collaborating or have specific questions? Reach out to us!</p>
         <form action="https://formspree.io/f/mjgejrry" method="POST">
+            <label>Your Name:</label>
+            <input type="text" name="name" required placeholder="John Doe">
+
             <label>Your Email:</label>
-            <input type="email" name="email" required placeholder="example@email.com">
+            <input type="email" name="email" required placeholder="john@example.com">
             
             <label>Message:</label>
-            <textarea name="message" rows="4" required placeholder="How can we work together?"></textarea>
+            <textarea name="message" rows="4" required placeholder="Tell us more..."></textarea>
             
             <button type="submit">Send Message</button>
         </form>
@@ -82,19 +122,10 @@
 
     <!-- Disqus Comments Section -->
     <div class="card">
-        <h2>Comments</h2>
+        <h2>Join the Discussion</h2>
         <div id="disqus_thread"></div>
         <script>
-            /**
-            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-            /*
-            var disqus_config = function () {
-            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-            };
-            */
-            (function() { // DON'T EDIT BELOW THIS LINE
+            (function() { 
             var d = document, s = d.createElement('script');
             s.src = 'https://canadapr.disqus.com/embed.js';
             s.setAttribute('data-timestamp', +new Date());
@@ -105,6 +136,15 @@
     </div>
 
 </div>
+
+<footer>
+    <p>&copy; 2026 Canada PR Builder. All rights reserved.</p>
+    <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="#contact">Contact Us</a>
+    </div>
+</footer>
 
 <script src="main.js" defer></script>
 
