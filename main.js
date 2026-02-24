@@ -4,7 +4,7 @@ function calculateCRS() {
     let language = parseInt(document.getElementById("language").value);
     let canadianExp = parseInt(document.getElementById("canadianExp").value);
 
-    // Simple Age Points Logic
+    // 간단한 나이 점수 로직
     let agePoints = 0;
     if(age >= 20 && age <= 29) agePoints = 110;
     else if(age >= 30 && age <= 35) agePoints = 90;
@@ -12,7 +12,7 @@ function calculateCRS() {
     else if(age > 40) agePoints = 40;
 
     let total = agePoints + education + language + canadianExp;
-    document.getElementById("crsResult").innerText = "Total Points: " + total;
+    document.getElementById("crsResult").innerText = "총점: " + total + "점";
 }
 
 function addPost() {
@@ -50,14 +50,14 @@ function loadPosts() {
     });
 }
 
-// Theme Toggle Logic
+// 테마 토글 로직
 const themeToggle = document.getElementById('themeToggle');
 const currentTheme = localStorage.getItem('theme');
 
 if (currentTheme) {
     document.documentElement.setAttribute('data-theme', currentTheme);
     if (currentTheme === 'dark') {
-        themeToggle.textContent = '☀️ Light Mode';
+        themeToggle.textContent = '☀️ 라이트 모드';
     }
 }
 
@@ -66,11 +66,11 @@ themeToggle.addEventListener('click', () => {
     if (theme === 'dark') {
         document.documentElement.setAttribute('data-theme', 'light');
         localStorage.setItem('theme', 'light');
-        themeToggle.textContent = '🌙 Dark Mode';
+        themeToggle.textContent = '🌙 다크 모드';
     } else {
         document.documentElement.setAttribute('data-theme', 'dark');
         localStorage.setItem('theme', 'dark');
-        themeToggle.textContent = '☀️ Light Mode';
+        themeToggle.textContent = '☀️ 라이트 모드';
     }
 });
 

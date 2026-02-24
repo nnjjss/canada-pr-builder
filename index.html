@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-adsense-account" content="ca-pub-7667199502336658">
-    <title>Canada Express Entry Guide & CRS Score Calculator</title>
-    <meta name="description" content="Calculate your CRS score for Canada Express Entry and learn how to improve it with our comprehensive guide.">
+    <title>캐나다 익스프레스 엔트리 가이드 & CRS 점수 계산기</title>
+    <meta name="description" content="캐나다 익스프레스 엔트리 CRS 점수를 계산하고 종합 가이드를 통해 점수 향상 방법을 알아보세요.">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7667199502336658"
      crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
@@ -13,197 +13,177 @@
 <body>
 
 <header>
-    <h1>Canada Immigration: Express Entry & CRS</h1>
-    <button class="theme-toggle" id="themeToggle">🌙 Dark Mode</button>
+    <h1>캐나다 이민: 익스프레스 엔트리 & CRS</h1>
+    <button class="theme-toggle" id="themeToggle">🌙 다크 모드</button>
 </header>
 
 <nav>
-    <a href="#home">Home</a>
-    <a href="#calculator">CRS Calculator</a>
-    <a href="#guide">EE Guide</a>
-    <a href="#articles">Latest News</a>
-    <a href="#community">Community</a>
-    <a href="#contact">Contact</a>
+    <a href="#home">홈</a>
+    <a href="#calculator">CRS 계산기</a>
+    <a href="#guide">이민 가이드</a>
+    <a href="#articles">최신 뉴스</a>
+    <a href="#community">커뮤니티</a>
+    <a href="#contact">문의하기</a>
 </nav>
 
 <div class="container">
 
     <!-- Introduction Section -->
     <div class="card" id="home">
-        <h2>Welcome to Canada PR Builder</h2>
-        <p>Your ultimate resource for navigating the Canadian immigration landscape. We provide tools and information to help you understand the Express Entry system and optimize your Comprehensive Ranking System (CRS) score.</p>
-        <p>Whether you are a skilled worker, a student, or a professional looking to call Canada home, our platform is designed to simplify your journey.</p>
+        <h2>Canada PR Builder에 오신 것을 환영합니다</h2>
+        <p>캐나다 이민 여정을 위한 최고의 리소스입니다. 익스프레스 엔트리(Express Entry) 시스템을 이해하고 종합 점수 시스템(CRS) 점수를 최적화하는 데 필요한 도구와 정보를 제공합니다.</p>
+        <p>숙련직 근로자, 학생, 또는 캐나다를 제2의 고향으로 만들고자 하는 전문가 여러분의 여정을 간소화할 수 있도록 설계되었습니다.</p>
     </div>
 
     <!-- CRS Calculator -->
     <div class="card" id="calculator">
-        <h2>CRS Score Calculator</h2>
-        <p>Use our calculator to estimate your CRS score for the Express Entry pool. Please fill in all fields accurately for the best estimation.</p>
+        <h2>CRS 점수 계산기</h2>
+        <p>익스프레스 엔트리 풀에서의 예상 CRS 점수를 확인해보세요. 정확한 추정치를 위해 모든 항목을 성실히 입력해 주세요.</p>
 
-        <label for="age">Current Age</label>
-        <input type="number" id="age" placeholder="Enter your age" />
+        <label for="age">현재 나이 (만)</label>
+        <input type="number" id="age" placeholder="나이를 입력하세요" />
 
-        <label for="education">Highest Level of Education</label>
+        <label for="education">최종 학력</label>
         <select id="education">
-            <option value="0">Select Education Level</option>
-            <option value="90">Secondary school (high school diploma)</option>
-            <option value="120">Bachelor's degree OR a three or more year program</option>
-            <option value="135">Master's degree, OR professional degree</option>
-            <option value="150">Doctoral level university degree (PhD)</option>
+            <option value="0">학력을 선택하세요</option>
+            <option value="90">고등학교 졸업</option>
+            <option value="120">학사 학위 (또는 3년 이상의 대학 프로그램)</option>
+            <option value="135">석사 학위 (또는 전문직 학위)</option>
+            <option value="150">박사 학위 (PhD)</option>
         </select>
 
-        <label for="language">Official Language Proficiency (IELTS/CELPIP CLB Level)</label>
+        <label for="language">공인 영어 성적 (IELTS/CELPIP CLB 레벨)</label>
         <select id="language">
-            <option value="0">Select CLB Level</option>
-            <option value="80">CLB 7 (Minimum for EE)</option>
-            <option value="100">CLB 9 (Advanced)</option>
-            <option value="120">CLB 10 (Expert)</option>
+            <option value="0">CLB 레벨을 선택하세요</option>
+            <option value="80">CLB 7 (EE 최소 요건)</option>
+            <option value="100">CLB 9 (고득점 구간)</option>
+            <option value="120">CLB 10 (최고 점수)</option>
         </select>
 
-        <label for="canadianExp">Canadian Work Experience (Last 10 Years)</label>
+        <label for="canadianExp">캐나다 내 경력 (최근 10년 이내)</label>
         <select id="canadianExp">
-            <option value="0">None</option>
-            <option value="40">1 year</option>
-            <option value="53">2 years</option>
-            <option value="64">3 years or more</option>
+            <option value="0">없음</option>
+            <option value="40">1년</option>
+            <option value="53">2년</option>
+            <option value="64">3년 이상</option>
         </select>
 
-        <button onclick="calculateCRS()">Calculate My Score</button>
+        <button onclick="calculateCRS()">점수 계산하기</button>
 
-        <div class="result" id="crsResult">Total Points: -</div>
+        <div class="result" id="crsResult">총점: -</div>
     </div>
 
     <!-- Comprehensive Guide Section -->
     <div class="card" id="guide">
-        <h2>What is Express Entry?</h2>
-        <p>Express Entry is a system used by the Canadian government to manage applications for permanent residence from skilled workers. It covers three main programs:</p>
+        <h2>익스프레스 엔트리(Express Entry)란?</h2>
+        <p>익스프레스 엔트리는 캐나다 정부가 숙련직 근로자의 영주권 신청을 관리하는 시스템입니다. 다음 세 가지 주요 프로그램을 포함합니다:</p>
         <ul>
-            <li><strong>Federal Skilled Worker Program:</strong> For skilled workers with foreign work experience.</li>
-            <li><strong>Federal Skilled Trades Program:</strong> For skilled workers in specific trades.</li>
-            <li><strong>Canadian Experience Class:</strong> For skilled workers who have Canadian work experience.</li>
+            <li><strong>연방 숙련직 프로그램 (FSWP):</strong> 해외 경력을 가진 숙련직 근로자 대상.</li>
+            <li><strong>연방 기술직 프로그램 (FSTP):</strong> 특정 기술 업종의 근로자 대상.</li>
+            <li><strong>캐나다 경험 이민 (CEC):</strong> 캐나다 내 경력이 있는 숙련직 근로자 대상.</li>
         </ul>
-        <h3>How to Improve Your CRS Score?</h3>
-        <p>If your score is lower than the recent cut-offs, consider these strategies:</p>
+        <h3>CRS 점수를 높이는 방법은?</h3>
+        <p>현재 점수가 최근 커트라인보다 낮다면 다음 전략을 고려해 보세요:</p>
         <ul>
-            <li><strong>Improve Language Scores:</strong> Retaking IELTS or CELPIP to reach CLB 9 or 10 can significantly boost your score.</li>
-            <li><strong>Provincial Nominee Program (PNP):</strong> A nomination from a province gives you an automatic 600 points.</li>
-            <li><strong>Gain Work Experience:</strong> Additional years of skilled work experience, especially in Canada, will add points.</li>
-            <li><strong>Higher Education:</strong> Completing a Master's or PhD can provide more points for human capital.</li>
+            <li><strong>언어 점수 향상:</strong> IELTS 또는 CELPIP에서 CLB 9 또는 10을 달성하면 점수가 비약적으로 상승합니다.</li>
+            <li><strong>주정부 이민(PNP):</strong> 주정부 노미네이션을 받으면 자동으로 600점을 추가 획득합니다.</li>
+            <li><strong>경력 쌓기:</strong> 특히 캐나다 내에서의 추가 경력은 높은 가산점이 붙습니다.</li>
+            <li><strong>추가 학위 취득:</strong> 석사 또는 박사 학위는 인적 자본 점수를 크게 높여줍니다.</li>
         </ul>
     </div>
 
     <!-- Latest Articles Section -->
     <div id="articles">
-        <h2 style="color: var(--text-color); border-bottom: none; margin-bottom: 20px; font-size: 1.8rem;">Latest Immigration News & Guides</h2>
+        <h2 style="color: var(--text-main); border-bottom: none; margin-bottom: 20px; font-size: 1.8rem;">최신 이민 뉴스 및 가이드</h2>
         <div class="articles-grid">
             
             <article class="article-card">
-                <h3>Express Entry 2026: Understanding Category-Based Selection</h3>
-                <div class="article-meta">
-                    <span class="article-badge">Express Entry</span>
-                    <span>Feb 24, 2026</span>
-                </div>
+                <span class="article-badge">익스프레스 엔트리</span>
+                <h3>2026년 익스프레스 엔트리: 카테고리 기반 선발 이해하기</h3>
+                <div class="article-meta">2026년 2월 24일</div>
                 <div class="article-summary">
-                    IRCC has revolutionized the Express Entry system with category-based selection draws. In 2026, the focus remains strong on STEM, Healthcare, Trades, Transport, and Agriculture professionals. If you have work experience in these priority sectors, you may be eligible for draws with significantly lower CRS score requirements than general rounds.
+                    IRCC는 카테고리 기반 선발을 통해 익스프레스 엔트리 시스템을 혁신했습니다. 2026년에는 STEM, 보건 의료, 기술직, 운송 및 농업 전문가에 초점을 맞추고 있습니다. 해당 분야 경력이 있다면 일반 선발보다 훨씬 낮은 점수로 초청받을 수 있습니다.
                 </div>
             </article>
 
             <article class="article-card">
-                <h3>The French Language Proficiency Advantage</h3>
-                <div class="article-meta">
-                    <span class="article-badge">Tips</span>
-                    <span>Feb 22, 2026</span>
-                </div>
+                <span class="article-badge">꿀팁</span>
+                <h3>프랑스어 능력의 엄청난 혜택</h3>
+                <div class="article-meta">2026년 2월 22일</div>
                 <div class="article-summary">
-                    Did you know that French speakers have a distinct advantage in Express Entry? Francophone priority draws continue to invite candidates with CRS scores often 50-100 points lower than the general cutoff. Achieving a CLB 7 in French can be the game-changer for your application, regardless of your other qualifications.
+                    프랑스어 능력이 익스프레스 엔트리에서 결정적인 역할을 한다는 사실을 알고 계셨나요? 프랑스어 우수자 전형은 일반 컷오프보다 50~100점 낮은 점수로 진행되는 경우가 많습니다. 다른 자격 조건이 부족하더라도 프랑스어 CLB 7을 달성하면 게임 체인저가 될 수 있습니다.
                 </div>
             </article>
 
             <article class="article-card">
-                <h3>OINP Human Capital Priorities Stream: A Complete Guide</h3>
-                <div class="article-meta">
-                    <span class="article-badge">PNP</span>
-                    <span>Feb 20, 2026</span>
-                </div>
+                <span class="article-badge">PNP</span>
+                <h3>온타리오 주정부(OINP) 인적 자본 우선순위 스트림 완벽 가이드</h3>
+                <div class="article-meta">2026년 2월 20일</div>
                 <div class="article-summary">
-                    The Ontario Immigrant Nominee Program (OINP) remains one of the most popular pathways. The Human Capital Priorities stream frequently invites tech workers and other skilled professionals directly from the Express Entry pool. No job offer is required, but you must meet specific CRS ranges and work experience criteria.
+                    OINP는 가장 인기 있는 이민 경로 중 하나입니다. 인적 자본 우선순위 스트림은 IT 전문가 및 숙련직을 익스프레스 엔트리 풀에서 직접 선정합니다. 잡오퍼가 필요 없지만, 특정 CRS 점수 범위와 경력 요건을 충족해야 합니다.
                 </div>
             </article>
 
             <article class="article-card">
-                <h3>Proof of Funds: Updated Requirements for 2026</h3>
-                <div class="article-meta">
-                    <span class="article-badge">Requirements</span>
-                    <span>Feb 18, 2026</span>
-                </div>
+                <span class="article-badge">필수 요건</span>
+                <h3>2026년 정착 자금 증명: 업데이트된 요구 사항</h3>
+                <div class="article-meta">2026년 2월 18일</div>
                 <div class="article-summary">
-                    IRCC updates the Proof of Funds requirement annually. For 2026, the amount has been adjusted for inflation. Applicants under FSW and FST programs must demonstrate they have enough money to settle in Canada. Remember, if you are applying under the Canadian Experience Class (CEC) or have a valid job offer, you are exempt.
+                    IRCC는 매년 정착 자금 요건을 업데이트합니다. 2026년에는 인플레이션을 반영하여 금액이 조정되었습니다. FSWP 및 FSTP 신청자는 캐나다 정착을 위한 충분한 자금을 증명해야 합니다. CEC 신청자나 유효한 잡오퍼가 있는 경우는 면제됩니다.
                 </div>
             </article>
 
             <article class="article-card">
-                <h3>How to Boost Your CRS Score Without a Job Offer</h3>
-                <div class="article-meta">
-                    <span class="article-badge">Strategy</span>
-                    <span>Feb 15, 2026</span>
-                </div>
+                <span class="article-badge">전략</span>
+                <h3>잡오퍼 없이 CRS 점수를 올리는 방법</h3>
+                <div class="article-meta">2026년 2월 15일</div>
                 <div class="article-summary">
-                    Stuck in the 470s? You don't necessarily need an LMIA job offer to boost your score. Consider maximizing your language points (CLB 9/10), learning French, obtaining a higher education degree, or gaining one year of Canadian work experience. Sibling points (15 points) can also help tip the scale.
+                    470점대에 머물러 계신가요? LMIA 잡오퍼 없이도 점수를 올릴 수 있습니다. 언어 점수 극대화(CLB 9/10), 프랑스어 학습, 학위 추가, 또는 1년의 캐나다 경력 쌓기를 고려하세요. 캐나다 내 형제자매(15점)도 큰 도움이 됩니다.
                 </div>
             </article>
 
             <article class="article-card">
-                <h3>Alberta Advantage Immigration Program (AAIP) Tech Pathway</h3>
-                <div class="article-meta">
-                    <span class="article-badge">PNP</span>
-                    <span>Feb 12, 2026</span>
-                </div>
+                <span class="article-badge">PNP</span>
+                <h3>알버타 주정부(AAIP) 테크 패스웨이</h3>
+                <div class="article-meta">2026년 2월 12일</div>
                 <div class="article-summary">
-                    Alberta's accelerated Tech Pathway is a golden opportunity for IT professionals. If you have a job offer in one of the eligible tech occupations and an Express Entry profile, you could receive a nomination quickly. The processing times for this stream are among the fastest in the country.
+                    알버타의 가속 테크 패스웨이는 IT 전문가에게 황금 같은 기회입니다. 해당 직종의 잡오퍼가 있고 익스프레스 엔트리 프로필이 있다면 신속하게 노미네이션을 받을 수 있습니다. 이 스트림은 캐나다에서 가장 빠른 처리 속도를 자랑합니다.
                 </div>
             </article>
 
             <article class="article-card">
-                <h3>British Columbia PNP (BC PNP) Tech</h3>
-                <div class="article-meta">
-                    <span class="article-badge">PNP</span>
-                    <span>Feb 10, 2026</span>
-                </div>
+                <span class="article-badge">PNP</span>
+                <h3>BC 주정부(BC PNP) 테크 드로우</h3>
+                <div class="article-meta">2026년 2월 10일</div>
                 <div class="article-summary">
-                    BC PNP Tech holds weekly draws, providing stability for applicants. Key occupations include software engineers, web designers, and broadcasters. Unlike other streams, the Tech stream prioritizes processing and often has lower point thresholds than general BC PNP draws.
+                    BC PNP 테크는 매주 드로우를 실시하여 예측 가능성을 높여줍니다. 소프트웨어 엔지니어, 웹 디자이너 등이 주요 대상입니다. 일반 스트림보다 처리 순위가 높고 점수 컷오프가 낮게 형성되는 경향이 있습니다.
                 </div>
             </article>
 
             <article class="article-card">
-                <h3>Understanding the TEER System: NOC 2021 Explained</h3>
-                <div class="article-meta">
-                    <span class="article-badge">Basics</span>
-                    <span>Feb 08, 2026</span>
-                </div>
+                <span class="article-badge">기초 지식</span>
+                <h3>TEER 시스템 이해하기: NOC 2021 완벽 정리</h3>
+                <div class="article-meta">2026년 2월 8일</div>
                 <div class="article-summary">
-                    The transition from NOC skill levels (0, A, B) to TEER categories (0, 1, 2, 3) is now fully integrated. Ensure your work experience is classified correctly under TEER 0, 1, 2, or 3 to be eligible for Express Entry. Some occupations that were previously ineligible are now included, and vice versa.
+                    기존 NOC 스킬 레벨(0, A, B)이 TEER 카테고리(0, 1, 2, 3)로 완전히 통합되었습니다. 본인의 경력이 TEER 0~3에 해당하는지 정확히 파악해야 합니다. 이전에는 불가능했던 직종이 추가되거나 그 반대의 경우도 있으니 주의가 필요합니다.
                 </div>
             </article>
 
             <article class="article-card">
-                <h3>Study to PR: The Post-Graduation Work Permit (PGWP) Route</h3>
-                <div class="article-meta">
-                    <span class="article-badge">Students</span>
-                    <span>Feb 05, 2026</span>
-                </div>
+                <span class="article-badge">학생</span>
+                <h3>유학 후 이민: 졸업 후 취업 비자(PGWP) 활용하기</h3>
+                <div class="article-meta">2026년 2월 5일</div>
                 <div class="article-summary">
-                    International students have a clear pathway to PR via the PGWP. After graduating from a DLI, obtaining an open work permit allows you to gain the crucial "Canadian Experience" needed for the CEC class. Strategic planning of your study program length is vital for maximizing your permit duration.
+                    유학생들은 PGWP를 통해 영주권으로 가는 명확한 경로를 가집니다. DLI 졸업 후 오픈 워크 퍼밋을 통해 CEC 신청에 필요한 '캐나다 경력'을 쌓을 수 있습니다. 비자 기간을 최대화하기 위한 전략적인 학업 기간 설정이 중요합니다.
                 </div>
             </article>
 
             <article class="article-card">
-                <h3>Common Mistakes That Lead to Express Entry Refusals</h3>
-                <div class="article-meta">
-                    <span class="article-badge">Advice</span>
-                    <span>Feb 01, 2026</span>
-                </div>
+                <span class="article-badge">주의사항</span>
+                <h3>익스프레스 엔트리 거절을 부르는 흔한 실수들</h3>
+                <div class="article-meta">2026년 2월 1일</div>
                 <div class="article-summary">
-                    A high CRS score doesn't guarantee PR if your application is incomplete. Common pitfalls include uploading the wrong police certificate, mismatching NOC codes with reference letters, or failing to declare all family members. Double-check every document against the personalized checklist.
+                    높은 CRS 점수가 영주권을 보장하지는 않습니다. 서류 미비로 거절되는 사례가 많습니다. 범죄 경력 증명서 오류, NOC 코드와 경력 증명서의 불일치, 가족 구성원 누락 등이 흔한 원인입니다. 모든 서류를 꼼꼼히 체크리스트와 대조하세요.
                 </div>
             </article>
 
@@ -213,36 +193,36 @@
 
     <!-- Blog Section -->
     <div class="card" id="community">
-        <h2>Community Discussion</h2>
-        <p>Share your experiences or read stories from other applicants.</p>
-        <input type="text" id="title" placeholder="Post Title" />
-        <textarea id="content" rows="4" placeholder="Share your story or ask a question..."></textarea>
-        <button onclick="addPost()">Post to Community</button>
+        <h2>커뮤니티 게시판</h2>
+        <p>여러분의 경험을 공유하거나 다른 신청자들의 이야기를 읽어보세요.</p>
+        <input type="text" id="title" placeholder="제목" />
+        <textarea id="content" rows="4" placeholder="여러분의 이야기나 질문을 남겨주세요..."></textarea>
+        <button onclick="addPost()">게시하기</button>
 
         <div id="blogList"></div>
     </div>
 
     <!-- Partnership Inquiry Form -->
     <div class="card" id="contact">
-        <h2>Contact & Partnership</h2>
-        <p>Interested in collaborating or have specific questions? Reach out to us!</p>
+        <h2>문의 및 제휴</h2>
+        <p>협업이나 특정 질문이 있으신가요? 저희에게 연락주세요!</p>
         <form action="https://formspree.io/f/mjgejrry" method="POST">
-            <label>Your Name:</label>
-            <input type="text" name="name" required placeholder="John Doe">
+            <label>성함:</label>
+            <input type="text" name="name" required placeholder="홍길동">
 
-            <label>Your Email:</label>
-            <input type="email" name="email" required placeholder="john@example.com">
+            <label>이메일:</label>
+            <input type="email" name="email" required placeholder="example@email.com">
             
-            <label>Message:</label>
-            <textarea name="message" rows="4" required placeholder="Tell us more..."></textarea>
+            <label>메시지:</label>
+            <textarea name="message" rows="4" required placeholder="내용을 입력해주세요..."></textarea>
             
-            <button type="submit">Send Message</button>
+            <button type="submit">메시지 전송</button>
         </form>
     </div>
 
     <!-- Disqus Comments Section -->
     <div class="card">
-        <h2>Join the Discussion</h2>
+        <h2>함께 이야기해요</h2>
         <div id="disqus_thread"></div>
         <script>
             (function() { 
@@ -252,7 +232,7 @@
             (d.head || d.body).appendChild(s);
             })();
         </script>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <noscript>Please enable JavaScript를 활성화하여 <a href="https://disqus.com/?ref_noscript">Disqus 댓글을 확인하세요.</a></noscript>
     </div>
 
 </div>
@@ -260,9 +240,9 @@
 <footer>
     <p>&copy; 2026 Canada PR Builder. All rights reserved.</p>
     <div class="footer-links">
-        <a href="#home">Home</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="#contact">Contact Us</a>
+        <a href="#home">홈</a>
+        <a href="privacy.html">개인정보처리방침</a>
+        <a href="#contact">고객센터</a>
     </div>
 </footer>
 
