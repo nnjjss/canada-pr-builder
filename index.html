@@ -1,14 +1,174 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
-  <link href='/style.css' rel='stylesheet'>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Express Entry & CRS Calculator</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f4f6f8;
+}
+header {
+    background: #c8102e;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+.card {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+input, select, button, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+button {
+    background: #c8102e;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background: #a50d25;
+}
+.blog-post {
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+.result {
+    font-size: 20px;
+    font-weight: bold;
+    color: #c8102e;
+}
+</style>
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
-  <script defer type="text/javascript" src="/main.js"></script>
+
+<header>
+<h1>Express Entry & CRS Calculator</h1>
+</header>
+
+<div class="container">
+
+<!-- CRS Calculator -->
+<div class="card">
+<h2>CRS Score Calculator</h2>
+
+<label>Age</label>
+<input type="number" id="age" />
+
+<label>Education</label>
+<select id="education">
+<option value="0">Select</option>
+<option value="90">High School (90)</option>
+<option value="120">Bachelor (120)</option>
+<option value="135">Master (135)</option>
+<option value="150">PhD (150)</option>
+</select>
+
+<label>IELTS CLB Level</label>
+<select id="language">
+<option value="0">Select</option>
+<option value="80">CLB 7 (80)</option>
+<option value="100">CLB 9 (100)</option>
+<option value="120">CLB 10 (120)</option>
+</select>
+
+<label>Canadian Work Experience (Years)</label>
+<select id="canadianExp">
+<option value="0">0</option>
+<option value="40">1</option>
+<option value="53">2</option>
+<option value="64">3+</option>
+</select>
+
+<button onclick="calculateCRS()">Calculate Score</button>
+
+<div class="result" id="crsResult"></div>
+</div>
+
+<!-- Blog Section -->
+<div class="card">
+<h2>Write Blog Post</h2>
+<input type="text" id="title" placeholder="Title" />
+<textarea id="content" rows="4" placeholder="Write your article..."></textarea>
+<button onclick="addPost()">Publish</button>
+
+<div id="blogList"></div>
+</div>
+
+</div>
+
+<script>
+function calculateCRS() {
+    let age = parseInt(document.getElementById("age").value) || 0;
+    let education = parseInt(document.getElementById("education").value);
+    let language = parseInt(document.getElementById("language").value);
+    let canadianExp = parseInt(document.getElementById("canadianExp").value);
+
+    // Simple Age Points Logic
+    let agePoints = 0;
+    if(age >= 20 && age <= 29) agePoints = 110;
+    else if(age >= 30 && age <= 35) agePoints = 90;
+    else if(age >= 36 && age <= 40) agePoints = 70;
+    else if(age > 40) agePoints = 40;
+
+    let total = agePoints + education + language + canadianExp;
+    document.getElementById("crsResult").innerText = "Estimated CRS Score: " + total;
+}
+
+function addPost() {
+    let title = document.getElementById("title").value;
+    let content = document.getElementById("content").value;
+
+    if(title === "" || content === "") return;
+
+    let blogList = document.getElementById("blogList");
+    let post = document.createElement("div");
+    post.className = "blog-post";
+    post.innerHTML = "<h3>" + title + "</h3><p>" + content + "</p>";
+    blogList.prepend(post);
+
+    saveToLocalStorage(title, content);
+
+    document.getElementById("title").value = "";
+    document.getElementById("content").value = "";
+}
+
+function saveToLocalStorage(title, content) {
+    let posts = JSON.parse(localStorage.getItem("posts")) || [];
+    posts.push({title, content});
+    localStorage.setItem("posts", JSON.stringify(posts));
+}
+
+function loadPosts() {
+    let posts = JSON.parse(localStorage.getItem("posts")) || [];
+    let blogList = document.getElementById("blogList");
+    posts.reverse().forEach(post => {
+        let div = document.createElement("div");
+        div.className = "blog-post";
+        div.innerHTML = "<h3>" + post.title + "</h3><p>" + post.content + "</p>";
+        blogList.appendChild(div);
+    });
+}
+
+loadPosts();
+</script>
+
 </body>
 </html>
