@@ -151,6 +151,72 @@ button:hover {
     margin-top: 20px;
 }
 
+/* New Article Section Styles */
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.article-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 25px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.article-card h3 {
+    margin-top: 0;
+    color: var(--btn-bg);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.article-meta {
+    font-size: 0.85rem;
+    color: var(--text-color);
+    opacity: 0.8;
+    margin-bottom: 15px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.article-badge {
+    background: var(--btn-bg);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.article-summary {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.read-more {
+    color: var(--btn-bg);
+    text-decoration: none;
+    font-weight: bold;
+    align-self: flex-start;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
 .result {
     font-size: 24px;
     font-weight: bold;
