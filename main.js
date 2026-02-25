@@ -46,39 +46,84 @@ const articlesData = [
     }
 ];
 
-// --- 네비게이션 및 스크롤 효과 ---
-window.addEventListener('scroll', () => {
-    const nav = document.getElementById('mainNav');
-    if (window.scrollY > 100) {
-        nav.style.padding = '8px 20px';
-        nav.style.top = '10px';
-    } else {
-        nav.style.padding = '12px 30px';
-        nav.style.top = '20px';
+// --- 기사 모달 제어 (전역 함수로 유지하되 안정성 강화) ---
+window.openArticle = function(index) {
+    console.log("Attempting to open article at index:", index);
+    const article = articlesData[index];
+    if (!article) return;
+
+    const modal = document.getElementById("articleModal");
+    const modalBody = document.getElementById("modalBody");
+
+    if (!modal || !modalBody) return;
+
+    modalBody.innerHTML = `
+        <span class="article-badge">${article.badge}</span>
+        <h2>${article.title}</h2>
+        <div class="article-meta">${article.date}</div>
+        <div class="full-content">${article.content}</div>
+        <button class="read-more-btn" style="margin-top:30px; width:100%" id="modalCloseBtn">닫기</button>
+    `;
+
+    modal.style.display = "block";
+    document.body.style.overflow = "hidden";
+
+    document.getElementById("modalCloseBtn").onclick = closeArticle;
+};
+
+window.closeArticle = function() {
+    const modal = document.getElementById("articleModal");
+    if (modal) {
+        modal.style.display = "none";
+        document.body.style.overflow = "auto";
     }
-});
+};
 
-document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        const offset = 100; // nav height offset
-        const elementPosition = targetElement.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - offset;
+// --- 초기화 로직 ---
+document.addEventListener('DOMContentLoaded', () => {
+    console.log("DOM fully loaded and parsed");
 
-        window.scrollTo({
-            top: offsetPosition,
-            behavior: "smooth"
-        });
+    // 1. 네비게이션 효과
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+            nav.style.padding = '8px 20px';
+            nav.style.top = '10px';
+        } else {
+            nav.style.padding = '12px 30px';
+            nav.style.top = '20px';
+        }
     });
+
+    // 2. 테마 설정
+    const themeToggle = document.getElementById('themeToggle');
+    if (themeToggle) {
+        if (document.documentElement.getAttribute('data-theme') === 'dark') {
+            themeToggle.textContent = '☀️ 라이트 모드';
+        }
+        themeToggle.addEventListener('click', () => {
+            let theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            themeToggle.textContent = theme === 'dark' ? '☀️ 라이트 모드' : '🌙 다크 모드';
+        });
+    }
+
+    // 3. 커뮤니티 렌더링
+    renderPosts();
+
+    // 4. 모달 바깥 클릭 시 닫기
+    window.onclick = (e) => {
+        const modal = document.getElementById("articleModal");
+        if (e.target === modal) closeArticle();
+    };
 });
 
-// --- CRS 계산기 로직 ---
+// --- 기존 함수 유지 ---
 function toggleSpouseSection() {
     const status = document.getElementById('maritalStatus').value;
     const spouseSection = document.getElementById('spouseSection');
-    spouseSection.style.display = status === 'married' ? 'block' : 'none';
+    if(spouseSection) spouseSection.style.display = status === 'married' ? 'block' : 'none';
 }
 
 function calculateCRS() {
@@ -92,8 +137,6 @@ function calculateCRS() {
     let foreignExp = parseInt(document.getElementById("foreignExp").value) || 0;
 
     let total = 0;
-
-    // 1. 나이
     let agePoints = 0;
     if (age >= 20 && age <= 29) agePoints = isMarried ? 100 : 110;
     else if (age >= 30 && age <= 44) {
@@ -103,25 +146,15 @@ function calculateCRS() {
     }
     total += Math.max(0, agePoints);
 
-    // 2. 학력
-    const eduMap = {
-        'highschool': isMarried ? 28 : 30,
-        'bachelor': isMarried ? 112 : 120,
-        'two_or_more': isMarried ? 119 : 128,
-        'master': isMarried ? 126 : 135,
-        'phd': isMarried ? 140 : 150
-    };
+    const eduMap = { 'highschool': isMarried ? 28 : 30, 'bachelor': isMarried ? 112 : 120, 'two_or_more': isMarried ? 119 : 128, 'master': isMarried ? 126 : 135, 'phd': isMarried ? 140 : 150 };
     total += eduMap[education] || 0;
 
-    // 3. 언어 (단순화)
     const langMap = { 7: isMarried ? 64 : 68, 8: isMarried ? 88 : 92, 9: isMarried ? 116 : 124, 10: isMarried ? 128 : 136 };
     total += langMap[language] || 0;
 
-    // 4. 캐나다 경력
     const canExpMap = { 1: isMarried ? 35 : 40, 2: isMarried ? 46 : 53, 3: isMarried ? 70 : 80 };
     total += canExpMap[canadianExp] || 0;
 
-    // 5. 기술 전이
     let transfer = 0;
     if (education !== 'highschool' && education !== '0') {
         if (language >= 9) transfer += 50;
@@ -133,7 +166,6 @@ function calculateCRS() {
     }
     total += Math.min(100, transfer);
 
-    // 6. 배우자
     if (isMarried) {
         const sEdu = document.getElementById("spouseEducation").value;
         const sLang = parseInt(document.getElementById("spouseLanguage").value) || 0;
@@ -146,55 +178,6 @@ function calculateCRS() {
     res.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
-// --- 기사 모달 제어 ---
-function openArticle(index) {
-    console.log("Opening article:", index);
-    const article = articlesData[index];
-    if (!article) {
-        console.error("Article not found for index:", index);
-        return;
-    }
-
-    const modal = document.getElementById("articleModal");
-    const modalBody = document.getElementById("modalBody");
-
-    if (!modal || !modalBody) {
-        console.error("Modal elements not found in DOM");
-        return;
-    }
-
-    modalBody.innerHTML = `
-        <span class="article-badge">${article.badge}</span>
-        <h2>${article.title}</h2>
-        <div class="article-meta">${article.date}</div>
-        <div class="full-content">${article.content}</div>
-        <button class="read-more-btn close-btn" style="margin-top:30px; width:100%">닫기</button>
-    `;
-
-    modal.style.display = "block";
-    document.body.style.overflow = "hidden";
-
-    // 모달 내부 닫기 버튼에 이벤트 리스너 추가
-    modalBody.querySelector('.close-btn').onclick = closeArticle;
-}
-
-function closeArticle() {
-    const modal = document.getElementById("articleModal");
-    if (modal) {
-        modal.style.display = "none";
-        document.body.style.overflow = "auto";
-    }
-}
-
-// 모달 바깥 클릭 시 닫기
-window.addEventListener('click', (e) => {
-    const modal = document.getElementById("articleModal");
-    if (e.target === modal) {
-        closeArticle();
-    }
-});
-
-// --- 커뮤니티 (LocalStorage) ---
 function addPost() {
     let t = document.getElementById("title");
     let c = document.getElementById("content");
@@ -208,6 +191,7 @@ function addPost() {
 
 function renderPosts() {
     let list = document.getElementById("blogList");
+    if(!list) return;
     list.innerHTML = "";
     let posts = JSON.parse(localStorage.getItem("posts")) || [];
     posts.reverse().forEach(p => {
@@ -218,20 +202,3 @@ function renderPosts() {
         list.appendChild(d);
     });
 }
-
-// --- 테마 설정 ---
-const themeToggle = document.getElementById('themeToggle');
-themeToggle.addEventListener('click', () => {
-    let theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-    themeToggle.textContent = theme === 'dark' ? '☀️ 라이트 모드' : '🌙 다크 모드';
-});
-
-// 초기화
-document.addEventListener('DOMContentLoaded', () => {
-    if (document.documentElement.getAttribute('data-theme') === 'dark') {
-        themeToggle.textContent = '☀️ 라이트 모드';
-    }
-    renderPosts();
-});
