@@ -64,117 +64,130 @@
         </div>
     </div>
 
-    <!-- CRS Calculator -->
+    <!-- Comprehensive Assessment & Strategy Section -->
     <div class="card" id="calculator">
-        <h2>CRS 점수 계산기</h2>
-        <p>익스프레스 엔트리 예상 점수를 확인하세요. <b>2026년 신규 카테고리(연구직, 시니어 매니저, 운송직, 군 관련 직군)</b> 해당자는 일반 컷오프보다 낮은 점수로도 초청 대상이 될 수 있습니다.</p>
+        <h2>맞춤형 이민 루트 진단 & CRS 계산기</h2>
+        <p>기본 정보와 선호도를 입력하면 <b>Express Entry, PNP, Pilot 프로그램</b> 중 당신에게 가장 유리한 최적의 경로를 데이터 기반으로 추천해드립니다.</p>
         
-        <div style="background: rgba(230, 81, 0, 0.05); padding: 15px; border-radius: 12px; margin-bottom: 25px; border: 1px solid rgba(230, 81, 0, 0.2);">
-            <p style="margin:0; font-size: 0.9rem; color: var(--maple-orange);">💡 <b>2026년 우선 선발 대상:</b> 캐나다 경력 연구자/교수, 시니어 매니저, 운송(파일럿/정비), 국방 관련 숙련직</p>
-        </div>
-
-        <div class="calc-grid">
-            <div class="input-group">
-                <label for="maritalStatus">결혼 여부</label>
-                <select id="maritalStatus" onchange="toggleSpouseSection()">
-                    <option value="single">미혼 (Single/Common-law without partner)</option>
-                    <option value="married">기혼 (Married/Common-law with partner)</option>
-                </select>
-            </div>
-
-            <div class="input-group">
-                <label for="age">현재 나이 (만)</label>
-                <input type="number" id="age" placeholder="예: 30" />
-            </div>
-
-            <div class="input-group">
-                <label for="education">최종 학력</label>
-                <select id="education">
-                    <option value="0">학력을 선택하세요</option>
-                    <option value="highschool">고등학교 졸업</option>
-                    <option value="bachelor">학사 학위 (3년 이상)</option>
-                    <option value="two_or_more">2개 이상의 학위 (하나가 3년 이상)</option>
-                    <option value="master">석사 학위</option>
-                    <option value="phd">박사 학위</option>
-                </select>
-            </div>
-
-            <div class="input-group">
-                <label for="language">공인 영어 성적 (CLB)</label>
-                <select id="language">
-                    <option value="0">CLB 레벨을 선택하세요</option>
-                    <option value="7">CLB 7 (IELTS 6.0)</option>
-                    <option value="8">CLB 8 (IELTS L7.5, R6.5, W6.5, S6.5)</option>
-                    <option value="9">CLB 9 (IELTS L8.0, R7.0, W7.0, S7.0)</option>
-                    <option value="10">CLB 10 (IELTS L8.5, R8.0, W7.5, S7.5)</option>
-                </select>
-            </div>
-
-            <div class="input-group">
-                <label for="canadianExp">캐나다 내 숙련직 경력</label>
-                <select id="canadianExp">
-                    <option value="0">없음</option>
-                    <option value="1">1년</option>
-                    <option value="2">2년</option>
-                    <option value="3">3년 이상</option>
-                </select>
-            </div>
-
-            <div class="input-group">
-                <label for="foreignExp">해외 숙련직 경력 (최근 10년)</label>
-                <select id="foreignExp">
-                    <option value="0">없음</option>
-                    <option value="1">1~2년</option>
-                    <option value="3">3년 이상</option>
-                </select>
-            </div>
-        </div>
-
-        <div style="border-top: 1px solid var(--border-color); padding-top: 20px; margin-top: 20px;">
-            <h3>추가 가산점 (Additional Points)</h3>
+        <div style="background: rgba(10, 37, 64, 0.05); padding: 20px; border-radius: 16px; margin-bottom: 30px; border: 1px solid var(--border-color);">
+            <h3 style="font-size: 1.1rem; margin-bottom: 15px; color: var(--primary);">Step 1: 기본 정보 입력</h3>
             <div class="calc-grid">
                 <div class="input-group">
-                    <label for="canadianStudy">캐나다 내 학업 경험</label>
+                    <label for="maritalStatus">결혼 여부</label>
+                    <select id="maritalStatus" onchange="toggleSpouseSection()">
+                        <option value="single">미혼 (Single)</option>
+                        <option value="married">기혼 (Married)</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="age">현재 나이 (만)</label>
+                    <input type="number" id="age" placeholder="예: 30" />
+                </div>
+
+                <div class="input-group">
+                    <label for="education">최종 학력</label>
+                    <select id="education">
+                        <option value="0">학력을 선택하세요</option>
+                        <option value="highschool">고등학교 졸업</option>
+                        <option value="bachelor">학사 학위 (3년 이상)</option>
+                        <option value="two_or_more">2개 이상의 학위 (하나가 3년 이상)</option>
+                        <option value="master">석사 학위</option>
+                        <option value="phd">박사 학위</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="language">영어 성적 (CLB)</label>
+                    <select id="language">
+                        <option value="0">CLB 레벨을 선택하세요</option>
+                        <option value="7">CLB 7 (IELTS 6.0)</option>
+                        <option value="8">CLB 8 (IELTS L7.5, R6.5, W6.5, S6.5)</option>
+                        <option value="9">CLB 9 (IELTS L8.0, R7.0, W7.0, S7.0)</option>
+                        <option value="10">CLB 10 (IELTS L8.5, R8.0, W7.5, S7.5)</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="canadianExp">캐나다 내 숙련직 경력</label>
+                    <select id="canadianExp">
+                        <option value="0">없음</option>
+                        <option value="1">1년</option>
+                        <option value="2">2년</option>
+                        <option value="3">3년 이상</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="foreignExp">해외 숙련직 경력 (최근 10년)</label>
+                    <select id="foreignExp">
+                        <option value="0">없음</option>
+                        <option value="1">1~2년</option>
+                        <option value="3">3년 이상</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div style="background: rgba(213, 43, 30, 0.03); padding: 20px; border-radius: 16px; margin-bottom: 30px; border: 1px solid rgba(213, 43, 30, 0.1);">
+            <h3 style="font-size: 1.1rem; margin-bottom: 15px; color: var(--maple-red);">Step 2: 추가 변수 및 선호도</h3>
+            <div class="calc-grid">
+                <div class="input-group">
+                    <label for="targetProvince">선호 거주 지역</label>
+                    <select id="targetProvince">
+                        <option value="any">상관 없음 (전 지역)</option>
+                        <option value="ON">온타리오 (OINP)</option>
+                        <option value="BC">브리티시 컬럼비아 (BC PNP)</option>
+                        <option value="AB">알버타 (AAIP)</option>
+                        <option value="Atlantic">아틀란틱 지역 (AIP)</option>
+                        <option value="Rural">외곽 지역 (RNIP/RCIP)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="occupationGroup">현재 직종 카테고리</label>
+                    <select id="occupationGroup">
+                        <option value="others">기타 일반 숙련직</option>
+                        <option value="Healthcare">의료/보건 (Healthcare)</option>
+                        <option value="STEM">IT/공학 (STEM)</option>
+                        <option value="Trades">기술 생산직 (Trades)</option>
+                        <option value="Transport">운송 (Transport)</option>
+                        <option value="Agriculture">농축산 (Agriculture)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="jobOffer">유효한 잡오퍼 보유 여부</label>
+                    <select id="jobOffer">
+                        <option value="0">없음</option>
+                        <option value="50">있음 (일반 숙련직)</option>
+                        <option value="200">있음 (시니어 매니저)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="canadianStudy">캐나다 내 학업 유무</label>
                     <select id="canadianStudy">
                         <option value="0">없음</option>
                         <option value="15">1~2년 과정 졸업</option>
-                        <option value="30">3년 이상 또는 석/박사 과정 졸업</option>
+                        <option value="30">3년 이상 또는 석/박사 졸업</option>
                     </select>
                 </div>
                 <div class="input-group">
-                    <label for="pnp">주정부 노미네이션 (PNP) 승인</label>
-                    <select id="pnp">
-                        <option value="0">아니오</option>
-                        <option value="600">예 (600점)</option>
-                    </select>
-                </div>
-                <div class="input-group">
-                    <label for="jobOffer">유효한 잡오퍼 (LMIA 등)</label>
-                    <select id="jobOffer">
+                    <label for="frenchSkill">프랑스어 능력</label>
+                    <select id="frenchSkill">
                         <option value="0">없음</option>
-                        <option value="50">TEER 0, 1, 2, 3 직종</option>
-                        <option value="200">TEER 00 (시니어 매니저) 직종</option>
+                        <option value="50">CLB 7 이상 (불어 우수자)</option>
                     </select>
                 </div>
                 <div class="input-group">
-                    <label for="sibling">캐나다 내 형제/자매 거주 (시민/영주권)</label>
+                    <label for="sibling">캐나다 내 형제/자매 거주</label>
                     <select id="sibling">
                         <option value="0">아니오</option>
-                        <option value="15">예 (15점)</option>
-                    </select>
-                </div>
-                <div class="input-group">
-                    <label for="frenchSkill">프랑스어 능력 (모든 영역 CLB 7 이상)</label>
-                    <select id="frenchSkill">
-                        <option value="0">아니오</option>
-                        <option value="25">예 (영어 CLB 4 이하)</option>
-                        <option value="50">예 (영어 CLB 5 이상)</option>
+                        <option value="15">예 (시민/영주권자)</option>
                     </select>
                 </div>
             </div>
         </div>
 
-        <div id="spouseSection" style="display: none; border-top: 1px solid var(--border-color); padding-top: 20px; margin-top: 10px;">
+        <div id="spouseSection" style="display: none; border-top: 1px solid var(--border-color); padding-top: 20px; margin-top: 10px; margin-bottom: 30px;">
             <h3>배우자 정보 (동반하는 경우)</h3>
             <div class="calc-grid">
                 <div class="input-group">
@@ -198,12 +211,36 @@
             </div>
         </div>
 
-        <button onclick="calculateCRS()" style="width: 100%; margin-top: 20px;">상세 점수 계산하기</button>
+        <button onclick="calculateCRS()" style="width: 100%; font-size: 1.2rem; padding: 20px;">AI 최적 루트 분석 시작하기</button>
 
-        <div class="result-box" id="crsResult">
-            <span class="result-label">나의 예상 점수</span>
-            <span class="result-score">-</span>
-            <p class="result-note">이 점수는 단순 참고용이며 실제 결과와 다를 수 있습니다.</p>
+        <!-- Strategy Dashboard Results -->
+        <div id="strategyResults" style="display: none; margin-top: 40px; border-top: 2px solid var(--primary); padding-top: 40px;">
+            <div class="section-title">
+                <h2 style="justify-content: center;">AI 맞춤형 전략 리포트</h2>
+            </div>
+            
+            <div class="dashboard-grid">
+                <div class="stat-card">
+                    <span class="stat-label">나의 CRS 점수</span>
+                    <span id="res-crs" class="stat-value">-</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">합격권과의 격차</span>
+                    <span id="res-gap" class="stat-value">-</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">성공 확률</span>
+                    <span id="res-prob" class="stat-value" style="font-size: 1.5rem;">-</span>
+                </div>
+            </div>
+
+            <div id="recommendation-paths" class="articles-grid recommendation-path">
+                <!-- Recommended paths will be injected here -->
+            </div>
+
+            <div id="strategic-advice" class="advice-box">
+                <!-- Detailed advice will be injected here -->
+            </div>
         </div>
     </div>
 

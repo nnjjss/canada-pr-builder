@@ -392,6 +392,10 @@ function calculateCRS() {
     const sibling = parseInt(document.getElementById("sibling").value) || 0;
     const frenchSkill = parseInt(document.getElementById("frenchSkill").value) || 0;
 
+    // 분석용 추가 변수
+    const targetProvince = document.getElementById("targetProvince").value;
+    const occupationGroup = document.getElementById("occupationGroup").value;
+
     let total = 0;
     let agePoints = 0;
     if (age >= 20 && age <= 29) agePoints = isMarried ? 100 : 110;
@@ -433,9 +437,59 @@ function calculateCRS() {
     total += Math.min(100, transfer);
     total += (canadianStudy + jobOffer + sibling + frenchSkill + pnp);
 
-    const res = document.getElementById("crsResult");
-    res.querySelector('.result-score').innerText = Math.min(1200, total) + "점";
-    res.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    const finalScore = Math.min(1200, total);
+
+    // --- AI 루트 분석 결과 표시 ---
+    const RECENT_CUTOFF = 525;
+    const gap = finalScore - RECENT_CUTOFF;
+    
+    document.getElementById("strategyResults").style.display = "block";
+    document.getElementById("res-crs").innerText = finalScore;
+    document.getElementById("res-gap").innerText = (gap >= 0 ? "+" : "") + gap;
+    
+    let prob = "Low";
+    if (finalScore >= 500) prob = "Very High";
+    else if (finalScore >= 470) prob = "High";
+    else if (finalScore >= 430) prob = "Medium";
+    document.getElementById("res-prob").innerText = prob;
+
+    // 추천 경로 생성
+    const pathContainer = document.getElementById("recommendation-paths");
+    pathContainer.innerHTML = "";
+    
+    let recommendations = [];
+
+    if (finalScore >= 480) {
+        recommendations.push({ title: "Express Entry - General", desc: "현재 점수가 안정권에 가깝습니다. All-program 드로우를 통해 가장 빠르게 영주권 취득이 가능합니다.", badge: "Fastest" });
+    }
+    
+    if (["Healthcare", "STEM", "Transport", "Trades", "Agriculture"].includes(occupationGroup)) {
+        recommendations.push({ title: `EE Category-based (${occupationGroup})`, desc: `당신의 직종은 2026년 우선 선발 대상입니다. 일반 선발보다 낮은 점수로도 충분히 가능성이 있습니다.`, badge: "Recommended" });
+    }
+
+    if (targetProvince !== "any") {
+        recommendations.push({ title: `${targetProvince} Provincial Nominee`, desc: `선호하시는 ${targetProvince} 지역의 주정부 프로그램을 통해 600점 가산점을 노려볼 수 있습니다.`, badge: "Regional" });
+    } else if (finalScore < 450) {
+        recommendations.push({ title: "Provincial Nominee Program (PNP)", desc: "연방 정부 점수가 낮을 경우, 특정 주정부의 인적 자본 스트림(OINP 등)을 통한 600점 가산점이 필수적입니다.", badge: "Strategic" });
+    }
+
+    if (targetProvince === "Atlantic") {
+        recommendations.push({ title: "Atlantic Immigration Program (AIP)", desc: "아틀란틱 지역의 고용주로부터 잡오퍼를 받는다면, 낮은 점수 요건으로 영주권 신청이 가능합니다.", badge: "Low Score" });
+    }
+
+    recommendations.forEach(r => {
+        pathContainer.innerHTML += `<div class="article-card" style="padding: 25px; border: 1px solid var(--border-color); background: var(--card-bg);"><span class="article-badge" style="background: var(--primary); color: white;">${r.badge}</span><h3 style="margin-top: 10px;">${r.title}</h3><p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0;">${r.desc}</p></div>`;
+    });
+
+    let adviceHTML = `<h3>💡 AI 전략 분석 결과</h3><p>당신의 프로필을 기반으로 한 맞춤형 리포트입니다.</p><ul>`;
+    if (language < 9) adviceHTML += `<li><b>영어 점수 극대화</b>: 현재 CLB ${language}입니다. CLB 9(IELTS 8.0/7.0) 달성 시 기술 전이 점수에서 비약적인 상승을 기대할 수 있습니다.</li>`;
+    if (frenchSkill === 0) adviceHTML += `<li><b>프랑스어 보너스</b>: 연방 정부는 불어 구사자를 선호합니다. 기초 불어 공부를 통해 50점을 추가하면 판도가 바뀝니다.</li>`;
+    if (occupationGroup === "others") adviceHTML += `<li><b>NOC 최적화</b>: 본인의 경력이 2026년 전략 카테고리에 맞출 수 있는지 NOC Finder에서 재검토하세요.</li>`;
+    if (jobOffer === 0) adviceHTML += `<li><b>잡오퍼 전략</b>: 고용주로부터 잡오퍼를 확보하면 50~200점의 가점뿐만 아니라 PNP 연결이 매우 쉬워집니다.</li>`;
+    adviceHTML += `</ul>`;
+    
+    document.getElementById("strategic-advice").innerHTML = adviceHTML;
+    document.getElementById("strategyResults").scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 function addPost() {
