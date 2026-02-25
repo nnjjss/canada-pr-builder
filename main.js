@@ -40,7 +40,9 @@ const articlesData = [
             <p>2026년 IRCC가 도입한 '시니어 매니저 전형'은 글로벌 기업의 리더들이 캐나다에 자본과 경영 노하우를 가지고 정착하도록 유도하기 위한 전략적 선택입니다. 이는 경영진급 인력에게 사실상의 '레드 카펫'을 깔어주는 것과 다름없습니다.</p>
             <h3>1. TEER 0 등급 시니어 매니저의 정의</h3>
             <p>단순한 부서장 급을 넘어, 기업의 재무, 인사, 운영 전반에 걸쳐 최종 의사결정권을 가진 직군(NOC 00012, 00013 등)이 주요 타겟입니다. IRCC는 이들이 캐나다 현지 법인을 설립하거나 기존 기업의 성장을 주도하여 일자리를 창출할 것으로 기대하고 있습니다.</p>
-            <h3>2. 준비 사항: 성과 중심의 포트폴리오</h3>
+            <h3>2. 왜 지금이 적기인가?</h3>
+            <p>캐나다 내 많은 중견 기업들이 경영진의 세대교체 시기를 맞이하고 있으며, 이를 해외 우수 인력으로 수혈하려는 정책적 움직임이 강합니다. 특히 주정부 이민(PNP)과 연계될 경우, 시니어 매니저는 가장 높은 우선순위로 처리되며 비자 발급 속도 또한 다른 직군에 비해 비약적으로 빠릅니다.</p>
+            <h3>3. 준비 사항: 성과 중심의 포트폴리오</h3>
             <p>이 전형에서는 본인이 관리한 예산 규모, 팀 사이즈, 그리고 달성한 구체적인 비즈니스 성과를 데이터로 증명해야 합니다. 전문 컨설턴트와 함께 본인의 경력을 '캐나다 경제 기여도' 관점에서 재해석하시기 바랍니다.</p>
         `
     },
@@ -78,100 +80,23 @@ const articlesData = [
     }
 ];
 
-// --- Massive NOC 2021 Database (Over 200+ Unit Groups) ---
+// --- NOC 데이터 ---
 const nocData = [
-    // 0 - Management
     { code: "00010", title: "Legislators", teer: "0", cat: "" },
     { code: "00011", title: "Senior government managers and officials", teer: "0", cat: "" },
-    { code: "00012", title: "Senior managers - financial, communications (시니어 매니저)", teer: "0", cat: "Management" },
-    { code: "00013", title: "Senior managers - health, education (보건/교육 시니어 매니저)", teer: "0", cat: "Management" },
+    { code: "00012", title: "Senior managers - financial, communications", teer: "0", cat: "Management" },
+    { code: "00013", title: "Senior managers - health, education", teer: "0", cat: "Management" },
     { code: "00014", title: "Senior managers - trade, broadcasting", teer: "0", cat: "Management" },
-    { code: "00015", title: "Senior managers - construction, transport (건설/운송 시니어 매니저)", teer: "0", cat: "Management" },
+    { code: "00015", title: "Senior managers - construction, transport", teer: "0", cat: "Management" },
     { code: "10010", title: "Financial managers", teer: "0", cat: "" },
     { code: "10011", title: "Human resources managers", teer: "0", cat: "" },
     { code: "10012", title: "Purchasing managers", teer: "0", cat: "" },
-    { code: "10019", title: "Other administrative services managers", teer: "0", cat: "" },
-    { code: "10020", title: "Insurance, real estate and financial brokerage managers", teer: "0", cat: "" },
-    { code: "10021", title: "Banking, credit and other investment managers", teer: "0", cat: "" },
-    { code: "10022", title: "Advertising, marketing and public relations managers", teer: "0", cat: "" },
-    { code: "10029", title: "Other business services managers", teer: "0", cat: "" },
-    { code: "10030", title: "Telecommunication carriers managers", teer: "0", cat: "STEM" },
-    { code: "20010", title: "Engineering managers", teer: "0", cat: "STEM" },
-    { code: "20011", title: "Architecture and science managers", teer: "0", cat: "STEM" },
-    { code: "20012", title: "Computer and information systems managers", teer: "0", cat: "STEM" },
-    { code: "30010", title: "Managers in health care", teer: "0", cat: "Healthcare" },
-    { code: "40010", title: "Government managers - health and social policy", teer: "0", cat: "" },
-    { code: "40011", title: "Government managers - education policy", teer: "0", cat: "" },
-    { code: "40012", title: "Government managers - economic analysis", teer: "0", cat: "" },
-    { code: "40019", title: "Other managers in public administration", teer: "0", cat: "" },
-    { code: "40020", title: "Administrators - post-secondary education", teer: "0", cat: "Academic" },
-    { code: "40021", title: "School principals and administrators", teer: "0", cat: "" },
-    { code: "40030", title: "Managers in social, community and correctional services", teer: "0", cat: "" },
-    { code: "50010", title: "Library, archive, museum and art gallery managers", teer: "0", cat: "" },
-    { code: "50011", title: "Managers - publishing, motion pictures, broadcasting", teer: "0", cat: "" },
-    { code: "50012", title: "Recreation, sports and fitness program and service directors", teer: "0", cat: "" },
-    { code: "60010", title: "Corporate sales managers", teer: "0", cat: "" },
-    { code: "60020", title: "Retail and wholesale trade managers", teer: "0", cat: "" },
-    { code: "60030", title: "Restaurant and food service managers", teer: "0", cat: "" },
-    { code: "60031", title: "Accommodation service managers", teer: "0", cat: "" },
-    { code: "60040", title: "Managers in customer and personal services, n.e.c.", teer: "0", cat: "" },
-    { code: "70010", title: "Construction managers", teer: "0", cat: "" },
-    { code: "70011", title: "Home building and renovation managers", teer: "0", cat: "" },
-    { code: "70012", title: "Facility operation and maintenance managers", teer: "0", cat: "" },
-    { code: "70020", title: "Managers in transportation", teer: "0", cat: "Transport" },
-    { code: "80010", title: "Managers in natural resources production and fishing", teer: "0", cat: "" },
-    { code: "80020", title: "Managers in agriculture", teer: "0", cat: "" },
-    { code: "80021", title: "Managers in horticulture", teer: "0", cat: "" },
-    { code: "80022", title: "Managers in aquaculture", teer: "0", cat: "" },
-    { code: "90010", title: "Manufacturing managers", teer: "0", cat: "" },
-    { code: "90011", title: "Utilities managers", teer: "0", cat: "" },
-
-    // 1 - Business, Finance and Administration
-    { code: "11100", title: "Financial auditors and accountants (회계사)", teer: "1", cat: "" },
+    { code: "11100", title: "Financial auditors and accountants", teer: "1", cat: "" },
     { code: "11101", title: "Financial and investment analysts", teer: "1", cat: "" },
-    { code: "11102", title: "Financial advisors", teer: "1", cat: "" },
-    { code: "11103", title: "Securities agents, investment dealers and brokers", teer: "1", cat: "" },
-    { code: "11109", title: "Other financial officers", teer: "1", cat: "" },
-    { code: "11200", title: "Human resources professionals", teer: "1", cat: "" },
-    { code: "11201", title: "Professional occupations in business management consulting", teer: "1", cat: "" },
-    { code: "11202", title: "Professional occupations in advertising, marketing and PR", teer: "1", cat: "" },
-    { code: "12010", title: "General office supervisors", teer: "2", cat: "" },
-    { code: "12011", title: "Supervisors, finance and insurance office workers", teer: "2", cat: "" },
-    { code: "12012", title: "Supervisors, library, correspondence and related info workers", teer: "2", cat: "" },
-    { code: "12013", title: "Supervisors, supply chain, tracking and scheduling occupations", teer: "2", cat: "" },
     { code: "12100", title: "Administrative officers", teer: "2", cat: "" },
     { code: "12101", title: "Executive assistants", teer: "2", cat: "" },
-    { code: "12102", title: "Procurement and purchasing agents and officers", teer: "2", cat: "" },
-    { code: "12103", title: "Conference and event planners", teer: "2", cat: "" },
-    { code: "12200", title: "Accounting technicians and bookkeepers (부기)", teer: "2", cat: "" },
-    { code: "12201", title: "Insurance adjusters and claims examiners", teer: "2", cat: "" },
-    { code: "12202", title: "Industrial examiners, collectors and investigators", teer: "2", cat: "" },
-    { code: "13100", title: "Administrative assistants", teer: "3", cat: "" },
-    { code: "13101", title: "Legal administrative assistants", teer: "3", cat: "" },
-    { code: "13102", title: "Medical administrative assistants", teer: "3", cat: "" },
-    { code: "13110", title: "Administrative accounts payroll", teer: "3", cat: "" },
-    { code: "13111", title: "Property administrators", teer: "3", cat: "" },
-
-    // 2 - Natural and Applied Sciences
-    { code: "21100", title: "Physicists and astronomers", teer: "1", cat: "STEM" },
-    { code: "21101", title: "Chemists", teer: "1", cat: "STEM" },
-    { code: "21102", title: "Geoscientists and oceanographers", teer: "1", cat: "STEM" },
-    { code: "21103", title: "Meteorologists and climatologists", teer: "1", cat: "STEM" },
-    { code: "21110", title: "Biologists and related scientists", teer: "1", cat: "STEM" },
-    { code: "21111", title: "Forestry professionals", teer: "1", cat: "" },
-    { code: "21112", title: "Agricultural representatives, consultants and specialists", teer: "1", cat: "" },
-    { code: "21120", title: "Public and environmental health and safety professionals", teer: "1", cat: "" },
-    { code: "21200", title: "Architects", teer: "1", cat: "STEM" },
-    { code: "21201", title: "Landscape architects", teer: "1", cat: "STEM" },
-    { code: "21202", title: "Urban and land use planners", teer: "1", cat: "STEM" },
-    { code: "21203", title: "Land surveyors", teer: "1", cat: "STEM" },
-    { code: "21210", title: "Mathematicians, statisticians and actuaries", teer: "1", cat: "STEM" },
     { code: "21211", title: "Data scientists", teer: "1", cat: "STEM" },
     { code: "21220", title: "Cybersecurity specialists", teer: "1", cat: "STEM" },
-    { code: "21221", title: "Business systems specialists", teer: "1", cat: "STEM" },
-    { code: "21222", title: "Information systems specialists", teer: "1", cat: "STEM" },
-    { code: "21223", title: "Database analysts and data administrators", teer: "1", cat: "STEM" },
-    { code: "21230", title: "Computer systems developers and programmers", teer: "1", cat: "STEM" },
     { code: "21231", title: "Software engineers and designers", teer: "1", cat: "STEM" },
     { code: "21232", title: "Software developers and programmers", teer: "1", cat: "STEM" },
     { code: "21233", title: "Web designers", teer: "1", cat: "STEM" },
@@ -179,210 +104,21 @@ const nocData = [
     { code: "21300", title: "Civil engineers", teer: "1", cat: "STEM" },
     { code: "21301", title: "Mechanical engineers", teer: "1", cat: "STEM" },
     { code: "21310", title: "Electrical and electronics engineers", teer: "1", cat: "STEM" },
-    { code: "21311", title: "Computer engineers (except software)", teer: "1", cat: "STEM" },
-    { code: "21320", title: "Chemical engineers", teer: "1", cat: "STEM" },
-    { code: "21321", title: "Industrial and manufacturing engineers", teer: "1", cat: "STEM" },
-    { code: "21322", title: "Metallurgical and materials engineers", teer: "1", cat: "STEM" },
-    { code: "21330", title: "Mining engineers", teer: "1", cat: "STEM" },
-    { code: "21331", title: "Geological engineers", teer: "1", cat: "STEM" },
-    { code: "21332", title: "Petroleum engineers", teer: "1", cat: "STEM" },
-    { code: "21390", title: "Other professional engineers", teer: "1", cat: "STEM" },
-    { code: "22100", title: "Chemical technologists and technicians", teer: "2", cat: "STEM" },
-    { code: "22101", title: "Geological and mineral technologists and technicians", teer: "2", cat: "STEM" },
-    { code: "22110", title: "Biological technologists and technicians", teer: "2", cat: "STEM" },
-    { code: "22111", title: "Agricultural and fish products inspectors", teer: "2", cat: "" },
-    { code: "22114", title: "Landscape and horticulture technicians and specialists", teer: "2", cat: "" },
-    { code: "22210", title: "Architectural technologists and technicians", teer: "2", cat: "STEM" },
-    { code: "22211", title: "Industrial designers", teer: "2", cat: "STEM" },
-    { code: "22212", title: "Drafting technologists and technicians", teer: "2", cat: "STEM" },
-    { code: "22213", title: "Land survey technologists and technicians", teer: "2", cat: "STEM" },
-    { code: "22220", title: "Computer network and web technicians", teer: "2", cat: "STEM" },
-    { code: "22221", title: "User support technicians", teer: "2", cat: "STEM" },
-    { code: "22222", title: "Information systems testing technicians", teer: "2", cat: "STEM" },
-    { code: "22230", title: "Civil engineering technologists and technicians", teer: "2", cat: "STEM" },
-    { code: "22231", title: "Mechanical engineering technologists and technicians", teer: "2", cat: "STEM" },
-    { code: "22232", title: "Industrial engineering and manufacturing technologists", teer: "2", cat: "STEM" },
-    { code: "22233", title: "Electrical and electronics engineering technologists", teer: "2", cat: "STEM" },
-
-    // 3 - Health Occupations
     { code: "31100", title: "Specialists in clinical and laboratory medicine", teer: "1", cat: "Healthcare" },
-    { code: "31101", title: "Specialists in surgery", teer: "1", cat: "Healthcare" },
     { code: "31102", title: "General practitioners and family physicians", teer: "1", cat: "Healthcare" },
-    { code: "31103", title: "Veterinarians (수의사)", teer: "1", cat: "" },
-    { code: "31110", title: "Dentists", teer: "1", cat: "Healthcare" },
-    { code: "31111", title: "Optometrists", teer: "1", cat: "Healthcare" },
-    { code: "31112", title: "Audiologists and speech-language pathologists", teer: "1", cat: "Healthcare" },
-    { code: "31120", title: "Pharmacists", teer: "1", cat: "Healthcare" },
-    { code: "31121", title: "Dietitians and nutritionists", teer: "1", cat: "Healthcare" },
-    { code: "31200", title: "Psychologists", teer: "1", cat: "Healthcare" },
-    { code: "31201", title: "Chiropractors", teer: "1", cat: "Healthcare" },
-    { code: "31202", title: "Physiotherapists", teer: "1", cat: "Healthcare" },
-    { code: "31203", title: "Occupational therapists", teer: "1", cat: "Healthcare" },
-    { code: "31204", title: "Kinesiologists and other professional occupations in therapy", teer: "1", cat: "Healthcare" },
-    { code: "31209", title: "Other professional occupations in health diagnosing", teer: "1", cat: "Healthcare" },
-    { code: "31300", title: "Nursing coordinators and supervisors", teer: "1", cat: "Healthcare" },
     { code: "31301", title: "Registered nurses and registered psychiatric nurses", teer: "1", cat: "Healthcare" },
-    { code: "31302", title: "Nurse practitioners", teer: "1", cat: "Healthcare" },
-    { code: "31303", title: "Physician assistants, midwives and allied health professionals", teer: "1", cat: "Healthcare" },
-    { code: "32100", title: "Opticians", teer: "2", cat: "Healthcare" },
     { code: "32101", title: "Licensed practical nurses", teer: "2", cat: "Healthcare" },
-    { code: "32102", title: "Paramedical occupations", teer: "2", cat: "Healthcare" },
-    { code: "32103", title: "Respiratory therapists, clinical perfusionists", teer: "2", cat: "Healthcare" },
-    { code: "32104", title: "Animal health technologists and veterinary technicians", teer: "2", cat: "" },
-    { code: "32109", title: "Other technical occupations in therapy and assessment", teer: "2", cat: "Healthcare" },
-    { code: "32110", title: "Denturists", teer: "2", cat: "Healthcare" },
-    { code: "32111", title: "Dental hygienists and dental therapists", teer: "2", cat: "Healthcare" },
-    { code: "32112", title: "Dental technologists and technicians", teer: "2", cat: "Healthcare" },
-    { code: "32120", title: "Medical laboratory technologists", teer: "2", cat: "Healthcare" },
-    { code: "32121", title: "Medical radiation technologists", teer: "2", cat: "Healthcare" },
-    { code: "32122", title: "Medical sonographers", teer: "2", cat: "Healthcare" },
-    { code: "32123", title: "Cardiology technologists and electrophysiological diagnostic technologists", teer: "2", cat: "Healthcare" },
-    { code: "32124", title: "Pharmacy technicians", teer: "2", cat: "Healthcare" },
-    { code: "33100", title: "Dental assistants and dental laboratory assistants", teer: "3", cat: "Healthcare" },
-    { code: "33101", title: "Medical laboratory assistants and related technical occupations", teer: "3", cat: "Healthcare" },
-    { code: "33102", title: "Nurse aides, orderlies and patient service associates", teer: "3", cat: "Healthcare" },
-    { code: "33103", title: "Pharmacy technical assistants and pharmacy assistants", teer: "3", cat: "Healthcare" },
-
-    // 4 - Education, Law, Social Services
-    { code: "40020", title: "Administrators - post-secondary education and vocational training", teer: "0", cat: "Academic" },
-    { code: "40030", title: "Managers in social, community and correctional services", teer: "0", cat: "" },
-    { code: "41100", title: "Judges", teer: "1", cat: "" },
-    { code: "41101", title: "Lawyers and Quebec notaries", teer: "1", cat: "" },
-    { code: "41200", title: "University professors and lecturers", teer: "1", cat: "Academic" },
-    { code: "41201", title: "Post-secondary teaching and research assistants", teer: "1", cat: "Academic" },
-    { code: "41210", title: "College and other vocational instructors", teer: "1", cat: "Academic" },
-    { code: "41220", title: "Secondary school teachers", teer: "1", cat: "" },
-    { code: "41221", title: "Elementary school and kindergarten teachers", teer: "1", cat: "" },
-    { code: "41300", title: "Social workers", teer: "1", cat: "Healthcare" },
-    { code: "41301", title: "Therapists in counselling and related specialized therapies", teer: "1", cat: "Healthcare" },
-    { code: "41302", title: "Religious leaders", teer: "1", cat: "" },
-    { code: "41310", title: "Police investigators and other investigative occupations", teer: "1", cat: "" },
-    { code: "41311", title: "Probation and parole officers and related occupations", teer: "1", cat: "" },
-    { code: "41400", title: "Natural and applied science policy researchers", teer: "1", cat: "STEM" },
-    { code: "41401", title: "Economists and economic policy researchers", teer: "1", cat: "" },
-    { code: "41402", title: "Business development officers and market researchers", teer: "1", cat: "" },
-    { code: "41403", title: "Social policy researchers, consultants and program officers", teer: "1", cat: "" },
-    { code: "41404", title: "Health policy researchers, consultants and program officers", teer: "1", cat: "Healthcare" },
-    { code: "41405", title: "Education policy researchers, consultants and program officers", teer: "1", cat: "" },
-    { code: "42100", title: "Police officers (except commissioned)", teer: "2", cat: "" },
-    { code: "42101", title: "Firefighters", teer: "2", cat: "" },
-    { code: "42201", title: "Social and community service workers", teer: "2", cat: "Healthcare" },
+    { code: "40110", title: "University professors and lecturers", teer: "1", cat: "Academic" },
+    { code: "41200", title: "University researchers", teer: "1", cat: "Academic" },
     { code: "42202", title: "Early childhood educators and assistants (ECE)", teer: "2", cat: "" },
-    { code: "42203", title: "Instructors of persons with disabilities", teer: "2", cat: "" },
-    { code: "43100", title: "Legal assistants and paralegals", teer: "3", cat: "" },
-    { code: "43109", title: "Other instructors", teer: "3", cat: "" },
-
-    // 5 - Arts, Culture, Recreation, Sport
-    { code: "51101", title: "Painters, sculptors and other visual artists", teer: "1", cat: "" },
-    { code: "51111", title: "Librarians", teer: "1", cat: "" },
-    { code: "51113", title: "Authors and writers (except technical)", teer: "1", cat: "" },
-    { code: "51114", title: "Technical writers", teer: "1", cat: "STEM" },
-    { code: "51120", title: "Conservators and curators", teer: "1", cat: "" },
-    { code: "52100", title: "Writers and editors", teer: "2", cat: "" },
-    { code: "52110", title: "Video camera operators", teer: "2", cat: "" },
-    { code: "52111", title: "Graphic arts technicians", teer: "2", cat: "" },
-    { code: "52112", title: "Broadcast technicians", teer: "2", cat: "" },
-    { code: "52113", title: "Audio and video recording technicians", teer: "2", cat: "" },
     { code: "52120", title: "Graphic designers and illustrators", teer: "2", cat: "" },
-    { code: "52121", title: "Interior designers and interior decorators", teer: "2", cat: "" },
-    { code: "53100", title: "Photographers", teer: "3", cat: "" },
-    { code: "53111", title: "Motion picture, broadcasting, photography and performing arts assistants", teer: "3", cat: "" },
-
-    // 6 - Sales and Service
-    { code: "62010", title: "Retail sales supervisors", teer: "2", cat: "" },
-    { code: "62020", title: "Food service supervisors", teer: "2", cat: "" },
-    { code: "62021", title: "Accommodation service supervisors", teer: "2", cat: "" },
-    { code: "62022", title: "Customer and information services supervisors", teer: "2", cat: "" },
-    { code: "62023", title: "Cleaning supervisors", teer: "2", cat: "" },
-    { code: "62024", title: "Other service supervisors", teer: "2", cat: "" },
-    { code: "62100", title: "Technical sales specialists - wholesale trade", teer: "2", cat: "" },
-    { code: "62101", title: "Retail and wholesale buyers", teer: "2", cat: "" },
     { code: "62200", title: "Chefs", teer: "2", cat: "Trades" },
-    { code: "63100", title: "Insurance agents and brokers", teer: "3", cat: "" },
-    { code: "63101", title: "Real estate agents and salespersons", teer: "3", cat: "" },
-    { code: "63102", title: "Financial sales representatives", teer: "3", cat: "" },
     { code: "63200", title: "Cooks", teer: "3", cat: "Trades" },
-    { code: "63201", title: "Butchers - retail and wholesale", teer: "3", cat: "Trades" },
-    { code: "63202", title: "Bakers", teer: "3", cat: "Trades" },
-    { code: "63211", title: "Hairstylists and barbers", teer: "3", cat: "" },
-    { code: "63220", title: "Estheticians, electrologists and related occupations", teer: "3", cat: "" },
-
-    // 7 - Trades, Transport, Equipment
-    { code: "72010", title: "Contractors and supervisors, machining, metal forming, shaping and erecting trades", teer: "2", cat: "Trades" },
-    { code: "72011", title: "Contractors and supervisors, electrical trades and telecommunications occupations", teer: "2", cat: "Trades" },
-    { code: "72012", title: "Contractors and supervisors, pipefitting trades", teer: "2", cat: "Trades" },
-    { code: "72013", title: "Contractors and supervisors, carpentry trades", teer: "2", cat: "Trades" },
-    { code: "72014", title: "Contractors and supervisors, other construction trades, installers, repairers and servicers", teer: "2", cat: "Trades" },
-    { code: "72100", title: "Machinists and machining and tooling inspectors", teer: "2", cat: "Trades" },
-    { code: "72101", title: "Tool and die makers", teer: "2", cat: "Trades" },
-    { code: "72102", title: "Sheet metal workers", teer: "2", cat: "Trades" },
-    { code: "72103", title: "Boilermakers", teer: "2", cat: "Trades" },
-    { code: "72104", title: "Structural metal and platework fabricators and fitters", teer: "2", cat: "Trades" },
-    { code: "72105", title: "Ironworkers", teer: "2", cat: "Trades" },
     { code: "72106", title: "Welders and related machine operators", teer: "2", cat: "Trades" },
-    { code: "72200", title: "Electricians (except industrial and power system)", teer: "2", cat: "Trades" },
-    { code: "72201", title: "Industrial electricians", teer: "2", cat: "Trades" },
-    { code: "72202", title: "Power system electricians", teer: "2", cat: "Trades" },
-    { code: "72203", title: "Electrical power line and cable workers", teer: "2", cat: "Trades" },
-    { code: "72204", title: "Telecommunications line and cable installers and repairers", teer: "2", cat: "Trades" },
-    { code: "72205", title: "Telecommunications equipment installation and repair workers", teer: "2", cat: "Trades" },
-    { code: "72300", title: "Plumbers", teer: "2", cat: "Trades" },
-    { code: "72301", title: "Steamfitters, pipefitters and sprinkler system installers", teer: "2", cat: "Trades" },
-    { code: "72302", title: "Gas fitters", teer: "2", cat: "Trades" },
-    { code: "72310", title: "Carpenters", teer: "2", cat: "Trades" },
-    { code: "72311", title: "Cabinetmakers", teer: "2", cat: "Trades" },
-    { code: "72320", title: "Bricklayers", teer: "2", cat: "Trades" },
-    { code: "72321", title: "Insulators", teer: "2", cat: "Trades" },
     { code: "72400", title: "Construction millwrights and industrial mechanics", teer: "2", cat: "Trades" },
-    { code: "72401", title: "Heavy-duty equipment mechanics", teer: "2", cat: "Trades" },
-    { code: "72402", title: "Heating, refrigeration and air conditioning mechanics", teer: "2", cat: "Trades" },
-    { code: "72403", title: "Railway carmen/women", teer: "2", cat: "Trades" },
     { code: "72404", title: "Aircraft mechanics and aircraft inspectors", teer: "2", cat: "Transport" },
-    { code: "72405", title: "Machine fitters", teer: "2", cat: "Trades" },
-    { code: "72406", title: "Elevator constructors and mechanics", teer: "2", cat: "Trades" },
-    { code: "72410", title: "Automotive service technicians, truck and bus mechanics and mechanical repairers", teer: "2", cat: "Trades" },
-    { code: "72411", title: "Auto body repairers", teer: "2", cat: "Trades" },
-    { code: "72420", title: "Oil and solid fuel heating mechanics", teer: "2", cat: "Trades" },
-    { code: "72421", title: "Appliance servicers and repairers", teer: "2", cat: "Trades" },
-    { code: "72422", title: "Electrical mechanics", teer: "2", cat: "Trades" },
-    { code: "72423", title: "Motorcycle, all-terrain vehicle and other related mechanics", teer: "2", cat: "Trades" },
-    { code: "72500", title: "Crane operators", teer: "2", cat: "Trades" },
-    { code: "72501", title: "Water well drillers", teer: "2", cat: "Trades" },
     { code: "72600", title: "Air pilots, flight engineers and flying instructors", teer: "2", cat: "Transport" },
-    { code: "72601", title: "Air traffic controllers and related occupations", teer: "2", cat: "Transport" },
-    { code: "72602", title: "Deck officers, water transport", teer: "2", cat: "Transport" },
-    { code: "72603", title: "Engineer officers, water transport", teer: "2", cat: "Transport" },
-    { code: "72604", title: "Railway traffic controllers and marine traffic regulators", teer: "2", cat: "Transport" },
-    { code: "73100", title: "Concrete finishers", teer: "3", cat: "Trades" },
-    { code: "73101", title: "Tilesetters", teer: "3", cat: "Trades" },
-    { code: "73102", title: "Plasterers, drywall installers and finishers and lathers", teer: "3", cat: "Trades" },
-    { code: "73110", title: "Roofers and shinglers", teer: "3", cat: "Trades" },
-    { code: "73111", title: "Glaziers", teer: "3", cat: "Trades" },
-    { code: "73112", title: "Painters and decorators (except interior decorators)", teer: "3", cat: "Trades" },
-    { code: "73113", title: "Floor covering installers", teer: "3", cat: "Trades" },
-    { code: "73200", title: "Residential and commercial installers and servicers", teer: "3", cat: "Trades" },
-    { code: "73300", title: "Transport truck drivers", teer: "3", cat: "Transport" },
-    { code: "73301", title: "Bus drivers, subway operators and other transit operators", teer: "3", cat: "Transport" },
-
-    // 8 - Natural Resources, Agriculture
-    { code: "82010", title: "Agricultural service contractors and farm supervisors", teer: "2", cat: "" },
-    { code: "82020", title: "Logging contractors and supervisors", teer: "2", cat: "" },
-    { code: "82021", title: "Contractors and supervisors, oil and gas drilling and services", teer: "2", cat: "" },
-    { code: "82030", title: "Fishing masters and officers", teer: "2", cat: "" },
-    { code: "82031", title: "Fishermen/women", teer: "2", cat: "" },
-    { code: "83110", title: "Logging machinery operators", teer: "3", cat: "" },
-    { code: "83120", title: "Oil and gas well drillers, servicers, testers and related workers", teer: "3", cat: "" },
-
-    // 9 - Manufacturing and Utilities
-    { code: "92010", title: "Supervisors, mineral and metal processing", teer: "2", cat: "" },
-    { code: "92011", title: "Supervisors, petroleum, gas and chemical processing and utilities", teer: "2", cat: "" },
-    { code: "92012", title: "Supervisors, food and beverage processing", teer: "2", cat: "" },
-    { code: "92013", title: "Supervisors, plastic and rubber products manufacturing", teer: "2", cat: "" },
-    { code: "92014", title: "Supervisors, forest products processing", teer: "2", cat: "" },
-    { code: "92015", title: "Supervisors, textile, fabric, fur and leather products manufacturing", teer: "2", cat: "" },
-    { code: "92100", title: "Power engineers and power systems operators", teer: "2", cat: "" },
-    { code: "92101", title: "Water and waste treatment plant operators", teer: "2", cat: "" },
-    { code: "93101", title: "Central control and process operators, mineral and metal processing", teer: "3", cat: "" }
+    { code: "73300", title: "Transport truck drivers", teer: "3", cat: "Transport" }
 ];
 
 window.filterNOC = function() {
@@ -394,11 +130,9 @@ window.filterNOC = function() {
         return;
     }
 
-    const keywords = input.split(' ');
-
     const filtered = nocData.filter(item => {
         const fullContent = (item.title + " " + item.code + " " + (item.cat || "")).toLowerCase();
-        return keywords.every(kw => fullContent.includes(kw));
+        return fullContent.includes(input);
     });
 
     if (filtered.length === 0) {
@@ -500,13 +234,21 @@ function calculateCRS() {
     const status = document.getElementById('maritalStatus').value;
     const isMarried = (status === 'married');
     
-    let age = parseInt(document.getElementById("age").value) || 0;
-    let education = document.getElementById("education").value;
-    let language = parseInt(document.getElementById("language").value) || 0;
-    let canadianExp = parseInt(document.getElementById("canadianExp").value) || 0;
-    let foreignExp = parseInt(document.getElementById("foreignExp").value) || 0;
+    const age = parseInt(document.getElementById("age").value) || 0;
+    const education = document.getElementById("education").value;
+    const language = parseInt(document.getElementById("language").value) || 0;
+    const canadianExp = parseInt(document.getElementById("canadianExp").value) || 0;
+    const foreignExp = parseInt(document.getElementById("foreignExp").value) || 0;
+
+    const canadianStudy = parseInt(document.getElementById("canadianStudy").value) || 0;
+    const pnp = parseInt(document.getElementById("pnp").value) || 0;
+    const jobOffer = parseInt(document.getElementById("jobOffer").value) || 0;
+    const sibling = parseInt(document.getElementById("sibling").value) || 0;
+    const frenchSkill = parseInt(document.getElementById("frenchSkill").value) || 0;
 
     let total = 0;
+
+    // 1. 인적 자본 점수 (Core Factors)
     let agePoints = 0;
     if (age >= 20 && age <= 29) agePoints = isMarried ? 100 : 110;
     else if (age >= 30 && age <= 44) {
@@ -525,26 +267,35 @@ function calculateCRS() {
     const canExpMap = { 1: isMarried ? 35 : 40, 2: isMarried ? 46 : 53, 3: isMarried ? 70 : 80 };
     total += canExpMap[canadianExp] || 0;
 
-    let transfer = 0;
-    if (education !== 'highschool' && education !== '0') {
-        if (language >= 9) transfer += 50;
-        else if (language >= 7) transfer += 25;
-    }
-    if (foreignExp >= 1) {
-        if (language >= 9) transfer += (foreignExp >= 3 ? 50 : 25);
-        else if (language >= 7) transfer += (foreignExp >= 3 ? 25 : 13);
-    }
-    total += Math.min(100, transfer);
-
+    // 2. 배우자 가산점
     if (isMarried) {
         const sEdu = document.getElementById("spouseEducation").value;
         const sLang = parseInt(document.getElementById("spouseLanguage").value) || 0;
         if (sEdu === 'bachelor') total += 8; else if (sEdu === 'master') total += 10;
-        if (sLang >= 9) total += 20; else if (sLang >= 7) total += 12;
+        if (sLang >= 9) total += 20; else if (sLang >= 7) total += 12; else if (sLang >= 5) total += 4;
     }
 
+    // 3. 기술 전이 점수 (Skill Transferability - 최대 100점)
+    let transfer = 0;
+    if (education !== 'highschool' && education !== '0') {
+        if (language >= 9) transfer += (education === 'master' || education === 'phd' ? 50 : 25);
+        else if (language >= 7) transfer += (education === 'master' || education === 'phd' ? 25 : 13);
+    }
+    if (canadianExp >= 1 && foreignExp >= 1) {
+        if (canadianExp >= 2) transfer += (foreignExp >= 3 ? 50 : 25);
+        else transfer += (foreignExp >= 3 ? 25 : 13);
+    } else if (foreignExp >= 1 && language >= 7) {
+        if (language >= 9) transfer += (foreignExp >= 3 ? 50 : 25);
+        else transfer += (foreignExp >= 3 ? 25 : 13);
+    }
+    total += Math.min(100, transfer);
+
+    // 4. 추가 점수
+    total += (canadianStudy + jobOffer + sibling + frenchSkill);
+    total += pnp;
+
     const res = document.getElementById("crsResult");
-    res.querySelector('.result-score').innerText = total + "점";
+    res.querySelector('.result-score').innerText = Math.min(1200, total) + "점";
     res.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
