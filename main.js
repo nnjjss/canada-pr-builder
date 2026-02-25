@@ -61,19 +61,31 @@ const articlesData = [
     }
 ];
 
-// --- 네비게이션 및 모바일 메뉴 ---
-const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-const mainNav = document.getElementById('mainNav');
-
-if (mobileMenuBtn) {
-    mobileMenuBtn.addEventListener('click', () => {
-        mainNav.classList.toggle('active');
-    });
-}
+// --- 네비게이션 및 스크롤 효과 ---
+window.addEventListener('scroll', () => {
+    const nav = document.getElementById('mainNav');
+    if (window.scrollY > 100) {
+        nav.style.padding = '8px 20px';
+        nav.style.top = '10px';
+    } else {
+        nav.style.padding = '12px 30px';
+        nav.style.top = '20px';
+    }
+});
 
 document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', () => {
-        if (window.innerWidth <= 768) mainNav.classList.remove('active');
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        const offset = 100; // nav height offset
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+        });
     });
 });
 
