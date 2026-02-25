@@ -146,28 +146,53 @@ function calculateCRS() {
     res.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
-// --- 기사 모달 ---
+// --- 기사 모달 제어 ---
 function openArticle(index) {
+    console.log("Opening article:", index);
     const article = articlesData[index];
+    if (!article) {
+        console.error("Article not found for index:", index);
+        return;
+    }
+
     const modal = document.getElementById("articleModal");
     const modalBody = document.getElementById("modalBody");
+
+    if (!modal || !modalBody) {
+        console.error("Modal elements not found in DOM");
+        return;
+    }
+
     modalBody.innerHTML = `
         <span class="article-badge">${article.badge}</span>
         <h2>${article.title}</h2>
         <div class="article-meta">${article.date}</div>
         <div class="full-content">${article.content}</div>
-        <button class="read-more-btn" style="margin-top:30px; width:100%" onclick="closeArticle()">닫기</button>
+        <button class="read-more-btn close-btn" style="margin-top:30px; width:100%">닫기</button>
     `;
+
     modal.style.display = "block";
     document.body.style.overflow = "hidden";
+
+    // 모달 내부 닫기 버튼에 이벤트 리스너 추가
+    modalBody.querySelector('.close-btn').onclick = closeArticle;
 }
 
 function closeArticle() {
-    document.getElementById("articleModal").style.display = "none";
-    document.body.style.overflow = "auto";
+    const modal = document.getElementById("articleModal");
+    if (modal) {
+        modal.style.display = "none";
+        document.body.style.overflow = "auto";
+    }
 }
 
-window.onclick = (e) => { if (e.target.className === 'modal') closeArticle(); };
+// 모달 바깥 클릭 시 닫기
+window.addEventListener('click', (e) => {
+    const modal = document.getElementById("articleModal");
+    if (e.target === modal) {
+        closeArticle();
+    }
+});
 
 // --- 커뮤니티 (LocalStorage) ---
 function addPost() {
