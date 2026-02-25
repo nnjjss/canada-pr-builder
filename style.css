@@ -357,6 +357,71 @@ footer {
     .mobile-menu-btn { display: none; } /* Floating nav is better for mobile now */
 }
 
+/* NOC Finder Styles */
+.search-box {
+    margin-bottom: 20px;
+}
+
+.noc-results-list {
+    max-height: 400px;
+    overflow-y: auto;
+    background: var(--bg-color);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+}
+
+.noc-item {
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--border-color);
+    transition: background 0.2s;
+}
+
+.noc-item:last-child {
+    border-bottom: none;
+}
+
+.noc-item:hover {
+    background: rgba(200, 16, 46, 0.03);
+}
+
+.noc-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.noc-code {
+    font-weight: 800;
+    color: var(--maple-red);
+    font-family: monospace;
+    font-size: 1.1rem;
+}
+
+.noc-teer {
+    background: var(--text-main);
+    color: var(--card-bg);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.noc-cat-badge {
+    background: var(--maple-orange);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.noc-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
 /* Modal Styling & Scroll Lock */
 body.modal-open {
     overflow: hidden !important;

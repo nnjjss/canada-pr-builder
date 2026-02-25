@@ -90,6 +90,77 @@ const articlesData = [
     }
 ];
 
+// --- NOC Finder 데이터 ---
+const nocData = [
+    // STEM
+    { code: "21232", title: "Software developers and programmers (소프트웨어 개발자)", teer: "1", cat: "STEM" },
+    { code: "21231", title: "Software engineers and designers (소프트웨어 엔지니어)", teer: "1", cat: "STEM" },
+    { code: "21234", title: "Web developers and programmers (웹 개발자)", teer: "1", cat: "STEM" },
+    { code: "21233", title: "Web designers (웹 디자이너)", teer: "1", cat: "STEM" },
+    { code: "21211", title: "Data scientists (데이터 사이언티스트)", teer: "1", cat: "STEM" },
+    { code: "21311", title: "Computer engineers (컴퓨터 엔지니어)", teer: "1", cat: "STEM" },
+    { code: "21222", title: "Information systems specialists (정보 시스템 전문가)", teer: "1", cat: "STEM" },
+    
+    // Healthcare
+    { code: "31301", title: "Registered nurses (간호사)", teer: "1", cat: "Healthcare" },
+    { code: "31100", title: "Specialists in clinical and laboratory medicine (전문의)", teer: "1", cat: "Healthcare" },
+    { code: "31102", title: "General practitioners and family physicians (가정의학의)", teer: "1", cat: "Healthcare" },
+    { code: "32101", title: "Licensed practical nurses (준간호사)", teer: "2", cat: "Healthcare" },
+    { code: "33102", title: "Nurse aides, orderlies and patient service associates (간호 조무사)", teer: "3", cat: "Healthcare" },
+
+    // Transport (2026 Category)
+    { code: "72600", title: "Air pilots, flight engineers and flying instructors (파일럿)", teer: "2", cat: "Transport" },
+    { code: "72404", title: "Aircraft mechanics and aircraft inspectors (항공 정비사)", teer: "2", cat: "Transport" },
+    { code: "73300", title: "Transport truck drivers (트럭 운전사)", teer: "3", cat: "Transport" },
+
+    // Academic / Research (2026 Category)
+    { code: "40110", title: "University professors and lecturers (대학교수 및 강사)", teer: "1", cat: "Academic" },
+    { code: "40120", title: "Post-secondary teaching and research assistants (조교 및 연구원)", teer: "1", cat: "Academic" },
+
+    // Senior Management (2026 Category)
+    { code: "00012", title: "Senior managers - financial, communications (재무/통신 시니어 매니저)", teer: "0", cat: "Management" },
+    { code: "00013", title: "Senior managers - health, education, social (보건/교육 시니어 매니저)", teer: "0", cat: "Management" },
+    { code: "00015", title: "Senior managers - construction, transportation (건설/운송 시니어 매니저)", teer: "0", cat: "Management" },
+
+    // Trades
+    { code: "72400", title: "Construction electricians (전기 기술자)", teer: "2", cat: "Trades" },
+    { code: "72300", title: "Plumbers (배관공)", teer: "2", cat: "Trades" },
+    { code: "72100", title: "Machinists and machining and tooling inspectors (기계공)", teer: "2", cat: "Trades" },
+    { code: "72310", title: "Carpenters (목수)", teer: "2", cat: "Trades" }
+];
+
+window.filterNOC = function() {
+    const input = document.getElementById('nocSearchInput').value.toLowerCase();
+    const resultsContainer = document.getElementById('nocResults');
+    
+    if (input.length < 2) {
+        resultsContainer.innerHTML = '<p style="text-align: center; padding: 20px; color: var(--text-muted);">검색어를 2글자 이상 입력하세요.</p>';
+        return;
+    }
+
+    const filtered = nocData.filter(item => 
+        item.title.toLowerCase().includes(input) || 
+        item.code.includes(input) || 
+        item.cat.toLowerCase().includes(input)
+    );
+
+    if (filtered.length === 0) {
+        resultsContainer.innerHTML = '<p style="text-align: center; padding: 20px; color: var(--text-muted);">일치하는 결과가 없습니다.</p>';
+        return;
+    }
+
+    resultsContainer.innerHTML = filtered.map(item => `
+        <div class="noc-item">
+            <div class="noc-header">
+                <span class="noc-code">${item.code}</span>
+                <span class="noc-teer">TEER ${item.teer}</span>
+                ${item.cat ? `<span class="noc-cat-badge">${item.cat}</span>` : ''}
+            </div>
+            <div class="noc-title">${item.title}</div>
+        </div>
+    `).join('');
+};
+
 // --- 기사 모달 제어 ---
 window.openArticle = function(index) {
     const article = articlesData[index];

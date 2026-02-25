@@ -163,6 +163,22 @@
         </div>
     </div>
 
+    <!-- NOC Finder Section -->
+    <div class="card" id="noc-finder">
+        <h2>내 NOC 코드 찾기 (2021)</h2>
+        <p>캐나다 이민 신청의 첫 단계는 본인의 직업에 맞는 5자리 NOC 코드를 찾는 것입니다. 직업명이나 키워드(영문/한글)를 입력해보세요.</p>
+        
+        <div class="search-box">
+            <input type="text" id="nocSearchInput" placeholder="예: Software, Nurse, 개발자, 간호사..." onkeyup="filterNOC()">
+        </div>
+
+        <div id="nocResults" class="noc-results-list">
+            <!-- Results will be injected by JS -->
+            <p style="text-align: center; padding: 20px; color: var(--text-muted);">검색어를 입력하면 관련 NOC 코드가 표시됩니다.</p>
+        </div>
+        <p style="font-size: 0.8rem; margin-top: 15px; color: var(--text-muted);">* 본 리스트는 주요 숙련직 위주로 구성되어 있으며, 정확한 매칭은 공식 IRCC 웹사이트를 참조하세요.</p>
+    </div>
+
     <!-- Latest Draws Section -->
     <div class="card" id="latest-draws">
         <h2>익스프레스 엔트리 최신 선발 결과</h2>
