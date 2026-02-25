@@ -402,7 +402,7 @@ window.filterNOC = function() {
     });
 
     if (filtered.length === 0) {
-        resultsContainer.innerHTML = '<p style="text-align: center; padding: 20px; color: var(--text-muted);">일치하는 결과가 없습니다. 영문 직업명(예: Developer, Cook, Engineer)이나 5자리 숫자로 다시 시도해보세요.</p>';
+        resultsContainer.innerHTML = '<p style="text-align: center; padding: 20px; color: var(--text-muted);">일치하는 결과가 없습니다. 영문 키워드(e.g. Developer, Cook, Engineer)나 5자리 숫자로 다시 시도해보세요.</p>';
         return;
     }
 
