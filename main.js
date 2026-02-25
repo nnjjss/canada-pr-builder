@@ -602,100 +602,465 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // --- CORE ASSESSMENT LOGIC ---
-function calculateCRS() {
-    console.log("Analysis Triggered");
-    
-    // Core Inputs
-    const age = parseInt(document.getElementById("age").value) || 0;
-    const education = document.getElementById("education").value;
-    const language = parseInt(document.getElementById("language").value) || 0;
-    const status = document.getElementById('maritalStatus').value;
-    const isMarried = (status === 'married');
-    const canadianExp = parseInt(document.getElementById("canadianExp").value) || 0;
-    const foreignExp = parseInt(document.getElementById("foreignExp").value) || 0;
-    const canadianStudy = parseInt(document.getElementById("canadianStudy").value) || 0;
-    const pnp = parseInt(document.getElementById("pnp").value) || 0;
-    const jobOffer = parseInt(document.getElementById("jobOffer").value) || 0;
-    const sibling = parseInt(document.getElementById("sibling").value) || 0;
-    const frenchSkill = parseInt(document.getElementById("frenchSkill").value) || 0;
-    const targetProvince = document.getElementById("targetProvince").value;
-    const occupationGroup = document.getElementById("occupationGroup").value;
 
-    let total = 0;
+// IELTS → CLB conversion tables (per ability)
+const ieltsToCLB = {
+    L: [[8.5,10],[8.0,9],[7.5,8],[6.0,7],[5.5,6],[5.0,5],[4.5,4]],
+    R: [[8.0,10],[7.0,9],[6.5,8],[6.0,7],[5.0,6],[4.0,5],[3.5,4]],
+    W: [[7.5,10],[7.0,9],[6.5,8],[6.0,7],[5.5,6],[5.0,5],[4.0,4]],
+    S: [[7.5,10],[7.0,9],[6.5,8],[6.0,7],[5.5,6],[5.0,5],[4.0,4]]
+};
 
-    // 1. Age
-    let agePoints = 0;
-    if (age >= 20 && age <= 29) agePoints = isMarried ? 100 : 110;
-    else if (age >= 30 && age <= 44) {
-        let base = isMarried ? 100 : 110;
-        let deduct = isMarried ? 5 : 6;
-        agePoints = base - ((age - 29) * deduct);
+function convertToCLB(score, ability, testType) {
+    if (!score) return 0;
+    const s = parseFloat(score);
+    if (testType === 'CELPIP') {
+        if (s >= 10) return 10;
+        if (s >= 9) return 9;
+        if (s >= 8) return 8;
+        if (s >= 7) return 7;
+        if (s >= 6) return 6;
+        if (s >= 5) return 5;
+        if (s >= 4) return 4;
+        return 0;
     }
-    total += Math.max(0, agePoints);
-
-    // 2. Education
-    const eduMap = { 'highschool': isMarried ? 28 : 30, 'bachelor': isMarried ? 112 : 120, 'two_or_more': isMarried ? 119 : 128, 'master': isMarried ? 126 : 135, 'phd': isMarried ? 140 : 150 };
-    total += eduMap[education] || 0;
-
-    // 3. Language
-    const langMap = { 7: isMarried ? 64 : 68, 8: isMarried ? 88 : 92, 9: isMarried ? 116 : 124, 10: isMarried ? 128 : 136 };
-    total += langMap[language] || 0;
-
-    // 4. Experience
-    const canExpMap = { 1: isMarried ? 35 : 40, 2: isMarried ? 46 : 53, 3: isMarried ? 70 : 80 };
-    total += canExpMap[canadianExp] || 0;
-
-    // 5. Spouse (Simplified)
-    if (isMarried) {
-        const sEdu = document.getElementById("spouseEducation").value;
-        const sLang = parseInt(document.getElementById("spouseLanguage").value) || 0;
-        if (sEdu === 'bachelor') total += 8; else if (sEdu === 'master') total += 10;
-        if (sLang >= 9) total += 20; else if (sLang >= 7) total += 12;
+    const table = ieltsToCLB[ability];
+    if (!table) return 0;
+    for (const [threshold, clb] of table) {
+        if (s >= threshold) return clb;
     }
+    return 0;
+}
 
-    // 6. Transferability
-    let transfer = 0;
-    if (education !== 'highschool' && education !== '0') {
-        if (language >= 9) transfer += 50; else if (language >= 7) transfer += 25;
+function calcAge() {
+    const year = parseInt(document.getElementById('birthYear').value);
+    const month = parseInt(document.getElementById('birthMonth').value) || 1;
+    const display = document.getElementById('ageDisplay');
+    if (!year || year < 1940 || year > 2010) {
+        display.textContent = '올바른 출생 연도를 입력하세요';
+        return;
     }
-    total += Math.min(100, transfer);
+    const today = new Date();
+    let age = today.getFullYear() - year;
+    if (today.getMonth() + 1 < month) age--;
+    display.textContent = `만 ${age}세`;
+}
 
-    // 7. Additional
-    total += (canadianStudy + jobOffer + sibling + frenchSkill + pnp);
-    const finalScore = Math.min(1200, total);
+function calcCLB() {
+    const testType = document.getElementById('langTest').value;
+    const L = document.getElementById('langL').value;
+    const R = document.getElementById('langR').value;
+    const W = document.getElementById('langW').value;
+    const S = document.getElementById('langS').value;
+    const display = document.getElementById('clbDisplay');
+    if (!L || !R || !W || !S) {
+        display.textContent = '4개 점수를 모두 입력하세요';
+        return;
+    }
+    const clbL = convertToCLB(L, 'L', testType);
+    const clbR = convertToCLB(R, 'R', testType);
+    const clbW = convertToCLB(W, 'W', testType);
+    const clbS = convertToCLB(S, 'S', testType);
+    const minCLB = Math.min(clbL, clbR, clbW, clbS);
+    display.textContent = `L:${clbL} / R:${clbR} / W:${clbW} / S:${clbS} (최저 CLB ${minCLB})`;
+}
 
-    // --- Update Results UI ---
-    document.getElementById("strategyResults").style.display = "block";
-    document.getElementById("res-crs").innerText = finalScore + "점";
-    
-    const RECENT_CUTOFF = 525;
-    const gap = finalScore - RECENT_CUTOFF;
-    document.getElementById("res-gap").innerText = (gap >= 0 ? "+" : "") + gap + "점";
-    
-    let prob = "Low";
-    if (finalScore >= 500) prob = "Very High";
-    else if (finalScore >= 470) prob = "High";
-    else if (finalScore >= 430) prob = "Medium";
-    document.getElementById("res-prob").innerText = prob;
+function lookupNOC(inputId, displayId) {
+    const val = document.getElementById(inputId).value.trim();
+    const display = document.getElementById(displayId);
+    if (!val) { display.textContent = 'NOC 코드 입력 후 자동 표시'; display.style.color = ''; return; }
+    const found = nocData.find(n => n.code === val);
+    if (found) {
+        display.textContent = `TEER ${found.teer} — ${found.title}`;
+        display.style.color = 'var(--primary)';
+    } else {
+        display.textContent = '일치하는 NOC 코드 없음';
+        display.style.color = 'var(--text-muted)';
+    }
+}
 
-    // Recommendations
-    const pathContainer = document.getElementById("recommendation-paths");
-    pathContainer.innerHTML = "";
-    let recs = [];
-    if (finalScore >= 480) recs.push({ title: "Express Entry - General", desc: "가장 빠른 영주권 취득 경로입니다.", badge: "Fastest" });
-    if (occupationGroup !== "others") recs.push({ title: `EE Category (${occupationGroup})`, desc: "당신의 직종은 우선 선발 대상입니다.", badge: "Best Match" });
-    if (targetProvince !== "any") recs.push({ title: `${targetProvince} PNP`, desc: "지역 주정부 이민을 통한 600점 가점을 노려보세요.", badge: "Regional" });
+function toggleAcc(num) {
+    const body = document.getElementById(`acc-body${num}`);
+    const arrow = document.getElementById(`acc-arrow${num}`);
+    if (!body) return;
+    const isOpen = body.style.display !== 'none';
+    body.style.display = isOpen ? 'none' : 'block';
+    arrow.textContent = isOpen ? '▼' : '▲';
+}
 
-    recs.forEach(r => {
-        pathContainer.innerHTML += `<div class="article-card" style="padding: 20px; border: 1px solid var(--border-color); background: var(--card-bg); border-radius: 12px;"><span class="article-badge">${r.badge}</span><h3 style="margin-top:10px;">${r.title}</h3><p style="font-size:0.85rem; color:var(--text-muted);">${r.desc}</p></div>`;
+function updateLangPlaceholders() {
+    const testType = document.getElementById('langTest').value;
+    const isIELTS = testType === 'IELTS';
+    const ph = isIELTS ? '예: 8.0' : '예: 9';
+    ['langL','langR','langW','langS'].forEach(id => {
+        const el = document.getElementById(id);
+        el.placeholder = ph;
+        el.step = isIELTS ? '0.5' : '1';
     });
+    document.getElementById('langLLabel').textContent = `듣기 (L) — ${testType} 점수`;
+    document.getElementById('langRLabel').textContent = `읽기 (R) — ${testType} 점수`;
+    document.getElementById('langWLabel').textContent = `쓰기 (W) — ${testType} 점수`;
+    document.getElementById('langSLabel').textContent = `말하기 (S) — ${testType} 점수`;
+    calcCLB();
+}
 
-    document.getElementById("strategyResults").scrollIntoView({ behavior: 'smooth' });
+function toggleFrenchSection() {
+    const val = document.getElementById('frenchTest').value;
+    document.getElementById('frenchClbDiv').style.display = val === 'none' ? 'none' : 'block';
+}
+
+function toggleJobOfferSection() {
+    const val = document.getElementById('hasJobOffer').value;
+    const show = val !== 'no';
+    document.getElementById('lmiaDiv').style.display = show ? 'block' : 'none';
+    document.getElementById('employerPNPDiv').style.display = show ? 'block' : 'none';
 }
 
 function toggleSpouseSection() {
     const status = document.getElementById('maritalStatus').value;
-    document.getElementById('spouseSection').style.display = status === 'married' ? 'block' : 'none';
+    const isMarried = status === 'married';
+    document.getElementById('spouseSection').style.display = isMarried ? 'block' : 'none';
+    document.getElementById('spouseAccompanyDiv').style.display = isMarried ? 'block' : 'none';
+    document.getElementById('spouseIELTSDiv').style.display = isMarried ? 'block' : 'none';
+}
+
+// Per-ability CLB → CRS language points
+function clbToLangPts(clb, isMarried) {
+    const singleMap = {10:34, 9:31, 8:23, 7:17, 6:9, 5:6, 4:6};
+    const marriedMap = {10:32, 9:29, 8:22, 7:16, 6:8, 5:6, 4:6};
+    const map = isMarried ? marriedMap : singleMap;
+    const key = Math.min(10, Math.max(4, clb));
+    return map[key] || 0;
+}
+
+function calculateCRS() {
+    console.log("Analysis Triggered");
+
+    // --- Read Inputs ---
+    const birthYear = parseInt(document.getElementById('birthYear').value) || 0;
+    const birthMonth = parseInt(document.getElementById('birthMonth').value) || 1;
+    const maritalStatus = document.getElementById('maritalStatus').value;
+    const isMarried = (maritalStatus === 'married');
+    const spouseAccompany = isMarried ? document.getElementById('spouseAccompany').value : 'no';
+    const effectiveMarried = isMarried && spouseAccompany === 'yes';
+
+    // Calculate age from birth year/month
+    let age = 0;
+    if (birthYear > 1940) {
+        const today = new Date();
+        age = today.getFullYear() - birthYear;
+        if (today.getMonth() + 1 < birthMonth) age--;
+    }
+
+    const education = document.getElementById('education').value;
+    const canadianStudy = parseInt(document.getElementById('canadianStudy').value) || 0;
+
+    // Language (per ability)
+    const testType = document.getElementById('langTest').value;
+    const clbL = convertToCLB(document.getElementById('langL').value, 'L', testType);
+    const clbR = convertToCLB(document.getElementById('langR').value, 'R', testType);
+    const clbW = convertToCLB(document.getElementById('langW').value, 'W', testType);
+    const clbS = convertToCLB(document.getElementById('langS').value, 'S', testType);
+    const minCLB = (clbL && clbR && clbW && clbS) ? Math.min(clbL, clbR, clbW, clbS) : 0;
+
+    // French
+    const frenchTest = document.getElementById('frenchTest').value;
+    const frenchCLB = frenchTest !== 'none' ? parseInt(document.getElementById('frenchCLB').value) || 0 : 0;
+
+    // Experience
+    const canadianExpYears = parseInt(document.getElementById('canadianExpYears').value) || 0;
+    const foreignExpYears = parseInt(document.getElementById('foreignExpYears').value) || 0;
+
+    // Job Offer
+    const hasJobOffer = document.getElementById('hasJobOffer').value;
+
+    // Additional
+    const sibling = parseInt(document.getElementById('sibling').value) || 0;
+    const hasPNP = parseInt(document.getElementById('hasPNP').value) || 0;
+    const tradeOccupation = document.getElementById('tradeOccupation').value;
+
+    // Preferences
+    const targetProvince = document.getElementById('targetProvince').value;
+    const ruralWilling = document.getElementById('ruralWilling').value;
+    const atlanticWilling = document.getElementById('atlanticWilling').value;
+    const occupationGroup = document.getElementById('occupationGroup').value;
+    const businessIntent = document.getElementById('businessIntent').value;
+
+    // Simulation
+    const willingRetakeIELTS = document.getElementById('willingRetakeIELTS').value;
+    const canStudyFrench = document.getElementById('canStudyFrench').value;
+    const planMoreWork = document.getElementById('planMoreWork').value;
+    const spouseIELTS = isMarried ? document.getElementById('spouseIELTS').value : 'no';
+    const canChangeEmployer = document.getElementById('canChangeEmployer').value;
+
+    // Spouse
+    const spouseEdu = effectiveMarried ? document.getElementById('spouseEducation').value : '0';
+    const spouseLang = effectiveMarried ? parseInt(document.getElementById('spouseLanguage').value) || 0 : 0;
+    const spouseCanExp = effectiveMarried ? parseInt(document.getElementById('spouseCanadianExp').value) || 0 : 0;
+
+    const breakdown = {};
+    let total = 0;
+
+    // --- 1. AGE (exact IRCC table) ---
+    const ageTableSingle = {18:99,19:105,20:110,21:110,22:110,23:110,24:110,25:110,26:110,27:110,28:110,29:110,30:105,31:99,32:94,33:88,34:83,35:77,36:72,37:66,38:61,39:55,40:50,41:39,42:28,43:17,44:6};
+    const ageTableMarried = {18:90,19:95,20:100,21:100,22:100,23:100,24:100,25:100,26:100,27:100,28:100,29:100,30:95,31:90,32:85,33:80,34:75,35:70,36:65,37:60,38:55,39:50,40:45,41:35,42:25,43:15,44:5};
+    const ageTable = effectiveMarried ? ageTableMarried : ageTableSingle;
+    const agePoints = ageTable[age] || 0;
+    breakdown['나이'] = agePoints;
+    total += agePoints;
+
+    // --- 2. EDUCATION ---
+    const eduSingle = { highschool:30, oneyear:90, twoyear:98, bachelor:120, two_or_more:128, master:135, phd:150 };
+    const eduMarried = { highschool:28, oneyear:84, twoyear:91, bachelor:112, two_or_more:119, master:126, phd:140 };
+    const eduMap = effectiveMarried ? eduMarried : eduSingle;
+    const eduPoints = eduMap[education] || 0;
+    breakdown['학력'] = eduPoints;
+    total += eduPoints;
+
+    // --- 3. LANGUAGE (per-ability CLB) ---
+    let langPoints = 0;
+    if (clbL || clbR || clbW || clbS) {
+        langPoints = clbToLangPts(clbL, effectiveMarried) + clbToLangPts(clbR, effectiveMarried) +
+                     clbToLangPts(clbW, effectiveMarried) + clbToLangPts(clbS, effectiveMarried);
+    }
+    breakdown['언어 (영어)'] = langPoints;
+    total += langPoints;
+
+    // --- 4. CANADIAN EXPERIENCE ---
+    const canExpSingle = {1:40, 2:53, 3:64, 4:72, 5:80};
+    const canExpMarried = {1:35, 2:46, 3:56, 4:63, 5:70};
+    const canExpMap = effectiveMarried ? canExpMarried : canExpSingle;
+    const canExpPoints = canExpMap[Math.min(5, canadianExpYears)] || 0;
+    breakdown['캐나다 경력'] = canExpPoints;
+    total += canExpPoints;
+
+    // --- 5. SPOUSE FACTORS ---
+    if (effectiveMarried) {
+        let spousePoints = 0;
+        const spouseEduMap = { highschool:2, oneyear:6, twoyear:7, bachelor:8, master:10, phd:10 };
+        spousePoints += spouseEduMap[spouseEdu] || 0;
+        const spouseLangMap = {9:20, 8:16, 7:12, 6:8, 5:4};
+        spousePoints += spouseLangMap[Math.min(9, spouseLang)] || 0;
+        const spouseExpMap = {1:5, 2:7, 3:8, 4:9, 5:10};
+        spousePoints += spouseExpMap[Math.min(5, spouseCanExp)] || 0;
+        breakdown['배우자 요소'] = spousePoints;
+        total += spousePoints;
+    }
+
+    // --- 6. TRANSFERABILITY (max 100) ---
+    let transfer = 0;
+    const hasEdu = education !== 'highschool' && education !== '0';
+    // A: Education + Language
+    if (hasEdu && minCLB >= 9) transfer += 50;
+    else if (hasEdu && minCLB >= 7) transfer += 25;
+    // B: Education + Canadian Exp
+    if (hasEdu && canadianExpYears >= 2) transfer += 25;
+    else if (hasEdu && canadianExpYears >= 1) transfer += 13;
+    // C: Foreign Exp + Canadian Exp
+    if (foreignExpYears >= 1 && canadianExpYears >= 1) transfer += (foreignExpYears >= 3 ? 25 : 13);
+    // D: Foreign Exp + Language
+    if (foreignExpYears >= 1 && minCLB >= 7) transfer += (foreignExpYears >= 3 && minCLB >= 9 ? 25 : 13);
+    // E: Trade + Language
+    if (tradeOccupation === 'yes' && minCLB >= 7) transfer += (minCLB >= 9 ? 25 : 13);
+    transfer = Math.min(100, transfer);
+    breakdown['이전성 점수'] = transfer;
+    total += transfer;
+
+    // --- 7. ADDITIONAL POINTS ---
+    // Foreign Experience
+    const foreignExpMap = {1:13, 3:25};
+    const foreignPts = foreignExpMap[foreignExpYears] || 0;
+    if (foreignPts > 0) { breakdown['해외 경력'] = foreignPts; total += foreignPts; }
+
+    // Job Offer
+    let jobOfferPts = 0;
+    if (hasJobOffer === 'yes_senior') jobOfferPts = 200;
+    else if (hasJobOffer === 'yes_regular') jobOfferPts = 50;
+    if (jobOfferPts > 0) { breakdown['잡오퍼'] = jobOfferPts; total += jobOfferPts; }
+
+    // French language bonus
+    let frenchPts = 0;
+    if (frenchCLB >= 9) frenchPts = 50;
+    else if (frenchCLB >= 7) frenchPts = 25;
+    if (frenchPts > 0) { breakdown['불어'] = frenchPts; total += frenchPts; }
+
+    // PNP
+    if (hasPNP > 0) { breakdown['PNP 노미네이션'] = hasPNP; total += hasPNP; }
+
+    // Canadian Study
+    if (canadianStudy > 0) { breakdown['캐나다 학업'] = canadianStudy; total += canadianStudy; }
+
+    // Sibling
+    if (sibling > 0) { breakdown['형제/자매'] = sibling; total += sibling; }
+
+    const finalScore = Math.min(1200, total);
+
+    // --- Build Profile Object ---
+    const profile = {
+        age, education, clbL, clbR, clbW, clbS, minCLB, frenchCLB,
+        canadianExpYears, foreignExpYears, hasJobOffer, isMarried, effectiveMarried,
+        targetProvince, ruralWilling, atlanticWilling, occupationGroup, businessIntent,
+        tradeOccupation, hasPNP, sibling,
+        willingRetakeIELTS, canStudyFrench, planMoreWork, spouseIELTS, canChangeEmployer,
+        finalScore, breakdown
+    };
+
+    // --- Update Results UI ---
+    document.getElementById('strategyResults').style.display = 'block';
+    document.getElementById('res-crs').innerText = finalScore + '점';
+
+    const RECENT_CUTOFF = 490;
+    const gap = finalScore - RECENT_CUTOFF;
+    const gapEl = document.getElementById('res-gap');
+    gapEl.innerText = (gap >= 0 ? '+' : '') + gap + '점';
+    gapEl.style.color = gap >= 0 ? '#16a34a' : 'var(--maple-red)';
+
+    let prob = '낮음';
+    if (finalScore >= 500) prob = '매우 높음';
+    else if (finalScore >= 470) prob = '높음';
+    else if (finalScore >= 430) prob = '중간';
+    document.getElementById('res-prob').innerText = prob;
+
+    renderScoreBreakdown(breakdown, finalScore);
+    renderRecommendations(profile);
+    renderSimulations(profile);
+    renderStrategicAdvice(profile);
+
+    document.getElementById('strategyResults').scrollIntoView({ behavior: 'smooth' });
+}
+
+function renderScoreBreakdown(breakdown, total) {
+    const container = document.getElementById('scoreBreakdown');
+    const maxMap = { '나이':110, '학력':150, '언어 (영어)':136, '캐나다 경력':80, '해외 경력':25, '이전성 점수':100, '배우자 요소':40, '잡오퍼':200, 'PNP 노미네이션':600, '불어':50, '캐나다 학업':30, '형제/자매':15 };
+    let html = `<div class="breakdown-card"><h3 style="margin-bottom:16px; font-size:1.1rem;">점수 내역 (총 <span style="color:var(--maple-red)">${total}점</span>)</h3>`;
+    for (const [label, pts] of Object.entries(breakdown)) {
+        if (pts === 0) continue;
+        const max = maxMap[label] || 100;
+        const pct = Math.min(100, Math.round((pts / max) * 100));
+        html += `<div class="breakdown-item">
+            <span class="breakdown-label">${label}</span>
+            <div class="breakdown-bar-wrap"><div class="breakdown-bar" style="width:${pct}%"></div></div>
+            <span class="breakdown-pts">${pts}점</span>
+        </div>`;
+    }
+    html += '</div>';
+    container.innerHTML = html;
+}
+
+function renderRecommendations(profile) {
+    const container = document.getElementById('recommendation-paths');
+    container.innerHTML = '';
+    const recs = [];
+
+    // CEC
+    if (profile.canadianExpYears >= 1 && profile.minCLB >= 7) {
+        recs.push({ title: 'Canadian Experience Class (CEC)', badge: '추천', desc: `캐나다 경력 ${profile.canadianExpYears}년 + CLB ${profile.minCLB}으로 CEC 자격 충족. 가장 빠른 영주권 경로.` });
+    }
+    // FSW
+    if (profile.foreignExpYears >= 1 && profile.minCLB >= 7 && ['bachelor','two_or_more','master','phd','twoyear'].includes(profile.education)) {
+        recs.push({ title: 'Federal Skilled Worker (FSW)', badge: '적합', desc: '해외 경력 + 학력 + 언어 조건 충족. Express Entry 풀 등록 가능.' });
+    }
+    // FST
+    if (profile.tradeOccupation === 'yes' && profile.minCLB >= 5) {
+        recs.push({ title: 'Federal Skilled Trades (FST)', badge: '기술직', desc: 'CLB 5 이상 기술직 자격자 전용 경로.' });
+    }
+    // Category-based EE
+    if (profile.occupationGroup !== 'others') {
+        recs.push({ title: `EE 카테고리 선발 (${profile.occupationGroup})`, badge: 'Best Match', desc: `${profile.occupationGroup} 카테고리 드로우에서 일반 선발보다 낮은 컷오프로 ITA 수령 가능.` });
+    }
+    // PNP
+    if (profile.targetProvince !== 'any') {
+        recs.push({ title: `${profile.targetProvince} 주정부 이민 (PNP)`, badge: '주정부', desc: '노미네이션 획득 시 CRS +600점. 현재 점수와 무관하게 영주권 취득 가능.' });
+    }
+    // AIP
+    if (profile.atlanticWilling === 'yes') {
+        recs.push({ title: 'Atlantic Immigration Program (AIP)', badge: '파일럿', desc: '아틀란틱 4개 주 고용주 지원 기반 이민. CRS 점수 요건 없음.' });
+    }
+    // RNIP
+    if (profile.ruralWilling === 'yes') {
+        recs.push({ title: 'Rural and Northern Immigration Pilot (RNIP)', badge: '농촌', desc: '지방 소도시 정착 의향이 있는 경우 CRS 없이 커뮤니티 추천 가능.' });
+    }
+    // French category
+    if (profile.frenchCLB >= 7) {
+        recs.push({ title: '불어 우수자 카테고리', badge: '🇫🇷 불어', desc: `불어 CLB ${profile.frenchCLB} 실력으로 컷오프 ~420점 수준의 드로우 대상.` });
+    }
+
+    if (recs.length === 0) {
+        container.innerHTML = '<p style="color:var(--text-muted); text-align:center; padding:20px; grid-column:1/-1;">입력 정보를 더 보완하면 추천 경로가 표시됩니다.</p>';
+        return;
+    }
+    recs.forEach(r => {
+        container.innerHTML += `<div class="article-card" style="padding:20px;">
+            <span class="article-badge">${r.badge}</span>
+            <h3 style="margin-top:10px; font-size:1rem;">${r.title}</h3>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-top:8px;">${r.desc}</p>
+        </div>`;
+    });
+}
+
+function renderSimulations(profile) {
+    const section = document.getElementById('simulation-section');
+    const container = document.getElementById('simulation-cards');
+    container.innerHTML = '';
+    const sims = [];
+
+    // IELTS 재응시
+    if (profile.willingRetakeIELTS === 'yes' && profile.minCLB < 10) {
+        const targetCLB = Math.min(10, profile.minCLB + 1);
+        const currentLang = clbToLangPts(profile.clbL, profile.effectiveMarried) + clbToLangPts(profile.clbR, profile.effectiveMarried) + clbToLangPts(profile.clbW, profile.effectiveMarried) + clbToLangPts(profile.clbS, profile.effectiveMarried);
+        const newLang = clbToLangPts(targetCLB, profile.effectiveMarried) * 4;
+        const gain = newLang - currentLang;
+        if (gain > 0) sims.push({ title: 'IELTS 재응시', gain: `+${gain}`, desc: `전 영역 CLB ${targetCLB} 달성 시 언어 점수 약 ${gain}점 향상 예상.` });
+    }
+    // 불어 학습
+    if (profile.canStudyFrench === 'yes' && profile.frenchCLB < 7) {
+        sims.push({ title: '불어 CLB 7 달성', gain: '+25', desc: '불어 CLB 7~8 달성 시 +25점 및 불어 카테고리 드로우 자격 획득.' });
+    }
+    // 추가 경력
+    if (profile.planMoreWork === 'yes') {
+        const nextExp = Math.min(5, profile.canadianExpYears + 1);
+        const canExpSingle = {1:40, 2:53, 3:64, 4:72, 5:80};
+        const canExpMarried = {1:35, 2:46, 3:56, 4:63, 5:70};
+        const map = profile.effectiveMarried ? canExpMarried : canExpSingle;
+        const currentPts = map[profile.canadianExpYears] || 0;
+        const newPts = map[nextExp] || currentPts;
+        const gain = newPts - currentPts;
+        if (gain > 0) sims.push({ title: '캐나다 경력 1년 추가', gain: `+${gain}`, desc: `캐나다 경력 ${nextExp}년 달성 시 경력 점수 ${gain}점 향상.` });
+    }
+    // 배우자 IELTS
+    if (profile.isMarried && profile.spouseIELTS === 'yes') {
+        sims.push({ title: '배우자 IELTS 응시', gain: '+최대 20', desc: '배우자 CLB 9 이상 달성 시 배우자 언어 점수 최대 20점 추가.' });
+    }
+    // 고용주 변경 / 잡오퍼
+    if (profile.canChangeEmployer === 'yes' && profile.hasJobOffer === 'no') {
+        sims.push({ title: '잡오퍼 확보 전략', gain: '+50~200', desc: 'LMIA 잡오퍼 확보 시 +50점(일반) 또는 +200점(시니어 매니저) 추가.' });
+    }
+
+    if (sims.length === 0) { section.style.display = 'none'; return; }
+    section.style.display = 'block';
+    sims.forEach(s => {
+        container.innerHTML += `<div class="article-card" style="padding:20px; text-align:center;">
+            <div class="sim-gain">${s.gain}점</div>
+            <h3 style="font-size:1rem; margin:8px 0;">${s.title}</h3>
+            <p style="font-size:0.8rem; color:var(--text-muted);">${s.desc}</p>
+        </div>`;
+    });
+}
+
+function renderStrategicAdvice(profile) {
+    const container = document.getElementById('strategic-advice');
+    const advices = [];
+    if (profile.minCLB < 9) advices.push('💡 언어 점수 향상이 최우선입니다. CLB 9 달성 시 이전성 점수 +50점 포함 큰 폭의 점수 상승이 가능합니다.');
+    if (profile.canadianExpYears === 0 && profile.foreignExpYears >= 1) advices.push('🍁 캐나다 내 경력이 없습니다. 워크퍼밋을 통해 CEC 자격을 만드는 것이 장기적으로 가장 유리합니다.');
+    if (profile.hasPNP === 0 && profile.targetProvince !== 'any') advices.push(`🏛️ ${profile.targetProvince} PNP에 관심이 있으신 경우, 주정부 NOI(관심 표명서) 제출이나 고용주 연계 경로를 탐색하세요.`);
+    if (profile.frenchCLB < 7 && profile.canStudyFrench === 'yes') advices.push('🇫🇷 불어 CLB 7 이상 달성 시 일반 선발 대비 약 70~100점 낮은 컷오프 드로우에 참여 가능합니다.');
+    if (profile.age >= 35) advices.push('⏰ 나이에 따른 점수 감소가 시작됩니다. 가능한 빠르게 Express Entry 풀에 등록하는 것이 유리합니다.');
+    if (profile.finalScore >= 500) advices.push('✅ 현재 점수는 일반 Express Entry 선발 권내입니다. 프로필 최신화 및 정기 모니터링을 권장합니다.');
+    if (profile.atlanticWilling === 'yes') advices.push('🌊 아틀란틱 이민 파일럿(AIP)은 고용주 지원 기반으로 CRS 점수 제한이 없습니다. 해당 주 취업 활동에 집중하세요.');
+    if (profile.businessIntent === 'yes') advices.push('🏢 비즈니스 이민(Start-up Visa, Self-Employed 등)도 대안으로 검토해 보세요. CRS 없이 진행 가능합니다.');
+    if (advices.length === 0) advices.push('📋 입력 정보를 더 완성하면 맞춤형 전략 조언이 제공됩니다.');
+    container.innerHTML = `<h3 style="margin-bottom:16px; color:var(--primary);">전략 조언 (우선순위 순)</h3>` +
+        advices.map(a => `<div class="advice-item">${a}</div>`).join('');
 }
 
 function renderPosts() {
