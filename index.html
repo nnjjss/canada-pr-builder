@@ -47,7 +47,6 @@
     <a href="#calculator">CRS 계산기</a>
     <a href="#guide">이민 가이드</a>
     <a href="#articles">뉴스</a>
-    <a href="#community">커뮤니티</a>
     <a href="#contact">문의</a>
 </nav>
 
@@ -495,17 +494,6 @@
         </div>
     </div>
 
-    <!-- 커뮤니티 섹션 -->
-    <div class="card" id="community">
-        <h2>커뮤니티 게시판</h2>
-        <p>여러분의 경험을 공유하거나 다른 신청자들의 이야기를 읽어보세요.</p>
-        <input type="text" id="title" placeholder="제목" />
-        <textarea id="content" rows="4" placeholder="여러분의 이야기나 질문을 남겨주세요..."></textarea>
-        <button onclick="addPost()">게시하기</button>
-
-        <div id="blogList"></div>
-    </div>
-
     <!-- Partnership Inquiry Form -->
     <div class="card" id="contact">
         <h2>문의 및 제휴</h2>
@@ -522,21 +510,6 @@
             
             <button type="submit">메시지 전송</button>
         </form>
-    </div>
-
-    <!-- Disqus Comments Section -->
-    <div class="card">
-        <h2>함께 이야기해요</h2>
-        <div id="disqus_thread"></div>
-        <script>
-            (function() { 
-            var d = document, s = d.createElement('script');
-            s.src = 'https://canadapr.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-            })();
-        </script>
-        <noscript>Please enable JavaScript를 활성화하여 <a href="https://disqus.com/?ref_noscript">Disqus 댓글을 확인하세요.</a></noscript>
     </div>
 
 </div>
