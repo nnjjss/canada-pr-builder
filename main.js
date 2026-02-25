@@ -27,7 +27,7 @@ const articlesData = [
             <h3>1. 주요 대상 직종 및 NOC 코드</h3>
             <p>이 카테고리에는 대학 교수(NOC 4011), 박사 후 연구원(NOC 4012), 과학 연구원, 그리고 특정 기술 분야의 전문 강사진이 포함됩니다. 중요한 점은 단순히 학문적 성과뿐만 아니라, 캐나다 내에서의 고용 계약(Job Offer)이나 실제 근무 경력이 배점에 큰 영향을 미친다는 것입니다.</p>
             <h3>2. 연구직 전형의 핵심 차별점</h3>
-            <p>일반 FSW(Federal Skilled Worker) 프로그램에서는 나이 점수 감점이 뼈아픈 30대 후반~40대 연구자들에게 이 카테고리는 구원투수와 같습니다. 카테고리 선발에서는 나이보다는 '연구 분야의 희소성'과 '캐나다 내 기여도'를 우선시하기 때문에, 일반 커트라인보다 50~80점 낮은 점수로도 초청장(ITA)을 받을 수 있는 구조입니다.</p>
+            <p>일반 FSW(Federal Skilled Worker) 프로그램에서는 나이 점수 감점이 뼈아픈 30대 후반~40대 연구자들에게 이 카테고리는 구원투수와 같습니다. 나이보다는 '연구 분야의 희소성'과 '캐나다 내 기여도'를 우선시하기 때문에, 일반 커트라인보다 50~80점 낮은 점수로도 초청장(ITA)을 받을 수 있는 구조입니다.</p>
             <h3>3. 전문가 조언: 논문보다 중요한 '실무 증명'</h3>
             <p>영주권 심사관들은 당신의 논문 인용 횟수보다 당신이 캐나다 노동 시장에서 얼마나 대체 불가능한 인력인지를 봅니다. 따라서 경력 증명서(Reference Letter) 작성 시 본인의 연구가 캐나다의 특정 산업(예: AI, 청정 에너지, 바이오 등)에 미치는 영향을 구체적으로 기술하는 것이 합격률을 높이는 핵심 비결입니다.</p>
         `
@@ -90,47 +90,91 @@ const articlesData = [
     }
 ];
 
-// --- NOC Finder 데이터 ---
+// --- NOC Finder 데이터 대폭 확장 ---
 const nocData = [
-    // STEM
+    // IT & STEM
     { code: "21232", title: "Software developers and programmers (소프트웨어 개발자)", teer: "1", cat: "STEM" },
     { code: "21231", title: "Software engineers and designers (소프트웨어 엔지니어)", teer: "1", cat: "STEM" },
     { code: "21234", title: "Web developers and programmers (웹 개발자)", teer: "1", cat: "STEM" },
     { code: "21233", title: "Web designers (웹 디자이너)", teer: "1", cat: "STEM" },
     { code: "21211", title: "Data scientists (데이터 사이언티스트)", teer: "1", cat: "STEM" },
+    { code: "21223", title: "Database analysts and data administrators (데이터베이스 분석가)", teer: "1", cat: "STEM" },
+    { code: "20010", title: "Engineering managers (엔지니어링 매니저)", teer: "0", cat: "STEM" },
     { code: "21311", title: "Computer engineers (컴퓨터 엔지니어)", teer: "1", cat: "STEM" },
     { code: "21222", title: "Information systems specialists (정보 시스템 전문가)", teer: "1", cat: "STEM" },
+    { code: "21221", title: "Business systems specialists (비즈니스 시스템 전문가)", teer: "1", cat: "STEM" },
+    { code: "22220", title: "Computer network technicians (네트워크 기술자)", teer: "2", cat: "STEM" },
+    { code: "22221", title: "User support technicians (IT 기술 지원)", teer: "2", cat: "STEM" },
     
     // Healthcare
-    { code: "31301", title: "Registered nurses (간호사)", teer: "1", cat: "Healthcare" },
+    { code: "31301", title: "Registered nurses and registered psychiatric nurses (정간호사)", teer: "1", cat: "Healthcare" },
     { code: "31100", title: "Specialists in clinical and laboratory medicine (전문의)", teer: "1", cat: "Healthcare" },
     { code: "31102", title: "General practitioners and family physicians (가정의학의)", teer: "1", cat: "Healthcare" },
-    { code: "32101", title: "Licensed practical nurses (준간호사)", teer: "2", cat: "Healthcare" },
-    { code: "33102", title: "Nurse aides, orderlies and patient service associates (간호 조무사)", teer: "3", cat: "Healthcare" },
+    { code: "31201", title: "Chiropractors (카이로프랙틱 의사)", teer: "1", cat: "Healthcare" },
+    { code: "31202", title: "Physiotherapists (물리치료사)", teer: "1", cat: "Healthcare" },
+    { code: "31203", title: "Occupational therapists (작업치료사)", teer: "1", cat: "Healthcare" },
+    { code: "32101", title: "Licensed practical nurses (LPN/준간호사)", teer: "2", cat: "Healthcare" },
+    { code: "32102", title: "Paramedical occupations (응급구조사)", teer: "2", cat: "Healthcare" },
+    { code: "32103", title: "Respiratory therapists (호흡기 치료사)", teer: "2", cat: "Healthcare" },
+    { code: "32120", title: "Medical laboratory technicians (임상병리사)", teer: "2", cat: "Healthcare" },
+    { code: "33102", title: "Nurse aides, orderlies and patient service associates (간호조무사)", teer: "3", cat: "Healthcare" },
+    { code: "41300", title: "Social workers (사회복지사)", teer: "1", cat: "Healthcare" },
+    { code: "42201", title: "Social and community service workers (사회복지 서비스 종사자)", teer: "2", cat: "Healthcare" },
+
+    // Hospitality & Trades (Cook/Chef 등 추가)
+    { code: "62200", title: "Chefs (셰프/주방장)", teer: "2", cat: "Trades" },
+    { code: "63200", title: "Cooks (요리사)", teer: "3", cat: "Trades" },
+    { code: "62020", title: "Food service supervisors (식당 수퍼바이저)", teer: "2", cat: "" },
+    { code: "62021", title: "Accommodation service supervisors (호텔 수퍼바이저)", teer: "2", cat: "" },
+    { code: "63110", title: "Butchers (정육기술자)", teer: "3", cat: "Trades" },
+    { code: "63111", title: "Bakers (제빵사)", teer: "3", cat: "Trades" },
+    
+    // Skilled Trades
+    { code: "72400", title: "Construction electricians (전기 기술자)", teer: "2", cat: "Trades" },
+    { code: "72300", title: "Plumbers (배관공)", teer: "2", cat: "Trades" },
+    { code: "72100", title: "Machinists and machining and tooling inspectors (기계공)", teer: "2", cat: "Trades" },
+    { code: "72310", title: "Carpenters (목수)", teer: "2", cat: "Trades" },
+    { code: "72401", title: "Heavy-duty equipment mechanics (중장비 정비공)", teer: "2", cat: "Trades" },
+    { code: "72410", title: "Automotive service technicians (자동차 정비사)", teer: "2", cat: "Trades" },
+    { code: "72014", title: "Contractors and supervisors, other construction trades (건설 수퍼바이저)", teer: "2", cat: "Trades" },
 
     // Transport (2026 Category)
     { code: "72600", title: "Air pilots, flight engineers and flying instructors (파일럿)", teer: "2", cat: "Transport" },
     { code: "72404", title: "Aircraft mechanics and aircraft inspectors (항공 정비사)", teer: "2", cat: "Transport" },
     { code: "73300", title: "Transport truck drivers (트럭 운전사)", teer: "3", cat: "Transport" },
+    { code: "72601", title: "Air traffic controllers (항공 관제사)", teer: "2", cat: "Transport" },
+    { code: "72602", title: "Deck officers, water transport (항해사)", teer: "2", cat: "Transport" },
 
-    // Academic / Research (2026 Category)
+    // Academic / Research / Education
     { code: "40110", title: "University professors and lecturers (대학교수 및 강사)", teer: "1", cat: "Academic" },
     { code: "40120", title: "Post-secondary teaching and research assistants (조교 및 연구원)", teer: "1", cat: "Academic" },
+    { code: "41200", title: "University researchers (대학 연구원)", teer: "1", cat: "Academic" },
+    { code: "41210", title: "College and other vocational instructors (컬리지 강사)", teer: "1", cat: "Academic" },
+    { code: "41220", title: "Secondary school teachers (고등학교 교사)", teer: "1", cat: "" },
+    { code: "41221", title: "Elementary school and kindergarten teachers (초등학교/유치원 교사)", teer: "1", cat: "" },
+    { code: "42202", title: "Early childhood educators and assistants (ECE/유아교사)", teer: "2", cat: "" },
 
-    // Senior Management (2026 Category)
+    // Management & Administration
     { code: "00012", title: "Senior managers - financial, communications (재무/통신 시니어 매니저)", teer: "0", cat: "Management" },
     { code: "00013", title: "Senior managers - health, education, social (보건/교육 시니어 매니저)", teer: "0", cat: "Management" },
     { code: "00015", title: "Senior managers - construction, transportation (건설/운송 시니어 매니저)", teer: "0", cat: "Management" },
+    { code: "10010", title: "Financial managers (재무 매니저)", teer: "0", cat: "" },
+    { code: "10011", title: "Human resources managers (인사 매니저)", teer: "0", cat: "" },
+    { code: "10012", title: "Purchasing managers (구매 매니저)", teer: "0", cat: "" },
+    { code: "11100", title: "Financial auditors and accountants (회계사)", teer: "1", cat: "" },
+    { code: "12101", title: "Executive assistants (비서)", teer: "2", cat: "" },
+    { code: "12010", title: "General office subsystems supervisors (사무 관리자)", teer: "2", cat: "" },
+    { code: "13110", title: "Administrative officers (행정 요원)", teer: "3", cat: "" },
+    { code: "13111", title: "Property administrators (부동산 관리자)", teer: "3", cat: "" },
 
-    // Trades
-    { code: "72400", title: "Construction electricians (전기 기술자)", teer: "2", cat: "Trades" },
-    { code: "72300", title: "Plumbers (배관공)", teer: "2", cat: "Trades" },
-    { code: "72100", title: "Machinists and machining and tooling inspectors (기계공)", teer: "2", cat: "Trades" },
-    { code: "72310", title: "Carpenters (목수)", teer: "2", cat: "Trades" }
+    // Military (2026 Category)
+    { code: "43204", title: "Operations members of the Canadian Armed Forces (군 작전 부대원)", teer: "3", cat: "Military" },
+    { code: "42102", title: "Specialized members of the Canadian Armed Forces (군 특수 부대원)", teer: "2", cat: "Military" },
+    { code: "22232", title: "Military engineering technicians (군 공병 기술자)", teer: "2", cat: "Military" }
 ];
 
 window.filterNOC = function() {
-    const input = document.getElementById('nocSearchInput').value.toLowerCase();
+    const input = document.getElementById('nocSearchInput').value.toLowerCase().trim();
     const resultsContainer = document.getElementById('nocResults');
     
     if (input.length < 2) {
@@ -138,14 +182,16 @@ window.filterNOC = function() {
         return;
     }
 
-    const filtered = nocData.filter(item => 
-        item.title.toLowerCase().includes(input) || 
-        item.code.includes(input) || 
-        item.cat.toLowerCase().includes(input)
-    );
+    // 다중 검색어 대응 (예: "software developer" 입력 시 둘 다 포함된 결과 필터링)
+    const keywords = input.split(' ');
+
+    const filtered = nocData.filter(item => {
+        const fullContent = (item.title + " " + item.code + " " + item.cat).toLowerCase();
+        return keywords.every(kw => fullContent.includes(kw));
+    });
 
     if (filtered.length === 0) {
-        resultsContainer.innerHTML = '<p style="text-align: center; padding: 20px; color: var(--text-muted);">일치하는 결과가 없습니다.</p>';
+        resultsContainer.innerHTML = '<p style="text-align: center; padding: 20px; color: var(--text-muted);">일치하는 결과가 없습니다. 영문 직업명이나 5자리 숫자로 다시 시도해보세요.</p>';
         return;
     }
 
