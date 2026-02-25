@@ -357,8 +357,42 @@ footer {
     .mobile-menu-btn { display: none; } /* Floating nav is better for mobile now */
 }
 
-/* Modal Styling */
-.modal-content {
-    border-radius: 32px;
-    padding: 50px;
+/* Modal Styling & Scroll Lock */
+body.modal-open {
+    overflow: hidden !important;
+    padding-right: 0px; /* Prevent jitter if scrollbar disappears */
 }
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    overflow-y: auto; /* Allow backdrop to scroll if content is long */
+    -webkit-overflow-scrolling: touch;
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    margin: 40px auto;
+    padding: 50px;
+    border: 1px solid var(--border-color);
+    width: 92%;
+    max-width: 850px;
+    border-radius: 32px;
+    box-shadow: var(--shadow-bold);
+    position: relative;
+    animation: slideUp 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+@keyframes slideUp {
+    from { transform: translateY(40px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+

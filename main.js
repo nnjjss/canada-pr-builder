@@ -46,15 +46,13 @@ const articlesData = [
     }
 ];
 
-// --- 기사 모달 제어 (전역 함수로 유지하되 안정성 강화) ---
+// --- 기사 모달 제어 ---
 window.openArticle = function(index) {
-    console.log("Attempting to open article at index:", index);
     const article = articlesData[index];
     if (!article) return;
 
     const modal = document.getElementById("articleModal");
     const modalBody = document.getElementById("modalBody");
-
     if (!modal || !modalBody) return;
 
     modalBody.innerHTML = `
@@ -66,23 +64,21 @@ window.openArticle = function(index) {
     `;
 
     modal.style.display = "block";
-    document.body.style.overflow = "hidden";
+    document.body.classList.add("modal-open"); // 클래스로 제어
 
-    document.getElementById("modalCloseBtn").onclick = closeArticle;
+    document.getElementById("modalCloseBtn").onclick = window.closeArticle;
 };
 
 window.closeArticle = function() {
     const modal = document.getElementById("articleModal");
     if (modal) {
         modal.style.display = "none";
-        document.body.style.overflow = "auto";
+        document.body.classList.remove("modal-open"); // 클래스 제거
     }
 };
 
 // --- 초기화 로직 ---
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("DOM fully loaded and parsed");
-
     // 1. 네비게이션 효과
     const nav = document.getElementById('mainNav');
     window.addEventListener('scroll', () => {
@@ -112,14 +108,18 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. 커뮤니티 렌더링
     renderPosts();
 
-    // 4. 모달 바깥 클릭 시 닫기
-    window.onclick = (e) => {
+    // 4. 모달 닫기 이벤트 (바깥 클릭 및 ESC 키)
+    window.addEventListener('click', (e) => {
         const modal = document.getElementById("articleModal");
-        if (e.target === modal) closeArticle();
-    };
+        if (e.target === modal) window.closeArticle();
+    });
+
+    window.addEventListener('keydown', (e) => {
+        if (e.key === "Escape") window.closeArticle();
+    });
 });
 
-// --- 기존 함수 유지 ---
+// --- CRS 계산기 ---
 function toggleSpouseSection() {
     const status = document.getElementById('maritalStatus').value;
     const spouseSection = document.getElementById('spouseSection');
