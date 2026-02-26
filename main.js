@@ -795,7 +795,7 @@ function updateLanguage(lang) {
     clbThs[1].textContent = t.thTest;
 
     document.querySelectorAll('#guide h3')[1].textContent = t.howToRaiseH3;
-    document.querySelector('#guide > p:nth-of-type(3)').textContent = t.howToRaiseP;
+    document.getElementById('howToRaiseP').textContent = t.howToRaiseP;
     const raiseLis = document.querySelectorAll('#guide ul:last-of-type li');
     const splitLi = s => [`<strong>${s.split(':')[0]}:</strong>`, s.split(':').slice(1).join(':')].join('');
     raiseLis[0].innerHTML = splitLi(t.liRaiseLang);
