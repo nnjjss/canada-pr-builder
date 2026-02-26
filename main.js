@@ -184,9 +184,11 @@ const translations = {
         acc5Title: "가산점 요소",
         acc5Sub: "Additional Points",
         labelSibling: "캐나다 내 형제/자매 거주",
+        siblingYes: "예 (시민/영주권자)",
         labelPnp: "주정부 이민 (PNP) 노미네이션",
         pnpPlus600: "있음 (+600점)",
         labelTrade: "기술직 자격 보유 (FST 해당)",
+        tradeYes: "예 (Red Seal 등)",
         acc6Title: "이민 선호도",
         acc6Sub: "Preferences & Profile",
         labelProvince: "선호 거주 지역",
@@ -346,9 +348,11 @@ const translations = {
         acc5Title: "Additional Points",
         acc5Sub: "Bonus Factors",
         labelSibling: "Sibling in Canada",
+        siblingYes: "Yes (Citizen/PR)",
         labelPnp: "PNP Nomination",
         pnpPlus600: "Yes (+600 points)",
         labelTrade: "Certificate of Qualification (FST)",
+        tradeYes: "Yes (Red Seal, etc.)",
         acc6Title: "Preferences & Profile",
         acc6Sub: "Personal Preferences",
         labelProvince: "Preferred Province",
@@ -606,15 +610,15 @@ function updateLanguage(lang) {
     
     const sibSelect = document.getElementById('sibling');
     sibSelect.options[0].textContent = t.no;
-    sibSelect.options[1].textContent = t.yes;
-    
+    sibSelect.options[1].textContent = t.siblingYes;
+
     const pnpSelect = document.getElementById('hasPNP');
     pnpSelect.options[0].textContent = t.none;
     pnpSelect.options[1].textContent = t.pnpPlus600;
 
     const tradeSelect = document.getElementById('tradeOccupation');
     tradeSelect.options[0].textContent = t.no;
-    tradeSelect.options[1].textContent = t.yes;
+    tradeSelect.options[1].textContent = t.tradeYes;
 
     // Accordion 6
     document.querySelector('#acc6 .acc-header div > div').textContent = t.acc6Title;
@@ -627,10 +631,23 @@ function updateLanguage(lang) {
     acc6Labels[4].textContent = t.labelSalary;
     acc6Labels[5].textContent = t.labelBusiness;
     
-    document.getElementById('targetProvince').options[0].textContent = t.anyProvince;
-    
+    const provinceSelect = document.getElementById('targetProvince');
+    const provinceOpts = lang === 'ko'
+        ? ['상관 없음 (전 지역)','온타리오 (OINP)','브리티시 컬럼비아 (BC PNP)','알버타 (AAIP)',
+           '사스카추완 (SINP)','마니토바 (MPNP)','퀘벡 (PEQ/QSWP)','노바스코샤 (NSNP)',
+           '뉴브런즈윅 (NBPNP)','PEI (PEI PNP)','뉴펀들랜드 (NLPNP)','아틀란틱 지역 (AIP)','외곽 지역 (RNIP/RCIP)']
+        : ['No preference (All regions)','Ontario (OINP)','British Columbia (BC PNP)','Alberta (AAIP)',
+           'Saskatchewan (SINP)','Manitoba (MPNP)','Quebec (PEQ/QSWP)','Nova Scotia (NSNP)',
+           'New Brunswick (NBPNP)','PEI (PEI PNP)','Newfoundland (NLPNP)','Atlantic Region (AIP)','Rural & Remote (RNIP/RCIP)'];
+    provinceOpts.forEach((text, i) => { if (provinceSelect.options[i]) provinceSelect.options[i].textContent = text; });
+
     const occGroupSelect = document.getElementById('occupationGroup');
-    occGroupSelect.options[0].textContent = t.occOthers;
+    const occOpts = lang === 'ko'
+        ? ['기타 일반 숙련직','의료/보건 (Healthcare)','IT/공학 (STEM)','기술 생산직 (Trades)',
+           '운송 (Transport)','농축산 (Agriculture)','교육 (Education)','불어 우수자 (French)']
+        : ['Other Skilled Occupations','Healthcare','STEM / IT & Engineering','Skilled Trades',
+           'Transport','Agriculture','Education','French Language Proficiency'];
+    occOpts.forEach((text, i) => { if (occGroupSelect.options[i]) occGroupSelect.options[i].textContent = text; });
     
     const ruralSel = document.getElementById('ruralWilling');
     ruralSel.options[0].textContent = t.no; ruralSel.options[1].textContent = t.yes;
