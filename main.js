@@ -1496,6 +1496,60 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('click', (e) => { if (e.target === document.getElementById("articleModal")) window.closeArticle(); });
     window.addEventListener('keydown', (e) => { if (e.key === "Escape") window.closeArticle(); });
 
+    // Back-to-Top button
+    const backToTop = document.getElementById('backToTop');
+    if (backToTop) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    // Nav active state via IntersectionObserver
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+    const sections = [];
+    navLinks.forEach(link => {
+        const id = link.getAttribute('href').substring(1);
+        const section = document.getElementById(id);
+        if (section) sections.push({ el: section, link: link });
+    });
+    if (sections.length > 0) {
+        const navObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const match = sections.find(s => s.el === entry.target);
+                if (match) {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(l => l.classList.remove('active'));
+                        match.link.classList.add('active');
+                    }
+                }
+            });
+        }, { rootMargin: '-20% 0px -60% 0px' });
+        sections.forEach(s => navObserver.observe(s.el));
+    }
+
+    // Scroll fade-in-up animation
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!prefersReducedMotion) {
+        const fadeTargets = document.querySelectorAll('.card, #articles');
+        fadeTargets.forEach(el => el.classList.add('fade-in-up'));
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    fadeObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        fadeTargets.forEach(el => fadeObserver.observe(el));
+    }
+
     // Newsletter form submit
     const nlForm = document.getElementById('newsletterForm');
     if (nlForm) {
@@ -1655,10 +1709,16 @@ function hideNOCDropdown(prefix) {
 function toggleAcc(num) {
     const body = document.getElementById(`acc-body${num}`);
     const arrow = document.getElementById(`acc-arrow${num}`);
+    const header = document.getElementById(`acc-header${num}`);
     if (!body) return;
-    const isOpen = body.style.display !== 'none';
-    body.style.display = isOpen ? 'none' : 'block';
-    arrow.textContent = isOpen ? '▼' : '▲';
+    const isOpen = !body.classList.contains('acc-body-closed');
+    if (isOpen) {
+        body.classList.add('acc-body-closed');
+    } else {
+        body.classList.remove('acc-body-closed');
+    }
+    if (arrow) arrow.textContent = isOpen ? '▼' : '▲';
+    if (header) header.setAttribute('aria-expanded', String(!isOpen));
 }
 
 function updateLangPlaceholders() {

@@ -6,6 +6,13 @@
     <meta name="google-adsense-account" content="ca-pub-7667199502336658">
     <title>캐나다 익스프레스 엔트리 가이드 & CRS 점수 계산기</title>
     <meta name="description" content="캐나다 익스프레스 엔트리 CRS 점수를 계산하고 종합 가이드를 통해 점수 향상 방법을 알아보세요.">
+    <meta property="og:title" content="Canada PR Builder — CRS 점수 계산기 & 이민 가이드">
+    <meta property="og:description" content="무료 CRS 계산기로 점수를 확인하고, AI 기반 최적 이민 경로를 추천받으세요.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://canadaprbuilder.com/">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:locale:alternate" content="en_US">
+    <link rel="canonical" href="https://canadaprbuilder.com/">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7667199502336658"
      crossorigin="anonymous"></script>
     <!-- Google tag (gtag.js) -->
@@ -79,15 +86,15 @@
 
         <!-- Section 1: 기본 인적 정보 -->
         <div class="form-accordion" id="acc1">
-            <div class="acc-header" onclick="toggleAcc(1)">
+            <div class="acc-header" id="acc-header1" role="button" tabindex="0" aria-expanded="true" aria-controls="acc-body1" onclick="toggleAcc(1)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleAcc(1)}">
                 <span class="acc-num">1</span>
                 <div style="flex:1;">
                     <div style="font-weight:700;">기본 인적 정보</div>
                     <div class="acc-sub">Personal Information</div>
                 </div>
-                <span id="acc-arrow1">▼</span>
+                <span id="acc-arrow1">▲</span>
             </div>
-            <div class="acc-body" id="acc-body1">
+            <div class="acc-body" id="acc-body1" role="region" aria-labelledby="acc-header1">
                 <div class="calc-grid">
                     <div class="input-group">
                         <label>출생 연도</label>
@@ -144,7 +151,7 @@
 
         <!-- Section 2: 학력 정보 -->
         <div class="form-accordion" id="acc2">
-            <div class="acc-header" onclick="toggleAcc(2)">
+            <div class="acc-header" id="acc-header2" role="button" tabindex="0" aria-expanded="false" aria-controls="acc-body2" onclick="toggleAcc(2)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleAcc(2)}">
                 <span class="acc-num">2</span>
                 <div style="flex:1;">
                     <div style="font-weight:700;">학력 정보</div>
@@ -152,7 +159,7 @@
                 </div>
                 <span id="acc-arrow2">▼</span>
             </div>
-            <div class="acc-body" id="acc-body2">
+            <div class="acc-body acc-body-closed" id="acc-body2" role="region" aria-labelledby="acc-header2">
                 <div class="calc-grid">
                     <div class="input-group">
                         <label>최종 학력</label>
@@ -196,7 +203,7 @@
 
         <!-- Section 3: 언어 성적 -->
         <div class="form-accordion" id="acc3">
-            <div class="acc-header" onclick="toggleAcc(3)">
+            <div class="acc-header" id="acc-header3" role="button" tabindex="0" aria-expanded="false" aria-controls="acc-body3" onclick="toggleAcc(3)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleAcc(3)}">
                 <span class="acc-num">3</span>
                 <div style="flex:1;">
                     <div style="font-weight:700;">언어 성적</div>
@@ -204,7 +211,7 @@
                 </div>
                 <span id="acc-arrow3">▼</span>
             </div>
-            <div class="acc-body" id="acc-body3">
+            <div class="acc-body acc-body-closed" id="acc-body3" role="region" aria-labelledby="acc-header3">
                 <div class="calc-grid">
                     <div class="input-group">
                         <label>영어 시험 종류</label>
@@ -261,7 +268,7 @@
 
         <!-- Section 4: 경력 정보 -->
         <div class="form-accordion" id="acc4">
-            <div class="acc-header" onclick="toggleAcc(4)">
+            <div class="acc-header" id="acc-header4" role="button" tabindex="0" aria-expanded="false" aria-controls="acc-body4" onclick="toggleAcc(4)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleAcc(4)}">
                 <span class="acc-num">4</span>
                 <div style="flex:1;">
                     <div style="font-weight:700;">경력 정보</div>
@@ -269,7 +276,7 @@
                 </div>
                 <span id="acc-arrow4">▼</span>
             </div>
-            <div class="acc-body" id="acc-body4">
+            <div class="acc-body acc-body-closed" id="acc-body4" role="region" aria-labelledby="acc-header4">
                 <div style="font-weight:600; margin-bottom:12px; color:var(--primary);">캐나다 내 경력</div>
                 <div class="calc-grid">
                     <div class="input-group">
@@ -339,7 +346,7 @@
 
         <!-- Section 5: 가산점 요소 -->
         <div class="form-accordion" id="acc5">
-            <div class="acc-header" onclick="toggleAcc(5)">
+            <div class="acc-header" id="acc-header5" role="button" tabindex="0" aria-expanded="false" aria-controls="acc-body5" onclick="toggleAcc(5)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleAcc(5)}">
                 <span class="acc-num">5</span>
                 <div style="flex:1;">
                     <div style="font-weight:700;">가산점 요소</div>
@@ -347,7 +354,7 @@
                 </div>
                 <span id="acc-arrow5">▼</span>
             </div>
-            <div class="acc-body" id="acc-body5">
+            <div class="acc-body acc-body-closed" id="acc-body5" role="region" aria-labelledby="acc-header5">
                 <div class="calc-grid">
                     <div class="input-group">
                         <label>캐나다 내 형제/자매 거주</label>
@@ -376,7 +383,7 @@
 
         <!-- Section 6: 이민 선호도 -->
         <div class="form-accordion" id="acc6">
-            <div class="acc-header" onclick="toggleAcc(6)">
+            <div class="acc-header" id="acc-header6" role="button" tabindex="0" aria-expanded="false" aria-controls="acc-body6" onclick="toggleAcc(6)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleAcc(6)}">
                 <span class="acc-num">6</span>
                 <div style="flex:1;">
                     <div style="font-weight:700;">이민 선호도</div>
@@ -384,7 +391,7 @@
                 </div>
                 <span id="acc-arrow6">▼</span>
             </div>
-            <div class="acc-body" id="acc-body6">
+            <div class="acc-body acc-body-closed" id="acc-body6" role="region" aria-labelledby="acc-header6">
                 <div class="calc-grid">
                     <div class="input-group">
                         <label>선호 거주 지역</label>
@@ -455,7 +462,7 @@
 
         <!-- Section 7: 전략 시뮬레이션 -->
         <div class="form-accordion" id="acc7">
-            <div class="acc-header" onclick="toggleAcc(7)">
+            <div class="acc-header" id="acc-header7" role="button" tabindex="0" aria-expanded="false" aria-controls="acc-body7" onclick="toggleAcc(7)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleAcc(7)}">
                 <span class="acc-num">7</span>
                 <div style="flex:1;">
                     <div style="font-weight:700;">전략 시뮬레이션</div>
@@ -463,7 +470,7 @@
                 </div>
                 <span id="acc-arrow7">▼</span>
             </div>
-            <div class="acc-body" id="acc-body7">
+            <div class="acc-body acc-body-closed" id="acc-body7" role="region" aria-labelledby="acc-header7">
                 <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:16px;">아래 옵션을 선택하면 분석 결과에서 시나리오별 점수 향상 시뮬레이션을 확인할 수 있습니다.</p>
                 <div class="calc-grid">
                     <div class="input-group">
@@ -1023,9 +1030,9 @@
     <br><br>
 
     <!-- Article Modal -->
-    <div id="articleModal" class="modal">
+    <div id="articleModal" class="modal" role="dialog" aria-modal="true" aria-label="기사 상세 보기">
         <div class="modal-content">
-            <span class="close-modal" onclick="closeArticle()">&times;</span>
+            <span class="close-modal" onclick="closeArticle()" aria-label="닫기" role="button" tabindex="0">&times;</span>
             <div id="modalBody" class="modal-body">
                 <!-- Content will be injected by JS -->
             </div>
@@ -1037,20 +1044,22 @@
         <h2>문의 및 제휴</h2>
         <p>협업이나 특정 질문이 있으신가요? 저희에게 연락주세요!</p>
         <form action="https://formspree.io/f/mjgejrry" method="POST">
-            <label>성함:</label>
-            <input type="text" name="name" required placeholder="홍길동">
+            <label for="contactName">성함:</label>
+            <input type="text" name="name" id="contactName" required placeholder="홍길동">
 
-            <label>이메일:</label>
-            <input type="email" name="email" required placeholder="example@email.com">
-            
-            <label>메시지:</label>
-            <textarea name="message" rows="4" required placeholder="내용을 입력해주세요..."></textarea>
+            <label for="contactEmail">이메일:</label>
+            <input type="email" name="email" id="contactEmail" required placeholder="example@email.com">
+
+            <label for="contactMessage">메시지:</label>
+            <textarea name="message" id="contactMessage" rows="4" required placeholder="내용을 입력해주세요..."></textarea>
             
             <button type="submit">메시지 전송</button>
         </form>
     </div>
 
 </div>
+
+<button id="backToTop" aria-label="맨 위로">&#8593;</button>
 
 <footer>
     <p>&copy; 2026 Canada PR Builder. All rights reserved.</p>
