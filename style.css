@@ -630,7 +630,7 @@ footer {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-bottom: 32px;
+    margin-bottom: 0;
 }
 .hero-chip {
     font-size: 0.8rem;
