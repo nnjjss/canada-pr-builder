@@ -100,6 +100,7 @@ const translations = {
         navCalculator: "CRS 계산기",
         navGuide: "이민 가이드",
         navDraws: "선발 결과",
+        navPNP: "PNP 가이드",
         navArticles: "뉴스",
         navContact: "문의",
         homeH2: "Welcome to Canada",
@@ -227,6 +228,29 @@ const translations = {
         thInvitations: "초청 인원",
         thScore: "합격 점수 (CRS)",
         drawsDisclaimer: "* PNP 선발은 주정부 가산점 600점이 포함된 점수입니다.",
+        pnpH2: "주정부 이민 (PNP)란?",
+        pnpIntroP: "PNP(Provincial Nominee Program)는 퀘벡을 제외한 캐나다 각 주정부·준주가 자체 기준으로 이민자를 선발·추천하는 프로그램입니다. 지역 노동 시장 수요에 맞는 인재를 유치하며, 노미네이션을 받으면 연방 영주권 신청 자격이 주어집니다. 익스프레스 엔트리 연계 스트림에서는 CRS <strong>+600점</strong>이 자동 부여돼 영주권 취득에 결정적 역할을 합니다.",
+        pnpEeLabel: "EE 연계형 (Enhanced Stream)",
+        pnpEeLi1: "익스프레스 엔트리 풀 등록 필수",
+        pnpEeLi2: "주정부 NOI → 노미네이션 수락",
+        pnpEeLi3: "CRS <strong>+600점</strong> 자동 부여",
+        pnpEeLi4: "처리 기간 약 <strong>6개월</strong>",
+        pnpBaseLabel: "기본 스트림 (Base Stream)",
+        pnpBaseLi1: "EE 풀 등록 없이 주정부에 직접 신청",
+        pnpBaseLi2: "주정부 노미네이션 후 IRCC에 별도 신청",
+        pnpBaseLi3: "CRS 가산점 없음",
+        pnpBaseLi4: "처리 기간 약 <strong>1~2년</strong>",
+        pnpProvincesH3: "주요 주별 PNP 프로그램",
+        pnpQuebecNote: "* 퀘벡주는 별도의 이민 시스템(QSWP/PEQ)을 운영하며 연방 PNP와 다릅니다.",
+        pnpStrategyH3: "PNP 활용 전략",
+        pnpStrat1T: "EE 풀 먼저 등록",
+        pnpStrat1D: "가능한 한 빨리 EE 풀에 프로필을 등록해 주정부 NOI 수신 자격을 갖추세요. CRS가 낮더라도 특정 주정부의 타깃 직군이라면 NOI를 받을 수 있습니다.",
+        pnpStrat2T: "타깃 주정부 선택",
+        pnpStrat2D: "본인의 직군(NOC)·경력·거주지를 분석해 가장 매칭 가능성이 높은 주를 2~3곳 선정하고, 해당 주정부 이민 웹사이트에서 최신 Draws를 모니터링하세요.",
+        pnpStrat3T: "AIP (Atlantic Immigration Program)",
+        pnpStrat3D: "뉴브런즈윅·노바스코샤·PEI·뉴펀들랜드 중 하나에서 고용주 오퍼를 받으면 AIP로 영주권 신청이 가능합니다. 대서양 연안 주는 경쟁이 낮아 중간 CRS 대상자에게 유리합니다.",
+        pnpStrat4T: "RNIP (Rural & Northern Immigration Pilot)",
+        pnpStrat4D: "농촌·북부 지역 커뮤니티가 직접 이민자를 추천하는 파일럿 프로그램입니다. 특정 지역 거주·취업 의향이 있다면 낮은 CRS로도 영주권 취득이 가능합니다.",
         guideH2: "익스프레스 엔트리(Express Entry)란?",
         guideP1: "익스프레스 엔트리는 캐나다 정부가 숙련직 근로자의 영주권 신청을 관리하는 시스템입니다. 다음 세 가지 주요 프로그램을 포함합니다:",
         liFswp: "연방 숙련직 프로그램 (FSWP): 해외 숙련직 경력 최소 1년(최근 10년 이내), CLB 7 이상, TEER 0·1·2·3 직군. 선발 점수 67점 이상 필요.",
@@ -266,6 +290,7 @@ const translations = {
         navCalculator: "CRS Calculator",
         navGuide: "Guide",
         navDraws: "Draws",
+        navPNP: "PNP Guide",
         navArticles: "News",
         navContact: "Contact",
         homeH2: "Welcome to Canada",
@@ -393,6 +418,29 @@ const translations = {
         thInvitations: "Invitations",
         thScore: "Cut-off Score (CRS)",
         drawsDisclaimer: "* PNP draws include the 600-point provincial nomination bonus.",
+        pnpH2: "Provincial Nominee Program (PNP)",
+        pnpIntroP: "The PNP allows Canadian provinces and territories (except Quebec) to nominate immigrants who meet their specific labour market needs. Once nominated, you may apply for permanent residence. Through Express Entry-linked Enhanced Streams, a PNP nomination automatically adds <strong>+600 CRS points</strong>, virtually guaranteeing an ITA.",
+        pnpEeLabel: "EE-Linked (Enhanced Stream)",
+        pnpEeLi1: "Must have an active Express Entry profile",
+        pnpEeLi2: "Province issues NOI → Accept nomination",
+        pnpEeLi3: "Automatic CRS <strong>+600 points</strong>",
+        pnpEeLi4: "Processing time approx. <strong>6 months</strong>",
+        pnpBaseLabel: "Base Stream",
+        pnpBaseLi1: "Apply directly to the province (no EE profile needed)",
+        pnpBaseLi2: "Provincial nomination → Separate IRCC application",
+        pnpBaseLi3: "No CRS bonus points",
+        pnpBaseLi4: "Processing time approx. <strong>1–2 years</strong>",
+        pnpProvincesH3: "PNP Programs by Province",
+        pnpQuebecNote: "* Quebec operates its own immigration system (QSWP/PEQ) and is separate from the federal PNP.",
+        pnpStrategyH3: "PNP Strategy Tips",
+        pnpStrat1T: "Register in Express Entry First",
+        pnpStrat1D: "Create your EE profile as early as possible to become eligible for provincial Notices of Interest (NOIs). Even with a lower CRS, you may receive an NOI if your occupation matches a province's target.",
+        pnpStrat2T: "Target the Right Province",
+        pnpStrat2D: "Analyze your NOC, experience, and location to shortlist 2–3 provinces with the best match. Monitor each province's latest draws on their official immigration website.",
+        pnpStrat3T: "AIP (Atlantic Immigration Program)",
+        pnpStrat3D: "If you secure a job offer in NB, NS, PEI, or NL, the AIP can be a viable path. Atlantic provinces have less competition and can be ideal for mid-CRS candidates.",
+        pnpStrat4T: "RNIP (Rural & Northern Immigration Pilot)",
+        pnpStrat4D: "Smaller communities in rural or northern regions directly recommend immigrants. If you're willing to settle in a specific region, RNIP can lead to PR even with a modest CRS score.",
         guideH2: "What is Express Entry?",
         guideP1: "Express Entry is a system used by the Canadian government to manage applications for permanent residence from skilled workers. It includes three main programs:",
         liFswp: "Federal Skilled Worker Program (FSWP): 1+ yr of foreign skilled work experience (TEER 0–3) in the past 10 years. CLB 7+, and must score 67+ on selection factors.",
@@ -450,8 +498,9 @@ function updateLanguage(lang) {
     navLinks[1].textContent = t.navCalculator;
     navLinks[2].textContent = t.navGuide;
     navLinks[3].textContent = t.navDraws;
-    navLinks[4].textContent = t.navArticles;
-    navLinks[5].textContent = t.navContact;
+    navLinks[4].textContent = t.navPNP;
+    navLinks[5].textContent = t.navArticles;
+    navLinks[6].textContent = t.navContact;
 
     // Home
     document.getElementById('homeH2').textContent = t.homeH2;
@@ -761,6 +810,31 @@ function updateLanguage(lang) {
         });
     }
 
+    // PNP Guide Section
+    document.querySelector('#pnp-guide h2').textContent = t.pnpH2;
+    document.querySelector('#pnpIntroP').innerHTML = t.pnpIntroP;
+    document.querySelector('#pnpEeLabel').textContent = t.pnpEeLabel;
+    document.querySelector('#pnpEeLi1').innerHTML = t.pnpEeLi1;
+    document.querySelector('#pnpEeLi2').innerHTML = t.pnpEeLi2;
+    document.querySelector('#pnpEeLi3').innerHTML = t.pnpEeLi3;
+    document.querySelector('#pnpEeLi4').innerHTML = t.pnpEeLi4;
+    document.querySelector('#pnpBaseLabel').textContent = t.pnpBaseLabel;
+    document.querySelector('#pnpBaseLi1').innerHTML = t.pnpBaseLi1;
+    document.querySelector('#pnpBaseLi2').innerHTML = t.pnpBaseLi2;
+    document.querySelector('#pnpBaseLi3').innerHTML = t.pnpBaseLi3;
+    document.querySelector('#pnpBaseLi4').innerHTML = t.pnpBaseLi4;
+    document.querySelector('#pnpProvincesH3').textContent = t.pnpProvincesH3;
+    document.querySelector('#pnpQuebecNote').textContent = t.pnpQuebecNote;
+    document.querySelector('#pnpStrategyH3').textContent = t.pnpStrategyH3;
+    document.querySelector('#pnpStrat1T').textContent = t.pnpStrat1T;
+    document.querySelector('#pnpStrat1D').textContent = t.pnpStrat1D;
+    document.querySelector('#pnpStrat2T').textContent = t.pnpStrat2T;
+    document.querySelector('#pnpStrat2D').textContent = t.pnpStrat2D;
+    document.querySelector('#pnpStrat3T').textContent = t.pnpStrat3T;
+    document.querySelector('#pnpStrat3D').textContent = t.pnpStrat3D;
+    document.querySelector('#pnpStrat4T').textContent = t.pnpStrat4T;
+    document.querySelector('#pnpStrat4D').textContent = t.pnpStrat4D;
+
     // Dashboard
     document.querySelector('#strategyResults h2').textContent = lang === 'ko' ? 'AI 맞춤형 전략 리포트' : 'AI Personalized Strategy Report';
     const statLabels = document.querySelectorAll('.stat-label');
@@ -836,8 +910,9 @@ function updateLanguage(lang) {
     footerLinks[0].textContent = t.navHome;
     footerLinks[1].textContent = t.navGuide;
     footerLinks[2].textContent = t.navDraws;
-    footerLinks[3].textContent = t.footerPrivacy;
-    footerLinks[4].textContent = t.footerContact;
+    footerLinks[3].textContent = t.navPNP;
+    footerLinks[4].textContent = t.footerPrivacy;
+    footerLinks[5].textContent = t.footerContact;
 
     updateLangPlaceholders();
     if (document.getElementById('birthYear').value) calcAge();

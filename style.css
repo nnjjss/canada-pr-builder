@@ -1122,3 +1122,202 @@ body.modal-open {
     .raise-list { grid-template-columns: 1fr; }
 }
 
+
+/* ===================== PNP Guide Section ===================== */
+.pnp-pathway-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 24px 0;
+}
+@media (max-width: 640px) {
+    .pnp-pathway-grid { grid-template-columns: 1fr; }
+}
+.pnp-pathway-card {
+    border-radius: 14px;
+    padding: 24px 22px;
+    position: relative;
+    overflow: hidden;
+}
+.pnp-pathway-card.pnp-ee {
+    background: linear-gradient(135deg, #fff7f7 0%, #ffe9e9 100%);
+    border: 2px solid var(--maple-red);
+}
+.pnp-pathway-card.pnp-base {
+    background: linear-gradient(135deg, #f7f9ff 0%, #e8eeff 100%);
+    border: 2px solid var(--primary);
+}
+.pnp-pathway-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+.pnp-pathway-label {
+    font-size: 1rem;
+    font-weight: 800;
+    margin-bottom: 14px;
+    color: var(--text-main);
+}
+.pnp-pathway-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.pnp-pathway-list li {
+    font-size: 0.88rem;
+    color: var(--text-sub);
+    padding-left: 18px;
+    position: relative;
+    line-height: 1.5;
+}
+.pnp-pathway-list li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: var(--maple-red);
+    font-size: 0.75rem;
+    top: 2px;
+}
+.pnp-base .pnp-pathway-list li::before { color: var(--primary); }
+
+/* Province grid */
+.pnp-provinces-section { margin-top: 32px; }
+.pnp-provinces-section h3 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 16px;
+}
+.pnp-province-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+@media (max-width: 768px) {
+    .pnp-province-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+    .pnp-province-grid { grid-template-columns: 1fr; }
+}
+.pnp-province-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 16px;
+    transition: box-shadow 0.2s;
+}
+.pnp-province-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+.pnp-province-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.pnp-province-abbr {
+    width: 38px;
+    height: 38px;
+    background: var(--maple-red);
+    color: #fff;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.78rem;
+    font-weight: 900;
+    flex-shrink: 0;
+    letter-spacing: 0.02em;
+}
+.pnp-province-name {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-main);
+    line-height: 1.2;
+}
+.pnp-province-program {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--text-sub);
+    margin-top: 2px;
+}
+.pnp-province-streams {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.pnp-province-streams li {
+    font-size: 0.78rem;
+    color: var(--text-sub);
+    padding-left: 14px;
+    position: relative;
+    line-height: 1.4;
+}
+.pnp-province-streams li::before {
+    content: "·";
+    position: absolute;
+    left: 4px;
+    font-weight: 700;
+    color: var(--maple-red);
+}
+.pnp-quebec-note {
+    font-size: 0.8rem;
+    color: var(--text-sub);
+    background: var(--bg-light);
+    border-left: 3px solid var(--border-color);
+    padding: 10px 14px;
+    border-radius: 0 8px 8px 0;
+    margin-top: 14px;
+}
+
+/* Strategy grid */
+.pnp-strategy-section { margin-top: 32px; }
+.pnp-strategy-section h3 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 16px;
+}
+.pnp-strategy-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+@media (max-width: 600px) {
+    .pnp-strategy-grid { grid-template-columns: 1fr; }
+}
+.pnp-strategy-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: var(--bg-light);
+    border-radius: 12px;
+    padding: 16px;
+}
+.pnp-strategy-num {
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: var(--maple-red);
+    opacity: 0.3;
+    line-height: 1;
+    flex-shrink: 0;
+    min-width: 28px;
+}
+.pnp-strategy-item strong {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 4px;
+}
+.pnp-strategy-item p {
+    font-size: 0.8rem;
+    color: var(--text-sub);
+    margin: 0;
+    line-height: 1.5;
+}
