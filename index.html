@@ -270,16 +270,6 @@
                 <span id="acc-arrow4">▼</span>
             </div>
             <div class="acc-body" id="acc-body4">
-                <!-- NOC Finder (integrated) -->
-                <div style="margin-bottom:20px; padding-bottom:20px; border-bottom:1px dashed var(--border-color);">
-                    <div style="font-weight:700; margin-bottom:6px; font-size:0.95rem; color:var(--primary);" id="noc-finder-title">NOC 코드 찾기 (2021)</div>
-                    <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:10px;" id="noc-finder-desc">직업명이나 키워드(<b>영문 전용</b>)를 입력해 NOC 코드를 찾아보세요.</p>
-                    <input type="text" id="nocSearchInput" placeholder="예: Software, Nurse, Manager, Cook..." onkeyup="filterNOC()" style="margin-bottom:8px;">
-                    <div id="nocResults" class="noc-results-list" style="max-height:260px;">
-                        <p style="text-align: center; padding: 20px; color: var(--text-muted);">검색어를 입력하면 관련 NOC 코드가 표시됩니다.</p>
-                    </div>
-                    <p style="font-size: 0.8rem; margin-top: 8px; color: var(--text-muted);" id="noc-disclaimer">* 본 리스트는 주요 숙련직 위주로 구성되어 있으며, 정확한 매칭은 공식 IRCC 웹사이트를 참조하세요.</p>
-                </div>
                 <div style="font-weight:600; margin-bottom:12px; color:var(--primary);">캐나다 내 경력</div>
                 <div class="calc-grid">
                     <div class="input-group">
@@ -293,13 +283,15 @@
                             <option value="5">5년 이상</option>
                         </select>
                     </div>
-                    <div class="input-group">
+                    <div class="input-group noc-search-group">
                         <label>캐나다 직업 NOC 코드</label>
-                        <input type="text" id="canadianNOC" placeholder="예: 21232" oninput="lookupNOC('canadianNOC','canadianTEER')" maxlength="5" />
+                        <input type="text" id="canadianNOCSearch" placeholder="직업명/키워드 입력 (영문, 예: Software Engineer)" oninput="searchNOCInline('canadian')" onblur="hideNOCDropdown('canadian')" autocomplete="off" />
+                        <div id="canadianNOCDrop" class="noc-inline-drop" style="display:none;"></div>
+                        <input type="hidden" id="canadianNOC" value="" />
                     </div>
                     <div class="input-group">
                         <label>TEER / 직업명 (자동표시)</label>
-                        <div class="auto-val" id="canadianTEER">NOC 코드 입력 후 자동 표시</div>
+                        <div class="auto-val" id="canadianTEER">직업명 검색 후 선택하면 자동 표시</div>
                     </div>
                 </div>
                 <div style="font-weight:600; margin:16px 0 12px; color:var(--primary); padding-top:16px; border-top:1px dashed var(--border-color);">해외 경력</div>
@@ -312,13 +304,15 @@
                             <option value="3">3년 이상</option>
                         </select>
                     </div>
-                    <div class="input-group">
+                    <div class="input-group noc-search-group">
                         <label>해외 직업 NOC 코드</label>
-                        <input type="text" id="foreignNOC" placeholder="예: 21232" oninput="lookupNOC('foreignNOC','foreignTEER')" maxlength="5" />
+                        <input type="text" id="foreignNOCSearch" placeholder="직업명/키워드 입력 (영문, 예: Software Engineer)" oninput="searchNOCInline('foreign')" onblur="hideNOCDropdown('foreign')" autocomplete="off" />
+                        <div id="foreignNOCDrop" class="noc-inline-drop" style="display:none;"></div>
+                        <input type="hidden" id="foreignNOC" value="" />
                     </div>
                     <div class="input-group">
                         <label>TEER / 직업명 (자동표시)</label>
-                        <div class="auto-val" id="foreignTEER">NOC 코드 입력 후 자동 표시</div>
+                        <div class="auto-val" id="foreignTEER">직업명 검색 후 선택하면 자동 표시</div>
                     </div>
                 </div>
                 <div style="font-weight:600; margin:16px 0 12px; color:var(--primary); padding-top:16px; border-top:1px dashed var(--border-color);">잡오퍼 (Job Offer)</div>

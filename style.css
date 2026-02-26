@@ -471,6 +471,62 @@ footer {
     color: var(--text-main);
 }
 
+/* Inline NOC search dropdown */
+.noc-search-group {
+    position: relative;
+}
+.noc-inline-drop {
+    position: absolute;
+    top: calc(100% - 4px);
+    left: 0;
+    right: 0;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.13);
+    z-index: 200;
+    max-height: 260px;
+    overflow-y: auto;
+}
+.noc-drop-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    cursor: pointer;
+    border-bottom: 1px solid var(--border-color);
+    transition: background 0.15s;
+}
+.noc-drop-item:last-child { border-bottom: none; }
+.noc-drop-item:hover { background: var(--glass-bg); }
+.noc-drop-code {
+    font-weight: 800;
+    font-size: 0.82rem;
+    color: var(--maple-red);
+    font-family: monospace;
+    min-width: 50px;
+}
+.noc-drop-teer {
+    font-size: 0.72rem;
+    color: var(--card-bg);
+    background: var(--text-main);
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+.noc-drop-title {
+    font-size: 0.85rem;
+    color: var(--text-main);
+    flex: 1;
+}
+.noc-drop-empty {
+    padding: 14px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    text-align: center;
+}
+
 /* Strategy Dashboard Styles */
 .dashboard-grid {
     display: grid;

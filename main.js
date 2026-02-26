@@ -599,9 +599,9 @@ function updateLanguage(lang) {
     empPnpSelect.options[0].textContent = t.no;
     empPnpSelect.options[1].textContent = t.yes;
 
-    const nocPh = lang === 'ko' ? '예: 21232' : 'e.g. 21232';
-    document.getElementById('canadianNOC').placeholder = nocPh;
-    document.getElementById('foreignNOC').placeholder = nocPh;
+    const nocSearchPh = lang === 'ko' ? '직업명/키워드 입력 (영문, 예: Software Engineer)' : 'Type job title/keyword (e.g. Software Engineer)';
+    document.getElementById('canadianNOCSearch').placeholder = nocSearchPh;
+    document.getElementById('foreignNOCSearch').placeholder = nocSearchPh;
 
     // Accordion 5
     document.querySelector('#acc5 .acc-header div > div').textContent = t.acc5Title;
@@ -707,16 +707,6 @@ function updateLanguage(lang) {
     // Analyze Button
     document.querySelector('button[onclick="calculateCRS()"]').textContent = t.btnAnalyze;
 
-    // NOC Finder (integrated in acc4)
-    const nocFinderTitle = document.getElementById('noc-finder-title');
-    if (nocFinderTitle) nocFinderTitle.textContent = t.nocH2;
-    const nocFinderDesc = document.getElementById('noc-finder-desc');
-    if (nocFinderDesc) nocFinderDesc.innerHTML = t.nocP;
-    document.getElementById('nocSearchInput').placeholder = t.nocSearchPlaceholder;
-    const nocResultsP = document.querySelector('#nocResults p');
-    if (nocResultsP) nocResultsP.textContent = t.nocDefaultText;
-    const nocDisclaimerEl = document.getElementById('noc-disclaimer');
-    if (nocDisclaimerEl) nocDisclaimerEl.textContent = t.nocDisclaimer;
 
     // Latest Draws Section header, description, table headers, disclaimer
     document.querySelector('#latest-draws h2').textContent = t.drawsH2;
@@ -1361,27 +1351,6 @@ const nocData = [
     { code: "85121", title: "Landscaping and grounds maintenance labourers", teer: "5", cat: "Agriculture" }
 ];
 
-window.filterNOC = function() {
-    const input = document.getElementById('nocSearchInput').value.toLowerCase().trim();
-    const resultsContainer = document.getElementById('nocResults');
-    const t = translations[currentLang];
-    
-    if (input.length < 2) {
-        resultsContainer.innerHTML = `<p style="text-align: center; padding: 20px; color: var(--text-muted);">${t.nocDefaultText}</p>`;
-        return;
-    }
-    const keywords = input.split(' ');
-    const filtered = nocData.filter(item => {
-        const fullContent = (item.title + " " + item.code + " " + (item.cat || "")).toLowerCase();
-        return keywords.every(kw => fullContent.includes(kw));
-    });
-    if (filtered.length === 0) {
-        resultsContainer.innerHTML = `<p style="text-align: center; padding: 20px; color: var(--text-muted);">${currentLang === 'ko' ? '일치하는 결과가 없습니다.' : 'No matching results found.'}</p>`;
-        return;
-    }
-    resultsContainer.innerHTML = filtered.map(item => `<div class="noc-item"><div class="noc-header"><span class="noc-code">${item.code}</span><span class="noc-teer">TEER ${item.teer}</span>${item.cat ? `<span class="noc-cat-badge">${item.cat}</span>` : ''}</div><div class="noc-title">${item.title}</div></div>`).join('');
-};
-
 window.openArticle = function(index) {
     const article = articlesData[currentLang][index];
     if (!article) return;
@@ -1509,6 +1478,45 @@ function lookupNOC(inputId, displayId) {
         display.textContent = currentLang === 'ko' ? '일치하는 NOC 코드 없음' : 'No matching NOC code';
         display.style.color = 'var(--text-muted)';
     }
+}
+
+function searchNOCInline(prefix) {
+    const input = document.getElementById(prefix + 'NOCSearch').value.trim().toLowerCase();
+    const drop = document.getElementById(prefix + 'NOCDrop');
+    if (!input || input.length < 2) { drop.style.display = 'none'; return; }
+    const keywords = input.split(/\s+/);
+    const filtered = nocData.filter(item => {
+        const hay = (item.title + ' ' + item.code + ' ' + (item.cat || '')).toLowerCase();
+        return keywords.every(kw => hay.includes(kw));
+    }).slice(0, 8);
+    if (filtered.length === 0) {
+        drop.innerHTML = `<div class="noc-drop-empty">${currentLang === 'ko' ? '일치하는 결과 없음' : 'No matching results'}</div>`;
+    } else {
+        drop.innerHTML = filtered.map(item =>
+            `<div class="noc-drop-item" onmousedown="selectNOCInline('${prefix}','${item.code}',${JSON.stringify(item.title)},${item.teer})">
+                <span class="noc-drop-code">${item.code}</span>
+                <span class="noc-drop-teer">TEER ${item.teer}</span>
+                <span class="noc-drop-title">${item.title}</span>
+            </div>`
+        ).join('');
+    }
+    drop.style.display = 'block';
+}
+
+function selectNOCInline(prefix, code, title, teer) {
+    document.getElementById(prefix + 'NOCSearch').value = title;
+    document.getElementById(prefix + 'NOC').value = code;
+    document.getElementById(prefix + 'NOCDrop').style.display = 'none';
+    const display = document.getElementById(prefix + 'TEER');
+    display.textContent = `NOC ${code} · TEER ${teer} — ${title}`;
+    display.style.color = 'var(--primary)';
+}
+
+function hideNOCDropdown(prefix) {
+    setTimeout(() => {
+        const drop = document.getElementById(prefix + 'NOCDrop');
+        if (drop) drop.style.display = 'none';
+    }, 150);
 }
 
 function toggleAcc(num) {
