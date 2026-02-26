@@ -576,11 +576,15 @@
                 <!-- Recommended paths will be injected here -->
             </div>
 
-            <div id="simulation-section" style="margin:30px 0; display:none;">
-                <h3 style="margin-bottom:16px;">점수 향상 시뮬레이션</h3>
-                <div id="simulation-cards" class="articles-grid">
-                    <!-- Simulation cards injected here -->
+            <div id="strategy-cards-section" style="display:none; margin:30px 0;">
+                <div class="strategy-pipeline">
+                    <div class="strategy-pipeline-score"><span id="pipelineScore">-</span></div>
+                    <div class="strategy-pipeline-arrow">→</div>
+                    <div class="strategy-pipeline-chip">AI 분석</div>
+                    <div class="strategy-pipeline-arrow">→</div>
+                    <div class="strategy-pipeline-chip" id="pipelineLabel">전략별 점수 상승 예상</div>
                 </div>
+                <div id="strategy-cards-grid" class="strategy-cards-grid"></div>
             </div>
 
             <div id="strategic-advice" class="advice-box">

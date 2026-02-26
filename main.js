@@ -1851,7 +1851,7 @@ function calculateCRS() {
 
     renderScoreBreakdown(breakdown, finalScore);
     renderRecommendations(profile);
-    renderSimulations(profile);
+    renderStrategyCards(profile);
     renderStrategicAdvice(profile);
 
     document.getElementById('strategyResults').scrollIntoView({ behavior: 'smooth' });
@@ -1974,68 +1974,41 @@ function renderRecommendations(profile) {
     });
 }
 
-function renderSimulations(profile) {
-    const section = document.getElementById('simulation-section');
-    const container = document.getElementById('simulation-cards');
-    const labelPoints = currentLang === 'ko' ? '점' : 'pts';
-    container.innerHTML = '';
-    const sims = [];
+function renderStrategyCards(profile) {
+    const section = document.getElementById('strategy-cards-section');
+    const grid = document.getElementById('strategy-cards-grid');
+    const isKo = currentLang === 'ko';
 
-    // IELTS 재응시
-    if (profile.willingRetakeIELTS === 'yes' && profile.minCLB < 10) {
-        const targetCLB = Math.min(10, profile.minCLB + 1);
-        const currentLangPts = clbToLangPts(profile.clbL, profile.effectiveMarried) + clbToLangPts(profile.clbR, profile.effectiveMarried) + clbToLangPts(profile.clbW, profile.effectiveMarried) + clbToLangPts(profile.clbS, profile.effectiveMarried);
-        const newLangPts = clbToLangPts(targetCLB, profile.effectiveMarried) * 4;
-        const gain = newLangPts - currentLangPts;
-        if (gain > 0) sims.push({ 
-            title: currentLang === 'ko' ? 'IELTS 재응시' : 'Retake IELTS', 
-            gain: `+${gain}`, 
-            desc: currentLang === 'ko' ? `전 영역 CLB ${targetCLB} 달성 시 언어 점수 약 ${gain}점 향상 예상.` : `Expected ${gain} pts increase by achieving CLB ${targetCLB} in all sections.`
-        });
-    }
-    // 불어 학습
-    if (profile.canStudyFrench === 'yes' && profile.frenchCLB < 7) {
-        sims.push({ 
-            title: currentLang === 'ko' ? '불어 CLB 7 달성' : 'Achieve French CLB 7', 
-            gain: '+25', 
-            desc: currentLang === 'ko' ? '불어 CLB 7~8 달성 시 +25점 및 불어 카테고리 드로우 자격 획득.' : 'Get +25 pts and eligibility for French draws by reaching CLB 7.'
-        });
-    }
-    // 추가 경력
-    if (profile.planMoreWork === 'yes') {
-        const nextExp = Math.min(5, profile.canadianExpYears + 1);
-        const canExpSingle = {1:40, 2:53, 3:64, 4:72, 5:80};
-        const canExpMarried = {1:35, 2:46, 3:56, 4:63, 5:70};
-        const map = profile.effectiveMarried ? canExpMarried : canExpSingle;
-        const currentPts = map[profile.canadianExpYears] || 0;
-        const newPts = map[nextExp] || currentPts;
-        const gain = newPts - currentPts;
-        if (gain > 0) sims.push({ 
-            title: currentLang === 'ko' ? '캐나다 경력 1년 추가' : '1 Year More Canadian Exp', 
-            gain: `+${gain}`, 
-            desc: currentLang === 'ko' ? `캐나다 경력 ${nextExp}년 달성 시 경력 점수 ${gain}점 향상.` : `Score increases by ${gain} pts with ${nextExp} years of Canadian experience.`
-        });
-    }
-    // 배우자 IELTS
-    if (profile.isMarried && profile.spouseIELTS === 'yes') {
-        sims.push({ 
-            title: currentLang === 'ko' ? '배우자 IELTS 응시' : 'Spouse Retakes IELTS', 
-            gain: '+Max 20', 
-            desc: currentLang === 'ko' ? '배우자 CLB 9 이상 달성 시 배우자 언어 점수 최대 20점 추가.' : 'Up to 20 bonus points if spouse achieves CLB 9+.'
-        });
-    }
-    // 고용주 변경 / 잡오퍼 (2025-03-25 이후 CRS 가산점 없음 — 시뮬레이션 항목 제외)
+    document.getElementById('pipelineScore').textContent = isKo ? `${profile.finalScore}점` : `${profile.finalScore} pts`;
+    document.getElementById('pipelineLabel').textContent = isKo ? '전략별 점수 상승 예상' : 'Expected Score Gains';
 
-    if (sims.length === 0) { section.style.display = 'none'; return; }
+    const cards = isKo ? [
+        { icon: '🗣️', title: '언어 점수 향상',      condition: 'CLB 9~10 달성',                gain: '+40~70점' },
+        { icon: '🇫🇷', title: '프랑스어 추가',       condition: 'CLB 7 이상',                   gain: '최대 +50점' },
+        { icon: '🏛️', title: 'PNP 노미네이션',      condition: 'EE 연계',                      gain: '+600점' },
+        { icon: '🍁', title: '캐나다 경력 쌓기',     condition: 'NOC TEER 0–3, 풀타임',         gain: '최대 +80점' },
+        { icon: '🌏', title: '해외 경력 쌓기',       condition: '관련 직종 3년 이상',            gain: '최대 +50점' },
+        { icon: '🎓', title: '학위 추가',            condition: '학사 → 석사/박사',             gain: '최대 +200점' },
+        { icon: '🏠', title: '캐나다 학력/가족',     condition: '캐나다 학위 1년+ → +30점<br>형제·자매 거주 → +15점', gain: '최대 +45점' },
+    ] : [
+        { icon: '🗣️', title: 'Language Score',      condition: 'Achieve CLB 9–10',             gain: '+40–70 pts' },
+        { icon: '🇫🇷', title: 'French Language',    condition: 'CLB 7+',                       gain: 'Up to +50 pts' },
+        { icon: '🏛️', title: 'PNP Nomination',      condition: 'EE-linked',                    gain: '+600 pts' },
+        { icon: '🍁', title: 'Canadian Work Exp',   condition: 'NOC TEER 0–3, full-time',      gain: 'Up to +80 pts' },
+        { icon: '🌏', title: 'Foreign Work Exp',    condition: '3+ years in related field',    gain: 'Up to +50 pts' },
+        { icon: '🎓', title: 'Higher Education',    condition: 'Bachelor → Master / PhD',      gain: 'Up to +200 pts' },
+        { icon: '🏠', title: 'Study & Family',      condition: 'Canadian study → +30 pts<br>Sibling in Canada → +15 pts', gain: 'Up to +45 pts' },
+    ];
+
+    grid.innerHTML = cards.map(c => `
+        <div class="strategy-card">
+            <div class="strategy-card-icon">${c.icon}</div>
+            <div class="strategy-card-title">${c.title}</div>
+            <div class="strategy-card-condition">${c.condition}</div>
+            <div class="strategy-card-gain">${c.gain}</div>
+        </div>`).join('');
+
     section.style.display = 'block';
-    document.querySelector('#simulation-section h3').textContent = currentLang === 'ko' ? '점수 향상 시뮬레이션' : 'Score Improvement Simulation';
-    sims.forEach(s => {
-        container.innerHTML += `<div class="article-card" style="padding:20px; text-align:center;">
-            <div class="sim-gain">${s.gain}${labelPoints}</div>
-            <h3 style="font-size:1rem; margin:8px 0;">${s.title}</h3>
-            <p style="font-size:0.8rem; color:var(--text-muted);">${s.desc}</p>
-        </div>`;
-    });
 }
 
 function renderStrategicAdvice(profile) {
