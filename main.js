@@ -481,6 +481,16 @@ function updateLanguage(lang) {
     canadaStatusSelect.options[2].textContent = t.statusWork;
     canadaStatusSelect.options[3].textContent = t.statusVisitor;
 
+    const birthMonthSel = document.getElementById('birthMonth');
+    const monthNames = lang === 'ko'
+        ? ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월']
+        : ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    monthNames.forEach((m, i) => { if (birthMonthSel.options[i]) birthMonthSel.options[i].textContent = m; });
+
+    const depSel = document.getElementById('dependents');
+    const depOpts = lang === 'ko' ? ['없음','1명','2명','3명 이상'] : ['None','1','2','3 or more'];
+    depOpts.forEach((text, i) => { if (depSel.options[i]) depSel.options[i].textContent = text; });
+
     // Accordion 2
     document.querySelector('#acc2 .acc-header div > div').textContent = t.acc2Title;
     document.querySelector('#acc2 .acc-sub').textContent = t.acc2Sub;
@@ -559,9 +569,14 @@ function updateLanguage(lang) {
     document.getElementById('foreignTEER').textContent = t.teerDefault;
 
     const canExpYSelect = document.getElementById('canadianExpYears');
-    canExpYSelect.options[0].textContent = t.none;
+    const canExpOpts = lang === 'ko'
+        ? ['없음','1년','2년','3년','4년','5년 이상']
+        : ['None','1 year','2 years','3 years','4 years','5+ years'];
+    canExpOpts.forEach((text, i) => { if (canExpYSelect.options[i]) canExpYSelect.options[i].textContent = text; });
+
     const forExpYSelect = document.getElementById('foreignExpYears');
-    forExpYSelect.options[0].textContent = t.none;
+    const forExpOpts = lang === 'ko' ? ['없음','1~2년','3년 이상'] : ['None','1-2 years','3+ years'];
+    forExpOpts.forEach((text, i) => { if (forExpYSelect.options[i]) forExpYSelect.options[i].textContent = text; });
 
     const hasJobSelect = document.getElementById('hasJobOffer');
     hasJobSelect.options[0].textContent = t.no;
@@ -613,8 +628,18 @@ function updateLanguage(lang) {
     const occGroupSelect = document.getElementById('occupationGroup');
     occGroupSelect.options[0].textContent = t.occOthers;
     
+    const ruralSel = document.getElementById('ruralWilling');
+    ruralSel.options[0].textContent = t.no; ruralSel.options[1].textContent = t.yes;
+    const atlanticSel = document.getElementById('atlanticWilling');
+    atlanticSel.options[0].textContent = t.no; atlanticSel.options[1].textContent = t.yes;
+    const businessSel = document.getElementById('businessIntent');
+    businessSel.options[0].textContent = t.no; businessSel.options[1].textContent = t.yes;
+
     const salarySelect = document.getElementById('currentSalary');
-    salarySelect.options[0].textContent = t.salaryNone;
+    const salaryOpts = lang === 'ko'
+        ? ['정보 없음','CA$40,000 미만','CA$40,000~60,000','CA$60,000~80,000','CA$80,000~100,000','CA$100,000 이상']
+        : ['No info','Under CA$40,000','CA$40,000~60,000','CA$60,000~80,000','CA$80,000~100,000','CA$100,000+'];
+    salaryOpts.forEach((text, i) => { if (salarySelect.options[i]) salarySelect.options[i].textContent = text; });
 
     // Accordion 7
     document.querySelector('#acc7 .acc-header div > div').textContent = t.acc7Title;
@@ -627,12 +652,33 @@ function updateLanguage(lang) {
     acc7Labels[3].textContent = t.labelSimSpouse;
     acc7Labels[4].textContent = t.labelSimEmp;
 
+    ['willingRetakeIELTS','canStudyFrench','planMoreWork','spouseIELTS','canChangeEmployer'].forEach(id => {
+        const sel = document.getElementById(id);
+        if (sel) { sel.options[0].textContent = t.no; sel.options[1].textContent = t.yes; }
+    });
+
     // Spouse Section
     document.querySelector('#spouseSection h3').textContent = t.spouseSectionTitle;
     const spouseLabels = document.querySelectorAll('#spouseSection .input-group label');
     spouseLabels[0].textContent = t.labelSpouseEdu;
     spouseLabels[1].textContent = t.labelSpouseLang;
     spouseLabels[2].textContent = t.labelSpouseExp;
+
+    const spouseEduSel = document.getElementById('spouseEducation');
+    const spouseEduOpts = lang === 'ko'
+        ? ['선택 안 함','고등학교 졸업','1년 과정 대학','2년 과정 대학','학사 학위','석사/박사 학위']
+        : ['Not selected','High School','1-year college','2-year college',"Bachelor's","Master's / PhD"];
+    spouseEduOpts.forEach((text, i) => { if (spouseEduSel.options[i]) spouseEduSel.options[i].textContent = text; });
+
+    const spouseLangSel = document.getElementById('spouseLanguage');
+    spouseLangSel.options[0].textContent = lang === 'ko' ? '선택 안 함 / CLB 4 이하' : 'Not selected / CLB 4 or less';
+    spouseLangSel.options[5].textContent = lang === 'ko' ? 'CLB 9 이상' : 'CLB 9 or higher';
+
+    const spouseExpSel = document.getElementById('spouseCanadianExp');
+    const spouseExpOpts = lang === 'ko'
+        ? ['없음','1년','2년','3년','4년','5년 이상']
+        : ['None','1 year','2 years','3 years','4 years','5+ years'];
+    spouseExpOpts.forEach((text, i) => { if (spouseExpSel.options[i]) spouseExpSel.options[i].textContent = text; });
     
     // Analyze Button
     document.querySelector('button[onclick="calculateCRS()"]').textContent = t.btnAnalyze;
