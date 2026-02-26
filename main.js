@@ -1493,12 +1493,18 @@ function searchNOCInline(prefix) {
         drop.innerHTML = `<div class="noc-drop-empty">${currentLang === 'ko' ? '일치하는 결과 없음' : 'No matching results'}</div>`;
     } else {
         drop.innerHTML = filtered.map(item =>
-            `<div class="noc-drop-item" onmousedown="selectNOCInline('${prefix}','${item.code}',${JSON.stringify(item.title)},${item.teer})">
+            `<div class="noc-drop-item">
                 <span class="noc-drop-code">${item.code}</span>
                 <span class="noc-drop-teer">TEER ${item.teer}</span>
                 <span class="noc-drop-title">${item.title}</span>
             </div>`
         ).join('');
+        drop.querySelectorAll('.noc-drop-item').forEach((el, i) => {
+            el.addEventListener('mousedown', (e) => {
+                e.preventDefault();
+                selectNOCInline(prefix, filtered[i].code, filtered[i].title, filtered[i].teer);
+            });
+        });
     }
     drop.style.display = 'block';
 }
