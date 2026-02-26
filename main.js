@@ -711,36 +711,36 @@ function updateLanguage(lang) {
     // Draws Table Body
     const drawRows = document.querySelectorAll('#latest-draws tbody tr');
     if (lang === 'ko') {
-        drawRows[0].children[0].textContent = "2026년 2월 22일";
-        drawRows[1].children[0].textContent = "2026년 2월 18일";
-        drawRows[2].children[0].textContent = "2026년 2월 11일";
-        drawRows[3].children[0].textContent = "2026년 2월 4일";
-        drawRows[4].children[0].textContent = "2026년 1월 28일";
-        drawRows[5].children[0].textContent = "2026년 1월 21일";
-        drawRows[0].children[1].textContent = "헬스케어 & 소셜 서비스 (올해 첫 선발)";
-        drawRows[1].children[1].textContent = "프랑스어 우수자";
-        drawRows[2].children[1].textContent = "보건 의료 인력";
+        drawRows[0].children[0].textContent = "2026년 2월 20일";
+        drawRows[1].children[0].textContent = "2026년 2월 19일";
+        drawRows[2].children[0].textContent = "2026년 2월 17일";
+        drawRows[3].children[0].textContent = "2026년 2월 16일";
+        drawRows[4].children[0].textContent = "2026년 2월 6일";
+        drawRows[5].children[0].textContent = "2026년 2월 3일";
+        drawRows[0].children[1].textContent = "헬스케어 & 소셜 서비스";
+        drawRows[1].children[1].textContent = "신설 의사 카테고리 (캐나다 경력 의사)";
+        drawRows[2].children[1].textContent = "캐나다 경험 이민 (CEC)";
         drawRows[3].children[1].textContent = "주정부 이민 (PNP)";
-        drawRows[4].children[1].textContent = "STEM 전문가";
-        drawRows[5].children[1].textContent = "일반 선발 (All)";
+        drawRows[4].children[1].textContent = "프랑스어 우수자";
+        drawRows[5].children[1].textContent = "주정부 이민 (PNP)";
 
         drawRows.forEach(row => {
             row.children[2].textContent = row.children[2].textContent.replace('명', '').replace('ITAs','').trim() + '명';
             row.children[3].textContent = row.children[3].textContent.replace('점', '').replace('pts','').trim() + '점';
         });
     } else {
-        drawRows[0].children[0].textContent = "Feb 22, 2026";
-        drawRows[1].children[0].textContent = "Feb 18, 2026";
-        drawRows[2].children[0].textContent = "Feb 11, 2026";
-        drawRows[3].children[0].textContent = "Feb 4, 2026";
-        drawRows[4].children[0].textContent = "Jan 28, 2026";
-        drawRows[5].children[0].textContent = "Jan 21, 2026";
-        drawRows[0].children[1].textContent = "Healthcare & Social Services (First of 2026)";
-        drawRows[1].children[1].textContent = "French-speaking Proficiency";
-        drawRows[2].children[1].textContent = "Healthcare Occupations";
+        drawRows[0].children[0].textContent = "Feb 20, 2026";
+        drawRows[1].children[0].textContent = "Feb 19, 2026";
+        drawRows[2].children[0].textContent = "Feb 17, 2026";
+        drawRows[3].children[0].textContent = "Feb 16, 2026";
+        drawRows[4].children[0].textContent = "Feb 6, 2026";
+        drawRows[5].children[0].textContent = "Feb 3, 2026";
+        drawRows[0].children[1].textContent = "Healthcare & Social Services";
+        drawRows[1].children[1].textContent = "Physicians w/ Canadian Work Experience (New Category)";
+        drawRows[2].children[1].textContent = "Canadian Experience Class (CEC)";
         drawRows[3].children[1].textContent = "Provincial Nominee Program (PNP)";
-        drawRows[4].children[1].textContent = "STEM Professionals";
-        drawRows[5].children[1].textContent = "General (All Programs)";
+        drawRows[4].children[1].textContent = "French-Language Proficiency";
+        drawRows[5].children[1].textContent = "Provincial Nominee Program (PNP)";
 
         drawRows.forEach(row => {
             row.children[2].textContent = row.children[2].textContent.replace('명', '').replace('ITAs','').trim() + ' ITAs';
