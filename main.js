@@ -99,6 +99,7 @@ const translations = {
         navHome: "홈",
         navCalculator: "CRS 계산기",
         navGuide: "이민 가이드",
+        navDraws: "선발 결과",
         navArticles: "뉴스",
         navContact: "문의",
         homeH2: "Welcome to Canada",
@@ -267,6 +268,7 @@ const translations = {
         navHome: "Home",
         navCalculator: "CRS Calculator",
         navGuide: "Guide",
+        navDraws: "Draws",
         navArticles: "News",
         navContact: "Contact",
         homeH2: "Welcome to Canada",
@@ -453,8 +455,9 @@ function updateLanguage(lang) {
     navLinks[0].textContent = t.navHome;
     navLinks[1].textContent = t.navCalculator;
     navLinks[2].textContent = t.navGuide;
-    navLinks[3].textContent = t.navArticles;
-    navLinks[4].textContent = t.navContact;
+    navLinks[3].textContent = t.navDraws;
+    navLinks[4].textContent = t.navArticles;
+    navLinks[5].textContent = t.navContact;
 
     // Home
     document.getElementById('homeH2').textContent = t.homeH2;
