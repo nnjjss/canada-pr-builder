@@ -227,9 +227,9 @@ const translations = {
         drawsDisclaimer: "* PNP 선발은 주정부 가산점 600점이 포함된 점수입니다.",
         guideH2: "익스프레스 엔트리(Express Entry)란?",
         guideP1: "익스프레스 엔트리는 캐나다 정부가 숙련직 근로자의 영주권 신청을 관리하는 시스템입니다. 다음 세 가지 주요 프로그램을 포함합니다:",
-        liFswp: "연방 숙련직 프로그램 (FSWP): 해외 경력을 가진 숙련직 근로자 대상.",
-        liFstp: "연방 기술직 프로그램 (FSTP): 특정 기술 업종의 근로자 대상.",
-        liCec: "캐나다 경험 이민 (CEC): 캐나다 내 경력이 있는 숙련직 근로자 대상.",
+        liFswp: "연방 숙련직 프로그램 (FSWP): 해외 숙련직 경력 최소 1년(최근 10년 이내), CLB 7 이상, TEER 0·1·2·3 직군. 선발 점수 67점 이상 필요.",
+        liFstp: "연방 기술직 프로그램 (FSTP): 기술직 경력 최소 2년(최근 5년 이내). 취업 오퍼(1년 이상) 또는 Red Seal 등 자격증 필요. CLB 5 이상.",
+        liCec: "캐나다 경험 이민 (CEC): 캐나다 내 TEER 0~3 경력 최소 1년(최근 3년 이내). TEER 0·1은 CLB 7, TEER 2·3은 CLB 5 이상.",
         clbTableH3: "언어 성적(CLB) 상세 점수표",
         clbTableP: "캐나다 이민에서 가장 널리 사용되는 <strong>IELTS General Training</strong>과 <strong>CELPIP General</strong> 점수의 CLB 변환표입니다. 익스프레스 엔트리 고득점을 위해서는 <strong>CLB 9 이상</strong>을 목표로 하는 것이 좋습니다.",
         thClb: "CLB 레벨",
@@ -391,9 +391,9 @@ const translations = {
         drawsDisclaimer: "* PNP draws include the 600-point provincial nomination bonus.",
         guideH2: "What is Express Entry?",
         guideP1: "Express Entry is a system used by the Canadian government to manage applications for permanent residence from skilled workers. It includes three main programs:",
-        liFswp: "Federal Skilled Worker Program (FSWP): For skilled workers with foreign experience.",
-        liFstp: "Federal Skilled Trades Program (FSTP): For workers in specific technical trades.",
-        liCec: "Canadian Experience Class (CEC): For skilled workers with Canadian work experience.",
+        liFswp: "Federal Skilled Worker Program (FSWP): 1+ yr of foreign skilled work experience (TEER 0–3) in the past 10 years. CLB 7+, and must score 67+ on selection factors.",
+        liFstp: "Federal Skilled Trades Program (FSTP): 2+ yrs of skilled trade experience (TEER 2–3) in the past 5 years. Requires a job offer (1+ yr) or a trade certificate (e.g. Red Seal). CLB 5+.",
+        liCec: "Canadian Experience Class (CEC): 1+ yr of skilled work experience in Canada (TEER 0–3) in the past 3 years. CLB 7 for TEER 0/1, CLB 5 for TEER 2/3.",
         clbTableH3: "Detailed CLB Score Table",
         clbTableP: "CLB conversion table for <strong>IELTS General Training</strong> and <strong>CELPIP General</strong>. Aiming for <strong>CLB 9 or higher</strong> is recommended for high EE scores.",
         thClb: "CLB Level",
@@ -801,9 +801,10 @@ function updateLanguage(lang) {
     document.querySelector('#guide h2').textContent = t.guideH2;
     document.getElementById('guideP1').textContent = t.guideP1;
     const guideLis = document.querySelectorAll('#guideProgramUl li');
-    guideLis[0].innerHTML = `<strong>${t.liFswp.split(':')[0]}:</strong>${t.liFswp.split(':')[1]}`;
-    guideLis[1].innerHTML = `<strong>${t.liFstp.split(':')[0]}:</strong>${t.liFstp.split(':')[1]}`;
-    guideLis[2].innerHTML = `<strong>${t.liCec.split(':')[0]}:</strong>${t.liCec.split(':')[1]}`;
+    [t.liFswp, t.liFstp, t.liCec].forEach((str, i) => {
+        const idx = str.indexOf(':');
+        guideLis[i].innerHTML = `<strong>${str.slice(0, idx)}:</strong>${str.slice(idx + 1)}`;
+    });
 
     document.querySelectorAll('#guide h3')[0].textContent = t.clbTableH3;
     document.getElementById('clbTableP').innerHTML = t.clbTableP;
