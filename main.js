@@ -782,14 +782,14 @@ function updateLanguage(lang) {
 
     // Guide
     document.querySelector('#guide h2').textContent = t.guideH2;
-    document.querySelector('#guide > p').textContent = t.guideP1;
-    const guideLis = document.querySelectorAll('#guide ul:first-of-type li');
+    document.getElementById('guideP1').textContent = t.guideP1;
+    const guideLis = document.querySelectorAll('#guideProgramUl li');
     guideLis[0].innerHTML = `<strong>${t.liFswp.split(':')[0]}:</strong>${t.liFswp.split(':')[1]}`;
     guideLis[1].innerHTML = `<strong>${t.liFstp.split(':')[0]}:</strong>${t.liFstp.split(':')[1]}`;
     guideLis[2].innerHTML = `<strong>${t.liCec.split(':')[0]}:</strong>${t.liCec.split(':')[1]}`;
-    
+
     document.querySelectorAll('#guide h3')[0].textContent = t.clbTableH3;
-    document.querySelector('#guide > p:nth-of-type(2)').innerHTML = t.clbTableP;
+    document.getElementById('clbTableP').innerHTML = t.clbTableP;
     const clbThs = document.querySelectorAll('#guide table th');
     clbThs[0].textContent = t.thClb;
     clbThs[1].textContent = t.thTest;

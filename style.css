@@ -785,6 +785,89 @@ body.modal-open {
 }
 
 /* ============================= */
+/* Express Entry Program Cards   */
+/* ============================= */
+.program-grid {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 20px 0 0;
+    padding: 0;
+}
+
+.program-card {
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-top: 3px solid var(--maple-red);
+    border-radius: var(--radius-md);
+    padding: 20px 16px 16px;
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: var(--text-muted);
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.program-card:hover {
+    box-shadow: 0 4px 16px -4px rgba(200, 16, 46, 0.12);
+    transform: translateY(-2px);
+}
+
+.program-card::before {
+    display: block;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    line-height: 1;
+}
+
+.program-card:nth-child(1)::before { content: '🌍'; }
+.program-card:nth-child(2)::before { content: '🔧'; }
+.program-card:nth-child(3)::before { content: '🍁'; }
+
+.program-card strong:first-child {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: var(--maple-red);
+    margin-bottom: 6px;
+}
+
+/* ============================= */
+/* CLB Table Section             */
+/* ============================= */
+.clb-section {
+    margin-top: 36px;
+    padding-top: 32px;
+    border-top: 2px solid var(--border-color);
+}
+
+.clb-section h3 {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--text-main);
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.clb-section h3::before {
+    content: '📊';
+    font-size: 1.2rem;
+}
+
+.clb-section > p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .program-grid { grid-template-columns: 1fr; }
+}
+
+/* ============================= */
 /* Raise Score Strategy Cards    */
 /* ============================= */
 .raise-score-section {
