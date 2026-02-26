@@ -216,11 +216,6 @@ const translations = {
         labelSpouseLang: "배우자 영어 CLB 레벨",
         labelSpouseExp: "배우자 캐나다 경력",
         btnAnalyze: "AI 최적 루트 분석 시작하기",
-        nocH2: "내 NOC 코드 찾기 (2021)",
-        nocP: "직업명이나 키워드(<b>영문 전용</b>)를 입력해 NOC 코드를 찾아보세요.",
-        nocSearchPlaceholder: "예: Software, Nurse, Manager, Cook...",
-        nocDefaultText: "검색어를 입력하면 관련 NOC 코드가 표시됩니다.",
-        nocDisclaimer: "* 본 리스트는 주요 숙련직 위주로 구성되어 있으며, 정확한 매칭은 공식 IRCC 웹사이트를 참조하세요.",
         drawsH2: "익스프레스 엔트리 최신 선발 결과",
         drawsP: "최근 IRCC에서 발표한 익스프레스 엔트리 초청(ITA) 결과입니다. 본인의 점수와 최신 컷오프를 비교해 보세요.",
         thDate: "날짜",
@@ -410,11 +405,6 @@ const translations = {
         labelSpouseLang: "Spouse English CLB Level",
         labelSpouseExp: "Spouse Canadian Work Exp",
         btnAnalyze: "Start AI Optimal Path Analysis",
-        nocH2: "Find Your NOC Code (2021)",
-        nocP: "Search by job title or keyword (<b>English only</b>) to find your 5-digit NOC code.",
-        nocSearchPlaceholder: "e.g. Software, Nurse, Manager, Cook...",
-        nocDefaultText: "Related NOC codes will be displayed after entering keywords.",
-        nocDisclaimer: "* This list focuses on major skilled trades. Refer to the official IRCC website for exact matching.",
         drawsH2: "Latest Express Entry Draw Results",
         drawsP: "Recent EE Invitation to Apply (ITA) results from IRCC. Compare your score with the latest cut-offs.",
         thDate: "Date",
@@ -860,25 +850,13 @@ function updateLanguage(lang) {
     statLabels[2].textContent = lang === 'ko' ? '성공 확률' : 'Success Probability';
 
     // CLB Table
-    const clbTableBody = document.querySelector('#guide tbody');
-    if (clbTableBody) {
-        // Since it's a fixed table, we can just update specific cells or use translations object
-        const rows = clbTableBody.querySelectorAll('tr');
-        // This is a bit tedious to do by cell, but reliable for static content
-        if (lang === 'en') {
-            // Update "듣기", "읽기" etc in header
-            const ths = document.querySelectorAll('#guide thead th');
-            ths[2].textContent = "Listening (L)";
-            ths[3].textContent = "Reading (R)";
-            ths[4].textContent = "Writing (W)";
-            ths[5].textContent = "Speaking (S)";
-        } else {
-            const ths = document.querySelectorAll('#guide thead th');
-            ths[2].textContent = "듣기 (L)";
-            ths[3].textContent = "읽기 (R)";
-            ths[4].textContent = "쓰기 (W)";
-            ths[5].textContent = "말하기 (S)";
-        }
+    const skillThs = document.querySelectorAll('#guide thead th');
+    if (skillThs.length) {
+        const isEn = lang === 'en';
+        skillThs[2].textContent = isEn ? "Listening (L)" : "듣기 (L)";
+        skillThs[3].textContent = isEn ? "Reading (R)"   : "읽기 (R)";
+        skillThs[4].textContent = isEn ? "Writing (W)"   : "쓰기 (W)";
+        skillThs[5].textContent = isEn ? "Speaking (S)"  : "말하기 (S)";
     }
 
     // Guide
@@ -1678,9 +1656,6 @@ function clbToLangPts(clb, isMarried) {
 }
 
 function calculateCRS() {
-    console.log("Analysis Triggered");
-    const t = translations[currentLang];
-
     // --- Read Inputs ---
     const birthYear = parseInt(document.getElementById('birthYear').value) || 0;
     const birthMonth = parseInt(document.getElementById('birthMonth').value) || 1;
