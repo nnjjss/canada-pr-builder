@@ -7,33 +7,35 @@
     --maple-orange: #e65100;
     --maple-gold: #ffb300;
     --maple-leaf: #af1a24;
-    
+
     /* Modern UI Colors */
     --bg-color: #fafaf9; /* Warm bone white */
     --card-bg: #ffffff;
+    --input-bg: #f2f0ef; /* Form field bg — contrasts with white card */
     --text-main: #1c1917;
-    --text-muted: #57534e;
-    --border-color: #e7e5e4;
-    --glass-bg: rgba(255, 255, 255, 0.7);
+    --text-muted: #44403c; /* ↑ contrast from #57534e */
+    --border-color: #cec9c5; /* ↑ visibility from #e7e5e4 */
+    --glass-bg: rgba(255, 255, 255, 0.75);
     --primary: var(--maple-red);
     --primary-hover: var(--maple-deep);
-    
+
     /* Shadows & Effects */
-    --shadow-soft: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
-    --shadow-bold: 0 20px 40px -4px rgba(200, 16, 46, 0.1);
+    --shadow-soft: 0 4px 24px -2px rgba(0, 0, 0, 0.08);
+    --shadow-bold: 0 20px 40px -4px rgba(200, 16, 46, 0.15);
     --radius-lg: 24px;
     --radius-md: 16px;
 }
 
 [data-theme="dark"] {
     --bg-color: #0c0a09;
-    --card-bg: #1c1917;
+    --card-bg: #211e1c; /* ↑ separation from bg */
+    --input-bg: #0c0a09; /* same as bg — darker than card for contrast */
     --text-main: #f5f5f4;
-    --text-muted: #a8a29e;
-    --border-color: #292524;
-    --glass-bg: rgba(28, 25, 23, 0.8);
-    --shadow-soft: 0 4px 20px -2px rgba(0, 0, 0, 0.3);
-    --shadow-bold: 0 20px 40px -4px rgba(0, 0, 0, 0.5);
+    --text-muted: #b8b2ac; /* ↑ brightness from #a8a29e */
+    --border-color: #3d3a37; /* ↑ visibility from #292524 */
+    --glass-bg: rgba(33, 30, 28, 0.85);
+    --shadow-soft: 0 4px 20px -2px rgba(0, 0, 0, 0.35);
+    --shadow-bold: 0 20px 40px -4px rgba(0, 0, 0, 0.55);
 }
 
 * {
@@ -46,7 +48,7 @@ body {
     font-family: 'Plus Jakarta Sans', sans-serif;
     background: var(--bg-color);
     color: var(--text-main);
-    line-height: 1.6;
+    line-height: 1.7;
     transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     overflow-x: hidden;
 }
@@ -190,10 +192,11 @@ h2::before {
 
 .input-group label {
     display: block;
-    font-size: 0.85rem;
-    font-weight: 600;
+    font-size: 0.88rem;
+    font-weight: 700;
     color: var(--text-muted);
-    margin-bottom: 6px;
+    margin-bottom: 8px;
+    letter-spacing: 0.01em;
 }
 
 input, select, textarea {
@@ -201,7 +204,7 @@ input, select, textarea {
     padding: 16px;
     border-radius: var(--radius-md);
     border: 2px solid var(--border-color);
-    background: var(--bg-color);
+    background: var(--input-bg);
     color: var(--text-main);
     font-family: inherit;
     font-size: 0.95rem;
@@ -324,17 +327,27 @@ table {
 }
 
 th {
-    background: var(--bg-color);
+    background: rgba(200, 16, 46, 0.06);
     color: var(--text-main);
     font-weight: 700;
-    padding: 16px;
+    font-size: 0.85rem;
+    letter-spacing: 0.03em;
+    padding: 14px 16px;
     text-align: left;
     border-bottom: 2px solid var(--border-color);
 }
 
 td {
-    padding: 16px;
+    padding: 14px 16px;
     border-bottom: 1px solid var(--border-color);
+}
+
+tbody tr:nth-child(even) {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+[data-theme="dark"] tbody tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.025);
 }
 
 .clb-highlight {
@@ -472,6 +485,7 @@ footer {
     border-radius: 16px;
     text-align: center;
     border: 1px solid var(--border-color);
+    box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.06);
     transition: transform 0.2s;
 }
 
@@ -499,9 +513,9 @@ footer {
 
 .advice-box {
     padding: 30px;
-    background: rgba(10, 37, 64, 0.03);
+    background: rgba(200, 16, 46, 0.03);
     border-radius: 24px;
-    border: 1px solid var(--border-color);
+    border: 1px solid rgba(200, 16, 46, 0.15);
 }
 
 .advice-box h3 {
@@ -601,7 +615,7 @@ body.modal-open {
 }
 
 .acc-body {
-    padding: 20px;
+    padding: 24px 20px;
     border-top: 1px solid var(--border-color);
     background: var(--card-bg);
 }
@@ -611,8 +625,8 @@ body.modal-open {
     width: 100%;
     padding: 14px 16px;
     border-radius: var(--radius-md);
-    border: 2px dashed var(--border-color);
-    background: var(--bg-color);
+    border: 2px dashed rgba(200, 16, 46, 0.3);
+    background: rgba(200, 16, 46, 0.03);
     color: var(--text-muted);
     font-size: 0.9rem;
     font-weight: 600;
