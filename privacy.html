@@ -3,56 +3,182 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="page-title">개인정보처리방침 - Canada PR Builder</title>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1D8DWWPCM"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-Z1D8DWWPCM');
     </script>
-    <title>개인정보처리방침 - Canada PR Builder</title>
-    <!-- Microsoft Clarity -->
-    <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "vmpsubm906");
-    </script>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .privacy-content {
+            line-height: 1.8;
+        }
+        .privacy-content h2 {
+            margin-top: 30px;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+        .privacy-content p, .privacy-content li {
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+        .privacy-content ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+    <script>
+        // Prevent FOUC
+        (function() {
+            const theme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
 </head>
 <body>
 
 <header>
-    <h1>개인정보처리방침</h1>
+    <h1 id="header-h1">개인정보처리방침</h1>
+    <div class="header-controls">
+        <button class="lang-toggle" id="langToggle">English</button>
+        <button class="theme-toggle" id="themeToggle">🌙 다크 모드</button>
+    </div>
 </header>
 
 <div class="container">
-    <div class="card">
-        <h2>서문</h2>
-        <p>Canada PR Builder는 귀하의 개인정보를 중요하게 생각합니다. 본 방침은 귀하의 정보를 수집, 사용 및 보호하는 방법을 설명합니다.</p>
-        
-        <h2>수집하는 정보</h2>
-        <p>귀하가 연락처 양식이나 커뮤니티 블로그를 통해 자발적으로 제공하지 않는 한, 당사는 개인 식별 정보를 수집하지 않습니다. CRS 계산기에 입력된 데이터는 로컬에서 처리되며 당사 서버에 저장되지 않습니다.</p>
-
-        <h2>Google AdSense 및 쿠키</h2>
-        <p>본 사이트는 광고를 게재하기 위해 Google AdSense를 사용합니다. Google은 귀하가 본 사이트 및 인터넷의 다른 사이트를 방문한 기록을 바탕으로 쿠키를 사용하여 광고를 제공합니다. 귀하는 광고 설정을 방문하여 맞춤형 광고를 거부할 수 있습니다.</p>
-
-        <h2>제3자 서비스</h2>
-        <p>당사는 댓글을 위한 Disqus, 연락처 양식을 위한 Formspree와 같은 제3자 서비스를 사용합니다. 이러한 서비스는 각자의 개인정보처리방침을 가지고 있습니다.</p>
-
-        <h2>문의하기</h2>
-        <p>본 방침에 대해 궁금한 점이 있으시면 홈페이지의 문의 양식을 통해 연락해 주시기 바랍니다.</p>
-
-        <button onclick="window.location.href='index.html'">홈으로 돌아가기</button>
+    <div class="card privacy-content" id="privacy-body">
+        <!-- Content will be injected by script -->
     </div>
 </div>
 
 <footer>
     <p>&copy; 2026 Canada PR Builder. All rights reserved.</p>
 </footer>
+
+<script>
+    const translations = {
+        ko: {
+            title: "개인정보처리방침 - Canada PR Builder",
+            header: "개인정보처리방침",
+            langToggle: "English",
+            themeToggleLight: "☀️ 라이트 모드",
+            themeToggleDark: "🌙 다크 모드",
+            content: `
+                <p>Canada PR Builder(이하 '본 서비스')는 이용자의 개인정보를 중요시하며, '개인정보 보호법'을 준수하고 있습니다.</p>
+
+                <h2>1. 수집하는 개인정보 항목</h2>
+                <p>본 서비스는 별도의 회원가입 없이 이용 가능하며, CRS 계산기 및 전략 분석 도구 이용 시 입력하는 데이터(나이, 학력, 경력 등)는 서버에 저장되지 않고 이용자의 브라우저 내에서만 처리됩니다. 다만, 서비스 개선 및 통계 분석을 위해 다음과 같은 정보가 자동 생성되어 수집될 수 있습니다.</p>
+                <ul>
+                    <li>IP 주소, 쿠키, 서비스 이용 기록, 접속 로그 등</li>
+                </ul>
+
+                <h2>2. 개인정보의 수집 및 이용목적</h2>
+                <p>수집된 정보는 다음의 목적을 위해 활용됩니다.</p>
+                <ul>
+                    <li>서비스 제공 및 콘텐츠 최적화</li>
+                    <li>Google Analytics 및 Microsoft Clarity를 통한 이용 통계 분석</li>
+                    <li>Google AdSense를 통한 광고 게재 및 최적화</li>
+                </ul>
+
+                <h2>3. 제3자 서비스 이용</h2>
+                <p>본 서비스는 다음과 같은 외부 서비스 도구를 사용하며, 해당 서비스들은 쿠키를 사용하여 정보를 수집할 수 있습니다. 각 서비스의 개인정보 처리 방침은 해당 제공사의 웹사이트를 참조하시기 바랍니다.</p>
+                <ul>
+                    <li><b>Google Analytics / AdSense:</b> 광고 및 방문 분석</li>
+                    <li><b>Microsoft Clarity:</b> 사용자 경험 분석</li>
+                    <li><b>Formspree:</b> 문의 메일 전송 도구 (문의 시 입력한 이메일과 메시지만 전송됨)</li>
+                </ul>
+
+                <h2>4. 개인정보의 보유 및 파기</h2>
+                <p>이용자가 CRS 계산기에 입력한 정보는 서버에 저장되지 않으므로 파기 절차가 필요하지 않습니다. 자동 수집된 접속 로그 등은 외부 서비스(Google 등)의 정책에 따라 관리됩니다.</p>
+
+                <h2>5. 이용자의 권리</h2>
+                <p>이용자는 언제든지 브라우저 설정을 통해 쿠키 수집을 거부할 수 있습니다.</p>
+
+                <h2>6. 문의처</h2>
+                <p>개인정보 처리와 관련하여 궁금한 점이 있으시면 홈페이지의 문의 양식을 통해 연락해 주시기 바랍니다.</p>
+
+                <button onclick="window.location.href='index.html'" style="margin-top:20px; width:100%">홈으로 돌아가기</button>
+            `
+        },
+        en: {
+            title: "Privacy Policy - Canada PR Builder",
+            header: "Privacy Policy",
+            langToggle: "한글",
+            themeToggleLight: "☀️ Light Mode",
+            themeToggleDark: "🌙 Dark Mode",
+            content: `
+                <p>Canada PR Builder ("we", "us", or "the Service") values your privacy and complies with personal information protection laws.</p>
+
+                <h2>1. Information We Collect</h2>
+                <p>The Service is available without registration. Data entered into the CRS Calculator and Strategy tools (age, education, experience, etc.) is processed locally within your browser and is <b>not stored on our servers</b>. However, the following information may be automatically generated and collected for service improvement and statistical analysis:</p>
+                <ul>
+                    <li>IP address, cookies, usage records, access logs, etc.</li>
+                </ul>
+
+                <h2>2. Purpose of Collection and Use</h2>
+                <p>Collected information is used for the following purposes:</p>
+                <ul>
+                    <li>Providing and optimizing content</li>
+                    <li>Analyzing usage statistics via Google Analytics and Microsoft Clarity</li>
+                    <li>Serving and optimizing advertisements via Google AdSense</li>
+                </ul>
+
+                <h2>3. Third-Party Services</h2>
+                <p>We use external tools that may use cookies to collect information. Please refer to their respective privacy policies:</p>
+                <ul>
+                    <li><b>Google Analytics / AdSense:</b> Advertising and visit analysis</li>
+                    <li><b>Microsoft Clarity:</b> User experience analysis</li>
+                    <li><b>Formspree:</b> Contact form processing (Only the email and message you provide are transmitted)</li>
+                </ul>
+
+                <h2>4. Data Retention and Destruction</h2>
+                <p>Information entered into the calculator is not stored on our servers and thus requires no destruction process. Automatically collected access logs are managed according to the policies of the third-party providers (Google, etc.).</p>
+
+                <h2>5. Your Rights</h2>
+                <p>Users can refuse cookie collection at any time by adjusting their browser settings.</p>
+
+                <h2>6. Contact Us</h2>
+                <p>If you have any questions regarding our privacy practices, please contact us via the form on the homepage.</p>
+
+                <button onclick="window.location.href='index.html'" style="margin-top:20px; width:100%">Back to Home</button>
+            `
+        }
+    };
+
+    let currentLang = localStorage.getItem('lang') || 'ko';
+
+    function updateUI() {
+        const t = translations[currentLang];
+        document.getElementById('page-title').textContent = t.title;
+        document.getElementById('header-h1').textContent = t.header;
+        document.getElementById('langToggle').textContent = t.langToggle;
+        document.getElementById('privacy-body').innerHTML = t.content;
+        
+        const themeToggle = document.getElementById('themeToggle');
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        themeToggle.textContent = isDark ? t.themeToggleLight : t.themeToggleDark;
+    }
+
+    document.getElementById('langToggle').addEventListener('click', () => {
+        currentLang = (currentLang === 'ko' ? 'en' : 'ko');
+        localStorage.setItem('lang', currentLang);
+        updateUI();
+    });
+
+    document.getElementById('themeToggle').addEventListener('click', () => {
+        let theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        updateUI();
+    });
+
+    // Initialize
+    updateUI();
+</script>
 
 </body>
 </html>

@@ -115,10 +115,16 @@ nav a:hover {
     color: white;
 }
 
-.theme-toggle {
+.header-controls {
     position: absolute;
     right: 30px;
     top: 30px;
+    display: flex;
+    gap: 10px;
+    z-index: 100;
+}
+
+.lang-toggle, .theme-toggle {
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -128,7 +134,13 @@ nav a:hover {
     border-radius: 999px;
     font-size: 0.8rem;
     font-weight: 600;
-    z-index: 100;
+    transition: all 0.2s;
+    box-shadow: none;
+}
+
+.lang-toggle:hover, .theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
 }
 
 .container {
