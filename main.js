@@ -269,6 +269,12 @@ const translations = {
         liRaiseEdu: "학위 추가: 석·박사 학위는 핵심 인적 자본(최대 150점)과 스킬 전이(최대 50점) 합산 최대 200점 상승이 가능합니다.",
         liRaiseOther: "캐나다 학력·가족 가산점: 캐나다 내 1년 이상 학위 취득 시 +30점, 캐나다 시민권자·영주권자 형제·자매 거주 시 +15점이 추가됩니다.",
         articlesH2: "최신 이민 뉴스 및 가이드",
+        nlH2: "최신 이민 소식을 놓치지 마세요",
+        nlP: "Express Entry 선발 결과, 정책 변경, PNP 소식을 이메일로 받아보세요.",
+        nlPlaceholder: "이메일 입력",
+        nlBtn: "구독하기",
+        nlDisclaimer: "스팸 없이 주요 소식만 전달합니다.",
+        nlSuccess: "구독이 완료되었습니다! 감사합니다.",
         contactH2: "문의 및 제휴",
         contactP: "협업이나 특정 질문이 있으신가요? 저희에게 연락주세요!",
         labelName: "성함:",
@@ -460,6 +466,12 @@ const translations = {
         liRaiseEdu: "Higher Education: A Master's or PhD adds up to 150 pts in core human capital and up to 50 pts in skill transferability — a total of up to 200 pts above a Bachelor's.",
         liRaiseOther: "Canadian Study & Family: Canadian degree (1+ year) adds +30 pts; a sibling who is a Canadian citizen or PR adds +15 pts.",
         articlesH2: "Latest Immigration News & Guides",
+        nlH2: "Don't Miss the Latest Immigration Updates",
+        nlP: "Get Express Entry draw results, policy changes, and PNP news delivered to your inbox.",
+        nlPlaceholder: "Enter your email",
+        nlBtn: "Subscribe",
+        nlDisclaimer: "Only important updates, no spam.",
+        nlSuccess: "You're subscribed! Thank you.",
         contactH2: "Contact & Partnership",
         contactP: "Have questions or interested in partnership? Contact us!",
         labelName: "Name:",
@@ -893,6 +905,14 @@ function updateLanguage(lang) {
     // News
     document.querySelector('#articles h2').textContent = t.articlesH2;
     renderPosts();
+
+    // Newsletter
+    document.querySelector('#newsletter h2').textContent = t.nlH2;
+    document.querySelector('#newsletter > p').textContent = t.nlP;
+    document.querySelector('#newsletter input[type="email"]').placeholder = t.nlPlaceholder;
+    document.querySelector('#newsletter button').textContent = t.nlBtn;
+    document.querySelector('.newsletter-disclaimer').textContent = t.nlDisclaimer;
+    document.querySelector('.newsletter-success').textContent = t.nlSuccess;
 
     // Contact
     document.querySelector('#contact h2').textContent = t.contactH2;
@@ -1475,6 +1495,37 @@ document.addEventListener('DOMContentLoaded', () => {
     updateLanguage(currentLang);
     window.addEventListener('click', (e) => { if (e.target === document.getElementById("articleModal")) window.closeArticle(); });
     window.addEventListener('keydown', (e) => { if (e.key === "Escape") window.closeArticle(); });
+
+    // Newsletter form submit
+    const nlForm = document.getElementById('newsletterForm');
+    if (nlForm) {
+        nlForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const emailInput = nlForm.querySelector('input[type="email"]');
+            const btn = nlForm.querySelector('button');
+            const t = translations[currentLang];
+            btn.disabled = true;
+            btn.textContent = '...';
+            try {
+                const res = await fetch('https://formspree.io/f/mjgejrry', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: emailInput.value, _subject: 'Newsletter Subscription' })
+                });
+                if (res.ok) {
+                    nlForm.style.display = 'none';
+                    document.querySelector('.newsletter-disclaimer').style.display = 'none';
+                    document.querySelector('.newsletter-success').style.display = 'block';
+                } else {
+                    btn.disabled = false;
+                    btn.textContent = t.nlBtn;
+                }
+            } catch {
+                btn.disabled = false;
+                btn.textContent = t.nlBtn;
+            }
+        });
+    }
 });
 
 // --- CORE ASSESSMENT LOGIC ---
