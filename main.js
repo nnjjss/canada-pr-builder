@@ -242,6 +242,10 @@ const translations = {
         pnpBaseLi4: "처리 기간 약 <strong>1~2년</strong>",
         pnpProvincesH3: "주요 주별 PNP 프로그램",
         pnpQuebecNote: "* 퀘벡주는 별도의 이민 시스템(QSWP/PEQ)을 운영하며 연방 PNP와 다릅니다.",
+        pnpProvON: "온타리오", pnpProvBC: "브리티시컬럼비아", pnpProvAB: "앨버타",
+        pnpProvMB: "매니토바", pnpProvSK: "서스캐처원", pnpProvNS: "노바스코샤",
+        pnpProvNB: "뉴브런즈윅", pnpProvNL: "뉴펀들랜드",
+        pnpBCStream1: "BC PNP Tech (IT·헬스케어)",
         pnpStrategyH3: "PNP 활용 전략",
         pnpStrat1T: "EE 풀 먼저 등록",
         pnpStrat1D: "가능한 한 빨리 EE 풀에 프로필을 등록해 주정부 NOI 수신 자격을 갖추세요. CRS가 낮더라도 특정 주정부의 타깃 직군이라면 NOI를 받을 수 있습니다.",
@@ -432,6 +436,10 @@ const translations = {
         pnpBaseLi4: "Processing time approx. <strong>1–2 years</strong>",
         pnpProvincesH3: "PNP Programs by Province",
         pnpQuebecNote: "* Quebec operates its own immigration system (QSWP/PEQ) and is separate from the federal PNP.",
+        pnpProvON: "Ontario", pnpProvBC: "British Columbia", pnpProvAB: "Alberta",
+        pnpProvMB: "Manitoba", pnpProvSK: "Saskatchewan", pnpProvNS: "Nova Scotia",
+        pnpProvNB: "New Brunswick", pnpProvNL: "Newfoundland & Labrador",
+        pnpBCStream1: "BC PNP Tech (IT & Healthcare)",
         pnpStrategyH3: "PNP Strategy Tips",
         pnpStrat1T: "Register in Express Entry First",
         pnpStrat1D: "Create your EE profile as early as possible to become eligible for provincial Notices of Interest (NOIs). Even with a lower CRS, you may receive an NOI if your occupation matches a province's target.",
@@ -824,6 +832,15 @@ function updateLanguage(lang) {
     document.querySelector('#pnpBaseLi3').innerHTML = t.pnpBaseLi3;
     document.querySelector('#pnpBaseLi4').innerHTML = t.pnpBaseLi4;
     document.querySelector('#pnpProvincesH3').textContent = t.pnpProvincesH3;
+    document.querySelector('#pnpProvON').textContent = t.pnpProvON;
+    document.querySelector('#pnpProvBC').textContent = t.pnpProvBC;
+    document.querySelector('#pnpProvAB').textContent = t.pnpProvAB;
+    document.querySelector('#pnpProvMB').textContent = t.pnpProvMB;
+    document.querySelector('#pnpProvSK').textContent = t.pnpProvSK;
+    document.querySelector('#pnpProvNS').textContent = t.pnpProvNS;
+    document.querySelector('#pnpProvNB').textContent = t.pnpProvNB;
+    document.querySelector('#pnpProvNL').textContent = t.pnpProvNL;
+    document.querySelector('#pnpBCStream1').textContent = t.pnpBCStream1;
     document.querySelector('#pnpQuebecNote').textContent = t.pnpQuebecNote;
     document.querySelector('#pnpStrategyH3').textContent = t.pnpStrategyH3;
     document.querySelector('#pnpStrat1T').textContent = t.pnpStrat1T;
