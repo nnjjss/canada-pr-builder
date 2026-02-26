@@ -234,10 +234,11 @@ const translations = {
         thTest: "시험 종류",
         howToRaiseH3: "CRS 점수를 높이는 방법은?",
         howToRaiseP: "현재 점수가 최근 커트라인보다 낮다면 다음 전략을 고려해 보세요:",
-        liRaiseLang: "언어 점수 향상: IELTS 또는 CELPIP에서 CLB 9 또는 10을 달성하면 점수가 비약적으로 상승합니다.",
-        liRaisePnp: "주정부 이민(PNP): 주정부 노미네이션을 받으면 자동으로 600점을 추가 획득합니다.",
-        liRaiseExp: "경력 쌓기: 특히 캐나다 내에서의 추가 경력은 높은 가산점이 붙습니다.",
-        liRaiseEdu: "추가 학위 취득: 석사 또는 박사 학위는 인적 자본 점수를 크게 높여줍니다.",
+        liRaiseLang: "언어 점수 향상 (CLB 9·10): CLB 9 또는 10 달성 시 각 능력별 점수와 '스킬 전이' 항목이 함께 올라 전체 CRS가 40–70점 상승하는 경우가 흔합니다. 영어 외에 프랑스어(CLB 7 이상)까지 갖추면 최대 50점이 추가됩니다.",
+        liRaisePnp: "주정부 이민(PNP): Express Entry 연계 PNP 노미네이션을 받으면 CRS '추가 점수' 항목으로 600점이 자동 부여됩니다. 현재 일반 커트라인(400–500점대)을 크게 상회해 초청장(ITA) 확보에 거의 결정적으로 작용합니다.",
+        liRaiseExp: "경력 쌓기: 캐나다 경력(NOC TEER 0–3, 풀타임 또는 이에 상응)은 핵심 인적 자본+스킬 전이 합산 최대 80점, 해외 경력은 단독으로 최대 50점(스킬 전이)을 받을 수 있어 캐나다 내 경력의 가산 효과가 훨씬 큽니다.",
+        liRaiseEdu: "추가 학위 취득: 학사 대비 석·박사 학위는 핵심 인적 자본(최대 150점)과 '학력+언어·경력' 조합(최대 50점)이 함께 올라가 CRS가 크게 상승합니다.",
+        liRaiseOther: "잡오퍼·기타 가산점: 유효한 LMIA 기반 잡오퍼는 최대 200점, 캐나다 학력은 최대 30점, 캐나다 내 형제·자매 거주 시 15점이 추가됩니다.",
         articlesH2: "최신 이민 뉴스 및 가이드",
         contactH2: "문의 및 제휴",
         contactP: "협업이나 특정 질문이 있으신가요? 저희에게 연락주세요!",
@@ -395,10 +396,11 @@ const translations = {
         thTest: "Test Type",
         howToRaiseH3: "How to Increase Your CRS Score?",
         howToRaiseP: "If your score is below the recent cut-offs, consider these strategies:",
-        liRaiseLang: "Improve Language Scores: Achieving CLB 9 or 10 in IELTS/CELPIP significantly boosts your points.",
-        liRaisePnp: "Provincial Nomination (PNP): Getting a nomination automatically adds 600 points.",
-        liRaiseExp: "Gain Experience: Additional work experience, especially in Canada, adds high bonus points.",
-        liRaiseEdu: "Obtain Higher Education: A Master's or PhD degree greatly increases your human capital points.",
+        liRaiseLang: "Improve Language Scores (CLB 9·10): Reaching CLB 9 or 10 boosts per-ability points and unlocks 'Skill Transferability' bonuses, commonly adding 40–70 pts to your total CRS. Adding French (CLB 7+) as a second language can contribute up to 50 more points.",
+        liRaisePnp: "Provincial Nomination (PNP): An EE-linked PNP nomination automatically adds 600 pts to the CRS 'Additional points' category — far exceeding the typical cut-off (400–500s) and nearly guaranteeing an ITA.",
+        liRaiseExp: "Gain Work Experience: Canadian experience (NOC TEER 0–3, full-time equivalent) contributes up to 80 pts via core human capital + skill transferability, while foreign experience alone contributes up to 50 pts — making Canadian experience far more valuable.",
+        liRaiseEdu: "Obtain Higher Education: A Master's or PhD adds points in both core human capital (up to 150 pts) and 'education + language/experience' combinations (up to 50 pts), significantly raising CRS above a Bachelor's degree.",
+        liRaiseOther: "Job Offer & Other Bonuses: A valid LMIA-supported job offer adds up to 200 pts, Canadian education up to 30 pts, and having a sibling who is a Canadian citizen or PR adds 15 pts.",
         articlesH2: "Latest Immigration News & Guides",
         contactH2: "Contact & Partnership",
         contactP: "Have questions or interested in partnership? Contact us!",
@@ -742,10 +744,12 @@ function updateLanguage(lang) {
     document.querySelectorAll('#guide h3')[1].textContent = t.howToRaiseH3;
     document.querySelector('#guide > p:nth-of-type(3)').textContent = t.howToRaiseP;
     const raiseLis = document.querySelectorAll('#guide ul:last-of-type li');
-    raiseLis[0].innerHTML = `<strong>${t.liRaiseLang.split(':')[0]}:</strong>${t.liRaiseLang.split(':')[1]}`;
-    raiseLis[1].innerHTML = `<strong>${t.liRaisePnp.split(':')[0]}:</strong>${t.liRaisePnp.split(':')[1]}`;
-    raiseLis[2].innerHTML = `<strong>${t.liRaiseExp.split(':')[0]}:</strong>${t.liRaiseExp.split(':')[1]}`;
-    raiseLis[3].innerHTML = `<strong>${t.liRaiseEdu.split(':')[0]}:</strong>${t.liRaiseEdu.split(':')[1]}`;
+    const splitLi = s => [`<strong>${s.split(':')[0]}:</strong>`, s.split(':').slice(1).join(':')].join('');
+    raiseLis[0].innerHTML = splitLi(t.liRaiseLang);
+    raiseLis[1].innerHTML = splitLi(t.liRaisePnp);
+    raiseLis[2].innerHTML = splitLi(t.liRaiseExp);
+    raiseLis[3].innerHTML = splitLi(t.liRaiseEdu);
+    if (raiseLis[4]) raiseLis[4].innerHTML = splitLi(t.liRaiseOther);
 
     // News
     document.querySelector('#articles h2').textContent = t.articlesH2;
