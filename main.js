@@ -103,6 +103,10 @@ const translations = {
         navContact: "문의",
         homeH2: "Welcome to Canada",
         homeP: "캐나다 이민 여정을 위한 가장 세련된 도구입니다. 익스프레스 엔트리(Express Entry) 시스템을 분석하고 당신의 점수를 최적화하세요.",
+        heroChip1: "✅ IRCC 공식 기준",
+        heroChip2: "⚡ 실시간 CRS 계산",
+        heroChip3: "🆓 무료 사용",
+        heroCta: "CRS 점수 계산하기 →",
         calcH2: "맞춤형 이민 루트 진단 & CRS 계산기",
         calcP: "기본 정보와 선호도를 입력하면 <b>Express Entry, PNP, Pilot 프로그램</b> 중 당신에게 가장 유리한 최적의 경로를 데이터 기반으로 추천해드립니다.",
         acc1Title: "기본 인적 정보",
@@ -267,6 +271,10 @@ const translations = {
         navContact: "Contact",
         homeH2: "Welcome to Canada",
         homeP: "The most sophisticated tool for your Canadian immigration journey. Analyze the Express Entry system and optimize your score.",
+        heroChip1: "✅ IRCC Official Standard",
+        heroChip2: "⚡ Real-time CRS Score",
+        heroChip3: "🆓 Free to Use",
+        heroCta: "Calculate My CRS Score →",
         calcH2: "Personalized Immigration Path Diagnosis & CRS Calculator",
         calcP: "Enter your information and preferences to get data-driven recommendations for <b>Express Entry, PNP, and Pilot programs</b>.",
         acc1Title: "Personal Information",
@@ -449,8 +457,12 @@ function updateLanguage(lang) {
     navLinks[4].textContent = t.navContact;
 
     // Home
-    document.querySelector('#home h2').textContent = t.homeH2;
-    document.querySelector('#home p').textContent = t.homeP;
+    document.getElementById('homeH2').textContent = t.homeH2;
+    document.getElementById('homeP').textContent = t.homeP;
+    document.getElementById('heroChip1').textContent = t.heroChip1;
+    document.getElementById('heroChip2').textContent = t.heroChip2;
+    document.getElementById('heroChip3').textContent = t.heroChip3;
+    document.getElementById('heroCta').textContent = t.heroCta;
 
     // Calculator
     document.querySelector('#calculator h2').textContent = t.calcH2;
