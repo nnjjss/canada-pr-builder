@@ -592,6 +592,10 @@ function updateLanguage(lang) {
     empPnpSelect.options[0].textContent = t.no;
     empPnpSelect.options[1].textContent = t.yes;
 
+    const nocPh = lang === 'ko' ? '예: 21232' : 'e.g. 21232';
+    document.getElementById('canadianNOC').placeholder = nocPh;
+    document.getElementById('foreignNOC').placeholder = nocPh;
+
     // Accordion 5
     document.querySelector('#acc5 .acc-header div > div').textContent = t.acc5Title;
     document.querySelector('#acc5 .acc-sub').textContent = t.acc5Sub;
