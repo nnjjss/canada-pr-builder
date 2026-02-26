@@ -856,8 +856,10 @@ function updateLanguage(lang) {
     document.querySelector('footer p').textContent = t.footerRights;
     const footerLinks = document.querySelectorAll('.footer-links a');
     footerLinks[0].textContent = t.navHome;
-    footerLinks[1].textContent = t.footerPrivacy;
-    footerLinks[2].textContent = t.footerContact;
+    footerLinks[1].textContent = t.navGuide;
+    footerLinks[2].textContent = t.navDraws;
+    footerLinks[3].textContent = t.footerPrivacy;
+    footerLinks[4].textContent = t.footerContact;
 
     updateLangPlaceholders();
     if (document.getElementById('birthYear').value) calcAge();
