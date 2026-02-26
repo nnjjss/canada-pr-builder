@@ -182,9 +182,6 @@ const translations = {
         labelHasJob: "유효한 잡오퍼 보유 여부",
         jobRegular: "있음 (일반 숙련직, TEER 1-3)",
         jobSenior: "있음 (시니어 매니저, TEER 0)",
-        labelLmia: "LMIA 승인 여부",
-        lmiaYes: "예, LMIA 승인",
-        lmiaExempt: "LMIA 면제 (C10/C11 등)",
         labelEmpPnp: "고용주 PNP 연계 가능 여부",
         acc5Title: "가산점 요소",
         acc5Sub: "Additional Points",
@@ -245,7 +242,7 @@ const translations = {
         liRaisePnp: "주정부 이민(PNP): Express Entry 연계 PNP 노미네이션을 받으면 CRS '추가 점수' 항목으로 600점이 자동 부여됩니다. 현재 일반 커트라인(400–500점대)을 크게 상회해 초청장(ITA) 확보에 거의 결정적으로 작용합니다.",
         liRaiseExp: "경력 쌓기: 캐나다 경력(NOC TEER 0–3, 풀타임 또는 이에 상응)은 핵심 인적 자본+스킬 전이 합산 최대 80점, 해외 경력은 단독으로 최대 50점(스킬 전이)을 받을 수 있어 캐나다 내 경력의 가산 효과가 훨씬 큽니다.",
         liRaiseEdu: "추가 학위 취득: 학사 대비 석·박사 학위는 핵심 인적 자본(최대 150점)과 '학력+언어·경력' 조합(최대 50점)이 함께 올라가 CRS가 크게 상승합니다.",
-        liRaiseOther: "잡오퍼·기타 가산점: 유효한 LMIA 기반 잡오퍼는 최대 200점, 캐나다 학력은 최대 30점, 캐나다 내 형제·자매 거주 시 15점이 추가됩니다.",
+        liRaiseOther: "기타 가산점: 캐나다 학력은 최대 30점, 캐나다 내 형제·자매 거주 시 15점이 추가됩니다. (잡오퍼 CRS 가산점은 2025년 3월 25일부로 폐지)",
         articlesH2: "최신 이민 뉴스 및 가이드",
         contactH2: "문의 및 제휴",
         contactP: "협업이나 특정 질문이 있으신가요? 저희에게 연락주세요!",
@@ -351,9 +348,6 @@ const translations = {
         labelHasJob: "Valid Job Offer?",
         jobRegular: "Yes (Regular skilled, TEER 1-3)",
         jobSenior: "Yes (Senior Manager, TEER 0)",
-        labelLmia: "LMIA Approved?",
-        lmiaYes: "Yes, LMIA Approved",
-        lmiaExempt: "LMIA Exempt (C10/C11, etc.)",
         labelEmpPnp: "Employer PNP Link Possible?",
         acc5Title: "Additional Points",
         acc5Sub: "Bonus Factors",
@@ -414,7 +408,7 @@ const translations = {
         liRaisePnp: "Provincial Nomination (PNP): An EE-linked PNP nomination automatically adds 600 pts to the CRS 'Additional points' category — far exceeding the typical cut-off (400–500s) and nearly guaranteeing an ITA.",
         liRaiseExp: "Gain Work Experience: Canadian experience (NOC TEER 0–3, full-time equivalent) contributes up to 80 pts via core human capital + skill transferability, while foreign experience alone contributes up to 50 pts — making Canadian experience far more valuable.",
         liRaiseEdu: "Obtain Higher Education: A Master's or PhD adds points in both core human capital (up to 150 pts) and 'education + language/experience' combinations (up to 50 pts), significantly raising CRS above a Bachelor's degree.",
-        liRaiseOther: "Job Offer & Other Bonuses: A valid LMIA-supported job offer adds up to 200 pts, Canadian education up to 30 pts, and having a sibling who is a Canadian citizen or PR adds 15 pts.",
+        liRaiseOther: "Other Bonuses: Canadian education adds up to 30 pts, and having a sibling who is a Canadian citizen or PR adds 15 pts. (Job offer CRS points were eliminated March 25, 2025)",
         articlesH2: "Latest Immigration News & Guides",
         contactH2: "Contact & Partnership",
         contactP: "Have questions or interested in partnership? Contact us!",
@@ -581,8 +575,7 @@ function updateLanguage(lang) {
     acc4Labels[4].textContent = t.labelForeignNoc;
     acc4Labels[5].textContent = t.labelTeerDisplay;
     acc4Labels[6].textContent = t.labelHasJob;
-    acc4Labels[7].textContent = t.labelLmia;
-    acc4Labels[8].textContent = t.labelEmpPnp;
+    acc4Labels[7].textContent = t.labelEmpPnp;
     
     document.getElementById('canadianTEER').textContent = t.teerDefault;
     document.getElementById('foreignTEER').textContent = t.teerDefault;
@@ -601,11 +594,6 @@ function updateLanguage(lang) {
     hasJobSelect.options[0].textContent = t.no;
     hasJobSelect.options[1].textContent = t.jobRegular;
     hasJobSelect.options[2].textContent = t.jobSenior;
-
-    const lmiaSelect = document.getElementById('lmia');
-    lmiaSelect.options[0].textContent = t.lmiaYes;
-    lmiaSelect.options[1].textContent = t.lmiaExempt;
-    lmiaSelect.options[2].textContent = t.no;
 
     const empPnpSelect = document.getElementById('employerPNP');
     empPnpSelect.options[0].textContent = t.no;
@@ -1563,7 +1551,6 @@ function toggleFrenchSection() {
 function toggleJobOfferSection() {
     const val = document.getElementById('hasJobOffer').value;
     const show = val !== 'no';
-    document.getElementById('lmiaDiv').style.display = show ? 'block' : 'none';
     document.getElementById('employerPNPDiv').style.display = show ? 'block' : 'none';
 }
 
@@ -1700,35 +1687,43 @@ function calculateCRS() {
     }
 
     // --- 6. TRANSFERABILITY (max 100) ---
+    // IRCC official table: post-secondary(1+yr)=tier1, two_or_more/master/phd=tier2(advanced)
     let transfer = 0;
     const hasEdu = education !== 'highschool' && education !== '0';
-    // A: Education + Language
-    if (hasEdu && minCLB >= 9) transfer += 50;
-    else if (hasEdu && minCLB >= 7) transfer += 25;
-    // B: Education + Canadian Exp
-    if (hasEdu && canadianExpYears >= 2) transfer += 25;
-    else if (hasEdu && canadianExpYears >= 1) transfer += 13;
-    // C: Foreign Exp + Canadian Exp
-    if (foreignExpYears >= 1 && canadianExpYears >= 1) transfer += (foreignExpYears >= 3 ? 25 : 13);
-    // D: Foreign Exp + Language
-    if (foreignExpYears >= 1 && minCLB >= 7) transfer += (foreignExpYears >= 3 && minCLB >= 9 ? 25 : 13);
-    // E: Trade + Language
-    if (tradeOccupation === 'yes' && minCLB >= 7) transfer += (minCLB >= 9 ? 25 : 13);
+    const isAdvancedEdu = ['two_or_more', 'master', 'phd'].includes(education);
+    // A: Education + Language (tier1 max 25, tier2 max 50)
+    if (hasEdu) {
+        transfer += isAdvancedEdu
+            ? (minCLB >= 9 ? 50 : minCLB >= 7 ? 25 : 0)
+            : (minCLB >= 9 ? 25 : minCLB >= 7 ? 13 : 0);
+    }
+    // B: Education + Canadian Work Experience (tier1 max 25, tier2 max 50)
+    if (hasEdu && canadianExpYears >= 1) {
+        const hiCan = canadianExpYears >= 2;
+        transfer += isAdvancedEdu ? (hiCan ? 50 : 25) : (hiCan ? 25 : 13);
+    }
+    // C: Foreign Work Experience + Canadian Work Experience (2×2 matrix, max 50)
+    if (foreignExpYears >= 1 && canadianExpYears >= 1) {
+        const hiFor = foreignExpYears >= 3, hiCan = canadianExpYears >= 2;
+        transfer += (hiFor && hiCan) ? 50 : (hiFor || hiCan) ? 25 : 13;
+    }
+    // D: Foreign Work Experience + Language (2×2 matrix, max 50)
+    if (foreignExpYears >= 1 && minCLB >= 7) {
+        const hiFor = foreignExpYears >= 3, hiCLB = minCLB >= 9;
+        transfer += (hiFor && hiCLB) ? 50 : (hiFor || hiCLB) ? 25 : 13;
+    }
+    // E: Certificate of Qualification + Language (CLB5-6=25, CLB7+=50)
+    if (tradeOccupation === 'yes') {
+        if (minCLB >= 7)      transfer += 50;
+        else if (minCLB >= 5) transfer += 25;
+    }
     transfer = Math.min(100, transfer);
     breakdown[currentLang === 'ko' ? '이전성 점수' : 'Skill Transferability'] = transfer;
     total += transfer;
 
     // --- 7. ADDITIONAL POINTS ---
-    // Foreign Experience
-    const foreignExpMap = {1:13, 3:25};
-    const foreignPts = foreignExpMap[foreignExpYears] || 0;
-    if (foreignPts > 0) { breakdown[currentLang === 'ko' ? '해외 경력' : 'Foreign Exp'] = foreignPts; total += foreignPts; }
-
-    // Job Offer
-    let jobOfferPts = 0;
-    if (hasJobOffer === 'yes_senior') jobOfferPts = 200;
-    else if (hasJobOffer === 'yes_regular') jobOfferPts = 50;
-    if (jobOfferPts > 0) { breakdown[currentLang === 'ko' ? '잡오퍼' : 'Job Offer'] = jobOfferPts; total += jobOfferPts; }
+    // Note: Foreign Exp standalone points do not exist in IRCC CRS (only via Transferability C/D).
+    // Note: Job Offer CRS points were eliminated March 25, 2025 (MI Section 29 repealed).
 
     // French language bonus
     let frenchPts = 0;
@@ -1793,10 +1788,8 @@ function renderScoreBreakdown(breakdown, total) {
         '학력':150, 'Education':150,
         '언어 (영어)':136, 'Language (English)':136,
         '캐나다 경력':80, 'Canadian Experience':80,
-        '해외 경력':25, 'Foreign Exp':25,
         '이전성 점수':100, 'Skill Transferability':100,
         '배우자 요소':40, 'Spouse Factors':40,
-        '잡오퍼':200, 'Job Offer':200,
         'PNP 노미네이션':600, 'PNP Nomination':600,
         '불어':50, 'French':50,
         '캐나다 학업':30, 'Canadian Study':30,
@@ -1950,14 +1943,7 @@ function renderSimulations(profile) {
             desc: currentLang === 'ko' ? '배우자 CLB 9 이상 달성 시 배우자 언어 점수 최대 20점 추가.' : 'Up to 20 bonus points if spouse achieves CLB 9+.'
         });
     }
-    // 고용주 변경 / 잡오퍼
-    if (profile.canChangeEmployer === 'yes' && profile.hasJobOffer === 'no') {
-        sims.push({ 
-            title: currentLang === 'ko' ? '잡오퍼 확보 전략' : 'Job Offer Strategy', 
-            gain: '+50~200', 
-            desc: currentLang === 'ko' ? 'LMIA 잡오퍼 확보 시 +50점(일반) 또는 +200점(시니어 매니저) 추가.' : 'Secure LMIA job offer for +50 pts (Regular) or +200 pts (Senior Manager).'
-        });
-    }
+    // 고용주 변경 / 잡오퍼 (2025-03-25 이후 CRS 가산점 없음 — 시뮬레이션 항목 제외)
 
     if (sims.length === 0) { section.style.display = 'none'; return; }
     section.style.display = 'block';
