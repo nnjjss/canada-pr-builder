@@ -814,12 +814,12 @@ function updateLanguage(lang) {
 
     document.querySelectorAll('#guide h3')[1].textContent = t.howToRaiseH3;
     document.getElementById('howToRaiseP').textContent = t.howToRaiseP;
-    const raiseLis = document.querySelectorAll('#guide ul:last-of-type li');
-    const splitLi = s => [`<strong>${s.split(':')[0]}:</strong>`, s.split(':').slice(1).join(':')].join('');
-    raiseLis[0].innerHTML = splitLi(t.liRaiseLang);
-    raiseLis[1].innerHTML = splitLi(t.liRaisePnp);
-    raiseLis[2].innerHTML = splitLi(t.liRaiseExp);
-    raiseLis[3].innerHTML = splitLi(t.liRaiseEdu);
+    const raiseLis = document.querySelectorAll('#guide .raise-list li');
+    const splitLi = s => { const idx = s.indexOf(':'); return `<strong>${s.slice(0, idx)}:</strong>${s.slice(idx + 1)}`; };
+    if (raiseLis[0]) raiseLis[0].innerHTML = splitLi(t.liRaiseLang);
+    if (raiseLis[1]) raiseLis[1].innerHTML = splitLi(t.liRaisePnp);
+    if (raiseLis[2]) raiseLis[2].innerHTML = splitLi(t.liRaiseExp);
+    if (raiseLis[3]) raiseLis[3].innerHTML = splitLi(t.liRaiseEdu);
     if (raiseLis[4]) raiseLis[4].innerHTML = splitLi(t.liRaiseOther);
 
     // News
