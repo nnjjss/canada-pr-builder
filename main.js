@@ -108,6 +108,7 @@ const translations = {
         heroChip1: "✅ IRCC 공식 기준",
         heroChip2: "⚡ 실시간 CRS 계산",
         heroChip3: "🆓 무료 사용",
+        jobOfferNotice: "⚠️ 2025년 3월 25일부로 잡오퍼 CRS 가산점이 폐지됐습니다. 프로그램 자격 판단용으로만 활용됩니다.",
         calcH2: "맞춤형 이민 루트 진단 & CRS 계산기",
         calcP: "기본 정보와 선호도를 입력하면 <b>Express Entry, PNP, Pilot 프로그램</b> 중 당신에게 가장 유리한 최적의 경로를 데이터 기반으로 추천해드립니다.",
         acc1Title: "기본 인적 정보",
@@ -301,6 +302,7 @@ const translations = {
         heroChip1: "✅ IRCC Official Standard",
         heroChip2: "⚡ Real-time CRS Score",
         heroChip3: "🆓 Free to Use",
+        jobOfferNotice: "⚠️ As of March 25, 2025, CRS points for job offers have been eliminated. Job offer information is used only for program eligibility purposes.",
         calcH2: "Personalized Immigration Path Diagnosis & CRS Calculator",
         calcP: "Enter your information and preferences to get data-driven recommendations for <b>Express Entry, PNP, and Pilot programs</b>.",
         acc1Title: "Personal Information",
@@ -518,6 +520,7 @@ function updateLanguage(lang) {
     // Calculator
     document.querySelector('#calculator h2').textContent = t.calcH2;
     document.querySelector('#calculator > p').innerHTML = t.calcP;
+    document.getElementById('jobOfferNotice').textContent = t.jobOfferNotice;
     
     // Accordion 1
     document.querySelector('#acc1 .acc-header div > div').textContent = t.acc1Title;
