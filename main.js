@@ -212,7 +212,7 @@ const translations = {
         labelSpouseExp: "배우자 캐나다 경력",
         btnAnalyze: "AI 최적 루트 분석 시작하기",
         nocH2: "내 NOC 코드 찾기 (2021)",
-        nocP: "캐나다 이민 신청의 첫 단계는 본인의 직업에 맞는 5자리 NOC 코드를 찾는 것입니다. 직업명이나 키워드(<b>영문 전용</b>)를 입력해보세요.",
+        nocP: "직업명이나 키워드(<b>영문 전용</b>)를 입력해 NOC 코드를 찾아보세요.",
         nocSearchPlaceholder: "예: Software, Nurse, Manager, Cook...",
         nocDefaultText: "검색어를 입력하면 관련 NOC 코드가 표시됩니다.",
         nocDisclaimer: "* 본 리스트는 주요 숙련직 위주로 구성되어 있으며, 정확한 매칭은 공식 IRCC 웹사이트를 참조하세요.",
@@ -374,7 +374,7 @@ const translations = {
         labelSpouseExp: "Spouse Canadian Work Exp",
         btnAnalyze: "Start AI Optimal Path Analysis",
         nocH2: "Find Your NOC Code (2021)",
-        nocP: "Finding the 5-digit NOC code that matches your job is the first step. Enter keywords or job titles (<b>English only</b>).",
+        nocP: "Search by job title or keyword (<b>English only</b>) to find your 5-digit NOC code.",
         nocSearchPlaceholder: "e.g. Software, Nurse, Manager, Cook...",
         nocDefaultText: "Related NOC codes will be displayed after entering keywords.",
         nocDisclaimer: "* This list focuses on major skilled trades. Refer to the official IRCC website for exact matching.",
@@ -687,13 +687,16 @@ function updateLanguage(lang) {
     // Analyze Button
     document.querySelector('button[onclick="calculateCRS()"]').textContent = t.btnAnalyze;
 
-    // NOC Finder
-    document.querySelector('#noc-finder h2').textContent = t.nocH2;
-    document.querySelector('#noc-finder p').innerHTML = t.nocP;
+    // NOC Finder (integrated in acc4)
+    const nocFinderTitle = document.getElementById('noc-finder-title');
+    if (nocFinderTitle) nocFinderTitle.textContent = t.nocH2;
+    const nocFinderDesc = document.getElementById('noc-finder-desc');
+    if (nocFinderDesc) nocFinderDesc.innerHTML = t.nocP;
     document.getElementById('nocSearchInput').placeholder = t.nocSearchPlaceholder;
     const nocResultsP = document.querySelector('#nocResults p');
     if (nocResultsP) nocResultsP.textContent = t.nocDefaultText;
-    document.querySelector('#noc-finder > p:last-child').textContent = t.nocDisclaimer;
+    const nocDisclaimerEl = document.getElementById('noc-disclaimer');
+    if (nocDisclaimerEl) nocDisclaimerEl.textContent = t.nocDisclaimer;
 
     // Latest Draws Section header, description, table headers, disclaimer
     document.querySelector('#latest-draws h2').textContent = t.drawsH2;

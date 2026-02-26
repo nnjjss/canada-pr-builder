@@ -264,6 +264,16 @@
                 <span id="acc-arrow4">▼</span>
             </div>
             <div class="acc-body" id="acc-body4">
+                <!-- NOC Finder (integrated) -->
+                <div style="margin-bottom:20px; padding-bottom:20px; border-bottom:1px dashed var(--border-color);">
+                    <div style="font-weight:700; margin-bottom:6px; font-size:0.95rem; color:var(--primary);" id="noc-finder-title">NOC 코드 찾기 (2021)</div>
+                    <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:10px;" id="noc-finder-desc">직업명이나 키워드(<b>영문 전용</b>)를 입력해 NOC 코드를 찾아보세요.</p>
+                    <input type="text" id="nocSearchInput" placeholder="예: Software, Nurse, Manager, Cook..." onkeyup="filterNOC()" style="margin-bottom:8px;">
+                    <div id="nocResults" class="noc-results-list" style="max-height:260px;">
+                        <p style="text-align: center; padding: 20px; color: var(--text-muted);">검색어를 입력하면 관련 NOC 코드가 표시됩니다.</p>
+                    </div>
+                    <p style="font-size: 0.8rem; margin-top: 8px; color: var(--text-muted);" id="noc-disclaimer">* 본 리스트는 주요 숙련직 위주로 구성되어 있으며, 정확한 매칭은 공식 IRCC 웹사이트를 참조하세요.</p>
+                </div>
                 <div style="font-weight:600; margin-bottom:12px; color:var(--primary);">캐나다 내 경력</div>
                 <div class="calc-grid">
                     <div class="input-group">
@@ -584,22 +594,6 @@
                 <!-- Detailed advice will be injected here -->
             </div>
         </div>
-    </div>
-
-    <!-- NOC Finder Section -->
-    <div class="card" id="noc-finder">
-        <h2>내 NOC 코드 찾기 (2021)</h2>
-        <p>캐나다 이민 신청의 첫 단계는 본인의 직업에 맞는 5자리 NOC 코드를 찾는 것입니다. 직업명이나 키워드(<b>영문 전용</b>)를 입력해보세요.</p>
-        
-        <div class="search-box">
-            <input type="text" id="nocSearchInput" placeholder="e.g. Software, Nurse, Manager, Cook..." onkeyup="filterNOC()">
-        </div>
-
-        <div id="nocResults" class="noc-results-list">
-            <!-- Results will be injected by JS -->
-            <p style="text-align: center; padding: 20px; color: var(--text-muted);">검색어를 입력하면 관련 NOC 코드가 표시됩니다.</p>
-        </div>
-        <p style="font-size: 0.8rem; margin-top: 15px; color: var(--text-muted);">* 본 리스트는 주요 숙련직 위주로 구성되어 있으며, 정확한 매칭은 공식 IRCC 웹사이트를 참조하세요.</p>
     </div>
 
     <!-- Latest Draws Section -->
