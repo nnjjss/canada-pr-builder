@@ -1988,7 +1988,7 @@ function updateMiniScore() {
         el.removeAttribute('data-level');
     } else {
         numEl.textContent = score;
-        const level = score < 420 ? 'low' : score < 470 ? 'mid' : 'high';
+        const level = score < 450 ? 'low' : score < 500 ? 'mid' : 'high';
         el.setAttribute('data-level', level);
         if (lastMiniScore !== null && score !== lastMiniScore) {
             el.classList.remove('pulse');
