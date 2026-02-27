@@ -1750,14 +1750,14 @@ function goToStep(n) {
     if (n > maxVisitedStep) maxVisitedStep = n;
     updateWizardProgress();
 
-    // Scroll so the step header is visible below the sticky nav
+    // Scroll after accordion transition finishes (0.35s) so layout is stable
     const header = document.getElementById(`acc-header${n}`);
     if (header) {
         setTimeout(() => {
             const rect = header.getBoundingClientRect();
-            const offset = window.scrollY + rect.top - 150;
+            const offset = window.scrollY + rect.top - 20;
             window.scrollTo({ top: Math.max(0, offset), behavior: 'smooth' });
-        }, 50);
+        }, 400);
     }
 }
 
