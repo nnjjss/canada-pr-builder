@@ -41,6 +41,48 @@ const articlesData = {
             date: "2026년 2월 26일",
             summary: "헬스케어, 프랑스어, CEC, PNP, 의사 카테고리까지 — 2026년 실제 드로우 데이터를 바탕으로 내게 유리한 이민 경로를 분석합니다.",
             content: `<p>2026년 2월 한 달간의 드로우 데이터를 분석하면 <b>카테고리 기반 선발</b>이 이민 전략의 핵심임을 알 수 있습니다.</p><h3>2월 드로우 총정리</h3><ul><li><b>의사 카테고리 (02/19):</b> 391명 · CRS 169점 — 역대 최저권</li><li><b>프랑스어 (02/06):</b> 8,500명 · CRS 400점 — 역대 최대 규모</li><li><b>CEC (02/17):</b> 6,000명 · CRS 508점 — 캐나다 경력자</li><li><b>헬스케어 (02/20):</b> 4,000명 · CRS 467점 — 의료·복지직</li><li><b>PNP (02/16, 02/03):</b> 각 279명·423명 · 789점·749점</li></ul><h3>나에게 맞는 전략</h3><p>① 의료직 종사자 → 의사/헬스케어 카테고리 우선 검토<br>② 프랑스어 CLB 7 달성 가능 → 프랑스어 카테고리 목표<br>③ 캐나다 내 1년 이상 경력 → CEC 경로 집중<br>④ 특정 주와 연계된 고용주 → PNP 전략<br>위 CRS 계산기로 현재 점수를 확인하고 AI 루트 분석을 실행해 보세요.</p>`
+        },
+        {
+            title: "Express Entry 2026년 연간 초청 목표 11만 명 — 역대 최대 규모",
+            badge: "뉴스",
+            date: "2026년 1월 15일",
+            summary: "IRCC가 2026년 Express Entry 초청 목표를 11만 명으로 발표했습니다. 카테고리별 선발 비중이 대폭 확대됩니다.",
+            content: `<p>IRCC는 2026년 Express Entry를 통해 총 <b>110,000명</b>을 초청하겠다는 연간 계획을 발표했습니다. 이는 2025년 대비 약 15% 증가한 수치입니다.</p><h3>주요 변경 사항</h3><ul><li><b>카테고리별 선발 비중 확대:</b> 전체 초청의 60% 이상을 카테고리 드로우로 실시.</li><li><b>일반(No Program Specified) 드로우 축소:</b> CRS 고득점자 위주의 일반 드로우 빈도 감소.</li><li><b>신규 카테고리 추가:</b> 의사, 농업·식품 분야 카테고리 신설 예정.</li></ul><h3>전략적 시사점</h3><p>CRS 점수만으로 경쟁하는 시대는 저물고 있습니다. 자신의 직종·언어·경력이 어떤 카테고리에 해당하는지 파악하고, 해당 카테고리의 드로우 주기와 컷오프를 추적하는 것이 핵심 전략입니다.</p>`
+        },
+        {
+            title: "BC PNP Tech 스트림 — IT 직종 우선 초청 확대",
+            badge: "PNP",
+            date: "2026년 2월 10일",
+            summary: "BC주가 Tech 스트림 대상 직종을 35개로 확대하고 월 2회 드로우를 실시합니다. 소프트웨어 엔지니어·데이터 분석가 등이 포함됩니다.",
+            content: `<p>브리티시 컬럼비아(BC)주는 2026년부터 <b>BC PNP Tech 스트림</b> 대상 NOC 코드를 <b>35개</b>로 확대하고, 드로우 빈도를 월 2회로 늘렸습니다.</p><h3>주요 대상 직종</h3><ul><li><b>소프트웨어 엔지니어(NOC 21231)</b></li><li><b>데이터베이스 분석가(NOC 21223)</b></li><li><b>UX/UI 디자이너(NOC 21233)</b></li><li><b>정보보안 분석가(NOC 21220)</b></li></ul><h3>지원 절차</h3><p>BC주 고용주로부터 1년 이상의 잡오퍼를 받고 Express Entry 프로필을 등록한 후, BC PNP에 별도 신청합니다. 노미네이션을 받으면 CRS 600점이 추가됩니다. IT 업계 종사자라면 가장 현실적인 PR 경로입니다.</p>`
+        },
+        {
+            title: "OINP 고용주 잡오퍼 스트림 — 온타리오 취업자 필독",
+            badge: "PNP",
+            date: "2026년 2월 5일",
+            summary: "온타리오 OINP가 고용주 잡오퍼 스트림을 통해 1,200명을 초청했습니다. 토론토·오타와 소재 기업 취업자에게 유리합니다.",
+            content: `<p>온타리오 이민자 추천 프로그램(OINP)은 2026년 2월 <b>고용주 잡오퍼(Employer Job Offer)</b> 스트림에서 <b>1,200명</b>에게 노미네이션 초청장을 발급했습니다.</p><h3>스트림 종류</h3><ul><li><b>Foreign Worker Stream:</b> 해외 거주 숙련 인력 (NOC TEER 0~3).</li><li><b>International Student Stream:</b> 온타리오 대학 졸업생.</li><li><b>In-Demand Skills Stream:</b> 농업·건설·운송 등 TEER 4~5 직종.</li></ul><h3>핵심 요건</h3><p>온타리오 소재 고용주로부터 정규직 잡오퍼가 필수입니다. 잡오퍼의 임금이 해당 직종 중위 임금 이상이어야 하며, 고용주는 OINP 등록 요건을 충족해야 합니다. 노미네이션 시 CRS 600점이 추가됩니다.</p>`
+        },
+        {
+            title: "프랑스어 학습 전략 — TEF 시험 NCLC 7 달성 로드맵",
+            badge: "프랑스어",
+            date: "2026년 1월 28일",
+            summary: "프랑스어 초보자도 12~18개월이면 NCLC 7을 달성할 수 있습니다. 효율적인 학습 방법과 시험 전략을 정리했습니다.",
+            content: `<p>프랑스어 카테고리 드로우는 CRS 400점대에서 8,500명을 초청할 만큼 <b>가장 유리한 이민 경로</b> 중 하나입니다. NCLC 7 달성은 생각보다 어렵지 않습니다.</p><h3>학습 단계별 로드맵</h3><ul><li><b>0~3개월:</b> Duolingo + YouTube 기초 강의로 A1~A2 수준 달성.</li><li><b>3~6개월:</b> Alliance Française 또는 온라인 B1 과정 수강.</li><li><b>6~12개월:</b> TEF 모의시험 반복 + 작문·말하기 집중 훈련.</li><li><b>12~18개월:</b> NCLC 7 목표 TEF Canada 응시.</li></ul><h3>시험 팁</h3><p>TEF Canada는 컴퓨터 기반 시험으로, 듣기·읽기는 객관식, 쓰기·말하기는 주관식입니다. 가장 점수를 올리기 쉬운 영역은 <b>듣기</b>이며, 말하기는 자신감 있는 발음과 구조화된 답변이 핵심입니다. CRS에서 프랑스어 보너스 최대 50점을 추가로 받을 수 있습니다.</p>`
+        },
+        {
+            title: "AIPP에서 AIP로 — 대서양 이민 정규 프로그램 가이드",
+            badge: "가이드",
+            date: "2026년 1월 20일",
+            summary: "파일럿에서 정규 프로그램으로 전환된 AIP. 대서양 4개 주 취업자라면 CRS 없이 PR이 가능합니다.",
+            content: `<p><b>대서양 이민 프로그램(Atlantic Immigration Program, AIP)</b>은 2022년 정규 프로그램으로 전환되어 Nova Scotia, New Brunswick, PEI, Newfoundland & Labrador 4개 주에서 운영됩니다.</p><h3>자격 요건</h3><ul><li>대서양 4개 주 소재 <b>지정 고용주</b>로부터 정규직 잡오퍼.</li><li>최근 5년 내 1년 이상 경력 (NOC TEER 0~4).</li><li>영어/프랑스어 CLB 4 이상 (TEER 0~3) 또는 CLB 5 (TEER 4).</li><li>고등학교 졸업 이상 학력.</li></ul><h3>장점</h3><p>AIP는 Express Entry와 별도의 경로로, CRS 점수 경쟁 없이 PR을 취득할 수 있습니다. 처리 기간은 평균 12~18개월이며, 고용주 지정(designation) 절차가 간소화되어 중소기업도 적극 참여하고 있습니다.</p>`
+        },
+        {
+            title: "캐나다 정착 첫 6개월 — 실전 생활 가이드",
+            badge: "가이드",
+            date: "2026년 2월 1일",
+            summary: "SIN 발급부터 은행 개설, 건강보험, 주거, 취업까지. PR 랜딩 후 반드시 해야 할 일을 순서대로 정리했습니다.",
+            content: `<p>PR 카드를 받고 캐나다에 도착한 후 <b>첫 6개월</b>은 정착의 골든 타임입니다.</p><h3>도착 후 즉시 (1~2주)</h3><ul><li><b>SIN(사회보험번호) 발급:</b> Service Canada 센터 방문 또는 온라인 신청.</li><li><b>은행 계좌 개설:</b> TD, RBC, BMO 등 주요 은행. 신분증 + PR 카드 필요.</li><li><b>핸드폰 개통:</b> Bell, Rogers, Telus 또는 알뜰폰(Freedom, Koodo).</li></ul><h3>1~3개월</h3><ul><li><b>건강보험(OHIP/MSP 등) 등록:</b> 주별로 대기 기간 상이 (온타리오 3개월 대기).</li><li><b>운전면허 전환:</b> 한국 면허 → 주별 교환 절차 확인.</li><li><b>임시 주거 → 장기 렌트:</b> 크레딧 히스토리 구축 시작.</li></ul><h3>3~6개월</h3><ul><li><b>취업 활동:</b> LinkedIn, Indeed Canada, 주정부 Job Bank 활용.</li><li><b>세금 신고 준비:</b> CRA 등록 + T4 수령 대비.</li><li><b>언어 향상:</b> LINC(무료 영어 교육) 프로그램 등록.</li></ul>`
         }
     ],
     en: [
@@ -85,6 +127,48 @@ const articlesData = {
             date: "Feb 26, 2026",
             summary: "From Healthcare to French, CEC, PNP, and the new Physician category — use February's real draw data to identify your best immigration pathway.",
             content: `<p>February 2026's draw results confirm that <b>category-based selection</b> is now the dominant feature of Express Entry strategy.</p><h3>February 2026 Draw Summary</h3><ul><li><b>Physicians (Feb 19):</b> 391 invited · CRS 169 — historic low</li><li><b>French (Feb 6):</b> 8,500 invited · CRS 400 — record volume</li><li><b>CEC (Feb 17):</b> 6,000 invited · CRS 508 — Canadian work exp.</li><li><b>Healthcare (Feb 20):</b> 4,000 invited · CRS 467 — medical & social</li><li><b>PNP (Feb 16, Feb 3):</b> 279 & 423 invited · 789 & 749 pts</li></ul><h3>Choose Your Path</h3><p>① Medical professionals → Check Physician or Healthcare category eligibility first<br>② Can achieve French NCLC 7 → Prioritize French-language category<br>③ 1+ year Canadian work experience → Focus on CEC<br>④ Employer in a specific province → Pursue PNP strategy<br>Use the CRS Calculator above to find your score and run the AI route analysis.</p>`
+        },
+        {
+            title: "Express Entry 2026 Annual Target: 110,000 Invitations — Record High",
+            badge: "News",
+            date: "Jan 15, 2026",
+            summary: "IRCC announced a 2026 Express Entry target of 110,000 invitations — up 15% from 2025. Category-based draws will dominate.",
+            content: `<p>IRCC has announced an annual target of <b>110,000 Express Entry invitations</b> for 2026, a ~15% increase over 2025.</p><h3>Key Changes</h3><ul><li><b>Category-based draws dominate:</b> Over 60% of invitations will be through category draws.</li><li><b>Fewer general draws:</b> No-program-specified draws will become less frequent.</li><li><b>New categories:</b> Physician and agriculture/food processing categories added.</li></ul><h3>Strategic Implications</h3><p>The era of competing purely on CRS score is fading. The new priority is identifying which category matches your occupation, language, and experience — then tracking that category's draw frequency and cut-off trends.</p>`
+        },
+        {
+            title: "BC PNP Tech Stream — Expanded IT Occupation Priority",
+            badge: "PNP",
+            date: "Feb 10, 2026",
+            summary: "BC has expanded the Tech Stream to 35 NOC codes with bi-monthly draws. Software engineers, data analysts, and UX designers are eligible.",
+            content: `<p>British Columbia has expanded the <b>BC PNP Tech Stream</b> to <b>35 eligible NOC codes</b> and increased draw frequency to twice monthly in 2026.</p><h3>Key Eligible Occupations</h3><ul><li><b>Software Engineers (NOC 21231)</b></li><li><b>Database Analysts (NOC 21223)</b></li><li><b>UX/UI Designers (NOC 21233)</b></li><li><b>Information Security Analysts (NOC 21220)</b></li></ul><h3>Application Process</h3><p>Obtain a job offer of 1+ year from a BC employer, register an Express Entry profile, then apply separately to BC PNP. If nominated, 600 CRS points are added automatically. For IT professionals, this is the most practical PR pathway.</p>`
+        },
+        {
+            title: "OINP Employer Job Offer Stream — Must-Read for Ontario Workers",
+            badge: "PNP",
+            date: "Feb 5, 2026",
+            summary: "Ontario's OINP invited 1,200 through the Employer Job Offer stream. Ideal for those working with Toronto or Ottawa employers.",
+            content: `<p>The Ontario Immigrant Nominee Program (OINP) issued <b>1,200 nomination invitations</b> through the <b>Employer Job Offer</b> stream in February 2026.</p><h3>Stream Types</h3><ul><li><b>Foreign Worker Stream:</b> Skilled workers abroad (NOC TEER 0–3).</li><li><b>International Student Stream:</b> Ontario post-secondary graduates.</li><li><b>In-Demand Skills Stream:</b> Agriculture, construction, transport (TEER 4–5).</li></ul><h3>Key Requirements</h3><p>A full-time job offer from an Ontario employer is mandatory. The offered wage must meet or exceed the median for the occupation, and the employer must meet OINP registration requirements. Nomination adds 600 CRS points.</p>`
+        },
+        {
+            title: "French Language Strategy — Roadmap to TEF NCLC 7",
+            badge: "French Language",
+            date: "Jan 28, 2026",
+            summary: "Even French beginners can reach NCLC 7 in 12–18 months. Here's an efficient study plan and exam strategy.",
+            content: `<p>The French-language category invites 8,500+ at CRS 400, making it one of the <b>most advantageous immigration pathways</b>. Reaching NCLC 7 is more achievable than you think.</p><h3>Study Roadmap</h3><ul><li><b>Months 0–3:</b> Duolingo + YouTube basics to reach A1–A2.</li><li><b>Months 3–6:</b> Alliance Française or online B1 course.</li><li><b>Months 6–12:</b> TEF practice tests + writing/speaking intensive training.</li><li><b>Months 12–18:</b> Take TEF Canada aiming for NCLC 7.</li></ul><h3>Exam Tips</h3><p>TEF Canada is computer-based: listening and reading are multiple-choice; writing and speaking are open-ended. <b>Listening</b> is the easiest section to improve. For speaking, confident pronunciation and structured responses are key. French proficiency can add up to 50 bonus CRS points.</p>`
+        },
+        {
+            title: "Atlantic Immigration Program (AIP) — Full Guide",
+            badge: "Guide",
+            date: "Jan 20, 2026",
+            summary: "The AIP offers a CRS-free PR path for those working in Atlantic Canada's four provinces.",
+            content: `<p>The <b>Atlantic Immigration Program (AIP)</b> became a permanent program in 2022, operating in Nova Scotia, New Brunswick, PEI, and Newfoundland & Labrador.</p><h3>Eligibility</h3><ul><li>Full-time job offer from a <b>designated employer</b> in Atlantic Canada.</li><li>1+ year work experience in the past 5 years (NOC TEER 0–4).</li><li>CLB 4+ (TEER 0–3) or CLB 5 (TEER 4).</li><li>High school diploma or equivalent.</li></ul><h3>Advantages</h3><p>AIP operates separately from Express Entry — no CRS score competition. Processing takes 12–18 months on average, and the employer designation process has been simplified, enabling more small businesses to participate.</p>`
+        },
+        {
+            title: "First 6 Months in Canada — Practical Settlement Guide",
+            badge: "Guide",
+            date: "Feb 1, 2026",
+            summary: "From SIN to banking, health insurance, housing, and employment — everything you need to do after PR landing, in order.",
+            content: `<p>The <b>first 6 months</b> after arriving in Canada with PR status are your golden settlement window.</p><h3>Immediately (Week 1–2)</h3><ul><li><b>Get your SIN:</b> Visit Service Canada or apply online.</li><li><b>Open a bank account:</b> TD, RBC, BMO — bring ID + PR card.</li><li><b>Get a phone plan:</b> Bell, Rogers, Telus, or budget carriers (Freedom, Koodo).</li></ul><h3>Months 1–3</h3><ul><li><b>Health insurance:</b> Register for OHIP/MSP (varies by province; Ontario has 3-month wait).</li><li><b>Driver's license:</b> Check provincial exchange agreements for your country.</li><li><b>Long-term housing:</b> Start building credit history for rental applications.</li></ul><h3>Months 3–6</h3><ul><li><b>Job search:</b> LinkedIn, Indeed Canada, provincial Job Banks.</li><li><b>Tax prep:</b> Register with CRA, prepare for T4 slips.</li><li><b>Language improvement:</b> Enroll in LINC (free English classes).</li></ul>`
         }
     ]
 };
@@ -287,6 +371,16 @@ const translations = {
         liRaiseEdu: "학위 추가: 석·박사 학위는 핵심 인적 자본(최대 150점)과 스킬 전이(최대 50점) 합산 최대 200점 상승이 가능합니다.",
         liRaiseOther: "캐나다 학력·가족 가산점: 캐나다 내 1년 이상 학위 취득 시 +30점, 캐나다 시민권자·영주권자 형제·자매 거주 시 +15점이 추가됩니다.",
         articlesH2: "최신 이민 뉴스 및 가이드",
+        filterAll: "전체",
+        filterNews: "뉴스",
+        filterPNP: "PNP",
+        filterCEC: "CEC",
+        filterFrench: "프랑스어",
+        filterHealthcare: "헬스케어",
+        filterGuide: "가이드",
+        blogSearchPlaceholder: "기사 검색...",
+        blogLoadMore: "더 보기",
+        blogEmpty: "검색 결과가 없습니다.",
         nlH2: "최신 이민 소식을 놓치지 마세요",
         nlP: "Express Entry 선발 결과, 정책 변경, PNP 소식을 이메일로 받아보세요.",
         nlPlaceholder: "이메일 입력",
@@ -502,6 +596,16 @@ const translations = {
         liRaiseEdu: "Higher Education: A Master's or PhD adds up to 150 pts in core human capital and up to 50 pts in skill transferability — a total of up to 200 pts above a Bachelor's.",
         liRaiseOther: "Canadian Study & Family: Canadian degree (1+ year) adds +30 pts; a sibling who is a Canadian citizen or PR adds +15 pts.",
         articlesH2: "Latest Immigration News & Guides",
+        filterAll: "All",
+        filterNews: "News",
+        filterPNP: "PNP",
+        filterCEC: "CEC",
+        filterFrench: "French",
+        filterHealthcare: "Healthcare",
+        filterGuide: "Guide",
+        blogSearchPlaceholder: "Search articles...",
+        blogLoadMore: "Load More",
+        blogEmpty: "No articles found.",
         nlH2: "Don't Miss the Latest Immigration Updates",
         nlP: "Get Express Entry draw results, policy changes, and PNP news delivered to your inbox.",
         nlPlaceholder: "Enter your email",
@@ -900,6 +1004,16 @@ function updateLanguage(lang) {
 
     // News
     document.querySelector('#articles h2').textContent = t.articlesH2;
+    document.querySelectorAll('.blog-filter-btn').forEach(btn => {
+        const key = btn.dataset.i18n;
+        if (key && t[key]) btn.textContent = t[key];
+    });
+    const blogSearchEl = document.getElementById('blogSearchInput');
+    if (blogSearchEl) blogSearchEl.placeholder = t.blogSearchPlaceholder || '';
+    const loadMoreEl = document.getElementById('blogLoadMore');
+    if (loadMoreEl) loadMoreEl.textContent = t.blogLoadMore || '';
+    const emptyEl = document.getElementById('blogEmpty');
+    if (emptyEl) emptyEl.textContent = t.blogEmpty || '';
     renderPosts();
 
     // Newsletter
@@ -950,6 +1064,12 @@ const articlesMeta = [
     { type: 'healthcare', isNew: true  },  // Feb 20
     { type: 'pnp',        isNew: true  },  // Feb 16
     { type: 'guide',      isNew: true  },  // Feb 26
+    { type: 'news',       isNew: false },  // Jan 15
+    { type: 'pnp',        isNew: true  },  // Feb 10
+    { type: 'pnp',        isNew: false },  // Feb 5
+    { type: 'french',     isNew: false },  // Jan 28
+    { type: 'guide',      isNew: false },  // Jan 20
+    { type: 'guide',      isNew: false },  // Feb 1
 ];
 
 // --- Express Entry Draw Data ---
@@ -1509,6 +1629,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    initBlogToolbar();
     updateLanguage(currentLang);
     window.addEventListener('click', (e) => { if (e.target === document.getElementById("articleModal")) window.closeArticle(); });
     window.addEventListener('keydown', (e) => { if (e.key === "Escape") window.closeArticle(); });
@@ -2541,18 +2662,52 @@ function renderStrategicAdvice(profile) {
         advices.map(a => `<div class="advice-item">${a}</div>`).join('');
 }
 
+let blogFilter = 'all';
+let blogSearch = '';
+let blogShowCount = 6;
+let blogSearchTimer = null;
+
+function getFilteredArticles() {
+    const data = articlesData[currentLang];
+    const results = [];
+    data.forEach((article, index) => {
+        const meta = articlesMeta[index] || {};
+        if (blogFilter !== 'all') {
+            if (blogFilter === 'news') {
+                if (meta.type !== 'news' && meta.type !== 'special') return;
+            } else if (meta.type !== blogFilter) return;
+        }
+        if (blogSearch) {
+            const q = blogSearch.toLowerCase();
+            if (!article.title.toLowerCase().includes(q) && !article.summary.toLowerCase().includes(q)) return;
+        }
+        results.push({ article, index, meta });
+    });
+    return results;
+}
+
 function renderPosts() {
     const list = document.getElementById("articles").querySelector(".articles-grid");
     if (!list) return;
     list.innerHTML = "";
 
-    const data = articlesData[currentLang];
+    const filtered = getFilteredArticles();
+    const visible = filtered.slice(0, blogShowCount);
     const btnText = currentLang === 'ko' ? '자세히 보기' : 'Read More';
     const newLabel = 'NEW';
 
-    data.forEach((article, index) => {
-        const meta = articlesMeta[index] || {};
-        const isFeatured = index === 0;
+    const emptyEl = document.getElementById('blogEmpty');
+    const loadMoreWrap = document.querySelector('.blog-load-more-wrap');
+
+    if (filtered.length === 0) {
+        if (emptyEl) emptyEl.style.display = 'block';
+        if (loadMoreWrap) loadMoreWrap.style.display = 'none';
+        return;
+    }
+    if (emptyEl) emptyEl.style.display = 'none';
+
+    visible.forEach(({ article, index, meta }, i) => {
+        const isFeatured = i === 0 && blogFilter === 'all' && !blogSearch;
         const badgeEl = `<span class="article-badge article-badge--${meta.type || ''}">${article.badge}</span>`;
         const newBadge = meta.isNew ? `<span class="article-new-badge">${newLabel}</span>` : '';
         const readMoreEl = `<span class="read-more-link">${btnText} →</span>`;
@@ -2587,4 +2742,40 @@ function renderPosts() {
         }
         list.appendChild(el);
     });
+
+    if (loadMoreWrap) {
+        loadMoreWrap.style.display = filtered.length > blogShowCount ? 'flex' : 'none';
+    }
+}
+
+function initBlogToolbar() {
+    document.querySelectorAll('.blog-filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.blog-filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            blogFilter = btn.dataset.filter;
+            blogShowCount = 6;
+            renderPosts();
+        });
+    });
+
+    const searchInput = document.getElementById('blogSearchInput');
+    if (searchInput) {
+        searchInput.addEventListener('input', () => {
+            clearTimeout(blogSearchTimer);
+            blogSearchTimer = setTimeout(() => {
+                blogSearch = searchInput.value.trim();
+                blogShowCount = 6;
+                renderPosts();
+            }, 300);
+        });
+    }
+
+    const loadMoreBtn = document.getElementById('blogLoadMore');
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', () => {
+            blogShowCount += 6;
+            renderPosts();
+        });
+    }
 }

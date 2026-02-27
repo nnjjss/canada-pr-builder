@@ -947,7 +947,25 @@
     <!-- Latest Articles Section -->
     <div id="articles">
         <h2 style="color: var(--text-main); border-bottom: none; margin-bottom: 20px; font-size: 1.8rem;">최신 이민 뉴스 및 가이드</h2>
+        <div class="blog-toolbar">
+            <div class="blog-filters">
+                <button class="blog-filter-btn active" data-filter="all" data-i18n="filterAll">전체</button>
+                <button class="blog-filter-btn" data-filter="news" data-i18n="filterNews">뉴스</button>
+                <button class="blog-filter-btn" data-filter="pnp" data-i18n="filterPNP">PNP</button>
+                <button class="blog-filter-btn" data-filter="cec" data-i18n="filterCEC">CEC</button>
+                <button class="blog-filter-btn" data-filter="french" data-i18n="filterFrench">프랑스어</button>
+                <button class="blog-filter-btn" data-filter="healthcare" data-i18n="filterHealthcare">헬스케어</button>
+                <button class="blog-filter-btn" data-filter="guide" data-i18n="filterGuide">가이드</button>
+            </div>
+            <div class="blog-search-wrap">
+                <input type="text" class="blog-search" id="blogSearchInput" placeholder="기사 검색..." data-i18n-placeholder="blogSearchPlaceholder">
+            </div>
+        </div>
         <div class="articles-grid"></div>
+        <div class="blog-load-more-wrap" style="display:none;">
+            <button class="blog-load-more" id="blogLoadMore" data-i18n="blogLoadMore">더 보기</button>
+        </div>
+        <div class="blog-empty" id="blogEmpty" style="display:none;" data-i18n="blogEmpty">검색 결과가 없습니다.</div>
     </div>
 
     <!-- Newsletter CTA -->
