@@ -787,58 +787,10 @@ function updateLanguage(lang) {
         : ['None','1 year','2 years','3 years','4 years','5+ years'];
     spouseExpOpts.forEach((text, i) => { if (spouseExpSel.options[i]) spouseExpSel.options[i].textContent = text; });
     
-    // Latest Draws Section header, description, table headers, disclaimer
-    document.querySelector('#latest-draws h2').textContent = t.drawsH2;
-    const drawsPs = document.querySelectorAll('#latest-draws > p');
-    if (drawsPs[0]) drawsPs[0].textContent = t.drawsP;
-    if (drawsPs[1]) drawsPs[1].textContent = t.drawsDisclaimer;
-    const drawThs = document.querySelectorAll('#latest-draws thead th');
-    if (drawThs.length >= 4) {
-        drawThs[0].textContent = t.thDate;
-        drawThs[1].textContent = t.thType;
-        drawThs[2].textContent = t.thInvitations;
-        drawThs[3].textContent = t.thScore;
-    }
-
-    // Draws Table Body
-    const drawRows = document.querySelectorAll('#latest-draws tbody tr');
-    if (lang === 'ko') {
-        drawRows[0].children[0].textContent = "2026년 2월 20일";
-        drawRows[1].children[0].textContent = "2026년 2월 19일";
-        drawRows[2].children[0].textContent = "2026년 2월 17일";
-        drawRows[3].children[0].textContent = "2026년 2월 16일";
-        drawRows[4].children[0].textContent = "2026년 2월 6일";
-        drawRows[5].children[0].textContent = "2026년 2월 3일";
-        drawRows[0].children[1].textContent = "헬스케어 & 소셜 서비스";
-        drawRows[1].children[1].textContent = "신설 의사 카테고리 (캐나다 경력 의사)";
-        drawRows[2].children[1].textContent = "캐나다 경험 이민 (CEC)";
-        drawRows[3].children[1].textContent = "주정부 이민 (PNP)";
-        drawRows[4].children[1].textContent = "프랑스어 우수자";
-        drawRows[5].children[1].textContent = "주정부 이민 (PNP)";
-
-        drawRows.forEach(row => {
-            row.children[2].textContent = row.children[2].textContent.replace('명', '').replace('ITAs','').trim() + '명';
-            row.children[3].textContent = row.children[3].textContent.replace('점', '').replace('pts','').trim() + '점';
-        });
-    } else {
-        drawRows[0].children[0].textContent = "Feb 20, 2026";
-        drawRows[1].children[0].textContent = "Feb 19, 2026";
-        drawRows[2].children[0].textContent = "Feb 17, 2026";
-        drawRows[3].children[0].textContent = "Feb 16, 2026";
-        drawRows[4].children[0].textContent = "Feb 6, 2026";
-        drawRows[5].children[0].textContent = "Feb 3, 2026";
-        drawRows[0].children[1].textContent = "Healthcare & Social Services";
-        drawRows[1].children[1].textContent = "Physicians w/ Canadian Work Experience (New Category)";
-        drawRows[2].children[1].textContent = "Canadian Experience Class (CEC)";
-        drawRows[3].children[1].textContent = "Provincial Nominee Program (PNP)";
-        drawRows[4].children[1].textContent = "French-Language Proficiency";
-        drawRows[5].children[1].textContent = "Provincial Nominee Program (PNP)";
-
-        drawRows.forEach(row => {
-            row.children[2].textContent = row.children[2].textContent.replace('명', '').replace('ITAs','').trim() + ' ITAs';
-            row.children[3].textContent = row.children[3].textContent.replace('점', '').replace('pts','').trim() + ' pts';
-        });
-    }
+    // Latest Draws Section
+    document.getElementById('drawsH2').textContent = t.drawsH2;
+    document.getElementById('drawsDesc').textContent = t.drawsP;
+    renderDrawsTable(lastDrawUserCRS);
 
     // PNP Guide Section
     document.querySelector('#pnp-guide h2').textContent = t.pnpH2;
@@ -960,6 +912,16 @@ function updateLanguage(lang) {
         calculateCRS();
     }
 }
+
+// --- Express Entry Draw Data ---
+const drawsData = [
+    { date: { ko: '2026년 2월 20일', en: 'Feb 20, 2026' }, type: 'healthcare', label: { ko: '헬스케어 & 소셜 서비스', en: 'Healthcare & Social Services' }, invited: 4000, cutoff: 467 },
+    { date: { ko: '2026년 2월 19일', en: 'Feb 19, 2026' }, type: 'special',    label: { ko: '신설 의사 카테고리', en: 'Physician Category (New)' }, invited: 391, cutoff: 169 },
+    { date: { ko: '2026년 2월 17일', en: 'Feb 17, 2026' }, type: 'cec',        label: { ko: '캐나다 경험 이민 (CEC)', en: 'Canadian Experience Class (CEC)' }, invited: 6000, cutoff: 508 },
+    { date: { ko: '2026년 2월 16일', en: 'Feb 16, 2026' }, type: 'pnp',        label: { ko: '주정부 이민 (PNP)', en: 'Provincial Nominee Program (PNP)' }, invited: 279,  cutoff: 789, effectiveCutoff: 189 },
+    { date: { ko: '2026년 2월 6일',  en: 'Feb 6, 2026'  }, type: 'french',     label: { ko: '프랑스어 우수자', en: 'French-Language Proficiency' }, invited: 8500, cutoff: 400 },
+    { date: { ko: '2026년 2월 3일',  en: 'Feb 3, 2026'  }, type: 'pnp',        label: { ko: '주정부 이민 (PNP)', en: 'Provincial Nominee Program (PNP)' }, invited: 423,  cutoff: 749, effectiveCutoff: 149 },
+];
 
 // --- Comprehensive NOC 2021 Database (Canada.ca) ---
 const nocData = [
@@ -1619,6 +1581,8 @@ document.addEventListener('DOMContentLoaded', () => {
         updateMiniScore();
     }
 
+    renderDrawsTable(null);
+
     // --- Real-time mini CRS: input/change delegation ---
     if (calcSection) {
         let miniDebounce = null;
@@ -1882,6 +1846,88 @@ function updateBottomNav() {
         nextBtn.className = 'wizard-bottom-btn';
         nextBtn.onclick = () => goToStep(currentStep + 1);
     }
+}
+
+/* ── Draws Table ── */
+let lastDrawUserCRS = null;
+
+function renderDrawsTable(userCRS) {
+    lastDrawUserCRS = userCRS;
+    const wrap = document.getElementById('drawsTableWrap');
+    if (!wrap) return;
+    const isKo = currentLang === 'ko';
+    const hasScore = userCRS !== null && userCRS > 0;
+
+    const thDate     = isKo ? '날짜' : 'Date';
+    const thType     = isKo ? '선발 유형' : 'Draw Type';
+    const thInvited  = isKo ? '초청 인원' : 'Invitations';
+    const thCutoff   = isKo ? '합격 점수 (CRS)' : 'CRS Cut-off';
+    const thMine     = isKo ? '내 점수' : 'My Score';
+
+    let rows = '';
+    for (const draw of drawsData) {
+        const isPNP = draw.type === 'pnp';
+        const dateStr  = draw.date[isKo ? 'ko' : 'en'];
+        const labelStr = draw.label[isKo ? 'ko' : 'en'];
+        const invitedStr = draw.invited.toLocaleString() + (isKo ? '명' : ' ITAs');
+
+        let cutoffStr;
+        if (isPNP) {
+            const eff = isKo
+                ? `<span class="draw-effective">(실질 ~${draw.effectiveCutoff}점)</span>`
+                : `<span class="draw-effective">(effective ~${draw.effectiveCutoff})</span>`;
+            cutoffStr = `${draw.cutoff.toLocaleString()}${isKo ? '점' : ' pts'} ${eff}`;
+        } else {
+            cutoffStr = `${draw.cutoff}${isKo ? '점' : ' pts'}`;
+        }
+
+        let compareTd = '';
+        if (hasScore) {
+            const cmp = isPNP ? draw.effectiveCutoff : draw.cutoff;
+            let cls, label;
+            if (userCRS >= cmp) {
+                cls = 'pass'; label = isKo ? '✓ 합격권' : '✓ Eligible';
+            } else if (userCRS >= cmp - 50) {
+                cls = 'close'; label = isKo ? '△ 근접' : '△ Near';
+            } else {
+                cls = 'fail'; label = isKo ? '✗ 미달' : '✗ Below';
+            }
+            if (isPNP) label += isKo ? ' (추천 필요)' : ' (w/ nomination)';
+            compareTd = `<td><span class="draw-compare draw-compare--${cls}">${label}</span></td>`;
+        }
+
+        rows += `<tr>
+            <td>${dateStr}</td>
+            <td><span class="draw-badge draw-badge--${draw.type}">${labelStr}</span></td>
+            <td>${invitedStr}</td>
+            <td>${cutoffStr}</td>
+            ${compareTd}
+        </tr>`;
+    }
+
+    const compareHeader = hasScore ? `<th>${thMine}</th>` : '';
+    const disclaimer = isKo
+        ? '* PNP 선발은 주정부 가산점 600점이 포함된 점수입니다. 괄호 안 수치가 실질 경쟁 기준입니다.'
+        : '* PNP draws include a 600-point provincial nomination bonus. Bracketed figures show the effective benchmark.';
+    const myScoreNote = hasScore
+        ? `<p style="font-size:0.85rem;margin-top:4px;color:var(--text-muted);">${isKo ? `* 내 추정 CRS <strong>${userCRS}점</strong> 기준으로 비교합니다.` : `* Comparison based on your estimated CRS of <strong>${userCRS} pts</strong>.`}</p>`
+        : '';
+
+    wrap.innerHTML = `
+        <div class="table-container">
+            <table>
+                <thead><tr>
+                    <th>${thDate}</th>
+                    <th>${thType}</th>
+                    <th>${thInvited}</th>
+                    <th>${thCutoff}</th>
+                    ${compareHeader}
+                </tr></thead>
+                <tbody>${rows}</tbody>
+            </table>
+        </div>
+        <p style="font-size:0.85rem;margin-top:10px;color:var(--text-muted);">${disclaimer}</p>
+        ${myScoreNote}`;
 }
 
 /* ── Mini CRS Score (lightweight) ── */
@@ -2248,6 +2294,7 @@ function calculateCRS() {
     renderRecommendations(profile);
     renderStrategyCards(profile);
     renderStrategicAdvice(profile);
+    renderDrawsTable(finalScore);
 
     document.getElementById('strategyResults').scrollIntoView({ behavior: 'smooth' });
 }
