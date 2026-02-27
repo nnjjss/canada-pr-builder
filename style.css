@@ -1631,7 +1631,7 @@ nav a.active {
 /* ===================== Back-to-Top Button ===================== */
 #backToTop {
     position: fixed;
-    bottom: 30px;
+    bottom: 80px;
     right: 30px;
     width: 48px;
     height: 48px;
@@ -1691,4 +1691,104 @@ footer::before {
     right: 0;
     height: 4px;
     background: linear-gradient(90deg, var(--maple-deep), var(--maple-red), var(--maple-orange), var(--maple-gold));
+}
+
+/* ===================== Fixed Bottom Wizard Navigation ===================== */
+.wizard-bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid var(--border-color);
+    box-shadow: 0 -4px 24px -4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.wizard-bottom-nav.hidden {
+    transform: translateY(100%);
+    opacity: 0;
+    pointer-events: none;
+}
+.wizard-bottom-btn {
+    padding: 10px 24px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: 1.5px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background: var(--card-bg);
+    color: var(--text-main);
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, transform 0.15s;
+    min-width: 100px;
+    text-align: center;
+}
+.wizard-bottom-btn:hover:not(:disabled) {
+    background: var(--bg-light);
+    border-color: var(--primary);
+    transform: translateY(-1px);
+}
+.wizard-bottom-btn:disabled {
+    opacity: 0.35;
+    cursor: default;
+}
+.wizard-bottom-btn.wizard-bottom-submit {
+    background: linear-gradient(135deg, var(--maple-red) 0%, var(--maple-deep) 100%);
+    color: #fff;
+    border-color: transparent;
+    min-width: 140px;
+}
+.wizard-bottom-btn.wizard-bottom-submit:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+}
+.wizard-bottom-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+.wizard-bottom-step {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+.mini-score {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--maple-red) 0%, var(--maple-deep) 100%);
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 3px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.3px;
+}
+.mini-score.pulse {
+    animation: scorePulse 0.4s ease;
+}
+@keyframes scorePulse {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+
+@media (max-width: 480px) {
+    .wizard-bottom-nav {
+        padding: 10px 12px;
+    }
+    .wizard-bottom-btn {
+        min-width: 70px;
+        padding: 10px 14px;
+        font-size: 0.85rem;
+    }
+    .wizard-bottom-btn.wizard-bottom-submit {
+        min-width: 100px;
+        font-size: 0.85rem;
+    }
 }

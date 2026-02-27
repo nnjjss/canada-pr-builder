@@ -204,10 +204,6 @@
                     </div>
                 </div>
 
-                <div class="wizard-nav">
-                    <div></div>
-                    <button type="button" data-dir="next" onclick="goToStep(2)">다음 &rarr;</button>
-                </div>
             </div>
         </div>
 
@@ -259,10 +255,6 @@
                             <option value="30">3년 이상 또는 석/박사 졸업</option>
                         </select>
                     </div>
-                </div>
-                <div class="wizard-nav">
-                    <button type="button" data-dir="prev" onclick="goToStep(1)">&larr; 이전</button>
-                    <button type="button" data-dir="next" onclick="goToStep(3)">다음 &rarr;</button>
                 </div>
             </div>
         </div>
@@ -328,10 +320,6 @@
                             </select>
                         </div>
                     </div>
-                </div>
-                <div class="wizard-nav">
-                    <button type="button" data-dir="prev" onclick="goToStep(2)">&larr; 이전</button>
-                    <button type="button" data-dir="next" onclick="goToStep(4)">다음 &rarr;</button>
                 </div>
             </div>
         </div>
@@ -411,10 +399,6 @@
                         </select>
                     </div>
                 </div>
-                <div class="wizard-nav">
-                    <button type="button" data-dir="prev" onclick="goToStep(3)">&larr; 이전</button>
-                    <button type="button" data-dir="next" onclick="goToStep(5)">다음 &rarr;</button>
-                </div>
             </div>
         </div>
 
@@ -451,10 +435,6 @@
                             <option value="yes">예 (Red Seal 등)</option>
                         </select>
                     </div>
-                </div>
-                <div class="wizard-nav">
-                    <button type="button" data-dir="prev" onclick="goToStep(4)">&larr; 이전</button>
-                    <button type="button" data-dir="next" onclick="goToStep(6)">다음 &rarr;</button>
                 </div>
             </div>
         </div>
@@ -535,10 +515,6 @@
                         </select>
                     </div>
                 </div>
-                <div class="wizard-nav">
-                    <button type="button" data-dir="prev" onclick="goToStep(5)">&larr; 이전</button>
-                    <button type="button" data-dir="next" onclick="goToStep(7)">다음 &rarr;</button>
-                </div>
             </div>
         </div>
 
@@ -591,11 +567,17 @@
                         </select>
                     </div>
                 </div>
-                <div class="wizard-nav">
-                    <button type="button" data-dir="prev" onclick="goToStep(6)">&larr; 이전</button>
-                    <button type="button" onclick="calculateCRS()" class="wizard-submit">AI 최적 루트 분석 시작하기</button>
-                </div>
             </div>
+        </div>
+
+        <!-- Fixed Bottom Wizard Navigation Bar -->
+        <div id="wizardBottomNav" class="wizard-bottom-nav" style="display:none;">
+            <button type="button" id="wizBottomPrev" class="wizard-bottom-btn" onclick="goToStep(currentStep - 1)">&larr; 이전</button>
+            <div class="wizard-bottom-center">
+                <span id="wizBottomStep" class="wizard-bottom-step">Step 1 / 7</span>
+                <span id="wizBottomScore" class="mini-score">CRS: --</span>
+            </div>
+            <button type="button" id="wizBottomNext" class="wizard-bottom-btn" onclick="goToStep(currentStep + 1)">다음 &rarr;</button>
         </div>
 
         <!-- Strategy Dashboard Results -->

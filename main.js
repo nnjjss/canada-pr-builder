@@ -115,6 +115,9 @@ const translations = {
         wizardPrev: "\u2190 이전",
         wizardNext: "다음 \u2192",
         wizardSubmit: "AI 최적 루트 분석 시작하기",
+        miniScoreLabel: "CRS",
+        miniScoreSuffix: "점",
+        bottomStepOf: "/",
         acc1Title: "기본 인적 정보",
         acc1Sub: "Personal Information",
         labelBirthYear: "출생 연도",
@@ -316,6 +319,9 @@ const translations = {
         wizardPrev: "\u2190 Previous",
         wizardNext: "Next \u2192",
         wizardSubmit: "Start AI Optimal Path Analysis",
+        miniScoreLabel: "CRS",
+        miniScoreSuffix: "pts",
+        bottomStepOf: "/",
         acc1Title: "Personal Information",
         acc1Sub: "Basic Info",
         labelBirthYear: "Birth Year",
@@ -540,14 +546,7 @@ function updateLanguage(lang) {
     document.querySelectorAll('.wizard-step .step-label').forEach((el, i) => {
         if (t.wizardSteps[i]) el.textContent = t.wizardSteps[i];
     });
-    document.querySelectorAll('.wizard-nav button[data-dir="prev"]').forEach(btn => {
-        btn.innerHTML = t.wizardPrev;
-    });
-    document.querySelectorAll('.wizard-nav button[data-dir="next"]').forEach(btn => {
-        btn.innerHTML = t.wizardNext;
-    });
-    const submitBtn = document.querySelector('.wizard-submit');
-    if (submitBtn) submitBtn.textContent = t.wizardSubmit;
+    updateBottomNav();
 
     // Accordion 1
     document.querySelector('#acc1 .acc-header div > div').textContent = t.acc1Title;
@@ -1597,6 +1596,63 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // --- Bottom Nav: IntersectionObserver to show/hide ---
+    const calcSection = document.getElementById('calculator');
+    const bottomNav = document.getElementById('wizardBottomNav');
+    if (calcSection && bottomNav) {
+        const calcObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    bottomNav.style.display = 'flex';
+                    requestAnimationFrame(() => bottomNav.classList.remove('hidden'));
+                } else {
+                    bottomNav.classList.add('hidden');
+                    setTimeout(() => {
+                        if (bottomNav.classList.contains('hidden')) bottomNav.style.display = 'none';
+                    }, 300);
+                }
+            });
+        }, { threshold: 0.01 });
+        calcObserver.observe(calcSection);
+        updateBottomNav();
+        updateMiniScore();
+    }
+
+    // --- Real-time mini CRS: input/change delegation ---
+    if (calcSection) {
+        let miniDebounce = null;
+        calcSection.addEventListener('input', () => {
+            clearTimeout(miniDebounce);
+            miniDebounce = setTimeout(updateMiniScore, 200);
+        });
+        calcSection.addEventListener('change', () => {
+            clearTimeout(miniDebounce);
+            miniDebounce = setTimeout(updateMiniScore, 100);
+        });
+    }
+
+    // --- Enter key to advance step ---
+    if (calcSection) {
+        calcSection.addEventListener('keydown', (e) => {
+            if (e.key !== 'Enter') return;
+            const tag = e.target.tagName;
+            if (tag === 'SELECT' || tag === 'TEXTAREA' || tag === 'BUTTON') return;
+            if (e.target.closest('.acc-header')) return;
+            // Skip if a NOC dropdown is visible
+            const nocDrop = e.target.closest('.input-group')?.querySelector('.noc-inline-drop');
+            if (nocDrop && nocDrop.style.display === 'block') return;
+            // Only handle if target is inside the active accordion body
+            const activeBody = document.getElementById(`acc-body${currentStep}`);
+            if (!activeBody || !activeBody.contains(e.target)) return;
+            e.preventDefault();
+            if (currentStep === 7) {
+                calculateCRS();
+            } else {
+                goToStep(currentStep + 1);
+            }
+        });
+    }
 });
 
 // --- CORE ASSESSMENT LOGIC ---
@@ -1749,6 +1805,7 @@ function goToStep(n) {
     currentStep = n;
     if (n > maxVisitedStep) maxVisitedStep = n;
     updateWizardProgress();
+    updateBottomNav();
 
     // Scroll after accordion transition finishes (0.35s) so layout is stable
     const header = document.getElementById(`acc-header${n}`);
@@ -1796,6 +1853,145 @@ function updateWizardProgress() {
             }
         }
     }
+}
+
+/* ── Bottom Navigation Bar ── */
+function updateBottomNav() {
+    const bar = document.getElementById('wizardBottomNav');
+    if (!bar) return;
+    const t = translations[currentLang];
+    const prevBtn = document.getElementById('wizBottomPrev');
+    const nextBtn = document.getElementById('wizBottomNext');
+    const stepLabel = document.getElementById('wizBottomStep');
+
+    // Step indicator
+    stepLabel.textContent = `Step ${currentStep} ${t.bottomStepOf} 7`;
+
+    // Previous button
+    prevBtn.innerHTML = t.wizardPrev;
+    prevBtn.disabled = (currentStep <= 1);
+    prevBtn.onclick = () => goToStep(currentStep - 1);
+
+    // Next / Submit button
+    if (currentStep === 7) {
+        nextBtn.textContent = t.wizardSubmit;
+        nextBtn.className = 'wizard-bottom-btn wizard-bottom-submit';
+        nextBtn.onclick = () => calculateCRS();
+    } else {
+        nextBtn.innerHTML = t.wizardNext;
+        nextBtn.className = 'wizard-bottom-btn';
+        nextBtn.onclick = () => goToStep(currentStep + 1);
+    }
+}
+
+/* ── Mini CRS Score (lightweight) ── */
+let lastMiniScore = null;
+
+function calculateMiniCRS() {
+    try {
+        const birthYear = parseInt(document.getElementById('birthYear').value) || 0;
+        const birthMonth = parseInt(document.getElementById('birthMonth').value) || 1;
+        const maritalStatus = document.getElementById('maritalStatus').value;
+        const isMarried = (maritalStatus === 'married');
+        const spouseAccompany = isMarried ? document.getElementById('spouseAccompany').value : 'no';
+        const effectiveMarried = isMarried && spouseAccompany === 'yes';
+
+        let age = 0;
+        if (birthYear > 1940) {
+            const today = new Date();
+            age = today.getFullYear() - birthYear;
+            if (today.getMonth() + 1 < birthMonth) age--;
+        }
+
+        const education = document.getElementById('education').value;
+        const testType = document.getElementById('langTest').value;
+        const clbL = convertToCLB(document.getElementById('langL').value, 'L', testType);
+        const clbR = convertToCLB(document.getElementById('langR').value, 'R', testType);
+        const clbW = convertToCLB(document.getElementById('langW').value, 'W', testType);
+        const clbS = convertToCLB(document.getElementById('langS').value, 'S', testType);
+        const minCLB = (clbL && clbR && clbW && clbS) ? Math.min(clbL, clbR, clbW, clbS) : 0;
+        const canadianExpYears = parseInt(document.getElementById('canadianExpYears').value) || 0;
+        const foreignExpYears = parseInt(document.getElementById('foreignExpYears').value) || 0;
+
+        let total = 0;
+
+        // Age
+        const ageTableSingle = {18:99,19:105,20:110,21:110,22:110,23:110,24:110,25:110,26:110,27:110,28:110,29:110,30:105,31:99,32:94,33:88,34:83,35:77,36:72,37:66,38:61,39:55,40:50,41:39,42:28,43:17,44:6};
+        const ageTableMarried = {18:90,19:95,20:100,21:100,22:100,23:100,24:100,25:100,26:100,27:100,28:100,29:100,30:95,31:90,32:85,33:80,34:75,35:70,36:65,37:60,38:55,39:50,40:45,41:35,42:25,43:15,44:5};
+        total += (effectiveMarried ? ageTableMarried : ageTableSingle)[age] || 0;
+
+        // Education
+        const eduSingle = { highschool:30, oneyear:90, twoyear:98, bachelor:120, two_or_more:128, master:135, phd:150 };
+        const eduMarried = { highschool:28, oneyear:84, twoyear:91, bachelor:112, two_or_more:119, master:126, phd:140 };
+        total += (effectiveMarried ? eduMarried : eduSingle)[education] || 0;
+
+        // Language
+        if (clbL || clbR || clbW || clbS) {
+            total += clbToLangPts(clbL, effectiveMarried) + clbToLangPts(clbR, effectiveMarried) +
+                     clbToLangPts(clbW, effectiveMarried) + clbToLangPts(clbS, effectiveMarried);
+        }
+
+        // Canadian experience
+        const canExpSingle = {1:40, 2:53, 3:64, 4:72, 5:80};
+        const canExpMarried = {1:35, 2:46, 3:56, 4:63, 5:70};
+        const canExpKey = Math.min(5, Math.max(0, canadianExpYears));
+        total += (effectiveMarried ? canExpMarried : canExpSingle)[canExpKey] || 0;
+
+        // Spouse (simplified)
+        if (effectiveMarried) {
+            const spouseLang = parseInt(document.getElementById('spouseLanguage').value) || 0;
+            const spouseLangPts = {9:20, 7:15, 5:10};
+            total += (spouseLang >= 9 ? 20 : spouseLang >= 7 ? 15 : spouseLang >= 5 ? 10 : 0);
+            const spouseEdu = document.getElementById('spouseEducation').value;
+            const spouseEduMap = { highschool:2, oneyear:6, twoyear:7, bachelor:8, two_or_more:9, master:10, phd:10 };
+            total += spouseEduMap[spouseEdu] || 0;
+            const spouseCanExp = parseInt(document.getElementById('spouseCanadianExp').value) || 0;
+            total += (spouseCanExp >= 5 ? 10 : spouseCanExp >= 3 ? 10 : spouseCanExp >= 2 ? 8 : spouseCanExp >= 1 ? 5 : 0);
+        }
+
+        // Transferability (simplified — lang+edu, lang+canExp, edu+foreignExp, canExp+foreignExp)
+        let transferability = 0;
+        const eduLevel = {highschool:1, oneyear:2, twoyear:2, bachelor:3, two_or_more:3, master:3, phd:3}[education] || 0;
+        if (minCLB >= 7 && eduLevel >= 3) transferability += (minCLB >= 9 ? 50 : 25);
+        if (minCLB >= 7 && canadianExpYears >= 1) transferability += (minCLB >= 9 ? 50 : 25);
+        if (eduLevel >= 3 && foreignExpYears >= 1) transferability += (foreignExpYears >= 3 ? 50 : 25);
+        if (canadianExpYears >= 1 && foreignExpYears >= 1) transferability += (foreignExpYears >= 3 ? 50 : 25);
+        total += Math.min(100, transferability);
+
+        // Additional (PNP, sibling, French simplified)
+        const hasPNP = parseInt(document.getElementById('hasPNP').value) || 0;
+        total += hasPNP;
+        const sibling = parseInt(document.getElementById('sibling').value) || 0;
+        total += sibling;
+        const frenchTest = document.getElementById('frenchTest').value;
+        const frenchCLB = frenchTest !== 'none' ? parseInt(document.getElementById('frenchCLB').value) || 0 : 0;
+        if (frenchCLB >= 9) total += (minCLB >= 5 ? 50 : 25);
+        else if (frenchCLB >= 7) total += (minCLB >= 5 ? 25 : 0);
+        const canadianStudy = parseInt(document.getElementById('canadianStudy').value) || 0;
+        total += canadianStudy;
+
+        return total;
+    } catch (e) {
+        return null;
+    }
+}
+
+function updateMiniScore() {
+    const score = calculateMiniCRS();
+    const el = document.getElementById('wizBottomScore');
+    if (!el) return;
+    const t = translations[currentLang];
+    if (score === null || score === 0) {
+        el.textContent = `${t.miniScoreLabel}: --`;
+    } else {
+        el.textContent = `${t.miniScoreLabel}: ${score} ${t.miniScoreSuffix}`;
+        if (lastMiniScore !== null && score !== lastMiniScore) {
+            el.classList.remove('pulse');
+            void el.offsetWidth; // force reflow
+            el.classList.add('pulse');
+        }
+    }
+    lastMiniScore = score;
 }
 
 function updateLangPlaceholders() {
