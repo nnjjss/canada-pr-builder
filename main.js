@@ -111,6 +111,10 @@ const translations = {
         jobOfferNotice: "⚠️ 2025년 3월 25일부로 잡오퍼 CRS 가산점이 폐지됐습니다. 프로그램 자격 판단용으로만 활용됩니다.",
         calcH2: "맞춤형 이민 루트 진단 & CRS 계산기",
         calcP: "기본 정보와 선호도를 입력하면 <b>Express Entry, PNP, Pilot 프로그램</b> 중 당신에게 가장 유리한 최적의 경로를 데이터 기반으로 추천해드립니다.",
+        wizardSteps: ["인적정보","학력","언어","경력","가산점","선호도","시뮬레이션"],
+        wizardPrev: "\u2190 이전",
+        wizardNext: "다음 \u2192",
+        wizardSubmit: "AI 최적 루트 분석 시작하기",
         acc1Title: "기본 인적 정보",
         acc1Sub: "Personal Information",
         labelBirthYear: "출생 연도",
@@ -308,6 +312,10 @@ const translations = {
         jobOfferNotice: "⚠️ As of March 25, 2025, CRS points for job offers have been eliminated. Job offer information is used only for program eligibility purposes.",
         calcH2: "Personalized Immigration Path Diagnosis & CRS Calculator",
         calcP: "Enter your information and preferences to get data-driven recommendations for <b>Express Entry, PNP, and Pilot programs</b>.",
+        wizardSteps: ["Personal","Education","Language","Work","Bonus","Preferences","Simulation"],
+        wizardPrev: "\u2190 Previous",
+        wizardNext: "Next \u2192",
+        wizardSubmit: "Start AI Optimal Path Analysis",
         acc1Title: "Personal Information",
         acc1Sub: "Basic Info",
         labelBirthYear: "Birth Year",
@@ -527,7 +535,20 @@ function updateLanguage(lang) {
     document.querySelector('#calculator h2').textContent = t.calcH2;
     document.querySelector('#calculator > p').innerHTML = t.calcP;
     document.getElementById('jobOfferNotice').textContent = t.jobOfferNotice;
-    
+
+    // Wizard step labels & nav buttons
+    document.querySelectorAll('.wizard-step .step-label').forEach((el, i) => {
+        if (t.wizardSteps[i]) el.textContent = t.wizardSteps[i];
+    });
+    document.querySelectorAll('.wizard-nav button[data-dir="prev"]').forEach(btn => {
+        btn.innerHTML = t.wizardPrev;
+    });
+    document.querySelectorAll('.wizard-nav button[data-dir="next"]').forEach(btn => {
+        btn.innerHTML = t.wizardNext;
+    });
+    const submitBtn = document.querySelector('.wizard-submit');
+    if (submitBtn) submitBtn.textContent = t.wizardSubmit;
+
     // Accordion 1
     document.querySelector('#acc1 .acc-header div > div').textContent = t.acc1Title;
     document.querySelector('#acc1 .acc-sub').textContent = t.acc1Sub;
@@ -767,10 +788,6 @@ function updateLanguage(lang) {
         : ['None','1 year','2 years','3 years','4 years','5+ years'];
     spouseExpOpts.forEach((text, i) => { if (spouseExpSel.options[i]) spouseExpSel.options[i].textContent = text; });
     
-    // Analyze Button
-    document.querySelector('button[onclick="calculateCRS()"]').textContent = t.btnAnalyze;
-
-
     // Latest Draws Section header, description, table headers, disclaimer
     document.querySelector('#latest-draws h2').textContent = t.drawsH2;
     const drawsPs = document.querySelectorAll('#latest-draws > p');
@@ -1706,19 +1723,77 @@ function hideNOCDropdown(prefix) {
     }, 150);
 }
 
-function toggleAcc(num) {
-    const body = document.getElementById(`acc-body${num}`);
-    const arrow = document.getElementById(`acc-arrow${num}`);
-    const header = document.getElementById(`acc-header${num}`);
-    if (!body) return;
-    const isOpen = !body.classList.contains('acc-body-closed');
-    if (isOpen) {
-        body.classList.add('acc-body-closed');
-    } else {
-        body.classList.remove('acc-body-closed');
+/* ── Wizard Step Navigation ── */
+let currentStep = 1;
+let maxVisitedStep = 1;
+
+function goToStep(n) {
+    if (n < 1 || n > 7 || n > maxVisitedStep + 1) return;
+
+    // Close current step
+    const curBody = document.getElementById(`acc-body${currentStep}`);
+    const curArrow = document.getElementById(`acc-arrow${currentStep}`);
+    const curHeader = document.getElementById(`acc-header${currentStep}`);
+    if (curBody) curBody.classList.add('acc-body-closed');
+    if (curArrow) curArrow.textContent = '▼';
+    if (curHeader) curHeader.setAttribute('aria-expanded', 'false');
+
+    // Open target step
+    const newBody = document.getElementById(`acc-body${n}`);
+    const newArrow = document.getElementById(`acc-arrow${n}`);
+    const newHeader = document.getElementById(`acc-header${n}`);
+    if (newBody) newBody.classList.remove('acc-body-closed');
+    if (newArrow) newArrow.textContent = '▲';
+    if (newHeader) newHeader.setAttribute('aria-expanded', 'true');
+
+    currentStep = n;
+    if (n > maxVisitedStep) maxVisitedStep = n;
+    updateWizardProgress();
+
+    // Scroll to top of the step
+    const acc = document.getElementById(`acc${n}`);
+    if (acc) {
+        setTimeout(() => {
+            acc.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 50);
     }
-    if (arrow) arrow.textContent = isOpen ? '▼' : '▲';
-    if (header) header.setAttribute('aria-expanded', String(!isOpen));
+}
+
+function updateWizardProgress() {
+    const steps = document.querySelectorAll('.wizard-step');
+    const lines = document.querySelectorAll('.wizard-line');
+
+    steps.forEach(el => {
+        const s = parseInt(el.dataset.step);
+        el.classList.remove('active', 'completed', 'disabled');
+        if (s === currentStep) {
+            el.classList.add('active');
+        } else if (s < currentStep) {
+            el.classList.add('completed');
+        } else if (s <= maxVisitedStep) {
+            // visited but not current — clickable
+        } else {
+            el.classList.add('disabled');
+        }
+    });
+
+    lines.forEach((line, i) => {
+        const stepAfter = i + 1; // line between step i+1 and step i+2
+        line.classList.toggle('completed', stepAfter < currentStep);
+        line.classList.toggle('active', stepAfter === currentStep - 1 || stepAfter < maxVisitedStep);
+    });
+
+    // Update accordion header disabled state
+    for (let i = 1; i <= 7; i++) {
+        const header = document.getElementById(`acc-header${i}`);
+        if (header) {
+            if (i > maxVisitedStep + 1) {
+                header.classList.add('wizard-disabled');
+            } else {
+                header.classList.remove('wizard-disabled');
+            }
+        }
+    }
 }
 
 function updateLangPlaceholders() {

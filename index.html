@@ -84,9 +84,26 @@
         <h2>맞춤형 이민 루트 진단 & CRS 계산기</h2>
         <p>기본 정보와 선호도를 입력하면 <b>Express Entry, PNP, Pilot 프로그램</b> 중 당신에게 가장 유리한 최적의 경로를 데이터 기반으로 추천해드립니다.</p>
 
+        <!-- Wizard Progress Bar -->
+        <div class="wizard-progress">
+            <div class="wizard-step active" data-step="1" onclick="goToStep(1)"><span class="step-num">1</span><span class="step-label">인적정보</span></div>
+            <div class="wizard-line"></div>
+            <div class="wizard-step disabled" data-step="2" onclick="goToStep(2)"><span class="step-num">2</span><span class="step-label">학력</span></div>
+            <div class="wizard-line"></div>
+            <div class="wizard-step disabled" data-step="3" onclick="goToStep(3)"><span class="step-num">3</span><span class="step-label">언어</span></div>
+            <div class="wizard-line"></div>
+            <div class="wizard-step disabled" data-step="4" onclick="goToStep(4)"><span class="step-num">4</span><span class="step-label">경력</span></div>
+            <div class="wizard-line"></div>
+            <div class="wizard-step disabled" data-step="5" onclick="goToStep(5)"><span class="step-num">5</span><span class="step-label">가산점</span></div>
+            <div class="wizard-line"></div>
+            <div class="wizard-step disabled" data-step="6" onclick="goToStep(6)"><span class="step-num">6</span><span class="step-label">선호도</span></div>
+            <div class="wizard-line"></div>
+            <div class="wizard-step disabled" data-step="7" onclick="goToStep(7)"><span class="step-num">7</span><span class="step-label">시뮬레이션</span></div>
+        </div>
+
         <!-- Section 1: 기본 인적 정보 -->
         <div class="form-accordion" id="acc1">
-            <div class="acc-header" id="acc-header1" role="button" tabindex="0" aria-expanded="true" aria-controls="acc-body1" onclick="toggleAcc(1)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleAcc(1)}">
+            <div class="acc-header" id="acc-header1" role="button" tabindex="0" aria-expanded="true" aria-controls="acc-body1" onclick="goToStep(1)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();goToStep(1)}">
                 <span class="acc-num">1</span>
                 <div style="flex:1;">
                     <div style="font-weight:700;">기본 인적 정보</div>
@@ -146,12 +163,57 @@
                         </select>
                     </div>
                 </div>
+
+                <!-- Spouse Section (moved inside Step 1) -->
+                <div id="spouseSection" style="display:none; border:1px solid var(--border-color); border-radius:16px; padding:24px; margin-top:16px; background:rgba(10,37,64,0.02);">
+                    <h3 style="margin-bottom:16px; color:var(--primary);">배우자 정보 (동반하는 경우)</h3>
+                    <div class="calc-grid">
+                        <div class="input-group">
+                            <label>배우자 최종 학력</label>
+                            <select id="spouseEducation">
+                                <option value="0">선택 안 함</option>
+                                <option value="highschool">고등학교 졸업</option>
+                                <option value="oneyear">1년 과정 대학</option>
+                                <option value="twoyear">2년 과정 대학</option>
+                                <option value="bachelor">학사 학위</option>
+                                <option value="master">석사/박사 학위</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>배우자 영어 CLB 레벨</label>
+                            <select id="spouseLanguage">
+                                <option value="0">선택 안 함 / CLB 4 이하</option>
+                                <option value="5">CLB 5</option>
+                                <option value="6">CLB 6</option>
+                                <option value="7">CLB 7</option>
+                                <option value="8">CLB 8</option>
+                                <option value="9">CLB 9 이상</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>배우자 캐나다 경력</label>
+                            <select id="spouseCanadianExp">
+                                <option value="0">없음</option>
+                                <option value="1">1년</option>
+                                <option value="2">2년</option>
+                                <option value="3">3년</option>
+                                <option value="4">4년</option>
+                                <option value="5">5년 이상</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wizard-nav">
+                    <div></div>
+                    <button type="button" data-dir="next" onclick="goToStep(2)">다음 &rarr;</button>
+                </div>
             </div>
         </div>
 
         <!-- Section 2: 학력 정보 -->
         <div class="form-accordion" id="acc2">
-            <div class="acc-header" id="acc-header2" role="button" tabindex="0" aria-expanded="false" aria-controls="acc-body2" onclick="toggleAcc(2)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleAcc(2)}">
+            <div class="acc-header" id="acc-header2" role="button" tabindex="0" aria-expanded="false" aria-controls="acc-body2" onclick="goToStep(2)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();goToStep(2)}">
                 <span class="acc-num">2</span>
                 <div style="flex:1;">
                     <div style="font-weight:700;">학력 정보</div>
@@ -198,12 +260,16 @@
                         </select>
                     </div>
                 </div>
+                <div class="wizard-nav">
+                    <button type="button" data-dir="prev" onclick="goToStep(1)">&larr; 이전</button>
+                    <button type="button" data-dir="next" onclick="goToStep(3)">다음 &rarr;</button>
+                </div>
             </div>
         </div>
 
         <!-- Section 3: 언어 성적 -->
         <div class="form-accordion" id="acc3">
-            <div class="acc-header" id="acc-header3" role="button" tabindex="0" aria-expanded="false" aria-controls="acc-body3" onclick="toggleAcc(3)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleAcc(3)}">
+            <div class="acc-header" id="acc-header3" role="button" tabindex="0" aria-expanded="false" aria-controls="acc-body3" onclick="goToStep(3)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();goToStep(3)}">
                 <span class="acc-num">3</span>
                 <div style="flex:1;">
                     <div style="font-weight:700;">언어 성적</div>
@@ -263,12 +329,16 @@
                         </div>
                     </div>
                 </div>
+                <div class="wizard-nav">
+                    <button type="button" data-dir="prev" onclick="goToStep(2)">&larr; 이전</button>
+                    <button type="button" data-dir="next" onclick="goToStep(4)">다음 &rarr;</button>
+                </div>
             </div>
         </div>
 
         <!-- Section 4: 경력 정보 -->
         <div class="form-accordion" id="acc4">
-            <div class="acc-header" id="acc-header4" role="button" tabindex="0" aria-expanded="false" aria-controls="acc-body4" onclick="toggleAcc(4)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleAcc(4)}">
+            <div class="acc-header" id="acc-header4" role="button" tabindex="0" aria-expanded="false" aria-controls="acc-body4" onclick="goToStep(4)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();goToStep(4)}">
                 <span class="acc-num">4</span>
                 <div style="flex:1;">
                     <div style="font-weight:700;">경력 정보</div>
@@ -341,12 +411,16 @@
                         </select>
                     </div>
                 </div>
+                <div class="wizard-nav">
+                    <button type="button" data-dir="prev" onclick="goToStep(3)">&larr; 이전</button>
+                    <button type="button" data-dir="next" onclick="goToStep(5)">다음 &rarr;</button>
+                </div>
             </div>
         </div>
 
         <!-- Section 5: 가산점 요소 -->
         <div class="form-accordion" id="acc5">
-            <div class="acc-header" id="acc-header5" role="button" tabindex="0" aria-expanded="false" aria-controls="acc-body5" onclick="toggleAcc(5)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleAcc(5)}">
+            <div class="acc-header" id="acc-header5" role="button" tabindex="0" aria-expanded="false" aria-controls="acc-body5" onclick="goToStep(5)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();goToStep(5)}">
                 <span class="acc-num">5</span>
                 <div style="flex:1;">
                     <div style="font-weight:700;">가산점 요소</div>
@@ -378,12 +452,16 @@
                         </select>
                     </div>
                 </div>
+                <div class="wizard-nav">
+                    <button type="button" data-dir="prev" onclick="goToStep(4)">&larr; 이전</button>
+                    <button type="button" data-dir="next" onclick="goToStep(6)">다음 &rarr;</button>
+                </div>
             </div>
         </div>
 
         <!-- Section 6: 이민 선호도 -->
         <div class="form-accordion" id="acc6">
-            <div class="acc-header" id="acc-header6" role="button" tabindex="0" aria-expanded="false" aria-controls="acc-body6" onclick="toggleAcc(6)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleAcc(6)}">
+            <div class="acc-header" id="acc-header6" role="button" tabindex="0" aria-expanded="false" aria-controls="acc-body6" onclick="goToStep(6)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();goToStep(6)}">
                 <span class="acc-num">6</span>
                 <div style="flex:1;">
                     <div style="font-weight:700;">이민 선호도</div>
@@ -457,12 +535,16 @@
                         </select>
                     </div>
                 </div>
+                <div class="wizard-nav">
+                    <button type="button" data-dir="prev" onclick="goToStep(5)">&larr; 이전</button>
+                    <button type="button" data-dir="next" onclick="goToStep(7)">다음 &rarr;</button>
+                </div>
             </div>
         </div>
 
         <!-- Section 7: 전략 시뮬레이션 -->
         <div class="form-accordion" id="acc7">
-            <div class="acc-header" id="acc-header7" role="button" tabindex="0" aria-expanded="false" aria-controls="acc-body7" onclick="toggleAcc(7)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleAcc(7)}">
+            <div class="acc-header" id="acc-header7" role="button" tabindex="0" aria-expanded="false" aria-controls="acc-body7" onclick="goToStep(7)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();goToStep(7)}">
                 <span class="acc-num">7</span>
                 <div style="flex:1;">
                     <div style="font-weight:700;">전략 시뮬레이션</div>
@@ -509,50 +591,12 @@
                         </select>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <!-- Spouse Section -->
-        <div id="spouseSection" style="display:none; border:1px solid var(--border-color); border-radius:16px; padding:24px; margin-top:16px; margin-bottom:16px; background:rgba(10,37,64,0.02);">
-            <h3 style="margin-bottom:16px; color:var(--primary);">배우자 정보 (동반하는 경우)</h3>
-            <div class="calc-grid">
-                <div class="input-group">
-                    <label>배우자 최종 학력</label>
-                    <select id="spouseEducation">
-                        <option value="0">선택 안 함</option>
-                        <option value="highschool">고등학교 졸업</option>
-                        <option value="oneyear">1년 과정 대학</option>
-                        <option value="twoyear">2년 과정 대학</option>
-                        <option value="bachelor">학사 학위</option>
-                        <option value="master">석사/박사 학위</option>
-                    </select>
-                </div>
-                <div class="input-group">
-                    <label>배우자 영어 CLB 레벨</label>
-                    <select id="spouseLanguage">
-                        <option value="0">선택 안 함 / CLB 4 이하</option>
-                        <option value="5">CLB 5</option>
-                        <option value="6">CLB 6</option>
-                        <option value="7">CLB 7</option>
-                        <option value="8">CLB 8</option>
-                        <option value="9">CLB 9 이상</option>
-                    </select>
-                </div>
-                <div class="input-group">
-                    <label>배우자 캐나다 경력</label>
-                    <select id="spouseCanadianExp">
-                        <option value="0">없음</option>
-                        <option value="1">1년</option>
-                        <option value="2">2년</option>
-                        <option value="3">3년</option>
-                        <option value="4">4년</option>
-                        <option value="5">5년 이상</option>
-                    </select>
+                <div class="wizard-nav">
+                    <button type="button" data-dir="prev" onclick="goToStep(6)">&larr; 이전</button>
+                    <button type="button" onclick="calculateCRS()" class="wizard-submit">AI 최적 루트 분석 시작하기</button>
                 </div>
             </div>
         </div>
-
-        <button onclick="calculateCRS()" style="width:100%; font-size:1.2rem; padding:20px; margin-top:16px;">AI 최적 루트 분석 시작하기</button>
 
         <!-- Strategy Dashboard Results -->
         <div id="strategyResults" style="display:none; margin-top:40px; border-top:2px solid var(--primary); padding-top:40px;">
