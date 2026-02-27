@@ -1751,11 +1751,11 @@ function goToStep(n) {
     updateWizardProgress();
 
     // Scroll so the step header is visible below the sticky nav
-    const acc = document.getElementById(`acc${n}`);
-    if (acc) {
+    const header = document.getElementById(`acc-header${n}`);
+    if (header) {
         setTimeout(() => {
-            const rect = acc.getBoundingClientRect();
-            const offset = window.scrollY + rect.top - 200;
+            const rect = header.getBoundingClientRect();
+            const offset = window.scrollY + rect.top - 80;
             window.scrollTo({ top: Math.max(0, offset), behavior: 'smooth' });
         }, 50);
     }
