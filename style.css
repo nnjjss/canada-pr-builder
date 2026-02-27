@@ -100,7 +100,8 @@ nav {
     justify-content: center;
     gap: 10px;
     width: fit-content;
-    margin: -35px auto 0;
+    margin: -30px auto 0;
+    will-change: transform;
     border-radius: 999px;
     box-shadow: var(--shadow-soft);
     transition: all 0.3s ease;
@@ -523,7 +524,7 @@ footer {
     border: 1px solid var(--border-color);
     border-radius: 10px;
     box-shadow: 0 8px 24px rgba(0,0,0,0.13);
-    z-index: 200;
+    z-index: 1050;
     max-height: 260px;
     overflow-y: auto;
 }
@@ -947,7 +948,7 @@ body.modal-open {
 }
 
 .acc-body {
-    max-height: 2000px;
+    max-height: 5000px;
     overflow: hidden;
     padding: 24px 20px;
     border-top: 1px solid var(--border-color);
@@ -1011,19 +1012,20 @@ body.modal-open {
         margin-top: 12px;
         gap: 6px;
     }
-    .lang-toggle, .theme-toggle { padding: 7px 10px; font-size: 0.7rem; }
+    .lang-toggle, .theme-toggle { padding: 7px 10px; font-size: 0.75rem; }
     h2 { font-size: 1.25rem; }
     .card { padding: 16px; }
-    .container { padding: 0 12px 50px; }
+    .container { padding: 0 12px 100px; }
     /* Single-column form grid on small phones */
     .calc-grid { grid-template-columns: 1fr; }
     .stat-value { font-size: 1.8rem; }
     .result-score { font-size: 2.5rem; }
     nav { width: 96%; }
-    nav a { font-size: 0.7rem; padding: 5px 10px; }
+    nav a { font-size: 0.75rem; padding: 5px 10px; }
     .modal-content { margin: 10px auto; padding: 24px 16px; border-radius: 20px; }
     th, td { padding: 8px 10px; }
-    .acc-header { padding: 14px 16px; gap: 12px; }
+    .acc-header { padding: 18px 16px; gap: 12px; }
+    input, select, textarea { font-size: 16px; }
     .acc-num { width: 28px; height: 28px; min-width: 28px; font-size: 0.8rem; }
     .article-card { padding: 20px; }
     button { padding: 14px 20px; }
@@ -1096,6 +1098,7 @@ body.modal-open {
     color: var(--text-muted);
     line-height: 1;
     transition: color 0.2s;
+    padding: 8px 12px;
 }
 
 .close-modal:hover {
@@ -1845,6 +1848,9 @@ nav a.active {
     box-shadow: 0 8px 24px -4px rgba(200, 16, 46, 0.5);
     filter: brightness(1.1);
 }
+@media (max-width: 480px) {
+    #backToTop { bottom: 90px; right: 16px; }
+}
 
 /* ===================== Scroll Fade-In Animation ===================== */
 .fade-in-up {
@@ -2074,7 +2080,7 @@ footer::before {
     }
     .wizard-bottom-btn {
         min-width: 70px;
-        padding: 10px 14px;
+        padding: 14px 14px;
         font-size: 0.85rem;
     }
     .wizard-bottom-btn.wizard-bottom-submit {
