@@ -384,7 +384,7 @@ const translations = {
         guideH2: "익스프레스 엔트리(Express Entry)란?",
         guideP1: "익스프레스 엔트리는 캐나다 정부가 숙련직 근로자의 영주권 신청을 관리하는 시스템입니다. 다음 세 가지 주요 프로그램을 포함합니다:",
         liFswp: "연방 숙련직 프로그램 (FSWP): 해외 숙련직 경력 최소 1년(최근 10년 이내), CLB 7 이상, TEER 0·1·2·3 직군. 선발 점수 67점 이상 필요.",
-        liFstp: "연방 기술직 프로그램 (FSTP): 기술직 경력 최소 2년(최근 5년 이내). 취업 오퍼(1년 이상) 또는 Red Seal 등 자격증 필요. CLB 5 이상.",
+        liFstp: "연방 기술직 프로그램 (FSTP): 기술직 경력 최소 2년(TEER 2–5, 최근 5년 이내). 취업 오퍼(1년 이상) 또는 Red Seal 등 자격증 필요. CLB 5 이상.",
         liCec: "캐나다 경험 이민 (CEC): 캐나다 내 TEER 0~3 경력 최소 1년(최근 3년 이내). TEER 0·1은 CLB 7, TEER 2·3은 CLB 5 이상.",
         clbTableH3: "언어 성적(CLB) 상세 점수표",
         clbTableP: "캐나다 이민에서 가장 널리 사용되는 <strong>IELTS General Training</strong>과 <strong>CELPIP General</strong> 점수의 CLB 변환표입니다. 익스프레스 엔트리 고득점을 위해서는 <strong>CLB 9 이상</strong>을 목표로 하는 것이 좋습니다.",
@@ -609,7 +609,7 @@ const translations = {
         guideH2: "What is Express Entry?",
         guideP1: "Express Entry is a system used by the Canadian government to manage applications for permanent residence from skilled workers. It includes three main programs:",
         liFswp: "Federal Skilled Worker Program (FSWP): 1+ yr of foreign skilled work experience (TEER 0–3) in the past 10 years. CLB 7+, and must score 67+ on selection factors.",
-        liFstp: "Federal Skilled Trades Program (FSTP): 2+ yrs of skilled trade experience (TEER 2–3) in the past 5 years. Requires a job offer (1+ yr) or a trade certificate (e.g. Red Seal). CLB 5+.",
+        liFstp: "Federal Skilled Trades Program (FSTP): 2+ yrs of skilled trade experience (TEER 2–5) in the past 5 years. Requires a job offer (1+ yr) or a trade certificate (e.g. Red Seal). CLB 5+.",
         liCec: "Canadian Experience Class (CEC): 1+ yr of skilled work experience in Canada (TEER 0–3) in the past 3 years. CLB 7 for TEER 0/1, CLB 5 for TEER 2/3.",
         clbTableH3: "Detailed CLB Score Table",
         clbTableP: "CLB conversion table for <strong>IELTS General Training</strong> and <strong>CELPIP General</strong>. Aiming for <strong>CLB 9 or higher</strong> is recommended for high EE scores.",
@@ -2414,7 +2414,7 @@ function calculateCRS() {
     // --- 5. SPOUSE FACTORS ---
     if (effectiveMarried) {
         let spousePoints = 0;
-        const spouseEduMap = { highschool:2, oneyear:6, twoyear:7, bachelor:8, master:10, phd:10 };
+        const spouseEduMap = { highschool:2, oneyear:6, twoyear:7, bachelor:8, two_or_more:9, master:10, phd:10 };
         spousePoints += spouseEduMap[spouseEdu] || 0;
         const spouseLangMap = {9:20, 8:16, 7:12, 6:8, 5:4};
         spousePoints += spouseLangMap[Math.min(9, spouseLang)] || 0;
@@ -2586,7 +2586,7 @@ function renderRecommendations(profile) {
     if (profile.atlanticWilling === 'yes') {
         recs.push({ 
             title: 'Atlantic Immigration Program (AIP)', 
-            badge: currentLang === 'ko' ? '파일럿' : 'Pilot', 
+            badge: currentLang === 'ko' ? '정규 프로그램' : 'Permanent',
             desc: currentLang === 'ko' ? '아틀란틱 4개 주 고용주 지원 기반 이민. CRS 점수 요건 없음.' : 'Employer-driven path in Atlantic provinces. No CRS requirement.'
         });
     }
@@ -2667,7 +2667,7 @@ function renderStrategicAdvice(profile) {
         if (profile.frenchCLB < 7 && profile.canStudyFrench === 'yes') advices.push('🇫🇷 불어 CLB 7 이상 달성 시 일반 선발 대비 약 70~100점 낮은 컷오프 드로우에 참여 가능합니다.');
         if (profile.age >= 35) advices.push('⏰ 나이에 따른 점수 감소가 시작됩니다. 가능한 빠르게 Express Entry 풀에 등록하는 것이 유리합니다.');
         if (profile.finalScore >= 500) advices.push('✅ 현재 점수는 일반 Express Entry 선발 권내입니다. 프로필 최신화 및 정기 모니터링을 권장합니다.');
-        if (profile.atlanticWilling === 'yes') advices.push('🌊 아틀란틱 이민 파일럿(AIP)은 고용주 지원 기반으로 CRS 점수 제한이 없습니다. 해당 주 취업 활동에 집중하세요.');
+        if (profile.atlanticWilling === 'yes') advices.push('🌊 아틀란틱 이민 프로그램(AIP)은 고용주 지원 기반으로 CRS 점수 제한이 없습니다. 해당 주 취업 활동에 집중하세요.');
         if (profile.businessIntent === 'yes') advices.push('🏢 비즈니스 이민(Start-up Visa, Self-Employed 등)도 대안으로 검토해 보세요. CRS 없이 진행 가능합니다.');
     } else {
         if (profile.minCLB < 9) advices.push('💡 Improving language scores is top priority. Reaching CLB 9 can trigger +50 pts in transferability.');
