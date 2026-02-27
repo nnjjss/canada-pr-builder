@@ -913,6 +913,17 @@ function updateLanguage(lang) {
     }
 }
 
+// --- Article Metadata (language-agnostic) ---
+// isNew: published within ~14 days of today (2026-02-27)
+const articlesMeta = [
+    { type: 'special',    isNew: true  },  // Feb 19
+    { type: 'french',     isNew: false },  // Feb 6
+    { type: 'cec',        isNew: true  },  // Feb 17
+    { type: 'healthcare', isNew: true  },  // Feb 20
+    { type: 'pnp',        isNew: true  },  // Feb 16
+    { type: 'guide',      isNew: true  },  // Feb 26
+];
+
 // --- Express Entry Draw Data ---
 const drawsData = [
     { date: { ko: '2026년 2월 20일', en: 'Feb 20, 2026' }, type: 'healthcare', label: { ko: '헬스케어 & 소셜 서비스', en: 'Healthcare & Social Services' }, invited: 4000, cutoff: 467 },
@@ -2489,19 +2500,43 @@ function renderPosts() {
 
     const data = articlesData[currentLang];
     const btnText = currentLang === 'ko' ? '자세히 보기' : 'Read More';
+    const newLabel = 'NEW';
 
     data.forEach((article, index) => {
-        const articleElement = document.createElement("article");
-        articleElement.className = "article-card";
-        articleElement.innerHTML = `
-            <span class="article-badge">${article.badge}</span>
-            <h3>${article.title}</h3>
-            <div class="article-meta">${article.date}</div>
-            <div class="article-summary">
-                ${article.summary}
-            </div>
-            <button class="read-more-btn" onclick="openArticle(${index})">${btnText}</button>
-        `;
-        list.appendChild(articleElement);
+        const meta = articlesMeta[index] || {};
+        const isFeatured = index === 0;
+        const badgeEl = `<span class="article-badge article-badge--${meta.type || ''}">${article.badge}</span>`;
+        const newBadge = meta.isNew ? `<span class="article-new-badge">${newLabel}</span>` : '';
+        const readMoreEl = `<span class="read-more-link">${btnText} →</span>`;
+
+        const el = document.createElement("article");
+        el.className = `article-card${isFeatured ? ' article-card--featured' : ''}`;
+        el.setAttribute('role', 'button');
+        el.setAttribute('tabindex', '0');
+        el.onclick = () => openArticle(index);
+        el.onkeydown = (e) => { if (e.key === 'Enter' || e.key === ' ') openArticle(index); };
+
+        if (isFeatured) {
+            el.innerHTML = `
+                <div class="article-card-left">
+                    <div class="article-card-top">${badgeEl}${newBadge}</div>
+                    <h3>${article.title}</h3>
+                    <div class="article-meta">${article.date}</div>
+                </div>
+                <div class="article-card-right">
+                    <div class="article-summary">${article.summary}</div>
+                    ${readMoreEl}
+                </div>`;
+        } else {
+            el.innerHTML = `
+                <div>
+                    <div class="article-card-top">${badgeEl}${newBadge}</div>
+                    <h3>${article.title}</h3>
+                    <div class="article-meta">${article.date}</div>
+                    <div class="article-summary">${article.summary}</div>
+                </div>
+                ${readMoreEl}`;
+        }
+        list.appendChild(el);
     });
 }
