@@ -1552,40 +1552,55 @@ body.modal-open {
 }
 .pnp-strategy-item {
     display: flex;
-    gap: 14px;
+    gap: 16px;
     align-items: flex-start;
     background: var(--card-bg);
     border: 1px solid var(--border-color);
-    border-left: 4px solid var(--maple-red);
-    border-radius: 12px;
-    padding: 16px;
-    transition: box-shadow 0.2s, transform 0.2s;
+    border-radius: 14px;
+    padding: 20px;
+    transition: box-shadow 0.25s, transform 0.25s, border-color 0.25s;
 }
 .pnp-strategy-item:hover {
-    box-shadow: 0 4px 16px -4px rgba(200, 16, 46, 0.15);
-    transform: translateY(-2px);
+    box-shadow: 0 10px 28px -6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+    border-color: rgba(200, 16, 46, 0.3);
+}
+[data-theme="dark"] .pnp-strategy-item:hover {
+    box-shadow: 0 10px 28px -6px rgba(0, 0, 0, 0.4);
 }
 .pnp-strategy-num {
-    font-size: 1.4rem;
+    width: 36px;
+    height: 36px;
+    background: var(--maple-red);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.82rem;
     font-weight: 900;
-    color: var(--maple-red);
-    line-height: 1;
     flex-shrink: 0;
-    min-width: 30px;
-    opacity: 1;
+    letter-spacing: 0.5px;
+    margin-top: 1px;
+}
+.pnp-strategy-body {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
 }
 .pnp-strategy-item strong {
     display: block;
-    font-size: 0.88rem;
+    font-size: 0.9rem;
     font-weight: 800;
     color: var(--text-main);
-    margin-bottom: 4px;
+    line-height: 1.3;
 }
 .pnp-strategy-item p {
-    font-size: 0.8rem;
+    font-size: 0.82rem;
     color: var(--text-sub);
     margin: 0;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 /* ===================== Strategy Cards Section ===================== */
