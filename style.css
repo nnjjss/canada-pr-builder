@@ -1312,6 +1312,77 @@ body.modal-open {
 
 
 /* ===================== PNP Guide Section ===================== */
+/* +600 Callout */
+.pnp-600-callout {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: linear-gradient(135deg, rgba(200,16,46,0.08) 0%, rgba(123,10,28,0.05) 100%);
+    border: 2px solid rgba(200,16,46,0.25);
+    border-radius: 16px;
+    padding: 18px 24px;
+    margin: 20px 0 24px;
+}
+.pnp-600-num {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--maple-red);
+    line-height: 1;
+    flex-shrink: 0;
+    letter-spacing: -1px;
+}
+.pnp-600-body {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+.pnp-600-body strong {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--text-main);
+}
+.pnp-600-body span {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+[data-theme="dark"] .pnp-600-callout {
+    background: rgba(200,16,46,0.12);
+    border-color: rgba(200,16,46,0.35);
+}
+
+/* Province card hover lift + active highlight */
+.pnp-province-card:hover {
+    box-shadow: 0 8px 24px -4px rgba(0,0,0,0.1);
+    transform: translateY(-3px);
+    border-color: var(--border-color);
+}
+.pnp-province-card {
+    transition: box-shadow 0.25s, transform 0.25s, border-color 0.25s;
+}
+.pnp-province-card--active {
+    border: 2px solid var(--maple-red) !important;
+    background: linear-gradient(135deg, rgba(200,16,46,0.05) 0%, var(--card-bg) 100%);
+    box-shadow: 0 0 0 4px rgba(200,16,46,0.1);
+}
+.pnp-province-card--active .pnp-province-abbr {
+    background: var(--maple-deep);
+    box-shadow: 0 2px 8px rgba(200,16,46,0.35);
+}
+.pnp-province-active-label {
+    display: none;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--maple-red);
+    margin-top: 10px;
+    letter-spacing: 0.3px;
+}
+.pnp-province-card--active .pnp-province-active-label {
+    display: block;
+}
+[data-theme="dark"] .pnp-province-card--active {
+    background: linear-gradient(135deg, rgba(200,16,46,0.1) 0%, var(--card-bg) 100%);
+}
+
 .pnp-pathway-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1483,18 +1554,25 @@ body.modal-open {
     display: flex;
     gap: 14px;
     align-items: flex-start;
-    background: var(--bg-light);
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--maple-red);
     border-radius: 12px;
     padding: 16px;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+.pnp-strategy-item:hover {
+    box-shadow: 0 4px 16px -4px rgba(200, 16, 46, 0.15);
+    transform: translateY(-2px);
 }
 .pnp-strategy-num {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: 900;
     color: var(--maple-red);
-    opacity: 0.3;
     line-height: 1;
     flex-shrink: 0;
-    min-width: 28px;
+    min-width: 30px;
+    opacity: 1;
 }
 .pnp-strategy-item strong {
     display: block;

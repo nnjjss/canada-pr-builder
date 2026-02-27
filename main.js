@@ -247,7 +247,18 @@ const translations = {
         pnpProvON: "온타리오", pnpProvBC: "브리티시컬럼비아", pnpProvAB: "앨버타",
         pnpProvMB: "매니토바", pnpProvSK: "서스캐처원", pnpProvNS: "노바스코샤",
         pnpProvNB: "뉴브런즈윅", pnpProvNL: "뉴펀들랜드",
+        pnp600Label: "EE 연계 PNP 노미네이션 수락 시",
+        pnp600Desc: "CRS에 자동 부여 — 사실상 ITA 획득이 확정됩니다",
         pnpBCStream1: "BC PNP Tech (IT·헬스케어)",
+        pnpOnS1: "인적 자본 우선 스트림", pnpOnS2: "석·박사 졸업자", pnpOnS3: "수요 기술 직군", pnpOnS4: "불어권 숙련 근로자",
+        pnpBcS2: "국제 대학원 졸업자", pnpBcS3: "보건기관 스트림", pnpBcS4: "숙련직 / 초급직",
+        pnpAbS1: "앨버타 기회 스트림", pnpAbS2: "익스프레스 엔트리 연계", pnpAbS3: "농촌 재생 스트림", pnpAbS4: "국제 졸업자",
+        pnpMbS1: "매니토바 숙련 근로자", pnpMbS2: "해외 숙련 근로자", pnpMbS3: "국제 교육 스트림", pnpMbS4: "비즈니스 투자 스트림",
+        pnpSkS1: "익스프레스 엔트리 연계", pnpSkS2: "수요 직종", pnpSkS3: "국제 졸업자", pnpSkS4: "서스캐처원 경험",
+        pnpNsS1: "노동시장 우선 스트림", pnpNsS2: "숙련 근로자", pnpNsS3: "의사 스트림", pnpNsS4: "국제 졸업자",
+        pnpNbS1: "전략 이니셔티브 스트림", pnpNbS2: "익스프레스 엔트리 연계", pnpNbS3: "대서양 이민 프로그램",
+        pnpPeiS1: "익스프레스 엔트리 연계", pnpPeiS2: "핵심 근로자 파일럿", pnpPeiS3: "해외 숙련 근로자",
+        pnpNlS1: "EE 연계 숙련 근로자", pnpNlS2: "숙련 근로자", pnpNlS3: "국제 졸업자", pnpNlS4: "대서양 이민 프로그램",
         pnpStrategyH3: "PNP 활용 전략",
         pnpStrat1T: "EE 풀 먼저 등록",
         pnpStrat1D: "가능한 한 빨리 EE 풀에 프로필을 등록해 주정부 NOI 수신 자격을 갖추세요. CRS가 낮더라도 특정 주정부의 타깃 직군이라면 NOI를 받을 수 있습니다.",
@@ -451,7 +462,18 @@ const translations = {
         pnpProvON: "Ontario", pnpProvBC: "British Columbia", pnpProvAB: "Alberta",
         pnpProvMB: "Manitoba", pnpProvSK: "Saskatchewan", pnpProvNS: "Nova Scotia",
         pnpProvNB: "New Brunswick", pnpProvNL: "Newfoundland & Labrador",
+        pnp600Label: "When you accept an EE-linked PNP nomination",
+        pnp600Desc: "Points are automatically added to your CRS — virtually guaranteeing an ITA",
         pnpBCStream1: "BC PNP Tech (IT & Healthcare)",
+        pnpOnS1: "Human Capital Priorities", pnpOnS2: "Masters / PhD Graduate", pnpOnS3: "In-Demand Skills", pnpOnS4: "French-Speaking Skilled Worker",
+        pnpBcS2: "International Post-Graduate", pnpBcS3: "Health Authority", pnpBcS4: "Skilled Worker / Entry Level",
+        pnpAbS1: "Alberta Opportunity Stream", pnpAbS2: "Express Entry Stream", pnpAbS3: "Rural Renewal Stream", pnpAbS4: "International Graduate",
+        pnpMbS1: "Skilled Workers in Manitoba", pnpMbS2: "Skilled Workers Overseas", pnpMbS3: "International Education Stream", pnpMbS4: "Business Investor Stream",
+        pnpSkS1: "Express Entry", pnpSkS2: "Occupations In-Demand", pnpSkS3: "International Graduate", pnpSkS4: "Saskatchewan Experience",
+        pnpNsS1: "Labour Market Priorities", pnpNsS2: "Skilled Worker", pnpNsS3: "Physician Stream", pnpNsS4: "International Graduate",
+        pnpNbS1: "Strategic Initiative Stream", pnpNbS2: "Express Entry", pnpNbS3: "Atlantic Immigration Program",
+        pnpPeiS1: "Express Entry", pnpPeiS2: "Critical Worker Pilot", pnpPeiS3: "Skilled Worker Outside Canada",
+        pnpNlS1: "Express Entry Skilled Worker", pnpNlS2: "Skilled Worker", pnpNlS3: "International Graduate", pnpNlS4: "Atlantic Immigration Program",
         pnpStrategyH3: "PNP Strategy Tips",
         pnpStrat1T: "Register in Express Entry First",
         pnpStrat1D: "Create your EE profile as early as possible to become eligible for provincial Notices of Interest (NOIs). Even with a lower CRS, you may receive an NOI if your occupation matches a province's target.",
@@ -805,6 +827,8 @@ function updateLanguage(lang) {
     document.querySelector('#pnpBaseLi2').innerHTML = t.pnpBaseLi2;
     document.querySelector('#pnpBaseLi3').innerHTML = t.pnpBaseLi3;
     document.querySelector('#pnpBaseLi4').innerHTML = t.pnpBaseLi4;
+    document.querySelector('#pnp600Label').textContent = t.pnp600Label;
+    document.querySelector('#pnp600Desc').textContent = t.pnp600Desc;
     document.querySelector('#pnpProvincesH3').textContent = t.pnpProvincesH3;
     document.querySelector('#pnpProvON').textContent = t.pnpProvON;
     document.querySelector('#pnpProvBC').textContent = t.pnpProvBC;
@@ -814,8 +838,12 @@ function updateLanguage(lang) {
     document.querySelector('#pnpProvNS').textContent = t.pnpProvNS;
     document.querySelector('#pnpProvNB').textContent = t.pnpProvNB;
     document.querySelector('#pnpProvNL').textContent = t.pnpProvNL;
-    document.querySelector('#pnpBCStream1').textContent = t.pnpBCStream1;
     document.querySelector('#pnpQuebecNote').textContent = t.pnpQuebecNote;
+    // Batch update data-i18n elements (province streams)
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key] !== undefined) el.textContent = t[key];
+    });
     document.querySelector('#pnpStrategyH3').textContent = t.pnpStrategyH3;
     document.querySelector('#pnpStrat1T').textContent = t.pnpStrat1T;
     document.querySelector('#pnpStrat1D').textContent = t.pnpStrat1D;
@@ -1941,6 +1969,25 @@ function renderDrawsTable(userCRS) {
         ${myScoreNote}`;
 }
 
+/* ── Province Highlight ── */
+function highlightTargetProvince(province) {
+    const label = currentLang === 'ko' ? '✓ 선택한 주' : '✓ Your target';
+    document.querySelectorAll('.pnp-province-card').forEach(card => {
+        card.classList.remove('pnp-province-card--active');
+        const existing = card.querySelector('.pnp-province-active-label');
+        if (existing) existing.remove();
+    });
+    if (!province || province === 'any' || province === 'Atlantic' || province === 'Rural' || province === 'QC') return;
+    const target = document.querySelector(`.pnp-province-card[data-province="${province}"]`);
+    if (target) {
+        target.classList.add('pnp-province-card--active');
+        const tag = document.createElement('span');
+        tag.className = 'pnp-province-active-label';
+        tag.textContent = label;
+        target.appendChild(tag);
+    }
+}
+
 /* ── Mini CRS Score (lightweight) ── */
 let lastMiniScore = null;
 
@@ -2306,6 +2353,7 @@ function calculateCRS() {
     renderStrategyCards(profile);
     renderStrategicAdvice(profile);
     renderDrawsTable(finalScore);
+    highlightTargetProvince(profile.targetProvince);
 
     document.getElementById('strategyResults').scrollIntoView({ behavior: 'smooth' });
 }

@@ -761,6 +761,15 @@
         <h2 id="pnpH2">주정부 이민 (PNP)란?</h2>
         <p id="pnpIntroP">PNP(Provincial Nominee Program)는 퀘벡을 제외한 캐나다 각 주정부·준주가 자체 기준으로 이민자를 선발·추천하는 프로그램입니다. 지역 노동 시장 수요에 맞는 인재를 유치하며, 노미네이션을 받으면 연방 영주권 신청 자격이 주어집니다. 익스프레스 엔트리 연계 스트림에서는 CRS <strong>+600점</strong>이 자동 부여돼 영주권 취득에 결정적 역할을 합니다.</p>
 
+        <!-- +600점 callout -->
+        <div class="pnp-600-callout">
+            <div class="pnp-600-num">+600</div>
+            <div class="pnp-600-body">
+                <strong id="pnp600Label">EE 연계 PNP 노미네이션 수락 시</strong>
+                <span id="pnp600Desc">CRS에 자동 부여 — 사실상 ITA 획득이 확정됩니다</span>
+            </div>
+        </div>
+
         <!-- 두 가지 경로 -->
         <div class="pnp-pathway-grid">
             <div class="pnp-pathway-card pnp-ee">
@@ -789,110 +798,110 @@
         <div class="pnp-provinces-section">
             <h3 id="pnpProvincesH3">주요 주별 PNP 프로그램</h3>
             <div class="pnp-province-grid">
-                <div class="pnp-province-card">
+                <div class="pnp-province-card" data-province="ON">
                     <div class="pnp-province-header">
                         <span class="pnp-province-abbr">ON</span>
                         <div><div class="pnp-province-name" id="pnpProvON">온타리오</div><div class="pnp-province-program">OINP</div></div>
                     </div>
                     <ul class="pnp-province-streams">
-                        <li>Human Capital Priorities</li>
-                        <li>Masters / PhD Graduate</li>
-                        <li>In-Demand Skills</li>
-                        <li>French-Speaking Skilled Worker</li>
+                        <li data-i18n="pnpOnS1">인적 자본 우선 스트림</li>
+                        <li data-i18n="pnpOnS2">석·박사 졸업자</li>
+                        <li data-i18n="pnpOnS3">수요 기술 직군</li>
+                        <li data-i18n="pnpOnS4">불어권 숙련 근로자</li>
                     </ul>
                 </div>
-                <div class="pnp-province-card">
+                <div class="pnp-province-card" data-province="BC">
                     <div class="pnp-province-header">
                         <span class="pnp-province-abbr">BC</span>
                         <div><div class="pnp-province-name" id="pnpProvBC">브리티시컬럼비아</div><div class="pnp-province-program">BC PNP</div></div>
                     </div>
                     <ul class="pnp-province-streams">
-                        <li id="pnpBCStream1">BC PNP Tech (IT·헬스케어)</li>
-                        <li>International Post-Graduate</li>
-                        <li>Health Authority</li>
-                        <li>Skilled Worker / Entry Level</li>
+                        <li data-i18n="pnpBCStream1" id="pnpBCStream1">BC PNP Tech (IT·헬스케어)</li>
+                        <li data-i18n="pnpBcS2">국제 대학원 졸업자</li>
+                        <li data-i18n="pnpBcS3">보건기관 스트림</li>
+                        <li data-i18n="pnpBcS4">숙련직 / 초급직</li>
                     </ul>
                 </div>
-                <div class="pnp-province-card">
+                <div class="pnp-province-card" data-province="AB">
                     <div class="pnp-province-header">
                         <span class="pnp-province-abbr">AB</span>
                         <div><div class="pnp-province-name" id="pnpProvAB">앨버타</div><div class="pnp-province-program">AINP</div></div>
                     </div>
                     <ul class="pnp-province-streams">
-                        <li>Alberta Opportunity Stream</li>
-                        <li>Express Entry Stream</li>
-                        <li>Rural Renewal Stream</li>
-                        <li>International Graduate</li>
+                        <li data-i18n="pnpAbS1">앨버타 기회 스트림</li>
+                        <li data-i18n="pnpAbS2">익스프레스 엔트리 연계</li>
+                        <li data-i18n="pnpAbS3">농촌 재생 스트림</li>
+                        <li data-i18n="pnpAbS4">국제 졸업자</li>
                     </ul>
                 </div>
-                <div class="pnp-province-card">
+                <div class="pnp-province-card" data-province="MB">
                     <div class="pnp-province-header">
                         <span class="pnp-province-abbr">MB</span>
                         <div><div class="pnp-province-name" id="pnpProvMB">매니토바</div><div class="pnp-province-program">MPNP</div></div>
                     </div>
                     <ul class="pnp-province-streams">
-                        <li>Skilled Workers in Manitoba</li>
-                        <li>Skilled Workers Overseas</li>
-                        <li>International Education Stream</li>
-                        <li>Business Investor Stream</li>
+                        <li data-i18n="pnpMbS1">매니토바 숙련 근로자</li>
+                        <li data-i18n="pnpMbS2">해외 숙련 근로자</li>
+                        <li data-i18n="pnpMbS3">국제 교육 스트림</li>
+                        <li data-i18n="pnpMbS4">비즈니스 투자 스트림</li>
                     </ul>
                 </div>
-                <div class="pnp-province-card">
+                <div class="pnp-province-card" data-province="SK">
                     <div class="pnp-province-header">
                         <span class="pnp-province-abbr">SK</span>
                         <div><div class="pnp-province-name" id="pnpProvSK">서스캐처원</div><div class="pnp-province-program">SINP</div></div>
                     </div>
                     <ul class="pnp-province-streams">
-                        <li>Express Entry</li>
-                        <li>Occupations In-Demand</li>
-                        <li>International Graduate</li>
-                        <li>Saskatchewan Experience</li>
+                        <li data-i18n="pnpSkS1">익스프레스 엔트리 연계</li>
+                        <li data-i18n="pnpSkS2">수요 직종</li>
+                        <li data-i18n="pnpSkS3">국제 졸업자</li>
+                        <li data-i18n="pnpSkS4">서스캐처원 경험</li>
                     </ul>
                 </div>
-                <div class="pnp-province-card">
+                <div class="pnp-province-card" data-province="NS">
                     <div class="pnp-province-header">
                         <span class="pnp-province-abbr">NS</span>
                         <div><div class="pnp-province-name" id="pnpProvNS">노바스코샤</div><div class="pnp-province-program">NSNP</div></div>
                     </div>
                     <ul class="pnp-province-streams">
-                        <li>Labour Market Priorities</li>
-                        <li>Skilled Worker</li>
-                        <li>Physician Stream</li>
-                        <li>International Graduate</li>
+                        <li data-i18n="pnpNsS1">노동시장 우선 스트림</li>
+                        <li data-i18n="pnpNsS2">숙련 근로자</li>
+                        <li data-i18n="pnpNsS3">의사 스트림</li>
+                        <li data-i18n="pnpNsS4">국제 졸업자</li>
                     </ul>
                 </div>
-                <div class="pnp-province-card">
+                <div class="pnp-province-card" data-province="NB">
                     <div class="pnp-province-header">
                         <span class="pnp-province-abbr">NB</span>
                         <div><div class="pnp-province-name" id="pnpProvNB">뉴브런즈윅</div><div class="pnp-province-program">NBPNP</div></div>
                     </div>
                     <ul class="pnp-province-streams">
-                        <li>Strategic Initiative Stream</li>
-                        <li>Express Entry</li>
-                        <li>Atlantic Immigration Program</li>
+                        <li data-i18n="pnpNbS1">전략 이니셔티브 스트림</li>
+                        <li data-i18n="pnpNbS2">익스프레스 엔트리 연계</li>
+                        <li data-i18n="pnpNbS3">대서양 이민 프로그램</li>
                     </ul>
                 </div>
-                <div class="pnp-province-card">
+                <div class="pnp-province-card" data-province="PEI">
                     <div class="pnp-province-header">
                         <span class="pnp-province-abbr">PEI</span>
                         <div><div class="pnp-province-name">PEI</div><div class="pnp-province-program">PEI PNP</div></div>
                     </div>
                     <ul class="pnp-province-streams">
-                        <li>Express Entry</li>
-                        <li>Critical Worker Pilot</li>
-                        <li>Skilled Worker Outside Canada</li>
+                        <li data-i18n="pnpPeiS1">익스프레스 엔트리 연계</li>
+                        <li data-i18n="pnpPeiS2">핵심 근로자 파일럿</li>
+                        <li data-i18n="pnpPeiS3">해외 숙련 근로자</li>
                     </ul>
                 </div>
-                <div class="pnp-province-card">
+                <div class="pnp-province-card" data-province="NL">
                     <div class="pnp-province-header">
                         <span class="pnp-province-abbr">NL</span>
                         <div><div class="pnp-province-name" id="pnpProvNL">뉴펀들랜드</div><div class="pnp-province-program">NLPNP</div></div>
                     </div>
                     <ul class="pnp-province-streams">
-                        <li>Express Entry Skilled Worker</li>
-                        <li>Skilled Worker</li>
-                        <li>International Graduate</li>
-                        <li>Atlantic Immigration Program</li>
+                        <li data-i18n="pnpNlS1">EE 연계 숙련 근로자</li>
+                        <li data-i18n="pnpNlS2">숙련 근로자</li>
+                        <li data-i18n="pnpNlS3">국제 졸업자</li>
+                        <li data-i18n="pnpNlS4">대서양 이민 프로그램</li>
                     </ul>
                 </div>
             </div>
