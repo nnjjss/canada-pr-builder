@@ -1,3 +1,32 @@
+/* ── Global Constants ── */
+const CURRENT_YEAR = new Date().getFullYear();
+const MIN_BIRTH_YEAR = 1940;
+const MAX_BIRTH_YEAR = CURRENT_YEAR - 18;
+const WIZARD_TOTAL_STEPS = 7;
+const NEW_ARTICLE_DAYS = 14;
+const FORMSPREE_URL = 'https://formspree.io/f/mjgejrry';
+
+const CRS_BENCHMARKS = {
+    RECENT_CUTOFF: 490,
+    VERY_HIGH: 500,
+    HIGH: 470,
+    MEDIUM: 430,
+    NEAR_ELIGIBLE_GAP: 50
+};
+
+const SCORE_BREAKDOWN_MAX = {
+    '나이': 110, 'Age': 110,
+    '학력': 150, 'Education': 150,
+    '언어 (영어)': 136, 'Language (English)': 136,
+    '캐나다 경력': 80, 'Canadian Experience': 80,
+    '이전성 점수': 100, 'Skill Transferability': 100,
+    '배우자 요소': 40, 'Spouse Factors': 40,
+    'PNP 노미네이션': 600, 'PNP Nomination': 600,
+    '불어': 50, 'French': 50,
+    '캐나다 학업': 30, 'Canadian Study': 30,
+    '형제/자매': 15, 'Sibling in Canada': 15
+};
+
 const articlesData = {
     ko: [
         {
@@ -395,7 +424,7 @@ const translations = {
         labelMessage: "메시지:",
         messagePlaceholder: "내용을 입력해주세요...",
         btnSubmit: "메시지 전송",
-        footerRights: "© 2026 Canada PR Builder. All rights reserved.",
+        footerRights: `© ${CURRENT_YEAR} Canada PR Builder. All rights reserved.`,
         footerPrivacy: "개인정보처리방침",
         footerContact: "고객센터"
     },
@@ -620,7 +649,7 @@ const translations = {
         labelMessage: "Message:",
         messagePlaceholder: "Enter your message here...",
         btnSubmit: "Send Message",
-        footerRights: "© 2026 Canada PR Builder. All rights reserved.",
+        footerRights: `© ${CURRENT_YEAR} Canada PR Builder. All rights reserved.`,
         footerPrivacy: "Privacy Policy",
         footerContact: "Support Center"
     }
@@ -1056,20 +1085,24 @@ function updateLanguage(lang) {
 }
 
 // --- Article Metadata (language-agnostic) ---
-// isNew: published within ~14 days of today (2026-02-27)
+// isNew is computed dynamically: true if published within NEW_ARTICLE_DAYS days
+function isNewArticle(pubDate) {
+    return (Date.now() - new Date(pubDate).getTime()) / 86400000 <= NEW_ARTICLE_DAYS;
+}
+
 const articlesMeta = [
-    { type: 'special',    isNew: true  },  // Feb 19
-    { type: 'french',     isNew: false },  // Feb 6
-    { type: 'cec',        isNew: true  },  // Feb 17
-    { type: 'healthcare', isNew: true  },  // Feb 20
-    { type: 'pnp',        isNew: true  },  // Feb 16
-    { type: 'guide',      isNew: true  },  // Feb 26
-    { type: 'news',       isNew: false },  // Jan 15
-    { type: 'pnp',        isNew: true  },  // Feb 10
-    { type: 'pnp',        isNew: false },  // Feb 5
-    { type: 'french',     isNew: false },  // Jan 28
-    { type: 'guide',      isNew: false },  // Jan 20
-    { type: 'guide',      isNew: false },  // Feb 1
+    { type: 'special',    pubDate: '2026-02-19' },
+    { type: 'french',     pubDate: '2026-02-06' },
+    { type: 'cec',        pubDate: '2026-02-17' },
+    { type: 'healthcare', pubDate: '2026-02-20' },
+    { type: 'pnp',        pubDate: '2026-02-16' },
+    { type: 'guide',      pubDate: '2026-02-26' },
+    { type: 'news',       pubDate: '2026-01-15' },
+    { type: 'pnp',        pubDate: '2026-02-10' },
+    { type: 'pnp',        pubDate: '2026-02-05' },
+    { type: 'french',     pubDate: '2026-01-28' },
+    { type: 'guide',      pubDate: '2026-01-20' },
+    { type: 'guide',      pubDate: '2026-02-01' },
 ];
 
 // --- Express Entry Draw Data ---
@@ -1602,6 +1635,10 @@ window.closeArticle = function() {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Dynamic copyright year
+    const copyrightEl = document.getElementById('copyrightYear');
+    if (copyrightEl) copyrightEl.textContent = CURRENT_YEAR;
+
     const nav = document.getElementById('mainNav');
     if (nav) {
         window.addEventListener('scroll', () => {
@@ -1699,7 +1736,7 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.disabled = true;
             btn.textContent = '...';
             try {
-                const res = await fetch('https://formspree.io/f/mjgejrry', {
+                const res = await fetch(FORMSPREE_URL, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ email: emailInput.value, _subject: 'Newsletter Subscription' })
@@ -1770,7 +1807,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const activeBody = document.getElementById(`acc-body${currentStep}`);
             if (!activeBody || !activeBody.contains(e.target)) return;
             e.preventDefault();
-            if (currentStep === 7) {
+            if (currentStep === WIZARD_TOTAL_STEPS) {
                 calculateCRS();
             } else {
                 goToStep(currentStep + 1);
@@ -1814,7 +1851,7 @@ function calcAge() {
     const year = parseInt(document.getElementById('birthYear').value);
     const month = parseInt(document.getElementById('birthMonth').value) || 1;
     const display = document.getElementById('ageDisplay');
-    if (!year || year < 1940 || year > 2010) {
+    if (!year || year < MIN_BIRTH_YEAR || year > MAX_BIRTH_YEAR) {
         display.textContent = currentLang === 'ko' ? '올바른 출생 연도를 입력하세요' : 'Enter a valid birth year';
         return;
     }
@@ -1908,7 +1945,7 @@ let currentStep = 1;
 let maxVisitedStep = 1;
 
 function goToStep(n) {
-    if (n < 1 || n > 7 || n > maxVisitedStep + 1) return;
+    if (n < 1 || n > WIZARD_TOTAL_STEPS || n > maxVisitedStep + 1) return;
 
     // Close current step
     const curBody = document.getElementById(`acc-body${currentStep}`);
@@ -1989,7 +2026,7 @@ function updateBottomNav() {
     const stepLabel = document.getElementById('wizBottomStep');
 
     // Step indicator
-    stepLabel.textContent = `Step ${currentStep} ${t.bottomStepOf} 7`;
+    stepLabel.textContent = `Step ${currentStep} ${t.bottomStepOf} ${WIZARD_TOTAL_STEPS}`;
 
     // Previous button
     prevBtn.innerHTML = t.wizardPrev;
@@ -1997,7 +2034,7 @@ function updateBottomNav() {
     prevBtn.onclick = () => goToStep(currentStep - 1);
 
     // Next / Submit button
-    if (currentStep === 7) {
+    if (currentStep === WIZARD_TOTAL_STEPS) {
         nextBtn.textContent = t.wizardSubmit;
         nextBtn.className = 'wizard-bottom-btn wizard-bottom-submit';
         nextBtn.onclick = () => calculateCRS();
@@ -2047,7 +2084,7 @@ function renderDrawsTable(userCRS) {
             let cls, label;
             if (userCRS >= cmp) {
                 cls = 'pass'; label = isKo ? '✓ 합격권' : '✓ Eligible';
-            } else if (userCRS >= cmp - 50) {
+            } else if (userCRS >= cmp - CRS_BENCHMARKS.NEAR_ELIGIBLE_GAP) {
                 cls = 'close'; label = isKo ? '△ 근접' : '△ Near';
             } else {
                 cls = 'fail'; label = isKo ? '✗ 미달' : '✗ Below';
@@ -2122,7 +2159,7 @@ function calculateMiniCRS() {
         const effectiveMarried = isMarried && spouseAccompany === 'yes';
 
         let age = 0;
-        if (birthYear > 1940) {
+        if (birthYear > MIN_BIRTH_YEAR) {
             const today = new Date();
             age = today.getFullYear() - birthYear;
             if (today.getMonth() + 1 < birthMonth) age--;
@@ -2213,7 +2250,7 @@ function updateMiniScore() {
         el.removeAttribute('data-level');
     } else {
         numEl.textContent = score;
-        const level = score < 450 ? 'low' : score < 500 ? 'mid' : 'high';
+        const level = score < CRS_BENCHMARKS.MEDIUM ? 'low' : score < CRS_BENCHMARKS.VERY_HIGH ? 'mid' : 'high';
         el.setAttribute('data-level', level);
         if (lastMiniScore !== null && score !== lastMiniScore) {
             el.classList.remove('pulse');
@@ -2286,7 +2323,7 @@ function calculateCRS() {
 
     // Calculate age from birth year/month
     let age = 0;
-    if (birthYear > 1940) {
+    if (birthYear > MIN_BIRTH_YEAR) {
         const today = new Date();
         age = today.getFullYear() - birthYear;
         if (today.getMonth() + 1 < birthMonth) age--;
@@ -2457,16 +2494,15 @@ function calculateCRS() {
     document.getElementById('strategyResults').style.display = 'block';
     document.getElementById('res-crs').innerText = finalScore + (currentLang === 'ko' ? '점' : ' pts');
 
-    const RECENT_CUTOFF = 490;
-    const gap = finalScore - RECENT_CUTOFF;
+    const gap = finalScore - CRS_BENCHMARKS.RECENT_CUTOFF;
     const gapEl = document.getElementById('res-gap');
     gapEl.innerText = (gap >= 0 ? '+' : '') + gap + (currentLang === 'ko' ? '점' : ' pts');
     gapEl.style.color = gap >= 0 ? '#16a34a' : 'var(--maple-red)';
 
     let prob = currentLang === 'ko' ? '낮음' : 'Low';
-    if (finalScore >= 500) prob = currentLang === 'ko' ? '매우 높음' : 'Very High';
-    else if (finalScore >= 470) prob = currentLang === 'ko' ? '높음' : 'High';
-    else if (finalScore >= 430) prob = currentLang === 'ko' ? '중간' : 'Medium';
+    if (finalScore >= CRS_BENCHMARKS.VERY_HIGH) prob = currentLang === 'ko' ? '매우 높음' : 'Very High';
+    else if (finalScore >= CRS_BENCHMARKS.HIGH) prob = currentLang === 'ko' ? '높음' : 'High';
+    else if (finalScore >= CRS_BENCHMARKS.MEDIUM) prob = currentLang === 'ko' ? '중간' : 'Medium';
     document.getElementById('res-prob').innerText = prob;
 
     renderScoreBreakdown(breakdown, finalScore);
@@ -2485,19 +2521,7 @@ function renderScoreBreakdown(breakdown, total) {
     const labelPoints = currentLang === 'ko' ? '점' : 'pts';
     let html = `<div class="breakdown-card"><h3 style="margin-bottom:16px; font-size:1.1rem;">${currentLang === 'ko' ? '점수 내역' : 'Score Breakdown'} (${labelTotal} <span style="color:var(--maple-red)">${total}${labelPoints}</span>)</h3>`;
     
-    // Max points for bar calculation (rough estimates for visuals)
-    const maxMap = { 
-        '나이':110, 'Age':110,
-        '학력':150, 'Education':150,
-        '언어 (영어)':136, 'Language (English)':136,
-        '캐나다 경력':80, 'Canadian Experience':80,
-        '이전성 점수':100, 'Skill Transferability':100,
-        '배우자 요소':40, 'Spouse Factors':40,
-        'PNP 노미네이션':600, 'PNP Nomination':600,
-        '불어':50, 'French':50,
-        '캐나다 학업':30, 'Canadian Study':30,
-        '형제/자매':15, 'Sibling in Canada':15 
-    };
+    const maxMap = SCORE_BREAKDOWN_MAX;
 
     for (const [label, pts] of Object.entries(breakdown)) {
         if (pts === 0) continue;
@@ -2709,7 +2733,7 @@ function renderPosts() {
     visible.forEach(({ article, index, meta }, i) => {
         const isFeatured = i === 0 && blogFilter === 'all' && !blogSearch;
         const badgeEl = `<span class="article-badge article-badge--${meta.type || ''}">${article.badge}</span>`;
-        const newBadge = meta.isNew ? `<span class="article-new-badge">${newLabel}</span>` : '';
+        const newBadge = isNewArticle(meta.pubDate) ? `<span class="article-new-badge">${newLabel}</span>` : '';
         const readMoreEl = `<span class="read-more-link">${btnText} →</span>`;
 
         const el = document.createElement("article");
