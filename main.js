@@ -1980,14 +1980,19 @@ function updateMiniScore() {
     const score = calculateMiniCRS();
     const el = document.getElementById('wizBottomScore');
     if (!el) return;
-    const t = translations[currentLang];
+    const numEl = el.querySelector('.mini-score-num');
+    if (!numEl) return;
+
     if (score === null || score === 0) {
-        el.textContent = `${t.miniScoreLabel}: --`;
+        numEl.textContent = '--';
+        el.removeAttribute('data-level');
     } else {
-        el.textContent = `${t.miniScoreLabel}: ${score} ${t.miniScoreSuffix}`;
+        numEl.textContent = score;
+        const level = score < 420 ? 'low' : score < 470 ? 'mid' : 'high';
+        el.setAttribute('data-level', level);
         if (lastMiniScore !== null && score !== lastMiniScore) {
             el.classList.remove('pulse');
-            void el.offsetWidth; // force reflow
+            void el.offsetWidth;
             el.classList.add('pulse');
         }
     }

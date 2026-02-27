@@ -1760,22 +1760,62 @@ footer::before {
     color: var(--text-muted);
 }
 .mini-score {
-    display: inline-block;
-    background: linear-gradient(135deg, var(--maple-red) 0%, var(--maple-deep) 100%);
-    color: #fff;
-    font-size: 0.78rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+    padding: 5px 18px;
+    border-radius: 12px;
+    background: var(--bg-light);
+    border: 1.5px solid var(--border-color);
+    min-width: 84px;
+    transition: background 0.35s, border-color 0.35s;
+}
+.mini-score-label {
+    font-size: 0.62rem;
     font-weight: 700;
-    padding: 3px 12px;
-    border-radius: 20px;
-    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--text-muted);
+    line-height: 1.2;
 }
-.mini-score.pulse {
-    animation: scorePulse 0.4s ease;
+.mini-score-num {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--text-main);
+    line-height: 1.15;
+    font-variant-numeric: tabular-nums;
+    transition: color 0.35s;
 }
+.mini-score[data-level="low"] {
+    background: rgba(217, 119, 6, 0.1);
+    border-color: rgba(217, 119, 6, 0.4);
+}
+.mini-score[data-level="low"] .mini-score-num { color: #b45309; }
+
+.mini-score[data-level="mid"] {
+    background: rgba(37, 99, 235, 0.09);
+    border-color: rgba(37, 99, 235, 0.35);
+}
+.mini-score[data-level="mid"] .mini-score-num { color: #1d4ed8; }
+
+.mini-score[data-level="high"] {
+    background: rgba(5, 150, 105, 0.1);
+    border-color: rgba(5, 150, 105, 0.4);
+}
+.mini-score[data-level="high"] .mini-score-num { color: #047857; }
+
+[data-theme="dark"] .mini-score[data-level="low"] .mini-score-num  { color: #fbbf24; }
+[data-theme="dark"] .mini-score[data-level="mid"] .mini-score-num  { color: #60a5fa; }
+[data-theme="dark"] .mini-score[data-level="high"] .mini-score-num { color: #34d399; }
+
 @keyframes scorePulse {
     0%   { transform: scale(1); }
-    50%  { transform: scale(1.15); }
+    50%  { transform: scale(1.18); }
     100% { transform: scale(1); }
+}
+.mini-score.pulse .mini-score-num {
+    animation: scorePulse 0.4s ease;
 }
 
 @media (max-width: 480px) {

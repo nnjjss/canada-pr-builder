@@ -575,7 +575,10 @@
             <button type="button" id="wizBottomPrev" class="wizard-bottom-btn" onclick="goToStep(currentStep - 1)">&larr; 이전</button>
             <div class="wizard-bottom-center">
                 <span id="wizBottomStep" class="wizard-bottom-step">Step 1 / 7</span>
-                <span id="wizBottomScore" class="mini-score">CRS: --</span>
+                <div id="wizBottomScore" class="mini-score">
+                    <span class="mini-score-label">CRS</span>
+                    <span class="mini-score-num">--</span>
+                </div>
             </div>
             <button type="button" id="wizBottomNext" class="wizard-bottom-btn" onclick="goToStep(currentStep + 1)">다음 &rarr;</button>
         </div>
