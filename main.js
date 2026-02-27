@@ -360,6 +360,7 @@ const translations = {
         pnpProvON: "온타리오", pnpProvBC: "브리티시컬럼비아", pnpProvAB: "앨버타",
         pnpProvMB: "매니토바", pnpProvSK: "서스캐처원", pnpProvNS: "노바스코샤",
         pnpProvNB: "뉴브런즈윅", pnpProvNL: "뉴펀들랜드",
+        pnpProvYT: "유콘", pnpProvNT: "노스웨스트 준주", pnpProvNU: "누나부트",
         pnp600Label: "EE 연계 PNP 노미네이션 수락 시",
         pnp600Desc: "CRS에 자동 부여 — 사실상 ITA 획득이 확정됩니다",
         pnpBCStream1: "BC PNP Tech (IT·헬스케어)",
@@ -372,6 +373,9 @@ const translations = {
         pnpNbS1: "전략 이니셔티브 스트림", pnpNbS2: "익스프레스 엔트리 연계", pnpNbS3: "대서양 이민 프로그램",
         pnpPeiS1: "익스프레스 엔트리 연계", pnpPeiS2: "핵심 근로자 파일럿", pnpPeiS3: "해외 숙련 근로자",
         pnpNlS1: "EE 연계 숙련 근로자", pnpNlS2: "숙련 근로자", pnpNlS3: "국제 졸업자", pnpNlS4: "대서양 이민 프로그램",
+        pnpYtS1: "숙련 근로자", pnpYtS2: "핵심 영향 근로자", pnpYtS3: "익스프레스 엔트리 연계",
+        pnpNtS1: "고용주 연계", pnpNtS2: "익스프레스 엔트리 연계", pnpNtS3: "비즈니스 스트림",
+        pnpNuS1: "고용주 연계", pnpNuS2: "커뮤니티 후원",
         pnpStrategyH3: "PNP 활용 전략",
         pnpStrat1T: "EE 풀 먼저 등록",
         pnpStrat1D: "가능한 한 빨리 EE 풀에 프로필을 등록해 주정부 NOI 수신 자격을 갖추세요. CRS가 낮더라도 특정 주정부의 타깃 직군이라면 NOI를 받을 수 있습니다.",
@@ -585,6 +589,7 @@ const translations = {
         pnpProvON: "Ontario", pnpProvBC: "British Columbia", pnpProvAB: "Alberta",
         pnpProvMB: "Manitoba", pnpProvSK: "Saskatchewan", pnpProvNS: "Nova Scotia",
         pnpProvNB: "New Brunswick", pnpProvNL: "Newfoundland & Labrador",
+        pnpProvYT: "Yukon", pnpProvNT: "Northwest Territories", pnpProvNU: "Nunavut",
         pnp600Label: "When you accept an EE-linked PNP nomination",
         pnp600Desc: "Points are automatically added to your CRS — virtually guaranteeing an ITA",
         pnpBCStream1: "BC PNP Tech (IT & Healthcare)",
@@ -597,6 +602,9 @@ const translations = {
         pnpNbS1: "Strategic Initiative Stream", pnpNbS2: "Express Entry", pnpNbS3: "Atlantic Immigration Program",
         pnpPeiS1: "Express Entry", pnpPeiS2: "Critical Worker Pilot", pnpPeiS3: "Skilled Worker Outside Canada",
         pnpNlS1: "Express Entry Skilled Worker", pnpNlS2: "Skilled Worker", pnpNlS3: "International Graduate", pnpNlS4: "Atlantic Immigration Program",
+        pnpYtS1: "Skilled Worker", pnpYtS2: "Critical Impact Worker", pnpYtS3: "Express Entry",
+        pnpNtS1: "Employer Driven", pnpNtS2: "Express Entry", pnpNtS3: "Business Stream",
+        pnpNuS1: "Employer Driven", pnpNuS2: "Community Sponsored",
         pnpStrategyH3: "PNP Strategy Tips",
         pnpStrat1T: "Register in Express Entry First",
         pnpStrat1D: "Create your EE profile as early as possible to become eligible for provincial Notices of Interest (NOIs). Even with a lower CRS, you may receive an NOI if your occupation matches a province's target.",
@@ -971,6 +979,9 @@ function updateLanguage(lang) {
     document.querySelector('#pnpProvNS').textContent = t.pnpProvNS;
     document.querySelector('#pnpProvNB').textContent = t.pnpProvNB;
     document.querySelector('#pnpProvNL').textContent = t.pnpProvNL;
+    document.querySelector('#pnpProvYT').textContent = t.pnpProvYT;
+    document.querySelector('#pnpProvNT').textContent = t.pnpProvNT;
+    document.querySelector('#pnpProvNU').textContent = t.pnpProvNU;
     document.querySelector('#pnpQuebecNote').textContent = t.pnpQuebecNote;
     // Batch update data-i18n elements (province streams)
     document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -1113,6 +1124,13 @@ const drawsData = [
     { date: { ko: '2026년 2월 16일', en: 'Feb 16, 2026' }, type: 'pnp',        label: { ko: '주정부 이민 (PNP)', en: 'Provincial Nominee Program (PNP)' }, invited: 279,  cutoff: 789, effectiveCutoff: 189 },
     { date: { ko: '2026년 2월 6일',  en: 'Feb 6, 2026'  }, type: 'french',     label: { ko: '프랑스어 우수자', en: 'French-Language Proficiency' }, invited: 8500, cutoff: 400 },
     { date: { ko: '2026년 2월 3일',  en: 'Feb 3, 2026'  }, type: 'pnp',        label: { ko: '주정부 이민 (PNP)', en: 'Provincial Nominee Program (PNP)' }, invited: 423,  cutoff: 749, effectiveCutoff: 149 },
+    { date: { ko: '2026년 1월 30일', en: 'Jan 30, 2026' }, type: 'general',    label: { ko: '일반 선발 (전체)', en: 'General (No Program Specified)' }, invited: 4000, cutoff: 524 },
+    { date: { ko: '2026년 1월 22일', en: 'Jan 22, 2026' }, type: 'stem',       label: { ko: 'STEM 직종', en: 'STEM Occupations' }, invited: 3200, cutoff: 481 },
+    { date: { ko: '2026년 1월 15일', en: 'Jan 15, 2026' }, type: 'general',    label: { ko: '일반 선발 (전체)', en: 'General (No Program Specified)' }, invited: 5500, cutoff: 517 },
+    { date: { ko: '2025년 12월 19일', en: 'Dec 19, 2025' }, type: 'general',   label: { ko: '일반 선발 (전체)', en: 'General (No Program Specified)' }, invited: 5000, cutoff: 520 },
+    { date: { ko: '2025년 12월 11일', en: 'Dec 11, 2025' }, type: 'trade',     label: { ko: '기술직', en: 'Trade Occupations' }, invited: 1800, cutoff: 443 },
+    { date: { ko: '2025년 12월 4일',  en: 'Dec 4, 2025'  }, type: 'transport', label: { ko: '운송직', en: 'Transport Occupations' }, invited: 1000, cutoff: 452 },
+    { date: { ko: '2025년 11월 27일', en: 'Nov 27, 2025' }, type: 'general',   label: { ko: '일반 선발 (전체)', en: 'General (No Program Specified)' }, invited: 4200, cutoff: 519 },
 ];
 
 // --- Comprehensive NOC 2021 Database (Canada.ca) ---
