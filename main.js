@@ -1750,11 +1750,13 @@ function goToStep(n) {
     if (n > maxVisitedStep) maxVisitedStep = n;
     updateWizardProgress();
 
-    // Scroll to top of the step
+    // Scroll so the step header is visible below the sticky nav
     const acc = document.getElementById(`acc${n}`);
     if (acc) {
         setTimeout(() => {
-            acc.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            const rect = acc.getBoundingClientRect();
+            const offset = window.scrollY + rect.top - 100;
+            window.scrollTo({ top: Math.max(0, offset), behavior: 'smooth' });
         }, 50);
     }
 }
