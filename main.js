@@ -1755,7 +1755,7 @@ function goToStep(n) {
     if (acc) {
         setTimeout(() => {
             const rect = acc.getBoundingClientRect();
-            const offset = window.scrollY + rect.top - 100;
+            const offset = window.scrollY + rect.top - 200;
             window.scrollTo({ top: Math.max(0, offset), behavior: 'smooth' });
         }, 50);
     }
