@@ -32,7 +32,7 @@
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         })(window, document, "clarity", "script", "vmpsubm906");
     </script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=1.0.6">
     <script>
         // Prevent FOUC (Flash of Unstyled Content)
         (function() {
@@ -55,8 +55,8 @@
 <nav id="mainNav">
     <a href="#home">홈</a>
     <a href="#calculator">CRS 계산기</a>
-    <a href="#guide">EE</a>
     <a href="#latest-draws">선발 결과</a>
+    <a href="#guide">EE</a>
     <a href="#pnp-guide">PNP</a>
     <a href="#articles">뉴스</a>
     <a href="#contact">문의</a>
@@ -68,9 +68,9 @@
     <div class="card hero-card" id="home">
         <div class="hero-inner">
             <div class="hero-eyebrow">🍁 Canada PR Builder</div>
-            <h2 class="hero-title" id="homeH2">Welcome to Canada</h2>
-            <p class="hero-sub" id="homeP">AI를 활용한 정밀 CRS 분석과 함께, Express Entry, PNP, Pilot 프로그램 전반을 종합적으로 검토합니다. 개인의 조건과 상황을 기반으로 최적의 이민 전략을 설계하며, 복잡한 제도 속에서도 실행 가능한 명확한 로드맵을 제공합니다.</p>
-            <div class="hero-chips">
+            <h2 class="hero-title hero-gradient" id="homeH2"><span class="hero-typed" id="heroTyped"></span><span class="hero-cursor" id="heroCursor">|</span></h2>
+            <p class="hero-sub hero-fade" id="homeP">AI를 활용한 정밀 CRS 분석과 함께, Express Entry, PNP, Pilot 프로그램 전반을 종합적으로 검토합니다. 개인의 조건과 상황을 기반으로 최적의 이민 전략을 설계하며, 복잡한 제도 속에서도 실행 가능한 명확한 로드맵을 제공합니다.</p>
+            <div class="hero-chips hero-fade" style="--fade-delay: 0.3s">
                 <span class="hero-chip" id="heroChip1">✅ IRCC 공식 기준</span>
                 <span class="hero-chip" id="heroChip2">⚡ 실시간 CRS 계산</span>
                 <span class="hero-chip" id="heroChip3">🆓 무료 사용</span>
@@ -635,6 +635,13 @@
         </div>
     </div>
 
+    <!-- Latest Draws Section -->
+    <div class="card" id="latest-draws">
+        <h2 id="drawsH2">익스프레스 엔트리 최신 선발 결과</h2>
+        <p id="drawsDesc">최근 IRCC에서 발표한 익스프레스 엔트리 초청(ITA) 결과입니다. 본인의 점수와 최신 컷오프를 비교해 보세요.</p>
+        <div id="drawsTableWrap"></div>
+    </div>
+
     <!-- Comprehensive Guide Section -->
     <div class="card" id="guide">
         <h2>익스프레스 엔트리(Express Entry)란?</h2>
@@ -798,13 +805,6 @@
                 </li>
             </ul>
         </div>
-    </div>
-
-    <!-- Latest Draws Section -->
-    <div class="card" id="latest-draws">
-        <h2 id="drawsH2">익스프레스 엔트리 최신 선발 결과</h2>
-        <p id="drawsDesc">최근 IRCC에서 발표한 익스프레스 엔트리 초청(ITA) 결과입니다. 본인의 점수와 최신 컷오프를 비교해 보세요.</p>
-        <div id="drawsTableWrap"></div>
     </div>
 
     <!-- PNP Guide Section -->
@@ -1100,8 +1100,8 @@
     <p>&copy; <span id="copyrightYear">2026</span> Canada PR Builder. All rights reserved.</p>
     <div class="footer-links">
         <a href="#home">홈</a>
-        <a href="#guide">EE</a>
         <a href="#latest-draws">선발 결과</a>
+        <a href="#guide">EE</a>
         <a href="#pnp-guide">PNP</a>
         <a href="privacy.html">개인정보처리방침</a>
         <a href="#contact">고객센터</a>
@@ -1109,7 +1109,7 @@
 </footer>
 
 <!-- Update ?v= when deploying changes to bust browser cache -->
-<script src="main.js?v=1.0.5" defer></script>
+<script src="main.js?v=1.0.6" defer></script>
 
 </body>
 </html>

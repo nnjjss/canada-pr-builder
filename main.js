@@ -2821,3 +2821,30 @@ function initBlogToolbar() {
         });
     }
 }
+
+/* ── Hero Typing Animation ── */
+(function initHeroTyping() {
+    const el = document.getElementById('heroTyped');
+    const cursor = document.getElementById('heroCursor');
+    if (!el) return;
+
+    const text = 'Welcome to Canada';
+    let i = 0;
+
+    function type() {
+        if (i < text.length) {
+            el.textContent += text[i];
+            i++;
+            setTimeout(type, 65 + Math.random() * 40);
+        } else {
+            if (cursor) cursor.classList.add('done');
+            // fade in sub elements
+            document.querySelectorAll('.hero-fade').forEach((el, idx) => {
+                setTimeout(() => el.classList.add('visible'), idx * 200);
+            });
+        }
+    }
+
+    // start after a brief delay
+    setTimeout(type, 400);
+})();

@@ -659,6 +659,43 @@ footer {
     line-height: 1.1;
     margin: 0 0 16px;
     color: var(--text-main);
+    min-height: 1.2em;
+}
+.hero-gradient {
+    background: linear-gradient(135deg, var(--maple-red) 0%, #e84057 40%, #ff6b6b 70%, var(--maple-red) 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: heroGradientShift 4s ease-in-out infinite;
+}
+@keyframes heroGradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+.hero-cursor {
+    -webkit-text-fill-color: var(--maple-red);
+    animation: heroBlink 0.7s step-end infinite;
+    font-weight: 300;
+}
+.hero-cursor.done {
+    animation: heroBlink 0.7s step-end infinite 1s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+@keyframes heroBlink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+.hero-fade {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition-delay: var(--fade-delay, 0s);
+}
+.hero-fade.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 .hero-sub {
     font-size: 1.05rem;
