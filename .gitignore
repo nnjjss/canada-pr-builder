@@ -2,3 +2,6 @@ firebase-debug.log
 .firebase/
 node_modules/
 .env
+.idx/
+.vscode/
+.claude/
