@@ -1941,7 +1941,7 @@ footer::before {
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 .wizard-bottom-spacer {
-    height: 80px;
+    height: 90px;
 }
 
 .wizard-bottom-nav.hidden {
@@ -1978,7 +1978,8 @@ footer::before {
     min-width: 140px;
 }
 .wizard-bottom-btn.wizard-bottom-submit:hover {
-    filter: brightness(1.1);
+    background: linear-gradient(135deg, var(--maple-deep) 0%, #8b0a1e 100%);
+    color: #fff;
     transform: translateY(-1px);
 }
 .wizard-bottom-center {
