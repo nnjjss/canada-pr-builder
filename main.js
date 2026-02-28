@@ -227,7 +227,7 @@ const translations = {
         wizardSteps: ["인적정보","학력","언어","경력","가산점","선호도","시뮬레이션"],
         wizardPrev: "\u2190 이전",
         wizardNext: "다음 \u2192",
-        wizardSubmit: "AI 최적 루트 분석 시작하기",
+        wizardSubmit: "CRS 점수 계산하기",
         miniScoreLabel: "CRS",
         miniScoreSuffix: "점",
         bottomStepOf: "/",
@@ -430,7 +430,10 @@ const translations = {
         btnSubmit: "메시지 전송",
         footerRights: `© ${CURRENT_YEAR} Canada PR Builder. All rights reserved.`,
         footerPrivacy: "개인정보처리방침",
-        footerContact: "고객센터"
+        footerContact: "고객센터",
+        aiAnalysisLabel: "다음 단계",
+        aiAnalysisBtn: "AI 분석",
+        aiAnalysisDone: "분석 완료"
     },
     en: {
         title: "Canada Express Entry Guide & CRS Calculator",
@@ -456,7 +459,7 @@ const translations = {
         wizardSteps: ["Personal","Education","Language","Work","Bonus","Preferences","Simulation"],
         wizardPrev: "\u2190 Previous",
         wizardNext: "Next \u2192",
-        wizardSubmit: "Start AI Optimal Path Analysis",
+        wizardSubmit: "Calculate CRS Score",
         miniScoreLabel: "CRS",
         miniScoreSuffix: "pts",
         bottomStepOf: "/",
@@ -659,7 +662,10 @@ const translations = {
         btnSubmit: "Send Message",
         footerRights: `© ${CURRENT_YEAR} Canada PR Builder. All rights reserved.`,
         footerPrivacy: "Privacy Policy",
-        footerContact: "Support Center"
+        footerContact: "Support Center",
+        aiAnalysisLabel: "Next Step",
+        aiAnalysisBtn: "AI Analysis",
+        aiAnalysisDone: "Done"
     }
 };
 
@@ -2524,13 +2530,49 @@ function calculateCRS() {
     document.getElementById('res-prob').innerText = prob;
 
     renderScoreBreakdown(breakdown, finalScore);
+
+    // Hide AI analysis sections until user clicks the button
+    document.getElementById('recommendation-paths').style.display = 'none';
+    document.getElementById('strategy-cards-section').style.display = 'none';
+    document.getElementById('strategic-advice').style.display = 'none';
+
+    // Reset AI analysis button
+    const aiBtn = document.getElementById('btn-ai-analysis');
+    aiBtn.classList.remove('done');
+    aiBtn.querySelector('[data-i18n="aiAnalysisBtn"]').textContent = translations[currentLang].aiAnalysisBtn;
+    aiBtn.querySelector('.ai-btn-icon').textContent = '\u2728';
+    aiBtn.querySelector('.ai-btn-arrow').textContent = '\u279C';
+
+    // Store profile for Phase 2
+    window._lastProfile = profile;
+
+    document.getElementById('strategyResults').scrollIntoView({ behavior: 'smooth' });
+}
+
+function showAIAnalysis() {
+    const profile = window._lastProfile;
+    if (!profile) return;
+
+    // Show AI analysis sections
+    document.getElementById('recommendation-paths').style.display = '';
+    document.getElementById('strategy-cards-section').style.display = '';
+    document.getElementById('strategic-advice').style.display = '';
+
     renderRecommendations(profile);
     renderStrategyCards(profile);
     renderStrategicAdvice(profile);
-    renderDrawsTable(finalScore);
+    renderDrawsTable(profile.finalScore);
     highlightTargetProvince(profile.targetProvince);
 
-    document.getElementById('strategyResults').scrollIntoView({ behavior: 'smooth' });
+    // Mark button as done
+    const aiBtn = document.getElementById('btn-ai-analysis');
+    aiBtn.classList.add('done');
+    const t = translations[currentLang];
+    aiBtn.querySelector('[data-i18n="aiAnalysisBtn"]').textContent = t.aiAnalysisDone;
+    aiBtn.querySelector('.ai-btn-icon').textContent = '\u2705';
+    aiBtn.querySelector('.ai-btn-arrow').textContent = '';
+
+    document.getElementById('recommendation-paths').scrollIntoView({ behavior: 'smooth' });
 }
 
 function renderScoreBreakdown(breakdown, total) {
