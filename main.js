@@ -433,7 +433,9 @@ const translations = {
         footerContact: "고객센터",
         aiAnalysisLabel: "다음 단계",
         aiAnalysisBtn: "AI 분석",
-        aiAnalysisDone: "분석 완료"
+        aiAnalysisSub: "맞춤 경로 추천 받기",
+        aiAnalysisDone: "분석 완료",
+        aiAnalysisDoneSub: "아래에서 결과를 확인하세요"
     },
     en: {
         title: "Canada Express Entry Guide & CRS Calculator",
@@ -665,7 +667,9 @@ const translations = {
         footerContact: "Support Center",
         aiAnalysisLabel: "Next Step",
         aiAnalysisBtn: "AI Analysis",
-        aiAnalysisDone: "Done"
+        aiAnalysisSub: "Get personalized route",
+        aiAnalysisDone: "Done",
+        aiAnalysisDoneSub: "See results below"
     }
 };
 
@@ -959,7 +963,7 @@ function updateLanguage(lang) {
     // Latest Draws Section
     document.getElementById('drawsH2').textContent = t.drawsH2;
     document.getElementById('drawsDesc').textContent = t.drawsP;
-    renderDrawsTable(lastDrawUserCRS);
+    renderDrawsTable(lastDrawProfile);
 
     // PNP Guide Section
     document.querySelector('#pnp-guide h2').textContent = t.pnpH2;
@@ -2070,10 +2074,66 @@ function updateBottomNav() {
 }
 
 /* ── Draws Table ── */
-let lastDrawUserCRS = null;
+let lastDrawProfile = null;
 
-function renderDrawsTable(userCRS) {
-    lastDrawUserCRS = userCRS;
+// Physician category eligible NOC codes (IRCC Feb 2026)
+const PHYSICIAN_NOCS = ['31100','31101','31102','31103','31110','31111','31112','31303'];
+
+// Map draw type → user profile conditions required to be eligible
+function isEligibleForDraw(draw, profile) {
+    if (!profile) return { eligible: true, reason: '' }; // no profile = show all as neutral
+    const isKo = currentLang === 'ko';
+    switch (draw.type) {
+        case 'general':
+            return { eligible: true, reason: '' };
+        case 'cec':
+            if (profile.canadianExpYears >= 1)
+                return { eligible: true, reason: '' };
+            return { eligible: false, reason: isKo ? '캐나다 경력 1년 이상 필요' : 'Requires 1+ yr Canadian exp.' };
+        case 'pnp':
+            if (profile.hasPNP > 0)
+                return { eligible: true, reason: '' };
+            return { eligible: false, reason: isKo ? 'PNP 추천 필요' : 'Requires PNP nomination' };
+        case 'french':
+            if (profile.frenchCLB >= 7)
+                return { eligible: true, reason: '' };
+            return { eligible: false, reason: isKo ? '불어 CLB 7 이상 필요' : 'Requires French CLB 7+' };
+        case 'healthcare':
+            if (profile.occupationGroup === 'Healthcare')
+                return { eligible: true, reason: '' };
+            return { eligible: false, reason: isKo ? '헬스케어 직종 해당자만' : 'Healthcare occupations only' };
+        case 'special': // Physician category
+            if (profile.nocCodes && profile.nocCodes.some(c => PHYSICIAN_NOCS.includes(c)))
+                return { eligible: true, reason: '' };
+            return { eligible: false, reason: isKo ? '의사/치과/수의사 등 특정 NOC만 해당' : 'Physician NOCs only' };
+        case 'stem':
+            if (profile.occupationGroup === 'STEM')
+                return { eligible: true, reason: '' };
+            return { eligible: false, reason: isKo ? 'STEM 직종 해당자만' : 'STEM occupations only' };
+        case 'trade':
+            if (profile.occupationGroup === 'Trades' || profile.tradeOccupation === 'yes')
+                return { eligible: true, reason: '' };
+            return { eligible: false, reason: isKo ? '기술직 해당자만' : 'Trade occupations only' };
+        case 'transport':
+            if (profile.occupationGroup === 'Transport')
+                return { eligible: true, reason: '' };
+            return { eligible: false, reason: isKo ? '운송직 해당자만' : 'Transport occupations only' };
+        default:
+            return { eligible: true, reason: '' };
+    }
+}
+
+function renderDrawsTable(profileOrScore) {
+    // Accept either a profile object or a raw CRS score (backward compat for lang switch / init)
+    let profile = null, userCRS = null;
+    if (profileOrScore !== null && typeof profileOrScore === 'object') {
+        profile = profileOrScore;
+        userCRS = profile.finalScore;
+    } else {
+        userCRS = profileOrScore;
+    }
+    lastDrawProfile = profile || (userCRS ? { finalScore: userCRS } : null);
+
     const wrap = document.getElementById('drawsTableWrap');
     if (!wrap) return;
     const isKo = currentLang === 'ko';
@@ -2104,17 +2164,23 @@ function renderDrawsTable(userCRS) {
 
         let compareTd = '';
         if (hasScore) {
-            const cmp = isPNP ? draw.effectiveCutoff : draw.cutoff;
-            let cls, label;
-            if (userCRS >= cmp) {
-                cls = 'pass'; label = isKo ? '✓ 합격권' : '✓ Eligible';
-            } else if (userCRS >= cmp - CRS_BENCHMARKS.NEAR_ELIGIBLE_GAP) {
-                cls = 'close'; label = isKo ? '△ 근접' : '△ Near';
+            const elig = isEligibleForDraw(draw, profile);
+            if (!elig.eligible) {
+                // User doesn't meet category requirements
+                compareTd = `<td><span class="draw-compare draw-compare--ineligible" title="${elig.reason}">— ${elig.reason}</span></td>`;
             } else {
-                cls = 'fail'; label = isKo ? '✗ 미달' : '✗ Below';
+                const cmp = isPNP ? draw.effectiveCutoff : draw.cutoff;
+                let cls, label;
+                if (userCRS >= cmp) {
+                    cls = 'pass'; label = isKo ? '✓ 합격권' : '✓ Eligible';
+                } else if (userCRS >= cmp - CRS_BENCHMARKS.NEAR_ELIGIBLE_GAP) {
+                    cls = 'close'; label = isKo ? '△ 근접' : '△ Near';
+                } else {
+                    cls = 'fail'; label = isKo ? '✗ 미달' : '✗ Below';
+                }
+                if (isPNP) label += isKo ? ' (추천 필요)' : ' (w/ nomination)';
+                compareTd = `<td><span class="draw-compare draw-compare--${cls}">${label}</span></td>`;
             }
-            if (isPNP) label += isKo ? ' (추천 필요)' : ' (w/ nomination)';
-            compareTd = `<td><span class="draw-compare draw-compare--${cls}">${label}</span></td>`;
         }
 
         rows += `<tr>
@@ -2130,6 +2196,9 @@ function renderDrawsTable(userCRS) {
     const disclaimer = isKo
         ? '* PNP 선발은 주정부 가산점 600점이 포함된 점수입니다. 괄호 안 수치가 실질 경쟁 기준입니다.'
         : '* PNP draws include a 600-point provincial nomination bonus. Bracketed figures show the effective benchmark.';
+    const categoryNote = isKo
+        ? '* 카테고리별 선발은 해당 직종/조건을 충족해야 지원 가능합니다.'
+        : '* Category-based draws require meeting specific occupation/eligibility criteria.';
     const myScoreNote = hasScore
         ? `<p style="font-size:0.85rem;margin-top:4px;color:var(--text-muted);">${isKo ? `* 내 추정 CRS <strong>${userCRS}점</strong> 기준으로 비교합니다.` : `* Comparison based on your estimated CRS of <strong>${userCRS} pts</strong>.`}</p>`
         : '';
@@ -2148,6 +2217,7 @@ function renderDrawsTable(userCRS) {
             </table>
         </div>
         <p style="font-size:0.85rem;margin-top:10px;color:var(--text-muted);">${disclaimer}</p>
+        <p style="font-size:0.85rem;margin-top:4px;color:var(--text-muted);">${categoryNote}</p>
         ${myScoreNote}`;
 }
 
@@ -2504,12 +2574,19 @@ function calculateCRS() {
 
     const finalScore = Math.min(1200, total);
 
+    // --- Collect NOC codes for category eligibility ---
+    const nocCodes = [];
+    const canNOC = document.getElementById('canadianNOC').value.trim();
+    const forNOC = document.getElementById('foreignNOC').value.trim();
+    if (canNOC) nocCodes.push(canNOC);
+    if (forNOC && forNOC !== canNOC) nocCodes.push(forNOC);
+
     // --- Build Profile Object ---
     const profile = {
         age, education, clbL, clbR, clbW, clbS, minCLB, frenchCLB,
         canadianExpYears, foreignExpYears, hasJobOffer, isMarried, effectiveMarried,
         targetProvince, ruralWilling, atlanticWilling, occupationGroup, businessIntent,
-        tradeOccupation, hasPNP, sibling,
+        tradeOccupation, hasPNP, sibling, nocCodes,
         willingRetakeIELTS, canStudyFrench, planMoreWork, spouseIELTS, canChangeEmployer,
         finalScore, breakdown
     };
@@ -2518,15 +2595,30 @@ function calculateCRS() {
     document.getElementById('strategyResults').style.display = 'block';
     document.getElementById('res-crs').innerText = finalScore + (currentLang === 'ko' ? '점' : ' pts');
 
-    const gap = finalScore - CRS_BENCHMARKS.RECENT_CUTOFF;
+    // Smart gap: find lowest cutoff among draws the user is actually eligible for
+    const eligibleCutoffs = drawsData
+        .filter(d => isEligibleForDraw(d, profile).eligible)
+        .map(d => d.type === 'pnp' ? d.effectiveCutoff : d.cutoff);
+    const bestCutoff = eligibleCutoffs.length > 0 ? Math.min(...eligibleCutoffs) : CRS_BENCHMARKS.RECENT_CUTOFF;
+
+    const gap = finalScore - bestCutoff;
     const gapEl = document.getElementById('res-gap');
     gapEl.innerText = (gap >= 0 ? '+' : '') + gap + (currentLang === 'ko' ? '점' : ' pts');
     gapEl.style.color = gap >= 0 ? '#16a34a' : 'var(--maple-red)';
 
-    let prob = currentLang === 'ko' ? '낮음' : 'Low';
-    if (finalScore >= CRS_BENCHMARKS.VERY_HIGH) prob = currentLang === 'ko' ? '매우 높음' : 'Very High';
-    else if (finalScore >= CRS_BENCHMARKS.HIGH) prob = currentLang === 'ko' ? '높음' : 'High';
-    else if (finalScore >= CRS_BENCHMARKS.MEDIUM) prob = currentLang === 'ko' ? '중간' : 'Medium';
+    // Probability based on how many eligible draws the user would pass
+    const passCount = eligibleCutoffs.filter(c => finalScore >= c).length;
+    const eligTotal = eligibleCutoffs.length;
+    let prob;
+    if (eligTotal === 0) {
+        prob = currentLang === 'ko' ? '해당 없음' : 'N/A';
+    } else {
+        const passRate = passCount / eligTotal;
+        if (passRate >= 0.6) prob = currentLang === 'ko' ? '매우 높음' : 'Very High';
+        else if (passRate >= 0.35) prob = currentLang === 'ko' ? '높음' : 'High';
+        else if (passRate >= 0.15) prob = currentLang === 'ko' ? '중간' : 'Medium';
+        else prob = currentLang === 'ko' ? '낮음' : 'Low';
+    }
     document.getElementById('res-prob').innerText = prob;
 
     renderScoreBreakdown(breakdown, finalScore);
@@ -2540,8 +2632,8 @@ function calculateCRS() {
     const aiBtn = document.getElementById('btn-ai-analysis');
     aiBtn.classList.remove('done');
     aiBtn.querySelector('[data-i18n="aiAnalysisBtn"]').textContent = translations[currentLang].aiAnalysisBtn;
-    aiBtn.querySelector('.ai-btn-icon').textContent = '\u2728';
-    aiBtn.querySelector('.ai-btn-arrow').textContent = '\u279C';
+    aiBtn.querySelector('[data-i18n="aiAnalysisSub"]').textContent = translations[currentLang].aiAnalysisSub;
+    aiBtn.querySelector('.ai-btn-icon').innerHTML = '<path d="M12 2L9.5 8.5 3 10l5 4-1.5 7L12 17.5 17.5 21 16 14l5-4-6.5-1.5Z"/>';
 
     // Store profile for Phase 2
     window._lastProfile = profile;
@@ -2561,7 +2653,7 @@ function showAIAnalysis() {
     renderRecommendations(profile);
     renderStrategyCards(profile);
     renderStrategicAdvice(profile);
-    renderDrawsTable(profile.finalScore);
+    renderDrawsTable(profile);
     highlightTargetProvince(profile.targetProvince);
 
     // Mark button as done
@@ -2569,8 +2661,8 @@ function showAIAnalysis() {
     aiBtn.classList.add('done');
     const t = translations[currentLang];
     aiBtn.querySelector('[data-i18n="aiAnalysisBtn"]').textContent = t.aiAnalysisDone;
-    aiBtn.querySelector('.ai-btn-icon').textContent = '\u2705';
-    aiBtn.querySelector('.ai-btn-arrow').textContent = '';
+    aiBtn.querySelector('[data-i18n="aiAnalysisSub"]').textContent = t.aiAnalysisDoneSub;
+    aiBtn.querySelector('.ai-btn-icon').innerHTML = '<polyline points="20 6 9 17 4 12"/>';
 
     document.getElementById('recommendation-paths').scrollIntoView({ behavior: 'smooth' });
 }
