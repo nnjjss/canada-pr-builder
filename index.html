@@ -11,7 +11,21 @@
     <meta property="og:url" content="https://canadaprbuilder.com/">
     <meta property="og:locale" content="ko_KR">
     <meta property="og:locale:alternate" content="en_US">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇨🇦</text></svg>" type="image/svg+xml">
     <link rel="canonical" href="https://canadaprbuilder.com/">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Canada PR Builder",
+        "url": "https://canadaprbuilder.com/",
+        "description": "캐나다 Express Entry CRS 점수 계산기 및 AI 기반 이민 경로 추천 도구",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "All",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CAD" },
+        "inLanguage": ["ko", "en"]
+    }
+    </script>
     <script>
         // Prevent FOUC (Flash of Unstyled Content)
         (function() {
@@ -279,19 +293,19 @@
                     </div>
                     <div class="input-group">
                         <label id="langLLabel">듣기 (L) — IELTS 점수</label>
-                        <input type="number" id="langL" placeholder="예: 8.0" step="0.5" oninput="calcCLB()" />
+                        <input type="number" id="langL" placeholder="예: 8.0" step="0.5" min="0" max="9" oninput="calcCLB()" />
                     </div>
                     <div class="input-group">
                         <label id="langRLabel">읽기 (R) — IELTS 점수</label>
-                        <input type="number" id="langR" placeholder="예: 7.0" step="0.5" oninput="calcCLB()" />
+                        <input type="number" id="langR" placeholder="예: 7.0" step="0.5" min="0" max="9" oninput="calcCLB()" />
                     </div>
                     <div class="input-group">
                         <label id="langWLabel">쓰기 (W) — IELTS 점수</label>
-                        <input type="number" id="langW" placeholder="예: 7.0" step="0.5" oninput="calcCLB()" />
+                        <input type="number" id="langW" placeholder="예: 7.0" step="0.5" min="0" max="9" oninput="calcCLB()" />
                     </div>
                     <div class="input-group">
                         <label id="langSLabel">말하기 (S) — IELTS 점수</label>
-                        <input type="number" id="langS" placeholder="예: 7.0" step="0.5" oninput="calcCLB()" />
+                        <input type="number" id="langS" placeholder="예: 7.0" step="0.5" min="0" max="9" oninput="calcCLB()" />
                     </div>
                     <div class="input-group">
                         <label>CLB 자동계산 결과</label>
@@ -580,6 +594,7 @@
             <button type="button" id="wizBottomPrev" class="wizard-bottom-btn" onclick="goToStep(currentStep - 1)">&larr; 이전</button>
             <div class="wizard-bottom-center">
                 <span id="wizBottomStep" class="wizard-bottom-step">Step 1 / 7</span>
+                <button type="button" id="wizResetBtn" class="wizard-reset-btn" onclick="resetForm()" title="초기화">↺</button>
                 <div id="wizBottomScore" class="mini-score">
                     <span class="mini-score-label">CRS</span>
                     <span class="mini-score-num">--</span>

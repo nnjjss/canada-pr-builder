@@ -677,7 +677,24 @@ const translations = {
 
 let currentLang = localStorage.getItem('lang') || 'ko';
 
+const FORM_IDS = ['birthYear','birthMonth','maritalStatus','spouseAccompany','dependents','canadaStatus',
+    'education','eduCountry','ecaDone','canadianStudy','langTest','langL','langR','langW','langS',
+    'frenchTest','frenchCLB','canadianExpYears','canadianNOC','foreignExpYears','foreignNOC',
+    'hasJobOffer','lmia','employerPNP','sibling','hasPNP','tradeOccupation',
+    'targetProvince','ruralWilling','atlanticWilling','occupationGroup','currentSalary','businessIntent',
+    'willingRetakeIELTS','canStudyFrench','planMoreWork','spouseIELTS','canChangeEmployer',
+    'spouseEducation','spouseLanguage','spouseCanadianExp'];
+function saveFormState() {
+    const state = {};
+    FORM_IDS.forEach(id => { const el = document.getElementById(id); if (el) state[id] = el.value; });
+    return state;
+}
+function restoreFormState(state) {
+    if (!state) return;
+    FORM_IDS.forEach(id => { const el = document.getElementById(id); if (el && state[id] !== undefined) el.value = state[id]; });
+}
 function updateLanguage(lang) {
+    const formState = saveFormState();
     currentLang = lang;
     localStorage.setItem('lang', lang);
     document.documentElement.lang = lang;
@@ -1096,6 +1113,7 @@ function updateLanguage(lang) {
     footerLinks[4].textContent = t.footerContact;
 
     updateLangPlaceholders();
+    restoreFormState(formState);
     if (document.getElementById('birthYear').value) calcAge();
     if (document.getElementById('langL').value) calcCLB();
 
@@ -1654,12 +1672,38 @@ window.openArticle = function(index) {
     modalBody.innerHTML = `<span class="article-badge">${article.badge}</span><h2>${article.title}</h2><div class="article-meta">${article.date}</div><div class="full-content">${article.content}</div><button class="read-more-btn" style="margin-top:30px; width:100%" id="modalCloseBtn">${closeText}</button>`;
     modal.style.display = "block";
     document.body.classList.add("modal-open");
-    document.getElementById("modalCloseBtn").onclick = window.closeArticle;
+    const closeBtn = document.getElementById("modalCloseBtn");
+    closeBtn.onclick = window.closeArticle;
+    closeBtn.focus();
+    // Trap focus inside modal
+    modal.addEventListener('keydown', window._modalKeyHandler = function(e) {
+        if (e.key === 'Escape') { window.closeArticle(); return; }
+        if (e.key === 'Tab') {
+            const focusable = modal.querySelectorAll('button, [href], [tabindex]:not([tabindex="-1"])');
+            if (focusable.length === 0) return;
+            const first = focusable[0], last = focusable[focusable.length - 1];
+            if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+            else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+        }
+    });
+};
+
+window._lastFocusBeforeModal = null;
+const origOpen = window.openArticle;
+const wrappedOpen = window.openArticle;
+window.openArticle = function(index) {
+    window._lastFocusBeforeModal = document.activeElement;
+    wrappedOpen(index);
 };
 
 window.closeArticle = function() {
     const modal = document.getElementById("articleModal");
-    if (modal) { modal.style.display = "none"; document.body.classList.remove("modal-open"); }
+    if (modal) {
+        modal.style.display = "none";
+        document.body.classList.remove("modal-open");
+        if (window._modalKeyHandler) modal.removeEventListener('keydown', window._modalKeyHandler);
+    }
+    if (window._lastFocusBeforeModal) window._lastFocusBeforeModal.focus();
 };
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -1669,9 +1713,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const nav = document.getElementById('mainNav');
     if (nav) {
+        let scrollTick = false;
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) { nav.style.padding = '8px 20px'; nav.style.top = '10px'; }
-            else { nav.style.padding = '12px 30px'; nav.style.top = '20px'; }
+            if (!scrollTick) {
+                requestAnimationFrame(() => {
+                    if (window.scrollY > 100) { nav.style.padding = '8px 20px'; nav.style.top = '10px'; }
+                    else { nav.style.padding = '12px 30px'; nav.style.top = '20px'; }
+                    scrollTick = false;
+                });
+                scrollTick = true;
+            }
         });
     }
     const themeToggle = document.getElementById('themeToggle');
@@ -1774,10 +1825,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     document.querySelector('.newsletter-disclaimer').style.display = 'none';
                     document.querySelector('.newsletter-success').style.display = 'block';
                 } else {
+                    alert(currentLang === 'ko' ? '구독 처리 중 오류가 발생했습니다. 다시 시도해주세요.' : 'Subscription failed. Please try again.');
                     btn.disabled = false;
                     btn.textContent = t.nlBtn;
                 }
             } catch {
+                alert(currentLang === 'ko' ? '네트워크 오류가 발생했습니다. 인터넷 연결을 확인해주세요.' : 'Network error. Please check your connection.');
                 btn.disabled = false;
                 btn.textContent = t.nlBtn;
             }
@@ -1848,10 +1901,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // IELTS → CLB conversion tables (per ability)
 const ieltsToCLB = {
-    L: [[8.5,10],[8.0,9],[7.5,8],[6.0,7],[5.5,6],[5.0,5],[4.5,4]],
-    R: [[8.0,10],[7.0,9],[6.5,8],[6.0,7],[5.0,6],[4.0,5],[3.5,4]],
-    W: [[7.5,10],[7.0,9],[6.5,8],[6.0,7],[5.5,6],[5.0,5],[4.0,4]],
-    S: [[7.5,10],[7.0,9],[6.5,8],[6.0,7],[5.5,6],[5.0,5],[4.0,4]]
+    L: [[8.5,10],[8.0,9],[7.5,8],[6.0,7],[5.5,6],[5.0,5],[4.5,4],[4.0,3]],
+    R: [[8.0,10],[7.0,9],[6.5,8],[6.0,7],[5.0,6],[4.0,5],[3.5,4],[3.0,3]],
+    W: [[7.5,10],[7.0,9],[6.5,8],[6.0,7],[5.5,6],[5.0,5],[4.0,4],[3.5,3]],
+    S: [[7.5,10],[7.0,9],[6.5,8],[6.0,7],[5.5,6],[5.0,5],[4.0,4],[3.5,3]]
 };
 
 function convertToCLB(score, ability, testType) {
@@ -1875,11 +1928,12 @@ function convertToCLB(score, ability, testType) {
     return 0;
 }
 
+function getVal(id) { const el = document.getElementById(id); return el ? el.value : ''; }
 function calcAge() {
-    const year = parseInt(document.getElementById('birthYear').value);
-    const month = parseInt(document.getElementById('birthMonth').value) || 1;
+    const year = parseInt(getVal('birthYear'));
+    const month = parseInt(getVal('birthMonth')) || 1;
     const display = document.getElementById('ageDisplay');
-    if (!year || year < MIN_BIRTH_YEAR || year > MAX_BIRTH_YEAR) {
+    if (!display || !year || year < MIN_BIRTH_YEAR || year > MAX_BIRTH_YEAR) {
         display.textContent = currentLang === 'ko' ? '올바른 출생 연도를 입력하세요' : 'Enter a valid birth year';
         return;
     }
@@ -1889,8 +1943,16 @@ function calcAge() {
     display.textContent = currentLang === 'ko' ? `만 ${age}세` : `Age ${age}`;
 }
 
+function clampLangInput(id, testType) {
+    const el = document.getElementById(id);
+    if (!el || !el.value) return;
+    const max = testType === 'CELPIP' ? 12 : 9;
+    let v = parseFloat(el.value);
+    if (v < 0) { el.value = 0; } else if (v > max) { el.value = max; }
+}
 function calcCLB() {
     const testType = document.getElementById('langTest').value;
+    ['langL','langR','langW','langS'].forEach(id => clampLangInput(id, testType));
     const L = document.getElementById('langL').value;
     const R = document.getElementById('langR').value;
     const W = document.getElementById('langW').value;
@@ -1969,8 +2031,8 @@ function hideNOCDropdown(prefix) {
 }
 
 /* ── Wizard Step Navigation ── */
-let currentStep = 1;
-let maxVisitedStep = 1;
+let currentStep = parseInt(sessionStorage.getItem('wizardStep')) || 1;
+let maxVisitedStep = parseInt(sessionStorage.getItem('wizardMaxStep')) || 1;
 
 function goToStep(n) {
     if (n < 1 || n > WIZARD_TOTAL_STEPS || n > maxVisitedStep + 1) return;
@@ -1993,6 +2055,8 @@ function goToStep(n) {
 
     currentStep = n;
     if (n > maxVisitedStep) maxVisitedStep = n;
+    sessionStorage.setItem('wizardStep', currentStep);
+    sessionStorage.setItem('wizardMaxStep', maxVisitedStep);
     updateWizardProgress();
     updateBottomNav();
 
@@ -2355,6 +2419,27 @@ function updateMiniScore() {
     lastMiniScore = score;
 }
 
+function resetForm() {
+    FORM_IDS.forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        if (el.tagName === 'SELECT') el.selectedIndex = 0;
+        else el.value = '';
+    });
+    const ageDisplay = document.getElementById('ageDisplay');
+    if (ageDisplay) ageDisplay.textContent = currentLang === 'ko' ? '출생 연도 입력 후 자동 계산' : 'Auto-calculated after entering birth year';
+    const clbDisplay = document.getElementById('clbDisplay');
+    if (clbDisplay) clbDisplay.textContent = currentLang === 'ko' ? '언어 점수 입력 후 자동 계산' : 'Auto-calculated after entering scores';
+    crsCalculated = false;
+    currentStep = 1;
+    maxVisitedStep = 1;
+    sessionStorage.removeItem('wizardStep');
+    sessionStorage.removeItem('wizardMaxStep');
+    goToStep(1);
+    const results = document.getElementById('strategyResults');
+    if (results) results.style.display = 'none';
+}
+
 function updateLangPlaceholders() {
     const testType = document.getElementById('langTest').value;
     const isIELTS = testType === 'IELTS';
@@ -2376,6 +2461,23 @@ function updateLangPlaceholders() {
     if (wLabel) wLabel.textContent = `${t.labelLangW} — ${testType} ${currentLang === 'ko' ? '점수' : 'Score'}`;
     if (sLabel) sLabel.textContent = `${t.labelLangS} — ${testType} ${currentLang === 'ko' ? '점수' : 'Score'}`;
     calcCLB();
+
+    // Other placeholders
+    const isKo = currentLang === 'ko';
+    const byEl = document.getElementById('birthYear');
+    if (byEl) byEl.placeholder = isKo ? '예: 1992' : 'e.g. 1992';
+    const cnEl = document.getElementById('canadianNOCSearch');
+    if (cnEl) cnEl.placeholder = isKo ? '직업명/키워드 입력 (영문, 예: Software Engineer)' : 'Enter job title/keyword (e.g. Software Engineer)';
+    const fnEl = document.getElementById('foreignNOCSearch');
+    if (fnEl) fnEl.placeholder = isKo ? '직업명/키워드 입력 (영문, 예: Software Engineer)' : 'Enter job title/keyword (e.g. Software Engineer)';
+    const bsEl = document.getElementById('blogSearchInput');
+    if (bsEl) bsEl.placeholder = isKo ? '기사 검색...' : 'Search articles...';
+    const nlEl = document.querySelector('#newsletter input[type="email"]');
+    if (nlEl) nlEl.placeholder = isKo ? '이메일 입력' : 'Enter your email';
+    const nameEl = document.getElementById('contactName');
+    if (nameEl) nameEl.placeholder = isKo ? '홍길동' : 'John Doe';
+    const msgEl = document.getElementById('contactMessage');
+    if (msgEl) msgEl.placeholder = isKo ? '내용을 입력해주세요...' : 'Enter your message...';
 }
 
 function toggleFrenchSection() {
@@ -2968,7 +3070,7 @@ function initBlogToolbar() {
     const cursor = document.getElementById('heroCursor');
     if (!el) return;
 
-    const text = 'Welcome to Canada';
+    const text = currentLang === 'ko' ? '캐나다에 오신 것을 환영합니다' : 'Welcome to Canada';
     let i = 0;
 
     function type() {
