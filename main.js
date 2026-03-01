@@ -1155,19 +1155,19 @@ const articlesMeta = [
 
 // --- Express Entry Draw Data ---
 const drawsData = [
-    { date: { ko: '2026년 2월 20일', en: 'Feb 20, 2026' }, type: 'healthcare', label: { ko: '헬스케어 & 소셜 서비스', en: 'Healthcare & Social Services' }, invited: 4000, cutoff: 467 },
-    { date: { ko: '2026년 2월 19일', en: 'Feb 19, 2026' }, type: 'special',    label: { ko: '신설 의사 카테고리', en: 'Physician Category (New)' }, invited: 391, cutoff: 169 },
-    { date: { ko: '2026년 2월 17일', en: 'Feb 17, 2026' }, type: 'cec',        label: { ko: '캐나다 경험 이민 (CEC)', en: 'Canadian Experience Class (CEC)' }, invited: 6000, cutoff: 508 },
-    { date: { ko: '2026년 2월 16일', en: 'Feb 16, 2026' }, type: 'pnp',        label: { ko: '주정부 이민 (PNP)', en: 'Provincial Nominee Program (PNP)' }, invited: 279,  cutoff: 789, effectiveCutoff: 189 },
-    { date: { ko: '2026년 2월 6일',  en: 'Feb 6, 2026'  }, type: 'french',     label: { ko: '프랑스어 우수자', en: 'French-Language Proficiency' }, invited: 8500, cutoff: 400 },
-    { date: { ko: '2026년 2월 3일',  en: 'Feb 3, 2026'  }, type: 'pnp',        label: { ko: '주정부 이민 (PNP)', en: 'Provincial Nominee Program (PNP)' }, invited: 423,  cutoff: 749, effectiveCutoff: 149 },
-    { date: { ko: '2026년 1월 30일', en: 'Jan 30, 2026' }, type: 'general',    label: { ko: '일반 선발 (전체)', en: 'General (No Program Specified)' }, invited: 4000, cutoff: 524 },
-    { date: { ko: '2026년 1월 22일', en: 'Jan 22, 2026' }, type: 'stem',       label: { ko: 'STEM 직종', en: 'STEM Occupations' }, invited: 3200, cutoff: 481 },
-    { date: { ko: '2026년 1월 15일', en: 'Jan 15, 2026' }, type: 'general',    label: { ko: '일반 선발 (전체)', en: 'General (No Program Specified)' }, invited: 5500, cutoff: 517 },
-    { date: { ko: '2025년 12월 19일', en: 'Dec 19, 2025' }, type: 'general',   label: { ko: '일반 선발 (전체)', en: 'General (No Program Specified)' }, invited: 5000, cutoff: 520 },
-    { date: { ko: '2025년 12월 11일', en: 'Dec 11, 2025' }, type: 'trade',     label: { ko: '기술직', en: 'Trade Occupations' }, invited: 1800, cutoff: 443 },
-    { date: { ko: '2025년 12월 4일',  en: 'Dec 4, 2025'  }, type: 'transport', label: { ko: '운송직', en: 'Transport Occupations' }, invited: 1000, cutoff: 452 },
-    { date: { ko: '2025년 11월 27일', en: 'Nov 27, 2025' }, type: 'general',   label: { ko: '일반 선발 (전체)', en: 'General (No Program Specified)' }, invited: 4200, cutoff: 519 },
+    { isoDate: '2026-02-20', date: { ko: '2026년 2월 20일', en: 'Feb 20, 2026' }, type: 'healthcare', label: { ko: '헬스케어 & 소셜 서비스', en: 'Healthcare & Social Services' }, invited: 4000, cutoff: 467 },
+    { isoDate: '2026-02-19', date: { ko: '2026년 2월 19일', en: 'Feb 19, 2026' }, type: 'special',    label: { ko: '신설 의사 카테고리', en: 'Physician Category (New)' }, invited: 391, cutoff: 169 },
+    { isoDate: '2026-02-17', date: { ko: '2026년 2월 17일', en: 'Feb 17, 2026' }, type: 'cec',        label: { ko: '캐나다 경험 이민 (CEC)', en: 'Canadian Experience Class (CEC)' }, invited: 6000, cutoff: 508 },
+    { isoDate: '2026-02-16', date: { ko: '2026년 2월 16일', en: 'Feb 16, 2026' }, type: 'pnp',        label: { ko: '주정부 이민 (PNP)', en: 'Provincial Nominee Program (PNP)' }, invited: 279,  cutoff: 789, effectiveCutoff: 189 },
+    { isoDate: '2026-02-06', date: { ko: '2026년 2월 6일',  en: 'Feb 6, 2026'  }, type: 'french',     label: { ko: '프랑스어 우수자', en: 'French-Language Proficiency' }, invited: 8500, cutoff: 400 },
+    { isoDate: '2026-02-03', date: { ko: '2026년 2월 3일',  en: 'Feb 3, 2026'  }, type: 'pnp',        label: { ko: '주정부 이민 (PNP)', en: 'Provincial Nominee Program (PNP)' }, invited: 423,  cutoff: 749, effectiveCutoff: 149 },
+    { isoDate: '2026-01-30', date: { ko: '2026년 1월 30일', en: 'Jan 30, 2026' }, type: 'general',    label: { ko: '일반 선발 (전체)', en: 'General (No Program Specified)' }, invited: 4000, cutoff: 524 },
+    { isoDate: '2026-01-22', date: { ko: '2026년 1월 22일', en: 'Jan 22, 2026' }, type: 'stem',       label: { ko: 'STEM 직종', en: 'STEM Occupations' }, invited: 3200, cutoff: 481 },
+    { isoDate: '2026-01-15', date: { ko: '2026년 1월 15일', en: 'Jan 15, 2026' }, type: 'general',    label: { ko: '일반 선발 (전체)', en: 'General (No Program Specified)' }, invited: 5500, cutoff: 517 },
+    { isoDate: '2025-12-19', date: { ko: '2025년 12월 19일', en: 'Dec 19, 2025' }, type: 'general',   label: { ko: '일반 선발 (전체)', en: 'General (No Program Specified)' }, invited: 5000, cutoff: 520 },
+    { isoDate: '2025-12-11', date: { ko: '2025년 12월 11일', en: 'Dec 11, 2025' }, type: 'trade',     label: { ko: '기술직', en: 'Trade Occupations' }, invited: 1800, cutoff: 443 },
+    { isoDate: '2025-12-04', date: { ko: '2025년 12월 4일',  en: 'Dec 4, 2025'  }, type: 'transport', label: { ko: '운송직', en: 'Transport Occupations' }, invited: 1000, cutoff: 452 },
+    { isoDate: '2025-11-27', date: { ko: '2025년 11월 27일', en: 'Nov 27, 2025' }, type: 'general',   label: { ko: '일반 선발 (전체)', en: 'General (No Program Specified)' }, invited: 4200, cutoff: 519 },
 ];
 
 // --- Comprehensive NOC 2021 Database (Canada.ca) ---
@@ -1719,9 +1719,8 @@ window.closeArticle = function() {
 function initCountdown() {
     const el = document.getElementById('heroCountdown');
     if (!el || !drawsData.length) return;
-    // Parse the latest draw's English date to get a Date object
-    const latestDateStr = drawsData[0].date.en; // e.g. "Feb 20, 2026"
-    const latestDate = new Date(latestDateStr);
+    // Use ISO date for reliable cross-browser parsing
+    const latestDate = new Date(drawsData[0].isoDate + 'T00:00:00');
     if (isNaN(latestDate)) return;
     // Next expected draw = latest + 14 days
     const nextDraw = new Date(latestDate);
