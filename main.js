@@ -228,6 +228,7 @@ const translations = {
         wizardPrev: "\u2190 이전",
         wizardNext: "다음 \u2192",
         wizardSubmit: "CRS 점수 계산하기",
+        wizardResubmit: "CRS 점수 다시계산",
         miniScoreLabel: "CRS",
         miniScoreSuffix: "점",
         bottomStepOf: "/",
@@ -462,6 +463,7 @@ const translations = {
         wizardPrev: "\u2190 Previous",
         wizardNext: "Next \u2192",
         wizardSubmit: "Calculate CRS Score",
+        wizardResubmit: "Recalculate CRS Score",
         miniScoreLabel: "CRS",
         miniScoreSuffix: "pts",
         bottomStepOf: "/",
@@ -2061,7 +2063,7 @@ function updateBottomNav() {
 
     // Next / Submit button
     if (currentStep === WIZARD_TOTAL_STEPS) {
-        nextBtn.textContent = t.wizardSubmit;
+        nextBtn.textContent = crsCalculated ? t.wizardResubmit : t.wizardSubmit;
         nextBtn.className = 'wizard-bottom-btn wizard-bottom-submit';
         nextBtn.onclick = () => calculateCRS();
     } else {
@@ -2404,7 +2406,13 @@ function clbToLangPts(clb, isMarried) {
     return map[key] || 0;
 }
 
+let crsCalculated = false;
 function calculateCRS() {
+    crsCalculated = true;
+    const t = translations[currentLang];
+    const submitBtn = document.getElementById('wizBottomNext');
+    if (submitBtn) submitBtn.textContent = t.wizardResubmit;
+
     // --- Read Inputs ---
     const birthYear = parseInt(document.getElementById('birthYear').value) || 0;
     const birthMonth = parseInt(document.getElementById('birthMonth').value) || 1;
