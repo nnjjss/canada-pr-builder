@@ -221,6 +221,10 @@ const translations = {
         heroChip1: "✅ IRCC 공식 기준",
         heroChip2: "⚡ 실시간 CRS 계산",
         heroChip3: "🆓 무료 사용",
+        countdownPrefix: "다음 Express Entry 선발까지 약",
+        countdownSuffix: "일",
+        countdownToday: "Express Entry 선발이 오늘 예상됩니다!",
+        countdownPassed: "최근 선발 결과를 확인하세요",
         jobOfferNotice: "⚠️ 2025년 3월 25일부로 잡오퍼 CRS 가산점이 폐지됐습니다. 프로그램 자격 판단용으로만 활용됩니다.",
         calcH2: "맞춤형 이민 루트 진단 & CRS 계산기",
         calcP: "기본 정보와 선호도를 입력하면 <b>Express Entry, PNP, Pilot 프로그램</b> 중 당신에게 가장 유리한 최적의 경로를 데이터 기반으로 추천해드립니다.",
@@ -456,6 +460,10 @@ const translations = {
         heroChip1: "✅ IRCC Official Standard",
         heroChip2: "⚡ Real-time CRS Score",
         heroChip3: "🆓 Free to Use",
+        countdownPrefix: "Next Express Entry draw in approx.",
+        countdownSuffix: " days",
+        countdownToday: "Express Entry draw expected today!",
+        countdownPassed: "Check the latest draw results",
         jobOfferNotice: "⚠️ As of March 25, 2025, CRS points for job offers have been eliminated. Job offer information is used only for program eligibility purposes.",
         calcH2: "Personalized Immigration Path Diagnosis & CRS Calculator",
         calcP: "Enter your information and preferences to get data-driven recommendations for <b>Express Entry, PNP, and Pilot programs</b>.",
@@ -727,6 +735,7 @@ function updateLanguage(lang) {
     document.getElementById('heroChip1').textContent = t.heroChip1;
     document.getElementById('heroChip2').textContent = t.heroChip2;
     document.getElementById('heroChip3').textContent = t.heroChip3;
+    updateCountdownDisplay();
 
     // Calculator
     document.querySelector('#calculator h2').textContent = t.calcH2;
@@ -1706,10 +1715,50 @@ window.closeArticle = function() {
     if (window._lastFocusBeforeModal) window._lastFocusBeforeModal.focus();
 };
 
+// --- COUNTDOWN TIMER ---
+function initCountdown() {
+    const el = document.getElementById('heroCountdown');
+    if (!el || !drawsData.length) return;
+    // Parse the latest draw's English date to get a Date object
+    const latestDateStr = drawsData[0].date.en; // e.g. "Feb 20, 2026"
+    const latestDate = new Date(latestDateStr);
+    if (isNaN(latestDate)) return;
+    // Next expected draw = latest + 14 days
+    const nextDraw = new Date(latestDate);
+    nextDraw.setDate(nextDraw.getDate() + 14);
+    updateCountdownDisplay(el, nextDraw);
+}
+
+function updateCountdownDisplay(el, nextDraw) {
+    if (!el) el = document.getElementById('heroCountdown');
+    if (!el) return;
+    // Store nextDraw for language switches
+    el._nextDraw = nextDraw || el._nextDraw;
+    if (!el._nextDraw) return;
+    const now = new Date();
+    now.setHours(0, 0, 0, 0);
+    const target = new Date(el._nextDraw);
+    target.setHours(0, 0, 0, 0);
+    const diffDays = Math.ceil((target - now) / (1000 * 60 * 60 * 24));
+    const t = translations[currentLang];
+    if (diffDays > 0) {
+        el.textContent = `${t.countdownPrefix} ${diffDays}${t.countdownSuffix}`;
+        el.classList.toggle('urgent', diffDays <= 7);
+    } else if (diffDays === 0) {
+        el.textContent = t.countdownToday;
+        el.classList.add('urgent');
+    } else {
+        el.textContent = t.countdownPassed;
+        el.classList.remove('urgent');
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     // Dynamic copyright year
     const copyrightEl = document.getElementById('copyrightYear');
     if (copyrightEl) copyrightEl.textContent = CURRENT_YEAR;
+
+    initCountdown();
 
     const nav = document.getElementById('mainNav');
     if (nav) {

@@ -893,6 +893,29 @@ footer {
     border: 1px solid var(--border-color);
     color: var(--text-muted);
 }
+.hero-countdown {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 6px 18px;
+    border-radius: 100px;
+    background: rgba(220,53,69,0.08);
+    color: var(--text-color);
+    border: 1px solid rgba(220,53,69,0.2);
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+}
+.hero-countdown:empty { display: none; }
+.hero-countdown.urgent {
+    background: rgba(220,53,69,0.15);
+    color: #dc3545;
+    border-color: rgba(220,53,69,0.4);
+    animation: countdownPulse 2s ease-in-out infinite;
+}
+@keyframes countdownPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.85; transform: scale(1.02); }
+}
 .hero-cta {
     display: inline-block;
     background: var(--maple-red);
