@@ -309,6 +309,7 @@ const translations = {
         jobRegular: "있음 (일반 숙련직, TEER 1-3)",
         jobSenior: "있음 (시니어 매니저, TEER 0)",
         labelEmpPnp: "고용주 PNP 연계 가능 여부",
+        nocSearchPlaceholder: "직업명/키워드 입력 (영문, 예: Software Engineer)",
         acc5Title: "가산점 요소",
         acc5Sub: "Additional Points",
         labelSibling: "캐나다 내 형제/자매 거주",
@@ -548,6 +549,7 @@ const translations = {
         jobRegular: "Yes (Regular skilled, TEER 1-3)",
         jobSenior: "Yes (Senior Manager, TEER 0)",
         labelEmpPnp: "Employer PNP Link Possible?",
+        nocSearchPlaceholder: "Type job title/keyword (e.g. Software Engineer)",
         acc5Title: "Additional Points",
         acc5Sub: "Bonus Factors",
         labelSibling: "Sibling in Canada",
@@ -709,64 +711,44 @@ function updateLanguage(lang) {
 
     const t = translations[lang];
 
-    // Page Title
+    // --- Batch i18n processing (replaces ~290 lines of manual DOM updates) ---
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        if (t[el.dataset.i18n] !== undefined) el.textContent = t[el.dataset.i18n];
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+        if (t[el.dataset.i18nHtml] !== undefined) el.innerHTML = t[el.dataset.i18nHtml];
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        if (t[el.dataset.i18nPlaceholder] !== undefined) el.placeholder = t[el.dataset.i18nPlaceholder];
+    });
+
+    // --- Non-batch: special logic that cannot use data attributes ---
+
+    // Page title (not a DOM element attribute target)
     document.title = t.title;
 
-    // Header
-    document.querySelector('header h1').textContent = "Canada PR Builder";
-    document.getElementById('header-subtitle').textContent = t.headerSubtitle;
-    document.getElementById('langToggle').textContent = t.langToggle;
+    // Theme toggle (conditional text based on current theme)
     const themeToggle = document.getElementById('themeToggle');
     const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
     themeToggle.textContent = isDark ? t.themeToggleLight : t.themeToggleDark;
 
-    // Navigation
-    const navLinks = document.querySelectorAll('#mainNav a');
-    navLinks[0].textContent = t.navHome;
-    navLinks[1].textContent = t.navCalculator;
-    navLinks[2].textContent = t.navGuide;
-    navLinks[3].textContent = t.navPNP;
-    navLinks[4].textContent = t.navArticles;
-    navLinks[5].textContent = t.navContact;
-
-    // Home
-    document.getElementById('homeH2').textContent = t.homeH2;
-    document.getElementById('homeP').textContent = t.homeP;
-    document.getElementById('heroChip1').textContent = t.heroChip1;
-    document.getElementById('heroChip2').textContent = t.heroChip2;
-    document.getElementById('heroChip3').textContent = t.heroChip3;
-    updateCountdownDisplay();
-
-    // Calculator
-    document.querySelector('#calculator h2').textContent = t.calcH2;
-    document.querySelector('#calculator > p').innerHTML = t.calcP;
-    document.getElementById('jobOfferNotice').textContent = t.jobOfferNotice;
-
-    // Wizard step labels & nav buttons
+    // Wizard step labels (array-based iteration)
     document.querySelectorAll('.wizard-step .step-label').forEach((el, i) => {
         if (t.wizardSteps[i]) el.textContent = t.wizardSteps[i];
     });
-    updateBottomNav();
 
-    // Accordion 1
-    document.querySelector('#acc1 .acc-header div > div').textContent = t.acc1Title;
-    document.querySelector('#acc1 .acc-sub').textContent = t.acc1Sub;
-    const acc1Labels = document.querySelectorAll('#acc-body1 .input-group label');
-    acc1Labels[0].textContent = t.labelBirthYear;
-    acc1Labels[1].textContent = t.labelBirthMonth;
-    acc1Labels[2].textContent = t.labelAge;
-    acc1Labels[3].textContent = t.labelMarital;
-    acc1Labels[4].textContent = t.labelSpouseAcc;
-    acc1Labels[5].textContent = t.labelDependents;
-    acc1Labels[6].textContent = t.labelCanadaStatus;
-    
-    document.getElementById('birthYear').placeholder = t.placeholderBirthYear;
-    document.getElementById('ageDisplay').textContent = t.ageDefault;
-    
+    // Month names (array-based)
+    const birthMonthSel = document.getElementById('birthMonth');
+    const monthNames = lang === 'ko'
+        ? ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월']
+        : ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    monthNames.forEach((m, i) => { if (birthMonthSel.options[i]) birthMonthSel.options[i].textContent = m; });
+
+    // --- Select option text updates (index-based, cannot use data-i18n) ---
     const maritalSelect = document.getElementById('maritalStatus');
     maritalSelect.options[0].textContent = t.single;
     maritalSelect.options[1].textContent = t.married;
-    
+
     const spouseAccSelect = document.getElementById('spouseAccompany');
     spouseAccSelect.options[0].textContent = t.accompany;
     spouseAccSelect.options[1].textContent = t.nonAccompany;
@@ -777,25 +759,10 @@ function updateLanguage(lang) {
     canadaStatusSelect.options[2].textContent = t.statusWork;
     canadaStatusSelect.options[3].textContent = t.statusVisitor;
 
-    const birthMonthSel = document.getElementById('birthMonth');
-    const monthNames = lang === 'ko'
-        ? ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월']
-        : ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-    monthNames.forEach((m, i) => { if (birthMonthSel.options[i]) birthMonthSel.options[i].textContent = m; });
-
     const depSel = document.getElementById('dependents');
     const depOpts = lang === 'ko' ? ['없음','1명','2명','3명 이상'] : ['None','1','2','3 or more'];
     depOpts.forEach((text, i) => { if (depSel.options[i]) depSel.options[i].textContent = text; });
 
-    // Accordion 2
-    document.querySelector('#acc2 .acc-header div > div').textContent = t.acc2Title;
-    document.querySelector('#acc2 .acc-sub').textContent = t.acc2Sub;
-    const acc2Labels = document.querySelectorAll('#acc-body2 .input-group label');
-    acc2Labels[0].textContent = t.labelEdu;
-    acc2Labels[1].textContent = t.labelEduCountry;
-    acc2Labels[2].textContent = t.labelEca;
-    acc2Labels[3].textContent = t.labelCanStudy;
-    
     const eduSelect = document.getElementById('education');
     eduSelect.options[0].textContent = t.eduPlaceholder;
     eduSelect.options[1].textContent = t.eduHigh;
@@ -820,48 +787,14 @@ function updateLanguage(lang) {
     canadianStudySelect.options[1].textContent = t.canStudy12y;
     canadianStudySelect.options[2].textContent = t.canStudy3y;
 
-    // Accordion 3
-    document.querySelector('#acc3 .acc-header div > div').textContent = t.acc3Title;
-    document.querySelector('#acc3 .acc-sub').textContent = t.acc3Sub;
-    const acc3Labels = document.querySelectorAll('#acc-body3 .calc-grid .input-group label');
-    acc3Labels[0].textContent = t.labelLangTest;
-    // Labels for individual language parts are updated via updateLangPlaceholders()
-    acc3Labels[5].textContent = t.labelClbRes;
-    document.getElementById('clbDisplay').textContent = t.clbDefault;
-    document.querySelector('#acc-body3 div[style*="dashed"] div').textContent = t.labelFrench;
-    const frenchLabels = document.querySelectorAll('#acc-body3 div[style*="dashed"] .input-group label');
-    frenchLabels[0].textContent = t.labelFrenchTest;
-    frenchLabels[1].textContent = t.labelFrenchClb;
-    
     const frenchTestSelect = document.getElementById('frenchTest');
     frenchTestSelect.options[0].textContent = t.none;
-    
+
     const frenchClbSelect = document.getElementById('frenchCLB');
     frenchClbSelect.options[0].textContent = t.frenchClb4;
     frenchClbSelect.options[1].textContent = t.frenchClb56;
     frenchClbSelect.options[2].textContent = t.frenchClb78;
     frenchClbSelect.options[3].textContent = t.frenchClb9;
-
-    // Accordion 4
-    document.querySelector('#acc4 .acc-header div > div').textContent = t.acc4Title;
-    document.querySelector('#acc4 .acc-sub').textContent = t.acc4Sub;
-    const expHeads = document.querySelectorAll('#acc-body4 > div[style*="font-weight:600"]');
-    expHeads[0].textContent = t.canExpTitle;
-    expHeads[1].textContent = t.foreignExpTitle;
-    expHeads[2].textContent = t.jobOfferTitle;
-    
-    const acc4Labels = document.querySelectorAll('#acc-body4 .input-group label');
-    acc4Labels[0].textContent = t.labelCanExpY;
-    acc4Labels[1].textContent = t.labelCanNoc;
-    acc4Labels[2].textContent = t.labelTeerDisplay;
-    acc4Labels[3].textContent = t.labelForeignExpY;
-    acc4Labels[4].textContent = t.labelForeignNoc;
-    acc4Labels[5].textContent = t.labelTeerDisplay;
-    acc4Labels[6].textContent = t.labelHasJob;
-    acc4Labels[7].textContent = t.labelEmpPnp;
-    
-    document.getElementById('canadianTEER').textContent = t.teerDefault;
-    document.getElementById('foreignTEER').textContent = t.teerDefault;
 
     const canExpYSelect = document.getElementById('canadianExpYears');
     const canExpOpts = lang === 'ko'
@@ -882,18 +815,6 @@ function updateLanguage(lang) {
     empPnpSelect.options[0].textContent = t.no;
     empPnpSelect.options[1].textContent = t.yes;
 
-    const nocSearchPh = lang === 'ko' ? '직업명/키워드 입력 (영문, 예: Software Engineer)' : 'Type job title/keyword (e.g. Software Engineer)';
-    document.getElementById('canadianNOCSearch').placeholder = nocSearchPh;
-    document.getElementById('foreignNOCSearch').placeholder = nocSearchPh;
-
-    // Accordion 5
-    document.querySelector('#acc5 .acc-header div > div').textContent = t.acc5Title;
-    document.querySelector('#acc5 .acc-sub').textContent = t.acc5Sub;
-    const acc5Labels = document.querySelectorAll('#acc-body5 .input-group label');
-    acc5Labels[0].textContent = t.labelSibling;
-    acc5Labels[1].textContent = t.labelPnp;
-    acc5Labels[2].textContent = t.labelTrade;
-    
     const sibSelect = document.getElementById('sibling');
     sibSelect.options[0].textContent = t.no;
     sibSelect.options[1].textContent = t.siblingYes;
@@ -906,17 +827,6 @@ function updateLanguage(lang) {
     tradeSelect.options[0].textContent = t.no;
     tradeSelect.options[1].textContent = t.tradeYes;
 
-    // Accordion 6
-    document.querySelector('#acc6 .acc-header div > div').textContent = t.acc6Title;
-    document.querySelector('#acc6 .acc-sub').textContent = t.acc6Sub;
-    const acc6Labels = document.querySelectorAll('#acc-body6 .input-group label');
-    acc6Labels[0].textContent = t.labelProvince;
-    acc6Labels[1].textContent = t.labelRural;
-    acc6Labels[2].textContent = t.labelAtlantic;
-    acc6Labels[3].textContent = t.labelOccGroup;
-    acc6Labels[4].textContent = t.labelSalary;
-    acc6Labels[5].textContent = t.labelBusiness;
-    
     const provinceSelect = document.getElementById('targetProvince');
     const provinceOpts = lang === 'ko'
         ? ['상관 없음 (전 지역)','온타리오 (OINP)','브리티시 컬럼비아 (BC PNP)','알버타 (AAIP)',
@@ -934,7 +844,7 @@ function updateLanguage(lang) {
         : ['Other Skilled Occupations','Healthcare','STEM / IT & Engineering','Skilled Trades',
            'Transport','Agriculture','Education','French Language Proficiency'];
     occOpts.forEach((text, i) => { if (occGroupSelect.options[i]) occGroupSelect.options[i].textContent = text; });
-    
+
     const ruralSel = document.getElementById('ruralWilling');
     ruralSel.options[0].textContent = t.no; ruralSel.options[1].textContent = t.yes;
     const atlanticSel = document.getElementById('atlanticWilling');
@@ -948,28 +858,10 @@ function updateLanguage(lang) {
         : ['No info','Under CA$40,000','CA$40,000~60,000','CA$60,000~80,000','CA$80,000~100,000','CA$100,000+'];
     salaryOpts.forEach((text, i) => { if (salarySelect.options[i]) salarySelect.options[i].textContent = text; });
 
-    // Accordion 7
-    document.querySelector('#acc7 .acc-header div > div').textContent = t.acc7Title;
-    document.querySelector('#acc7 .acc-sub').textContent = t.acc7Sub;
-    document.querySelector('#acc-body7 p').textContent = t.simP;
-    const acc7Labels = document.querySelectorAll('#acc-body7 .input-group label');
-    acc7Labels[0].textContent = t.labelSimIelts;
-    acc7Labels[1].textContent = t.labelSimFrench;
-    acc7Labels[2].textContent = t.labelSimExp;
-    acc7Labels[3].textContent = t.labelSimSpouse;
-    acc7Labels[4].textContent = t.labelSimEmp;
-
     ['willingRetakeIELTS','canStudyFrench','planMoreWork','spouseIELTS','canChangeEmployer'].forEach(id => {
         const sel = document.getElementById(id);
         if (sel) { sel.options[0].textContent = t.no; sel.options[1].textContent = t.yes; }
     });
-
-    // Spouse Section
-    document.querySelector('#spouseSection h3').textContent = t.spouseSectionTitle;
-    const spouseLabels = document.querySelectorAll('#spouseSection .input-group label');
-    spouseLabels[0].textContent = t.labelSpouseEdu;
-    spouseLabels[1].textContent = t.labelSpouseLang;
-    spouseLabels[2].textContent = t.labelSpouseExp;
 
     const spouseEduSel = document.getElementById('spouseEducation');
     const spouseEduOpts = lang === 'ko'
@@ -986,63 +878,15 @@ function updateLanguage(lang) {
         ? ['없음','1년','2년','3년','4년','5년 이상']
         : ['None','1 year','2 years','3 years','4 years','5+ years'];
     spouseExpOpts.forEach((text, i) => { if (spouseExpSel.options[i]) spouseExpSel.options[i].textContent = text; });
-    
-    // Latest Draws Section
-    document.getElementById('drawsH2').textContent = t.drawsH2;
-    document.getElementById('drawsDesc').textContent = t.drawsP;
-    renderDrawsTable(lastDrawProfile);
 
-    // PNP Guide Section
-    document.querySelector('#pnp-guide h2').textContent = t.pnpH2;
-    document.querySelector('#pnpIntroP').innerHTML = t.pnpIntroP;
-    document.querySelector('#pnpEeLabel').textContent = t.pnpEeLabel;
-    document.querySelector('#pnpEeLi1').innerHTML = t.pnpEeLi1;
-    document.querySelector('#pnpEeLi2').innerHTML = t.pnpEeLi2;
-    document.querySelector('#pnpEeLi3').innerHTML = t.pnpEeLi3;
-    document.querySelector('#pnpEeLi4').innerHTML = t.pnpEeLi4;
-    document.querySelector('#pnpBaseLabel').textContent = t.pnpBaseLabel;
-    document.querySelector('#pnpBaseLi1').innerHTML = t.pnpBaseLi1;
-    document.querySelector('#pnpBaseLi2').innerHTML = t.pnpBaseLi2;
-    document.querySelector('#pnpBaseLi3').innerHTML = t.pnpBaseLi3;
-    document.querySelector('#pnpBaseLi4').innerHTML = t.pnpBaseLi4;
-    document.querySelector('#pnp600Label').textContent = t.pnp600Label;
-    document.querySelector('#pnp600Desc').textContent = t.pnp600Desc;
-    document.querySelector('#pnpProvincesH3').textContent = t.pnpProvincesH3;
-    document.querySelector('#pnpProvON').textContent = t.pnpProvON;
-    document.querySelector('#pnpProvBC').textContent = t.pnpProvBC;
-    document.querySelector('#pnpProvAB').textContent = t.pnpProvAB;
-    document.querySelector('#pnpProvMB').textContent = t.pnpProvMB;
-    document.querySelector('#pnpProvSK').textContent = t.pnpProvSK;
-    document.querySelector('#pnpProvNS').textContent = t.pnpProvNS;
-    document.querySelector('#pnpProvNB').textContent = t.pnpProvNB;
-    document.querySelector('#pnpProvNL').textContent = t.pnpProvNL;
-    document.querySelector('#pnpProvYT').textContent = t.pnpProvYT;
-    document.querySelector('#pnpProvNT').textContent = t.pnpProvNT;
-    document.querySelector('#pnpProvNU').textContent = t.pnpProvNU;
-    document.querySelector('#pnpQuebecNote').textContent = t.pnpQuebecNote;
-    // Batch update data-i18n elements (province streams)
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (t[key] !== undefined) el.textContent = t[key];
-    });
-    document.querySelector('#pnpStrategyH3').textContent = t.pnpStrategyH3;
-    document.querySelector('#pnpStrat1T').textContent = t.pnpStrat1T;
-    document.querySelector('#pnpStrat1D').textContent = t.pnpStrat1D;
-    document.querySelector('#pnpStrat2T').textContent = t.pnpStrat2T;
-    document.querySelector('#pnpStrat2D').textContent = t.pnpStrat2D;
-    document.querySelector('#pnpStrat3T').textContent = t.pnpStrat3T;
-    document.querySelector('#pnpStrat3D').textContent = t.pnpStrat3D;
-    document.querySelector('#pnpStrat4T').textContent = t.pnpStrat4T;
-    document.querySelector('#pnpStrat4D').textContent = t.pnpStrat4D;
-
-    // Dashboard
+    // --- Special logic: Dashboard stat labels ---
     document.querySelector('#strategyResults h2').textContent = lang === 'ko' ? 'AI 맞춤형 전략 리포트' : 'AI Personalized Strategy Report';
     const statLabels = document.querySelectorAll('.stat-label');
     statLabels[0].textContent = lang === 'ko' ? '나의 CRS 점수' : 'My CRS Score';
     statLabels[1].textContent = lang === 'ko' ? '합격권과의 격차' : 'Gap to ITA Cut-off';
     statLabels[2].textContent = lang === 'ko' ? '성공 확률' : 'Success Probability';
 
-    // CLB Table
+    // CLB Table headers (index-based)
     const skillThs = document.querySelectorAll('#guide thead th');
     if (skillThs.length) {
         const isEn = lang === 'en';
@@ -1051,24 +895,18 @@ function updateLanguage(lang) {
         skillThs[4].textContent = isEn ? "Writing (W)"   : "쓰기 (W)";
         skillThs[5].textContent = isEn ? "Speaking (S)"  : "말하기 (S)";
     }
+    const clbThs = document.querySelectorAll('#guide table th');
+    clbThs[0].textContent = t.thClb;
+    clbThs[1].textContent = t.thTest;
 
-    // Guide
-    document.querySelector('#guide h2').textContent = t.guideH2;
-    document.getElementById('guideP1').textContent = t.guideP1;
+    // Guide program list (splitLi formatting)
     const guideLis = document.querySelectorAll('#guideProgramUl li');
     [t.liFswp, t.liFstp, t.liCec].forEach((str, i) => {
         const idx = str.indexOf(':');
         guideLis[i].innerHTML = `<strong>${str.slice(0, idx)}:</strong>${str.slice(idx + 1)}`;
     });
 
-    document.querySelectorAll('#guide h3')[0].textContent = t.clbTableH3;
-    document.getElementById('clbTableP').innerHTML = t.clbTableP;
-    const clbThs = document.querySelectorAll('#guide table th');
-    clbThs[0].textContent = t.thClb;
-    clbThs[1].textContent = t.thTest;
-
-    document.querySelectorAll('#guide h3')[1].textContent = t.howToRaiseH3;
-    document.getElementById('howToRaiseP').textContent = t.howToRaiseP;
+    // Raise score list (splitLi formatting)
     const raiseLis = document.querySelectorAll('#guide .raise-list li');
     const splitLi = s => { const idx = s.indexOf(':'); return `<strong>${s.slice(0, idx)}:</strong>${s.slice(idx + 1)}`; };
     if (raiseLis[0]) raiseLis[0].innerHTML = splitLi(t.liRaiseLang);
@@ -1079,49 +917,12 @@ function updateLanguage(lang) {
     if (raiseLis[5]) raiseLis[5].innerHTML = splitLi(t.liRaiseEdu);
     if (raiseLis[6]) raiseLis[6].innerHTML = splitLi(t.liRaiseOther);
 
-    // News
-    document.querySelector('#articles h2').textContent = t.articlesH2;
-    document.querySelectorAll('.blog-filter-btn').forEach(btn => {
-        const key = btn.dataset.i18n;
-        if (key && t[key]) btn.textContent = t[key];
-    });
-    const blogSearchEl = document.getElementById('blogSearchInput');
-    if (blogSearchEl) blogSearchEl.placeholder = t.blogSearchPlaceholder || '';
-    const loadMoreEl = document.getElementById('blogLoadMore');
-    if (loadMoreEl) loadMoreEl.textContent = t.blogLoadMore || '';
-    const emptyEl = document.getElementById('blogEmpty');
-    if (emptyEl) emptyEl.textContent = t.blogEmpty || '';
-    renderPosts();
-
-    // Newsletter
-    document.querySelector('#newsletter h2').textContent = t.nlH2;
-    document.querySelector('#newsletter > p').textContent = t.nlP;
-    document.querySelector('#newsletter input[type="email"]').placeholder = t.nlPlaceholder;
-    document.querySelector('#newsletter button').textContent = t.nlBtn;
-    document.querySelector('.newsletter-disclaimer').textContent = t.nlDisclaimer;
-    document.querySelector('.newsletter-success').textContent = t.nlSuccess;
-
-    // Contact
-    document.querySelector('#contact h2').textContent = t.contactH2;
-    document.querySelector('#contact p').textContent = t.contactP;
-    const contactLabels = document.querySelectorAll('#contact label');
-    contactLabels[0].textContent = t.labelName;
-    contactLabels[1].textContent = t.labelEmail;
-    contactLabels[2].textContent = t.labelMessage;
-    document.querySelector('#contact input[name="name"]').placeholder = t.namePlaceholder;
-    document.querySelector('#contact textarea').placeholder = t.messagePlaceholder;
-    document.querySelector('#contact button').textContent = t.btnSubmit;
-
-    // Footer
-    document.querySelector('footer p').textContent = t.footerRights;
-    const footerLinks = document.querySelectorAll('.footer-links a');
-    footerLinks[0].textContent = t.navHome;
-    footerLinks[1].textContent = t.navGuide;
-    footerLinks[2].textContent = t.navPNP;
-    footerLinks[3].textContent = t.footerPrivacy;
-    footerLinks[4].textContent = t.footerContact;
-
+    // --- Function calls ---
+    updateCountdownDisplay();
+    updateBottomNav();
     updateLangPlaceholders();
+    renderDrawsTable(lastDrawProfile);
+    renderPosts();
     restoreFormState(formState);
     if (document.getElementById('birthYear').value) calcAge();
     if (document.getElementById('langL').value) calcCLB();
