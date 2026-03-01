@@ -698,10 +698,9 @@ function updateLanguage(lang) {
     navLinks[0].textContent = t.navHome;
     navLinks[1].textContent = t.navCalculator;
     navLinks[2].textContent = t.navGuide;
-    navLinks[3].textContent = t.navDraws;
-    navLinks[4].textContent = t.navPNP;
-    navLinks[5].textContent = t.navArticles;
-    navLinks[6].textContent = t.navContact;
+    navLinks[3].textContent = t.navPNP;
+    navLinks[4].textContent = t.navArticles;
+    navLinks[5].textContent = t.navContact;
 
     // Home
     document.getElementById('homeH2').textContent = t.homeH2;
@@ -1090,10 +1089,9 @@ function updateLanguage(lang) {
     const footerLinks = document.querySelectorAll('.footer-links a');
     footerLinks[0].textContent = t.navHome;
     footerLinks[1].textContent = t.navGuide;
-    footerLinks[2].textContent = t.navDraws;
-    footerLinks[3].textContent = t.navPNP;
-    footerLinks[4].textContent = t.footerPrivacy;
-    footerLinks[5].textContent = t.footerContact;
+    footerLinks[2].textContent = t.navPNP;
+    footerLinks[3].textContent = t.footerPrivacy;
+    footerLinks[4].textContent = t.footerContact;
 
     updateLangPlaceholders();
     if (document.getElementById('birthYear').value) calcAge();
