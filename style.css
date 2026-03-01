@@ -611,13 +611,13 @@ footer {
 
 /* --- AI Analysis Button --- */
 .ai-analysis-btn {
-    background: linear-gradient(145deg, #1a1a2e, #16213e);
+    background: linear-gradient(145deg, #dc2626, #b91c1c);
     cursor: pointer;
-    border: 1px solid rgba(220, 38, 38, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     position: relative;
     overflow: hidden;
     transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 20px rgba(220, 38, 38, 0.35);
 }
 
 .ai-btn-glow {
@@ -625,7 +625,24 @@ footer {
 }
 
 .ai-analysis-btn::after {
-    display: none;
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 40%,
+        rgba(255, 255, 255, 0.08) 50%,
+        transparent 60%
+    );
+    animation: btnSheen 3.5s ease-in-out infinite;
+}
+
+@keyframes btnSheen {
+    0%, 100% { transform: translateX(-100%) rotate(0deg); }
+    50% { transform: translateX(100%) rotate(0deg); }
 }
 
 .ai-analysis-btn > * {
@@ -639,7 +656,7 @@ footer {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(255, 255, 255, 0.75);
     margin-bottom: 6px;
 }
 
@@ -658,10 +675,10 @@ footer {
 }
 
 .ai-btn-icon {
-    width: 20px;
-    height: 20px;
-    color: var(--maple-red);
-    filter: none;
+    width: 22px;
+    height: 22px;
+    color: #fff;
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.4));
     animation: none;
     transition: transform 0.25s ease;
 }
@@ -669,42 +686,44 @@ footer {
 .ai-btn-sub {
     display: block;
     margin-top: 8px;
-    font-size: 0.75rem;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.35);
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
     transition: color 0.25s ease;
 }
 
 .ai-analysis-btn:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-    border-color: rgba(220, 38, 38, 0.4);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(220, 38, 38, 0.5);
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
 .ai-analysis-btn:hover .ai-btn-sub {
-    color: rgba(255, 255, 255, 0.6);
+    color: #fff;
 }
 
 .ai-analysis-btn:hover .ai-btn-icon {
-    transform: scale(1.1);
+    transform: scale(1.15) rotate(15deg);
 }
 
 [data-theme="dark"] .ai-analysis-btn {
-    background: linear-gradient(145deg, #292524, #3d3a37);
-    border-color: rgba(220, 38, 38, 0.35);
+    background: linear-gradient(145deg, #dc2626, #991b1b);
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 24px rgba(220, 38, 38, 0.4);
 }
 [data-theme="dark"] .ai-analysis-btn:hover {
-    border-color: rgba(220, 38, 38, 0.6);
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 10px 35px rgba(220, 38, 38, 0.55);
 }
 [data-theme="dark"] .ai-analysis-btn .ai-btn-badge {
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.8);
 }
 [data-theme="dark"] .ai-analysis-btn .ai-btn-sub {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.85);
 }
 
 .ai-analysis-btn:active {
-    transform: translateY(-2px);
+    transform: translateY(-1px) scale(0.98);
     transition-duration: 0.1s;
 }
 
