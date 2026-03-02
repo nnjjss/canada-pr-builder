@@ -192,7 +192,7 @@ h2::before {
 /* Modern Calculator UI */
 .calc-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 24px;
 }
 
@@ -502,14 +502,14 @@ footer {
         padding: 10px;
         gap: 4px;
     }
-    nav a { font-size: 0.75rem; padding: 6px 12px; }
+    nav a { font-size: 0.8rem; padding: 7px 12px; }
     .container { margin-top: 40px; padding: 0 16px 60px; }
     .card { padding: 20px; }
     h2 { font-size: 1.5rem; }
     .result-score { font-size: 3rem; }
     /* Table horizontal scroll on mobile */
     .table-container { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-    th, td { padding: 10px 12px; font-size: 0.85rem; white-space: nowrap; }
+    th, td { padding: 10px 12px; font-size: 0.85rem; }
     /* Single-column article cards */
     .articles-grid { grid-template-columns: 1fr; }
     /* 2-column stat dashboard */
@@ -1010,7 +1010,9 @@ body.modal-open {
     gap: 4px;
     cursor: pointer;
     transition: opacity 0.2s;
-    padding: 0 2px;
+    padding: 6px 2px;
+    min-height: 44px;
+    justify-content: center;
 }
 
 .wizard-step.disabled {
@@ -1020,14 +1022,14 @@ body.modal-open {
 }
 
 .step-num {
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 800;
-    font-size: 0.85rem;
+    font-size: 0.88rem;
     border: 2px solid var(--border-color);
     background: var(--card-bg);
     color: var(--text-muted);
@@ -1072,10 +1074,10 @@ body.modal-open {
 
 .wizard-line {
     flex: 1;
-    height: 2px;
+    height: 3px;
     background: var(--border-color);
     transition: background 0.3s;
-    min-width: 12px;
+    min-width: 8px;
 }
 
 .wizard-line.completed,
@@ -1134,8 +1136,8 @@ body.modal-open {
 
 @media (max-width: 480px) {
     .step-label { display: none; }
-    .wizard-progress { gap: 0; padding: 12px 0; }
-    .step-num { width: 28px; height: 28px; font-size: 0.78rem; }
+    .wizard-progress { gap: 2px; padding: 10px 0; }
+    .step-num { width: 36px; height: 36px; font-size: 0.82rem; }
     .wizard-nav { flex-direction: row; }
     .wizard-nav button { min-width: 0; flex: 1; padding: 12px 16px; font-size: 0.9rem; }
     .wizard-nav button.wizard-submit { font-size: 0.95rem; }
@@ -1267,12 +1269,12 @@ body.modal-open {
     .stat-value { font-size: 1.8rem; }
     .result-score { font-size: 2.5rem; }
     nav { width: 96%; }
-    nav a { font-size: 0.75rem; padding: 5px 10px; }
+    nav a { font-size: 0.8rem; padding: 8px 10px; min-height: 36px; display: flex; align-items: center; }
     .modal-content { margin: 10px auto; padding: 24px 16px; border-radius: 20px; }
-    th, td { padding: 8px 10px; }
+    th, td { padding: 8px 10px; white-space: normal; }
     .acc-header { padding: 18px 16px; gap: 12px; }
     input, select, textarea { font-size: 16px; }
-    .acc-num { width: 28px; height: 28px; min-width: 28px; font-size: 0.8rem; }
+    .acc-num { width: 32px; height: 32px; min-width: 32px; font-size: 0.82rem; }
     .article-card { padding: 20px; }
     button { padding: 14px 20px; }
     footer { padding: 30px 16px; }
@@ -1892,7 +1894,7 @@ body.modal-open {
     gap: 12px;
 }
 @media (max-width: 900px) { .strategy-cards-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 480px) { .strategy-cards-grid { grid-template-columns: 1fr; } }
+@media (max-width: 640px) { .strategy-cards-grid { grid-template-columns: 1fr; } }
 .strategy-card {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
@@ -2254,8 +2256,9 @@ footer::before {
     font-size: 1rem;
     cursor: pointer;
     border-radius: 50%;
-    width: 28px;
-    height: 28px;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2530,4 +2533,25 @@ footer::before {
     .blog-filters {
         justify-content: center;
     }
+}
+
+/* ======================================= */
+/* Mobile overrides for inline-style elems */
+/* ======================================= */
+@media (max-width: 480px) {
+    /* 결과 확률 숫자 (inline style="font-size:1.5rem") */
+    #res-prob { font-size: 1.2rem !important; }
+
+    /* 잡오퍼 안내 문구 (inline style="font-size:0.82rem") */
+    #jobOfferNotice { font-size: 0.8rem !important; }
+
+    /* 결과/분석 섹션 마진·패딩 (inline style="margin-top:40px; padding-top:40px") */
+    #strategyResults { margin-top: 24px !important; padding-top: 24px !important; }
+
+    /* 헤더 서브타이틀 (inline style="font-size:1.1rem") */
+    #header-subtitle { font-size: 0.95rem !important; }
+
+    /* breakdown-label 말줄임 컬럼 보호 — 좁은 화면에서 wrap 허용 */
+    .breakdown-label { white-space: normal; word-break: keep-all; }
+    .breakdown-item { grid-template-columns: 80px 1fr 46px; gap: 6px; }
 }
