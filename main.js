@@ -205,7 +205,7 @@ const articlesData = {
 const translations = {
     ko: {
         title: "캐나다 익스프레스 엔트리 가이드 & CRS 점수 계산기",
-        headerSubtitle: "캐나다 익스프레스 엔트리 & CRS 종합 가이드",
+        headerSubtitle: "캐나다 영주권, 어디서부터 시작할지 여기서 알려드립니다",
         langToggle: "English",
         themeToggleLight: "☀️ 라이트 모드",
         themeToggleDark: "🌙 다크 모드",
@@ -493,7 +493,7 @@ const translations = {
     },
     en: {
         title: "Canada Express Entry Guide & CRS Calculator",
-        headerSubtitle: "Canada Express Entry & CRS Comprehensive Guide",
+        headerSubtitle: "Your Starting Point for Canadian Permanent Residence",
         langToggle: "한글",
         themeToggleLight: "☀️ Light Mode",
         themeToggleDark: "🌙 Dark Mode",
