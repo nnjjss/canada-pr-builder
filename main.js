@@ -211,13 +211,13 @@ const translations = {
         themeToggleDark: "🌙 다크 모드",
         navHome: "홈",
         navCalculator: "CRS 계산기",
-        navGuide: "EE",
+        navGuide: "가이드",
         navDraws: "선발 결과",
         navPNP: "PNP",
         navArticles: "뉴스",
         navContact: "문의",
         homeH2: "Welcome to Canada",
-        homeP: "AI를 활용한 정밀 CRS 분석과 함께, Express Entry, PNP, Pilot 프로그램 전반을 종합적으로 검토합니다. 개인의 조건과 상황을 기반으로 최적의 이민 전략을 설계하며, 복잡한 제도 속에서도 실행 가능한 명확한 로드맵을 제공합니다.",
+        homeP: "캐나다 영주권이 처음이라면 아래 기초 가이드부터, 이미 준비 중이라면 CRS 계산기로 바로 시작하세요. AI 기반 분석으로 Express Entry, PNP, Pilot 프로그램 중 최적의 경로를 추천합니다.",
         heroChip1: "✅ IRCC 공식 기준",
         heroChip2: "⚡ 실시간 CRS 계산",
         heroChip3: "🆓 무료 사용",
@@ -441,7 +441,55 @@ const translations = {
         aiAnalysisBtn: "AI 분석",
         aiAnalysisSub: "맞춤 경로 추천 받기",
         aiAnalysisDone: "분석 완료",
-        aiAnalysisDoneSub: "아래에서 결과를 확인하세요"
+        aiAnalysisDoneSub: "아래에서 결과를 확인하세요",
+        // Navigation
+        navBasics: "이민 기초",
+        // Immigration Basics Section
+        basicsH2: "캐나다 이민 기초 가이드",
+        basicsIntro: "캐나다 영주권(PR)에 대해 처음 알아보시나요? 핵심 개념과 용어를 먼저 이해하면 이민 준비가 훨씬 수월해집니다.",
+        basicsWhatIsPR: "영주권(PR)이란?",
+        basicsWhatIsPRDesc: "캐나다 영주권(Permanent Residence)은 캐나다 시민은 아니지만, 캐나다에서 무기한 거주·취업할 수 있는 법적 지위입니다. 의료보험(OHIP 등) 혜택을 받고, 대부분의 사회 서비스를 이용할 수 있습니다.",
+        basicsPRvsCitizen: "영주권자 vs 시민권자",
+        basicsPRvsCitizenDesc: "영주권자는 투표권과 여권 발급이 불가하지만, 거주·취업·교육·의료 혜택은 시민권자와 거의 동일합니다. 5년 중 3년 이상 거주하면 시민권 신청 자격이 주어집니다.",
+        basicsPathwaysTitle: "3가지 주요 이민 경로",
+        basicsPathEE: "Express Entry (EE)",
+        basicsPathEEDesc: "연방 정부가 운영하는 온라인 이민 관리 시스템. CRS 점수 기반으로 선발하며, 평균 처리 기간 6개월로 가장 빠른 경로입니다.",
+        basicsPathPNP: "주정부 이민 (PNP)",
+        basicsPathPNPDesc: "각 주정부가 자체 기준으로 이민자를 선발합니다. EE 연계 시 CRS +600점이 부여되어 영주권 취득이 사실상 확정됩니다.",
+        basicsPathPilot: "파일럿 프로그램",
+        basicsPathPilotDesc: "AIP(대서양 이민), RNIP(농촌·북부 이민) 등 특정 지역 정착을 조건으로 하는 프로그램. 경쟁이 낮아 중간 스펙으로도 가능합니다.",
+        basicsGlossaryTitle: "핵심 용어 정리",
+        basicsTermCRS: "CRS (종합 랭킹 시스템)",
+        basicsTermCRSDesc: "Express Entry 풀에서 후보자 순위를 매기는 1,200점 만점의 점수 체계. 나이·학력·언어·경력 등을 종합 평가합니다.",
+        basicsTermITA: "ITA (초청장)",
+        basicsTermITADesc: "Invitation to Apply — CRS 커트라인 이상이면 IRCC로부터 영주권 신청 초청을 받습니다.",
+        basicsTermNOC: "NOC (직업 분류 코드)",
+        basicsTermNOCDesc: "캐나다 국가 직업 분류 시스템. 5자리 코드로 직업을 분류하며, 이민 프로그램 자격 판단에 사용됩니다.",
+        basicsTermCLB: "CLB (언어 능력 등급)",
+        basicsTermCLBDesc: "Canadian Language Benchmarks — IELTS, CELPIP 등의 시험 점수를 CLB 4~12 등급으로 환산합니다.",
+        basicsTermTEER: "TEER (직업 훈련 등급)",
+        basicsTermTEERDesc: "Training, Education, Experience, Responsibilities — NOC 코드의 숙련도를 0~5 등급으로 분류합니다. TEER 0~3이 숙련직으로 분류됩니다.",
+        basicsTermECA: "ECA (학력 인증)",
+        basicsTermECADesc: "Educational Credential Assessment — 해외 학위를 캐나다 기준으로 환산하는 인증. WES 등 지정 기관에서 발급받습니다.",
+        // CTA Banner
+        ctaBannerText: "이제 기초를 이해했다면, 내 CRS 점수를 확인해보세요!",
+        ctaBannerBtn: "내 점수 계산하기 ↓",
+        // Tip Panels
+        tipToggleLabel: "💡 알고 가기",
+        tip1Title: "나이 점수와 결혼 여부",
+        tip1Body: "<table class='tip-table'><tr><th>나이</th><th>미혼</th><th>기혼(동반)</th></tr><tr><td>20~29세</td><td>110점</td><td>100점</td></tr><tr><td>30세</td><td>105점</td><td>95점</td></tr><tr><td>35세</td><td>77점</td><td>68점</td></tr><tr><td>40세</td><td>33점</td><td>24점</td></tr><tr><td>45세+</td><td>0점</td><td>0점</td></tr></table><p style='margin-top:8px'>⚠️ 배우자가 동반하면 본인 배점 테이블이 바뀝니다(최대 100점). 미혼이면 최대 110점입니다.</p>",
+        tip2Title: "학력별 CRS 점수",
+        tip2Body: "<table class='tip-table'><tr><th>학력</th><th>미혼</th><th>기혼(동반)</th></tr><tr><td>고졸</td><td>30점</td><td>28점</td></tr><tr><td>1년 대학</td><td>90점</td><td>84점</td></tr><tr><td>2년 대학</td><td>98점</td><td>91점</td></tr><tr><td>학사(3년+)</td><td>120점</td><td>112점</td></tr><tr><td>석사</td><td>135점</td><td>126점</td></tr><tr><td>박사</td><td>150점</td><td>140점</td></tr></table><p style='margin-top:8px'>📝 <b>ECA</b>란? 해외 학위를 캐나다 기준으로 인증하는 절차(WES 등). 해외 학위는 ECA 없이 CRS 점수를 받을 수 없습니다.<br>🎓 캐나다 학업 보너스: 1~2년 과정 +15점, 3년+ 또는 석박사 +30점</p>",
+        tip3Title: "CLB란? CLB 9+ 왜 중요한가?",
+        tip3Body: "<table class='tip-table'><tr><th>CLB</th><th>IELTS L</th><th>IELTS R</th><th>IELTS W</th><th>IELTS S</th></tr><tr><td>CLB 7</td><td>6.0</td><td>6.0</td><td>6.0</td><td>6.0</td></tr><tr><td>CLB 8</td><td>7.5</td><td>6.5</td><td>6.5</td><td>6.5</td></tr><tr><td>CLB 9</td><td>8.0</td><td>7.0</td><td>7.0</td><td>7.0</td></tr><tr><td>CLB 10</td><td>8.5</td><td>8.0</td><td>7.5</td><td>7.5</td></tr></table><p style='margin-top:8px'>💡 CRS는 <b>능력별(L/R/W/S)</b>로 점수를 매깁니다. CLB 9 이상이면 능력당 최대 34점(미혼), 스킬 전이에서도 추가 점수가 붙어 총 40~70점 상승 효과가 있습니다.<br>🇫🇷 프랑스어 CLB 7+ 달성 시 최대 +50점 보너스!</p>",
+        tip4Title: "NOC/TEER 체계와 경력 점수",
+        tip4Body: "<p><b>NOC</b>는 5자리 직업 분류 코드이고, <b>TEER</b>는 해당 직업의 숙련도(0~5)입니다.</p><table class='tip-table'><tr><th>경력</th><th>캐나다(미혼)</th><th>해외(미혼)</th></tr><tr><td>1년</td><td>40점</td><td>0점</td></tr><tr><td>2년</td><td>53점</td><td>13점</td></tr><tr><td>3년</td><td>64점</td><td>25점</td></tr><tr><td>5년+</td><td>80점</td><td>50점</td></tr></table><p style='margin-top:8px'>⚠️ 2025년 3월 25일부로 잡오퍼 CRS 가산점이 폐지됐습니다. 프로그램 자격 판단용으로만 활용됩니다.</p>",
+        tip5Title: "가산점 항목 정리",
+        tip5Body: "<table class='tip-table'><tr><th>항목</th><th>점수</th></tr><tr><td>PNP 노미네이션</td><td>+600점</td></tr><tr><td>캐나다 형제자매</td><td>+15점</td></tr><tr><td>기술직 자격 (Red Seal)</td><td>FST 프로그램 자격</td></tr></table><p style='margin-top:8px'>🏆 PNP +600점은 CRS 최대 가산점으로, 받으면 ITA 획득이 사실상 확정됩니다.</p>",
+        tip6Title: "주정부 선발 방식",
+        tip6Body: "<p>각 주정부는 <b>직종(NOC)</b>, <b>학력</b>, <b>거주 의향</b> 등을 기준으로 후보자를 선발합니다.</p><p style='margin-top:6px'>🌊 <b>AIP</b> (대서양 이민): NB·NS·PEI·NL 4개 주, 고용주 오퍼 기반<br>🏔️ <b>RNIP</b> (농촌·북부 이민): 소규모 커뮤니티가 직접 추천하는 파일럿</p><p style='margin-top:6px'>선호 지역을 선택하면 분석 결과에서 해당 주의 PNP 스트림을 자세히 안내합니다.</p>",
+        tip7Title: "시뮬레이션 옵션 안내",
+        tip7Body: "<table class='tip-table'><tr><th>옵션</th><th>예상 CRS 변화</th></tr><tr><td>IELTS 재응시</td><td>+20~40점 (CLB 1~2단계 상승 시)</td></tr><tr><td>프랑스어 학습</td><td>+25~50점 (CLB 7+ 달성 시)</td></tr><tr><td>추가 경력 1년</td><td>+10~25점</td></tr><tr><td>배우자 IELTS</td><td>+5~20점</td></tr></table><p style='margin-top:8px'>시뮬레이션 결과는 분석 리포트 하단에서 확인할 수 있습니다.</p>"
     },
     en: {
         title: "Canada Express Entry Guide & CRS Calculator",
@@ -451,13 +499,13 @@ const translations = {
         themeToggleDark: "🌙 Dark Mode",
         navHome: "Home",
         navCalculator: "CRS Calculator",
-        navGuide: "EE",
+        navGuide: "Guide",
         navDraws: "Draws",
         navPNP: "PNP",
         navArticles: "News",
         navContact: "Contact",
         homeH2: "Welcome to Canada",
-        homeP: "Powered by AI-driven CRS analysis, we take a comprehensive look across Express Entry, PNP, and Pilot programs. We design the optimal immigration strategy based on your personal profile and circumstances — delivering a clear, actionable roadmap through even the most complex immigration systems.",
+        homeP: "New to Canadian PR? Start with the basics guide below. Already preparing? Jump straight to the CRS calculator. Our AI-powered analysis recommends the optimal path across Express Entry, PNP, and Pilot programs.",
         heroChip1: "✅ IRCC Official Standard",
         heroChip2: "⚡ Real-time CRS Score",
         heroChip3: "🆓 Free to Use",
@@ -681,7 +729,55 @@ const translations = {
         aiAnalysisBtn: "AI Analysis",
         aiAnalysisSub: "Get personalized route",
         aiAnalysisDone: "Done",
-        aiAnalysisDoneSub: "See results below"
+        aiAnalysisDoneSub: "See results below",
+        // Navigation
+        navBasics: "Basics",
+        // Immigration Basics Section
+        basicsH2: "Immigration Basics Guide",
+        basicsIntro: "New to Canadian immigration? Understanding the key concepts and terms first will make your preparation much smoother.",
+        basicsWhatIsPR: "What is Permanent Residence (PR)?",
+        basicsWhatIsPRDesc: "Canadian Permanent Residence is a legal status that allows you to live and work in Canada indefinitely, even though you are not a citizen. You receive healthcare benefits and access to most social services.",
+        basicsPRvsCitizen: "PR vs Citizenship",
+        basicsPRvsCitizenDesc: "PR holders cannot vote or hold a Canadian passport, but enjoy nearly identical rights to citizens in terms of residence, employment, education, and healthcare. After living in Canada for 3 out of 5 years, you can apply for citizenship.",
+        basicsPathwaysTitle: "3 Major Immigration Pathways",
+        basicsPathEE: "Express Entry (EE)",
+        basicsPathEEDesc: "A federal online immigration management system. Candidates are ranked by CRS score, and it's the fastest pathway with an average processing time of 6 months.",
+        basicsPathPNP: "Provincial Nominee Program (PNP)",
+        basicsPathPNPDesc: "Each province selects immigrants based on their own criteria. When linked to EE, a nomination adds +600 CRS points, virtually guaranteeing PR.",
+        basicsPathPilot: "Pilot Programs",
+        basicsPathPilotDesc: "Programs like AIP (Atlantic Immigration) and RNIP (Rural & Northern Immigration) require settling in specific regions. Lower competition makes them accessible for mid-range profiles.",
+        basicsGlossaryTitle: "Key Terms Glossary",
+        basicsTermCRS: "CRS (Comprehensive Ranking System)",
+        basicsTermCRSDesc: "A 1,200-point scoring system that ranks Express Entry candidates based on age, education, language, and work experience.",
+        basicsTermITA: "ITA (Invitation to Apply)",
+        basicsTermITADesc: "When your CRS meets or exceeds the draw cutoff, IRCC sends you an invitation to apply for permanent residence.",
+        basicsTermNOC: "NOC (National Occupational Classification)",
+        basicsTermNOCDesc: "Canada's national job classification system using 5-digit codes. Used to determine immigration program eligibility.",
+        basicsTermCLB: "CLB (Canadian Language Benchmarks)",
+        basicsTermCLBDesc: "Converts IELTS, CELPIP, and other test scores into CLB levels 4–12 for immigration purposes.",
+        basicsTermTEER: "TEER (Training, Education, Experience, Responsibilities)",
+        basicsTermTEERDesc: "Classifies NOC occupations into skill levels 0–5. TEER 0–3 are considered skilled occupations for immigration.",
+        basicsTermECA: "ECA (Educational Credential Assessment)",
+        basicsTermECADesc: "An assessment that converts foreign degrees to Canadian equivalents. Issued by designated organizations like WES.",
+        // CTA Banner
+        ctaBannerText: "Now that you know the basics, check your CRS score!",
+        ctaBannerBtn: "Calculate My Score ↓",
+        // Tip Panels
+        tipToggleLabel: "💡 Good to Know",
+        tip1Title: "Age Points & Marital Status",
+        tip1Body: "<table class='tip-table'><tr><th>Age</th><th>Single</th><th>Married(Acc.)</th></tr><tr><td>20–29</td><td>110 pts</td><td>100 pts</td></tr><tr><td>30</td><td>105 pts</td><td>95 pts</td></tr><tr><td>35</td><td>77 pts</td><td>68 pts</td></tr><tr><td>40</td><td>33 pts</td><td>24 pts</td></tr><tr><td>45+</td><td>0 pts</td><td>0 pts</td></tr></table><p style='margin-top:8px'>⚠️ If your spouse accompanies you, the scoring table changes (max 100 pts). Single applicants can earn up to 110 pts.</p>",
+        tip2Title: "CRS Points by Education",
+        tip2Body: "<table class='tip-table'><tr><th>Education</th><th>Single</th><th>Married(Acc.)</th></tr><tr><td>High School</td><td>30 pts</td><td>28 pts</td></tr><tr><td>1-yr College</td><td>90 pts</td><td>84 pts</td></tr><tr><td>2-yr College</td><td>98 pts</td><td>91 pts</td></tr><tr><td>Bachelor's(3yr+)</td><td>120 pts</td><td>112 pts</td></tr><tr><td>Master's</td><td>135 pts</td><td>126 pts</td></tr><tr><td>PhD</td><td>150 pts</td><td>140 pts</td></tr></table><p style='margin-top:8px'>📝 <b>ECA</b>: Assessment that converts foreign degrees to Canadian standards (via WES, etc.). Foreign degrees cannot earn CRS points without an ECA.<br>🎓 Canadian study bonus: 1–2 yr program +15 pts, 3yr+ or Master/PhD +30 pts</p>",
+        tip3Title: "What is CLB? Why CLB 9+ Matters",
+        tip3Body: "<table class='tip-table'><tr><th>CLB</th><th>IELTS L</th><th>IELTS R</th><th>IELTS W</th><th>IELTS S</th></tr><tr><td>CLB 7</td><td>6.0</td><td>6.0</td><td>6.0</td><td>6.0</td></tr><tr><td>CLB 8</td><td>7.5</td><td>6.5</td><td>6.5</td><td>6.5</td></tr><tr><td>CLB 9</td><td>8.0</td><td>7.0</td><td>7.0</td><td>7.0</td></tr><tr><td>CLB 10</td><td>8.5</td><td>8.0</td><td>7.5</td><td>7.5</td></tr></table><p style='margin-top:8px'>💡 CRS scores language <b>per ability (L/R/W/S)</b>. CLB 9+ gives up to 34 pts per ability (single) plus skill transferability bonuses — total gain of 40–70 pts.<br>🇫🇷 French CLB 7+ adds up to +50 bonus points!</p>",
+        tip4Title: "NOC/TEER System & Work Experience",
+        tip4Body: "<p><b>NOC</b> is the 5-digit job code, and <b>TEER</b> is the skill level (0–5) of that occupation.</p><table class='tip-table'><tr><th>Experience</th><th>Canadian(Single)</th><th>Foreign(Single)</th></tr><tr><td>1 year</td><td>40 pts</td><td>0 pts</td></tr><tr><td>2 years</td><td>53 pts</td><td>13 pts</td></tr><tr><td>3 years</td><td>64 pts</td><td>25 pts</td></tr><tr><td>5+ years</td><td>80 pts</td><td>50 pts</td></tr></table><p style='margin-top:8px'>⚠️ As of March 25, 2025, CRS points for job offers have been eliminated. Job offers are now used only for program eligibility.</p>",
+        tip5Title: "Bonus Points Breakdown",
+        tip5Body: "<table class='tip-table'><tr><th>Factor</th><th>Points</th></tr><tr><td>PNP Nomination</td><td>+600 pts</td></tr><tr><td>Sibling in Canada</td><td>+15 pts</td></tr><tr><td>Trade Certificate (Red Seal)</td><td>FST program eligibility</td></tr></table><p style='margin-top:8px'>🏆 PNP +600 is the highest CRS bonus — receiving it virtually guarantees an ITA.</p>",
+        tip6Title: "How Provinces Select",
+        tip6Body: "<p>Each province selects candidates based on <b>occupation (NOC)</b>, <b>education</b>, and <b>settlement intent</b>.</p><p style='margin-top:6px'>🌊 <b>AIP</b> (Atlantic Immigration): NB, NS, PEI, NL — employer offer-based<br>🏔️ <b>RNIP</b> (Rural & Northern Immigration): Communities directly recommend candidates</p><p style='margin-top:6px'>Select your preferred region to get detailed PNP stream recommendations in your analysis.</p>",
+        tip7Title: "Simulation Options Guide",
+        tip7Body: "<table class='tip-table'><tr><th>Option</th><th>Expected CRS Change</th></tr><tr><td>Retake IELTS</td><td>+20–40 pts (if CLB improves 1–2 levels)</td></tr><tr><td>Study French</td><td>+25–50 pts (if CLB 7+ achieved)</td></tr><tr><td>1 More Year of Work</td><td>+10–25 pts</td></tr><tr><td>Spouse Takes IELTS</td><td>+5–20 pts</td></tr></table><p style='margin-top:8px'>Simulation results appear at the bottom of the analysis report.</p>"
     }
 };
 
@@ -1882,6 +1978,14 @@ function hideNOCDropdown(prefix) {
 /* ── Wizard Step Navigation ── */
 let currentStep = parseInt(sessionStorage.getItem('wizardStep')) || 1;
 let maxVisitedStep = parseInt(sessionStorage.getItem('wizardMaxStep')) || 1;
+
+function toggleTip(n) {
+    const body = document.getElementById(`tip-body${n}`);
+    const arrow = document.getElementById(`tip-arrow${n}`);
+    if (!body) return;
+    body.classList.toggle('collapsed');
+    if (arrow) arrow.textContent = body.classList.contains('collapsed') ? '▼' : '▲';
+}
 
 function goToStep(n) {
     if (n < 1 || n > WIZARD_TOTAL_STEPS || n > maxVisitedStep + 1) return;

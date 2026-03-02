@@ -33,7 +33,7 @@
             document.documentElement.setAttribute('data-theme', theme);
         })();
     </script>
-    <link rel="stylesheet" href="style.css?v=1.0.7">
+    <link rel="stylesheet" href="style.css?v=1.1.0">
     <meta name="google-adsense-account" content="ca-pub-7667199502336658">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7667199502336658"
      crossorigin="anonymous"></script>
@@ -68,9 +68,9 @@
 
 <nav id="mainNav">
     <a href="#home" data-i18n="navHome">홈</a>
+    <a href="#immigration-basics" data-i18n="navBasics">이민 기초</a>
+    <a href="#guide" data-i18n="navGuide">가이드</a>
     <a href="#calculator" data-i18n="navCalculator">CRS 계산기</a>
-    <a href="#guide" data-i18n="navGuide">EE</a>
-    <a href="#pnp-guide" data-i18n="navPNP">PNP</a>
     <a href="#articles" data-i18n="navArticles">뉴스</a>
     <a href="#contact" data-i18n="navContact">문의</a>
 </nav>
@@ -82,7 +82,7 @@
         <div class="hero-inner">
             <div class="hero-eyebrow">🍁 Canada PR Builder</div>
             <h2 class="hero-title hero-gradient" id="homeH2"><span class="hero-typed" id="heroTyped"></span><span class="hero-cursor" id="heroCursor">|</span></h2>
-            <p class="hero-sub hero-fade" id="homeP" data-i18n="homeP">AI를 활용한 정밀 CRS 분석과 함께, Express Entry, PNP, Pilot 프로그램 전반을 종합적으로 검토합니다. 개인의 조건과 상황을 기반으로 최적의 이민 전략을 설계하며, 복잡한 제도 속에서도 실행 가능한 명확한 로드맵을 제공합니다.</p>
+            <p class="hero-sub hero-fade" id="homeP" data-i18n="homeP">캐나다 영주권이 처음이라면 아래 기초 가이드부터, 이미 준비 중이라면 CRS 계산기로 바로 시작하세요. AI 기반 분석으로 Express Entry, PNP, Pilot 프로그램 중 최적의 경로를 추천합니다.</p>
             <div class="hero-countdown hero-fade" id="heroCountdown" style="--fade-delay: 0.25s"></div>
             <div class="hero-chips hero-fade" style="--fade-delay: 0.3s">
                 <span class="hero-chip" id="heroChip1" data-i18n="heroChip1">✅ IRCC 공식 기준</span>
@@ -93,578 +93,66 @@
         <div class="hero-deco" aria-hidden="true">🇨🇦</div>
     </div>
 
-    <!-- Comprehensive Assessment & Strategy Section -->
-    <div class="card" id="calculator">
-        <h2 data-i18n="calcH2">맞춤형 이민 루트 진단 & CRS 계산기</h2>
-        <p data-i18n-html="calcP">기본 정보와 선호도를 입력하면 <b>Express Entry, PNP, Pilot 프로그램</b> 중 당신에게 가장 유리한 최적의 경로를 데이터 기반으로 추천해드립니다.</p>
+    <!-- Immigration Basics Section -->
+    <div class="card basics-section" id="immigration-basics">
+        <h2 data-i18n="basicsH2">캐나다 이민 기초 가이드</h2>
+        <p data-i18n="basicsIntro">캐나다 영주권(PR)에 대해 처음 알아보시나요? 핵심 개념과 용어를 먼저 이해하면 이민 준비가 훨씬 수월해집니다.</p>
 
-        <!-- Wizard Progress Bar -->
-        <div class="wizard-progress">
-            <div class="wizard-step active" data-step="1" onclick="goToStep(1)"><span class="step-num">1</span><span class="step-label">인적정보</span></div>
-            <div class="wizard-line"></div>
-            <div class="wizard-step disabled" data-step="2" onclick="goToStep(2)"><span class="step-num">2</span><span class="step-label">학력</span></div>
-            <div class="wizard-line"></div>
-            <div class="wizard-step disabled" data-step="3" onclick="goToStep(3)"><span class="step-num">3</span><span class="step-label">언어</span></div>
-            <div class="wizard-line"></div>
-            <div class="wizard-step disabled" data-step="4" onclick="goToStep(4)"><span class="step-num">4</span><span class="step-label">경력</span></div>
-            <div class="wizard-line"></div>
-            <div class="wizard-step disabled" data-step="5" onclick="goToStep(5)"><span class="step-num">5</span><span class="step-label">가산점</span></div>
-            <div class="wizard-line"></div>
-            <div class="wizard-step disabled" data-step="6" onclick="goToStep(6)"><span class="step-num">6</span><span class="step-label">선호도</span></div>
-            <div class="wizard-line"></div>
-            <div class="wizard-step disabled" data-step="7" onclick="goToStep(7)"><span class="step-num">7</span><span class="step-label">시뮬레이션</span></div>
+        <div class="basics-pr-compare">
+            <h3 data-i18n="basicsWhatIsPR">영주권(PR)이란?</h3>
+            <p data-i18n="basicsWhatIsPRDesc">캐나다 영주권(Permanent Residence)은 캐나다 시민은 아니지만, 캐나다에서 무기한 거주·취업할 수 있는 법적 지위입니다. 의료보험(OHIP 등) 혜택을 받고, 대부분의 사회 서비스를 이용할 수 있습니다.</p>
+        </div>
+        <div class="basics-pr-compare">
+            <h3 data-i18n="basicsPRvsCitizen">영주권자 vs 시민권자</h3>
+            <p data-i18n="basicsPRvsCitizenDesc">영주권자는 투표권과 여권 발급이 불가하지만, 거주·취업·교육·의료 혜택은 시민권자와 거의 동일합니다. 5년 중 3년 이상 거주하면 시민권 신청 자격이 주어집니다.</p>
         </div>
 
-        <!-- Section 1: 기본 인적 정보 -->
-        <div class="form-accordion" id="acc1">
-            <div class="acc-header" id="acc-header1" role="button" tabindex="0" aria-expanded="true" aria-controls="acc-body1" onclick="goToStep(1)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();goToStep(1)}">
-                <span class="acc-num">1</span>
-                <div style="flex:1;">
-                    <div style="font-weight:700;" data-i18n="acc1Title">기본 인적 정보</div>
-                    <div class="acc-sub" data-i18n="acc1Sub">Personal Information</div>
-                </div>
-                <span id="acc-arrow1">▲</span>
+        <h3 data-i18n="basicsPathwaysTitle" style="margin-top: 32px; margin-bottom: 16px;">3가지 주요 이민 경로</h3>
+        <div class="basics-pathway-grid">
+            <div class="basics-pathway-card">
+                <span class="basics-pathway-icon">⚡</span>
+                <h4 data-i18n="basicsPathEE">Express Entry (EE)</h4>
+                <p data-i18n="basicsPathEEDesc">연방 정부가 운영하는 온라인 이민 관리 시스템. CRS 점수 기반으로 선발하며, 평균 처리 기간 6개월로 가장 빠른 경로입니다.</p>
             </div>
-            <div class="acc-body" id="acc-body1" role="region" aria-labelledby="acc-header1">
-                <div class="calc-grid">
-                    <div class="input-group">
-                        <label data-i18n="labelBirthYear">출생 연도</label>
-                        <input type="number" id="birthYear" data-i18n-placeholder="placeholderBirthYear" placeholder="예: 1992" oninput="calcAge()" />
-                    </div>
-                    <div class="input-group">
-                        <label data-i18n="labelBirthMonth">출생 월</label>
-                        <select id="birthMonth" onchange="calcAge()">
-                            <option value="1">1월</option><option value="2">2월</option><option value="3">3월</option>
-                            <option value="4">4월</option><option value="5">5월</option><option value="6">6월</option>
-                            <option value="7">7월</option><option value="8">8월</option><option value="9">9월</option>
-                            <option value="10">10월</option><option value="11">11월</option><option value="12">12월</option>
-                        </select>
-                    </div>
-                    <div class="input-group">
-                        <label data-i18n="labelAge">만 나이 (자동계산)</label>
-                        <div class="auto-val" id="ageDisplay" data-i18n="ageDefault">출생 연도/월 입력 후 자동 계산</div>
-                    </div>
-                    <div class="input-group">
-                        <label data-i18n="labelMarital">결혼 여부</label>
-                        <select id="maritalStatus" onchange="toggleSpouseSection()">
-                            <option value="single">미혼 (Single)</option>
-                            <option value="married">기혼 (Married)</option>
-                        </select>
-                    </div>
-                    <div class="input-group" id="spouseAccompanyDiv" style="display:none;">
-                        <label data-i18n="labelSpouseAcc">배우자 동반 여부</label>
-                        <select id="spouseAccompany">
-                            <option value="yes">동반 예정</option>
-                            <option value="no">비동반 (점수 산정 제외)</option>
-                        </select>
-                    </div>
-                    <div class="input-group">
-                        <label data-i18n="labelDependents">부양 자녀 수</label>
-                        <select id="dependents">
-                            <option value="0">없음</option>
-                            <option value="1">1명</option>
-                            <option value="2">2명</option>
-                            <option value="3">3명 이상</option>
-                        </select>
-                    </div>
-                    <div class="input-group">
-                        <label data-i18n="labelCanadaStatus">현재 캐나다 체류 상태</label>
-                        <select id="canadaStatus">
-                            <option value="none">없음 (해외 거주)</option>
-                            <option value="student">학생 비자</option>
-                            <option value="work">워크퍼밋</option>
-                            <option value="visitor">방문자 비자</option>
-                        </select>
-                    </div>
-                </div>
-
-                <!-- Spouse Section (moved inside Step 1) -->
-                <div id="spouseSection" style="display:none; border:1px solid var(--border-color); border-radius:16px; padding:24px; margin-top:16px; background:rgba(10,37,64,0.02);">
-                    <h3 style="margin-bottom:16px; color:var(--primary);" data-i18n="spouseSectionTitle">배우자 정보 (동반하는 경우)</h3>
-                    <div class="calc-grid">
-                        <div class="input-group">
-                            <label data-i18n="labelSpouseEdu">배우자 최종 학력</label>
-                            <select id="spouseEducation">
-                                <option value="0">선택 안 함</option>
-                                <option value="highschool">고등학교 졸업</option>
-                                <option value="oneyear">1년 과정 대학</option>
-                                <option value="twoyear">2년 과정 대학</option>
-                                <option value="bachelor">학사 학위</option>
-                                <option value="master">석사/박사 학위</option>
-                            </select>
-                        </div>
-                        <div class="input-group">
-                            <label data-i18n="labelSpouseLang">배우자 영어 CLB 레벨</label>
-                            <select id="spouseLanguage">
-                                <option value="0">선택 안 함 / CLB 4 이하</option>
-                                <option value="5">CLB 5</option>
-                                <option value="6">CLB 6</option>
-                                <option value="7">CLB 7</option>
-                                <option value="8">CLB 8</option>
-                                <option value="9">CLB 9 이상</option>
-                            </select>
-                        </div>
-                        <div class="input-group">
-                            <label data-i18n="labelSpouseExp">배우자 캐나다 경력</label>
-                            <select id="spouseCanadianExp">
-                                <option value="0">없음</option>
-                                <option value="1">1년</option>
-                                <option value="2">2년</option>
-                                <option value="3">3년</option>
-                                <option value="4">4년</option>
-                                <option value="5">5년 이상</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
+            <div class="basics-pathway-card">
+                <span class="basics-pathway-icon">🏛️</span>
+                <h4 data-i18n="basicsPathPNP">주정부 이민 (PNP)</h4>
+                <p data-i18n="basicsPathPNPDesc">각 주정부가 자체 기준으로 이민자를 선발합니다. EE 연계 시 CRS +600점이 부여되어 영주권 취득이 사실상 확정됩니다.</p>
+            </div>
+            <div class="basics-pathway-card">
+                <span class="basics-pathway-icon">🌾</span>
+                <h4 data-i18n="basicsPathPilot">파일럿 프로그램</h4>
+                <p data-i18n="basicsPathPilotDesc">AIP(대서양 이민), RNIP(농촌·북부 이민) 등 특정 지역 정착을 조건으로 하는 프로그램. 경쟁이 낮아 중간 스펙으로도 가능합니다.</p>
             </div>
         </div>
 
-        <!-- Section 2: 학력 정보 -->
-        <div class="form-accordion" id="acc2">
-            <div class="acc-header" id="acc-header2" role="button" tabindex="0" aria-expanded="false" aria-controls="acc-body2" onclick="goToStep(2)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();goToStep(2)}">
-                <span class="acc-num">2</span>
-                <div style="flex:1;">
-                    <div style="font-weight:700;" data-i18n="acc2Title">학력 정보</div>
-                    <div class="acc-sub" data-i18n="acc2Sub">Education</div>
-                </div>
-                <span id="acc-arrow2">▼</span>
+        <h3 data-i18n="basicsGlossaryTitle" style="margin-top: 32px; margin-bottom: 16px;">핵심 용어 정리</h3>
+        <dl class="basics-glossary">
+            <div class="basics-glossary-item">
+                <dt data-i18n="basicsTermCRS">CRS (종합 랭킹 시스템)</dt>
+                <dd data-i18n="basicsTermCRSDesc">Express Entry 풀에서 후보자 순위를 매기는 1,200점 만점의 점수 체계. 나이·학력·언어·경력 등을 종합 평가합니다.</dd>
             </div>
-            <div class="acc-body acc-body-closed" id="acc-body2" role="region" aria-labelledby="acc-header2">
-                <div class="calc-grid">
-                    <div class="input-group">
-                        <label data-i18n="labelEdu">최종 학력</label>
-                        <select id="education">
-                            <option value="0">학력을 선택하세요</option>
-                            <option value="highschool">고등학교 졸업</option>
-                            <option value="oneyear">1년 과정 대학 졸업 (1-year college)</option>
-                            <option value="twoyear">2년 과정 대학 졸업 (2-year college)</option>
-                            <option value="bachelor">학사 학위 (3년 이상)</option>
-                            <option value="two_or_more">2개 이상의 학위 (하나가 3년 이상)</option>
-                            <option value="master">석사 학위</option>
-                            <option value="phd">박사 학위</option>
-                        </select>
-                    </div>
-                    <div class="input-group">
-                        <label data-i18n="labelEduCountry">학위 취득 국가</label>
-                        <select id="eduCountry">
-                            <option value="abroad">해외</option>
-                            <option value="canada">캐나다</option>
-                            <option value="both">해외+캐나다 복수</option>
-                        </select>
-                    </div>
-                    <div class="input-group">
-                        <label data-i18n="labelEca">ECA 평가 완료 여부 (해외 학위)</label>
-                        <select id="ecaDone">
-                            <option value="no">아니오</option>
-                            <option value="yes">예, 완료</option>
-                        </select>
-                    </div>
-                    <div class="input-group">
-                        <label data-i18n="labelCanStudy">캐나다 내 학업 유무</label>
-                        <select id="canadianStudy">
-                            <option value="0">없음</option>
-                            <option value="15">1~2년 과정 졸업</option>
-                            <option value="30">3년 이상 또는 석/박사 졸업</option>
-                        </select>
-                    </div>
-                </div>
+            <div class="basics-glossary-item">
+                <dt data-i18n="basicsTermITA">ITA (초청장)</dt>
+                <dd data-i18n="basicsTermITADesc">Invitation to Apply — CRS 커트라인 이상이면 IRCC로부터 영주권 신청 초청을 받습니다.</dd>
             </div>
-        </div>
-
-        <!-- Section 3: 언어 성적 -->
-        <div class="form-accordion" id="acc3">
-            <div class="acc-header" id="acc-header3" role="button" tabindex="0" aria-expanded="false" aria-controls="acc-body3" onclick="goToStep(3)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();goToStep(3)}">
-                <span class="acc-num">3</span>
-                <div style="flex:1;">
-                    <div style="font-weight:700;" data-i18n="acc3Title">언어 성적</div>
-                    <div class="acc-sub" data-i18n="acc3Sub">Language Proficiency</div>
-                </div>
-                <span id="acc-arrow3">▼</span>
+            <div class="basics-glossary-item">
+                <dt data-i18n="basicsTermNOC">NOC (직업 분류 코드)</dt>
+                <dd data-i18n="basicsTermNOCDesc">캐나다 국가 직업 분류 시스템. 5자리 코드로 직업을 분류하며, 이민 프로그램 자격 판단에 사용됩니다.</dd>
             </div>
-            <div class="acc-body acc-body-closed" id="acc-body3" role="region" aria-labelledby="acc-header3">
-                <div class="calc-grid">
-                    <div class="input-group">
-                        <label data-i18n="labelLangTest">영어 시험 종류</label>
-                        <select id="langTest" onchange="updateLangPlaceholders()">
-                            <option value="IELTS">IELTS General Training</option>
-                            <option value="CELPIP">CELPIP General</option>
-                        </select>
-                    </div>
-                    <div class="input-group">
-                        <label id="langLLabel">듣기 (L) — IELTS 점수</label>
-                        <input type="number" id="langL" placeholder="예: 8.0" step="0.5" min="0" max="9" oninput="calcCLB()" />
-                    </div>
-                    <div class="input-group">
-                        <label id="langRLabel">읽기 (R) — IELTS 점수</label>
-                        <input type="number" id="langR" placeholder="예: 7.0" step="0.5" min="0" max="9" oninput="calcCLB()" />
-                    </div>
-                    <div class="input-group">
-                        <label id="langWLabel">쓰기 (W) — IELTS 점수</label>
-                        <input type="number" id="langW" placeholder="예: 7.0" step="0.5" min="0" max="9" oninput="calcCLB()" />
-                    </div>
-                    <div class="input-group">
-                        <label id="langSLabel">말하기 (S) — IELTS 점수</label>
-                        <input type="number" id="langS" placeholder="예: 7.0" step="0.5" min="0" max="9" oninput="calcCLB()" />
-                    </div>
-                    <div class="input-group">
-                        <label data-i18n="labelClbRes">CLB 자동계산 결과</label>
-                        <div class="auto-val" id="clbDisplay" data-i18n="clbDefault">언어 점수 입력 후 자동 계산</div>
-                    </div>
-                </div>
-                <div style="margin-top:16px; padding-top:16px; border-top:1px dashed var(--border-color);">
-                    <div style="font-weight:700; margin-bottom:12px; color:var(--text-muted);" data-i18n="labelFrench">불어 성적 (선택)</div>
-                    <div class="calc-grid">
-                        <div class="input-group">
-                            <label data-i18n="labelFrenchTest">불어 시험 종류</label>
-                            <select id="frenchTest" onchange="toggleFrenchSection()">
-                                <option value="none">없음</option>
-                                <option value="TEF">TEF Canada</option>
-                                <option value="TCF">TCF Canada</option>
-                            </select>
-                        </div>
-                        <div class="input-group" id="frenchClbDiv" style="display:none;">
-                            <label data-i18n="labelFrenchClb">불어 CLB 레벨</label>
-                            <select id="frenchCLB">
-                                <option value="0">CLB 4 이하</option>
-                                <option value="5">CLB 5~6</option>
-                                <option value="7">CLB 7~8</option>
-                                <option value="9">CLB 9 이상</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
+            <div class="basics-glossary-item">
+                <dt data-i18n="basicsTermCLB">CLB (언어 능력 등급)</dt>
+                <dd data-i18n="basicsTermCLBDesc">Canadian Language Benchmarks — IELTS, CELPIP 등의 시험 점수를 CLB 4~12 등급으로 환산합니다.</dd>
             </div>
-        </div>
-
-        <!-- Section 4: 경력 정보 -->
-        <div class="form-accordion" id="acc4">
-            <div class="acc-header" id="acc-header4" role="button" tabindex="0" aria-expanded="false" aria-controls="acc-body4" onclick="goToStep(4)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();goToStep(4)}">
-                <span class="acc-num">4</span>
-                <div style="flex:1;">
-                    <div style="font-weight:700;" data-i18n="acc4Title">경력 정보</div>
-                    <div class="acc-sub" data-i18n="acc4Sub">Work Experience & Job Offer</div>
-                </div>
-                <span id="acc-arrow4">▼</span>
+            <div class="basics-glossary-item">
+                <dt data-i18n="basicsTermTEER">TEER (직업 훈련 등급)</dt>
+                <dd data-i18n="basicsTermTEERDesc">Training, Education, Experience, Responsibilities — NOC 코드의 숙련도를 0~5 등급으로 분류합니다. TEER 0~3이 숙련직으로 분류됩니다.</dd>
             </div>
-            <div class="acc-body acc-body-closed" id="acc-body4" role="region" aria-labelledby="acc-header4">
-                <div style="font-weight:600; margin-bottom:12px; color:var(--primary);" data-i18n="canExpTitle">캐나다 내 경력</div>
-                <div class="calc-grid">
-                    <div class="input-group">
-                        <label data-i18n="labelCanExpY">캐나다 숙련직 경력 (년)</label>
-                        <select id="canadianExpYears">
-                            <option value="0">없음</option>
-                            <option value="1">1년</option>
-                            <option value="2">2년</option>
-                            <option value="3">3년</option>
-                            <option value="4">4년</option>
-                            <option value="5">5년 이상</option>
-                        </select>
-                    </div>
-                    <div class="input-group noc-search-group">
-                        <label data-i18n="labelCanNoc">캐나다 직업 NOC 코드</label>
-                        <input type="text" id="canadianNOCSearch" data-i18n-placeholder="nocSearchPlaceholder" placeholder="직업명/키워드 입력 (영문, 예: Software Engineer)" oninput="searchNOCInline('canadian')" onblur="hideNOCDropdown('canadian')" autocomplete="off" />
-                        <div id="canadianNOCDrop" class="noc-inline-drop" style="display:none;"></div>
-                        <input type="hidden" id="canadianNOC" value="" />
-                    </div>
-                    <div class="input-group">
-                        <label data-i18n="labelTeerDisplay">TEER / 직업명 (자동표시)</label>
-                        <div class="auto-val" id="canadianTEER" data-i18n="teerDefault">직업명 검색 후 선택하면 자동 표시</div>
-                    </div>
-                </div>
-                <div style="font-weight:600; margin:16px 0 12px; color:var(--primary); padding-top:16px; border-top:1px dashed var(--border-color);" data-i18n="foreignExpTitle">해외 경력</div>
-                <div class="calc-grid">
-                    <div class="input-group">
-                        <label data-i18n="labelForeignExpY">해외 숙련직 경력 (최근 10년)</label>
-                        <select id="foreignExpYears">
-                            <option value="0">없음</option>
-                            <option value="1">1~2년</option>
-                            <option value="3">3년 이상</option>
-                        </select>
-                    </div>
-                    <div class="input-group noc-search-group">
-                        <label data-i18n="labelForeignNoc">해외 직업 NOC 코드</label>
-                        <input type="text" id="foreignNOCSearch" data-i18n-placeholder="nocSearchPlaceholder" placeholder="직업명/키워드 입력 (영문, 예: Software Engineer)" oninput="searchNOCInline('foreign')" onblur="hideNOCDropdown('foreign')" autocomplete="off" />
-                        <div id="foreignNOCDrop" class="noc-inline-drop" style="display:none;"></div>
-                        <input type="hidden" id="foreignNOC" value="" />
-                    </div>
-                    <div class="input-group">
-                        <label data-i18n="labelTeerDisplay">TEER / 직업명 (자동표시)</label>
-                        <div class="auto-val" id="foreignTEER" data-i18n="teerDefault">직업명 검색 후 선택하면 자동 표시</div>
-                    </div>
-                </div>
-                <div style="font-weight:600; margin:16px 0 12px; color:var(--primary); padding-top:16px; border-top:1px dashed var(--border-color);" data-i18n="jobOfferTitle">잡오퍼 (Job Offer)</div>
-                <p id="jobOfferNotice" data-i18n="jobOfferNotice" style="font-size:0.82rem; color:var(--text-sub); margin:-4px 0 12px; padding:8px 12px; background:var(--glass-bg); border-radius:8px; border-left:3px solid var(--accent);">⚠️ 2025년 3월 25일부로 잡오퍼 CRS 가산점이 폐지됐습니다. 프로그램 자격 판단용으로만 활용됩니다.</p>
-                <div class="calc-grid">
-                    <div class="input-group">
-                        <label data-i18n="labelHasJob">잡오퍼 보유 여부 (자격 판단용)</label>
-                        <select id="hasJobOffer" onchange="toggleJobOfferSection()">
-                            <option value="no">없음</option>
-                            <option value="yes_regular">있음 (일반 숙련직, TEER 1-3)</option>
-                            <option value="yes_senior">있음 (시니어 매니저, TEER 0)</option>
-                        </select>
-                    </div>
-                    <div class="input-group" id="employerPNPDiv" style="display:none;">
-                        <label data-i18n="labelEmpPnp">고용주 PNP 연계 가능 여부</label>
-                        <select id="employerPNP">
-                            <option value="no">아니오</option>
-                            <option value="yes">예</option>
-                        </select>
-                    </div>
-                </div>
+            <div class="basics-glossary-item">
+                <dt data-i18n="basicsTermECA">ECA (학력 인증)</dt>
+                <dd data-i18n="basicsTermECADesc">Educational Credential Assessment — 해외 학위를 캐나다 기준으로 환산하는 인증. WES 등 지정 기관에서 발급받습니다.</dd>
             </div>
-        </div>
-
-        <!-- Section 5: 가산점 요소 -->
-        <div class="form-accordion" id="acc5">
-            <div class="acc-header" id="acc-header5" role="button" tabindex="0" aria-expanded="false" aria-controls="acc-body5" onclick="goToStep(5)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();goToStep(5)}">
-                <span class="acc-num">5</span>
-                <div style="flex:1;">
-                    <div style="font-weight:700;" data-i18n="acc5Title">가산점 요소</div>
-                    <div class="acc-sub" data-i18n="acc5Sub">Additional Points</div>
-                </div>
-                <span id="acc-arrow5">▼</span>
-            </div>
-            <div class="acc-body acc-body-closed" id="acc-body5" role="region" aria-labelledby="acc-header5">
-                <div class="calc-grid">
-                    <div class="input-group">
-                        <label data-i18n="labelSibling">캐나다 내 형제/자매 거주</label>
-                        <select id="sibling">
-                            <option value="0">아니오</option>
-                            <option value="15">예 (시민/영주권자)</option>
-                        </select>
-                    </div>
-                    <div class="input-group">
-                        <label data-i18n="labelPnp">주정부 이민 (PNP) 노미네이션</label>
-                        <select id="hasPNP">
-                            <option value="0">없음</option>
-                            <option value="600">있음 (+600점)</option>
-                        </select>
-                    </div>
-                    <div class="input-group">
-                        <label data-i18n="labelTrade">기술직 자격 보유 (FST 해당)</label>
-                        <select id="tradeOccupation">
-                            <option value="no">아니오</option>
-                            <option value="yes">예 (Red Seal 등)</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Section 6: 이민 선호도 -->
-        <div class="form-accordion" id="acc6">
-            <div class="acc-header" id="acc-header6" role="button" tabindex="0" aria-expanded="false" aria-controls="acc-body6" onclick="goToStep(6)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();goToStep(6)}">
-                <span class="acc-num">6</span>
-                <div style="flex:1;">
-                    <div style="font-weight:700;" data-i18n="acc6Title">이민 선호도</div>
-                    <div class="acc-sub" data-i18n="acc6Sub">Preferences & Profile</div>
-                </div>
-                <span id="acc-arrow6">▼</span>
-            </div>
-            <div class="acc-body acc-body-closed" id="acc-body6" role="region" aria-labelledby="acc-header6">
-                <div class="calc-grid">
-                    <div class="input-group">
-                        <label data-i18n="labelProvince">선호 거주 지역</label>
-                        <select id="targetProvince">
-                            <option value="any">상관 없음 (전 지역)</option>
-                            <option value="ON">온타리오 (OINP)</option>
-                            <option value="BC">브리티시 컬럼비아 (BC PNP)</option>
-                            <option value="AB">알버타 (AAIP)</option>
-                            <option value="SK">사스카추완 (SINP)</option>
-                            <option value="MB">마니토바 (MPNP)</option>
-                            <option value="QC">퀘벡 (PEQ/QSWP)</option>
-                            <option value="NS">노바스코샤 (NSNP)</option>
-                            <option value="NB">뉴브런즈윅 (NBPNP)</option>
-                            <option value="PEI">PEI (PEI PNP)</option>
-                            <option value="NL">뉴펀들랜드 (NLPNP)</option>
-                            <option value="YT">유콘 (YNP)</option>
-                            <option value="NT">노스웨스트 준주 (NTNP)</option>
-                            <option value="NU">누나부트 (NUNP)</option>
-                            <option value="Atlantic">아틀란틱 지역 (AIP)</option>
-                            <option value="Rural">외곽 지역 (RNIP/RCIP)</option>
-                        </select>
-                    </div>
-                    <div class="input-group">
-                        <label data-i18n="labelRural">농촌/소도시 정착 의향</label>
-                        <select id="ruralWilling">
-                            <option value="no">아니오</option>
-                            <option value="yes">예</option>
-                        </select>
-                    </div>
-                    <div class="input-group">
-                        <label data-i18n="labelAtlantic">아틀란틱 지역 정착 의향</label>
-                        <select id="atlanticWilling">
-                            <option value="no">아니오</option>
-                            <option value="yes">예</option>
-                        </select>
-                    </div>
-                    <div class="input-group">
-                        <label data-i18n="labelOccGroup">현재 직종 카테고리</label>
-                        <select id="occupationGroup">
-                            <option value="others">기타 일반 숙련직</option>
-                            <option value="Healthcare">의료/보건 (Healthcare)</option>
-                            <option value="STEM">IT/공학 (STEM)</option>
-                            <option value="Trades">기술 생산직 (Trades)</option>
-                            <option value="Transport">운송 (Transport)</option>
-                            <option value="Agriculture">농축산 (Agriculture)</option>
-                            <option value="Education">교육 (Education)</option>
-                            <option value="French">불어 우수자 (French)</option>
-                        </select>
-                    </div>
-                    <div class="input-group">
-                        <label data-i18n="labelSalary">현재 연봉 (캐나다 달러)</label>
-                        <select id="currentSalary">
-                            <option value="0">정보 없음</option>
-                            <option value="40000">CA$40,000 미만</option>
-                            <option value="60000">CA$40,000~60,000</option>
-                            <option value="80000">CA$60,000~80,000</option>
-                            <option value="100000">CA$80,000~100,000</option>
-                            <option value="120000">CA$100,000 이상</option>
-                        </select>
-                    </div>
-                    <div class="input-group">
-                        <label data-i18n="labelBusiness">비즈니스 이민 관심 여부</label>
-                        <select id="businessIntent">
-                            <option value="no">아니오</option>
-                            <option value="yes">예</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Section 7: 전략 시뮬레이션 -->
-        <div class="form-accordion" id="acc7">
-            <div class="acc-header" id="acc-header7" role="button" tabindex="0" aria-expanded="false" aria-controls="acc-body7" onclick="goToStep(7)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();goToStep(7)}">
-                <span class="acc-num">7</span>
-                <div style="flex:1;">
-                    <div style="font-weight:700;" data-i18n="acc7Title">전략 시뮬레이션</div>
-                    <div class="acc-sub" data-i18n="acc7Sub">What-if Strategy Simulation</div>
-                </div>
-                <span id="acc-arrow7">▼</span>
-            </div>
-            <div class="acc-body acc-body-closed" id="acc-body7" role="region" aria-labelledby="acc-header7">
-                <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:16px;" data-i18n="simP">아래 옵션을 선택하면 분석 결과에서 시나리오별 점수 향상 시뮬레이션을 확인할 수 있습니다.</p>
-                <div class="calc-grid">
-                    <div class="input-group">
-                        <label data-i18n="labelSimIelts">IELTS 재응시 의향</label>
-                        <select id="willingRetakeIELTS">
-                            <option value="no">아니오</option>
-                            <option value="yes">예</option>
-                        </select>
-                    </div>
-                    <div class="input-group">
-                        <label data-i18n="labelSimFrench">불어 학습 의향</label>
-                        <select id="canStudyFrench">
-                            <option value="no">아니오</option>
-                            <option value="yes">예</option>
-                        </select>
-                    </div>
-                    <div class="input-group">
-                        <label data-i18n="labelSimExp">추가 경력 계획 (1년 내)</label>
-                        <select id="planMoreWork">
-                            <option value="no">아니오</option>
-                            <option value="yes">예</option>
-                        </select>
-                    </div>
-                    <div class="input-group" id="spouseIELTSDiv" style="display:none;">
-                        <label data-i18n="labelSimSpouse">배우자 IELTS 응시 의향</label>
-                        <select id="spouseIELTS">
-                            <option value="no">아니오</option>
-                            <option value="yes">예</option>
-                        </select>
-                    </div>
-                    <div class="input-group">
-                        <label data-i18n="labelSimEmp">고용주 변경 가능 여부</label>
-                        <select id="canChangeEmployer">
-                            <option value="no">아니오</option>
-                            <option value="yes">예</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Spacer to prevent bottom nav from covering content -->
-        <div class="wizard-bottom-spacer"></div>
-
-        <!-- Fixed Bottom Wizard Navigation Bar -->
-        <div id="wizardBottomNav" class="wizard-bottom-nav" style="display:none;">
-            <button type="button" id="wizBottomPrev" class="wizard-bottom-btn" onclick="goToStep(currentStep - 1)">&larr; 이전</button>
-            <div class="wizard-bottom-center">
-                <span id="wizBottomStep" class="wizard-bottom-step">Step 1 / 7</span>
-                <button type="button" id="wizResetBtn" class="wizard-reset-btn" onclick="resetForm()" title="초기화">↺</button>
-                <div id="wizBottomScore" class="mini-score">
-                    <span class="mini-score-label">CRS</span>
-                    <span class="mini-score-num">--</span>
-                </div>
-            </div>
-            <button type="button" id="wizBottomNext" class="wizard-bottom-btn" onclick="goToStep(currentStep + 1)">다음 &rarr;</button>
-        </div>
-
-        <!-- Strategy Dashboard Results -->
-        <div id="strategyResults" style="display:none; margin-top:40px; border-top:2px solid var(--primary); padding-top:40px;">
-            <div class="section-title">
-                <h2 style="justify-content:center;">AI 맞춤형 전략 리포트</h2>
-            </div>
-
-            <div class="dashboard-grid">
-                <div class="stat-card">
-                    <span class="stat-label">나의 CRS 점수</span>
-                    <span id="res-crs" class="stat-value">-</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-label">합격권과의 격차</span>
-                    <span id="res-gap" class="stat-value">-</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-label">성공 확률</span>
-                    <span id="res-prob" class="stat-value" style="font-size:1.5rem;">-</span>
-                </div>
-                <div class="stat-card ai-analysis-btn" id="btn-ai-analysis" onclick="showAIAnalysis()">
-                    <div class="ai-btn-glow"></div>
-                    <span class="ai-btn-badge" data-i18n="aiAnalysisLabel">다음 단계</span>
-                    <span class="ai-btn-content">
-                        <svg class="ai-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L9.5 8.5 3 10l5 4-1.5 7L12 17.5 17.5 21 16 14l5-4-6.5-1.5Z"/></svg>
-                        <span class="stat-value" data-i18n="aiAnalysisBtn">AI 분석</span>
-                    </span>
-                    <span class="ai-btn-sub" data-i18n="aiAnalysisSub">맞춤 경로 추천 받기</span>
-                </div>
-            </div>
-
-            <div id="scoreBreakdown" style="margin-bottom:30px;">
-                <!-- Score breakdown chart injected here -->
-            </div>
-
-            <div id="recommendation-paths" class="articles-grid recommendation-path">
-                <!-- Recommended paths will be injected here -->
-            </div>
-
-            <div id="strategy-cards-section" style="display:none; margin:30px 0;">
-                <div class="strategy-pipeline">
-                    <div class="strategy-pipeline-score"><span id="pipelineScore">-</span></div>
-                    <div class="strategy-pipeline-arrow">→</div>
-                    <div class="strategy-pipeline-chip">AI 분석</div>
-                    <div class="strategy-pipeline-arrow">→</div>
-                    <div class="strategy-pipeline-chip" id="pipelineLabel">전략별 점수 상승 예상</div>
-                </div>
-                <div id="strategy-cards-grid" class="strategy-cards-grid"></div>
-            </div>
-
-            <div id="strategic-advice" class="advice-box">
-                <!-- Detailed advice will be injected here -->
-            </div>
-            <div class="wizard-bottom-spacer"></div>
-        </div>
-    </div>
-
-    <!-- Latest Draws Section -->
-    <div class="card" id="latest-draws">
-        <h2 id="drawsH2" data-i18n="drawsH2">익스프레스 엔트리 최신 선발 결과</h2>
-        <p id="drawsDesc" data-i18n="drawsP">최근 IRCC에서 발표한 익스프레스 엔트리 초청(ITA) 결과입니다. 본인의 점수와 최신 컷오프를 비교해 보세요.</p>
-        <div id="drawsTableWrap"></div>
+        </dl>
     </div>
 
     <!-- Comprehensive Guide Section -->
@@ -672,9 +160,30 @@
         <h2 data-i18n="guideH2">익스프레스 엔트리(Express Entry)란?</h2>
         <p id="guideP1" data-i18n="guideP1">익스프레스 엔트리는 캐나다 정부가 숙련직 근로자의 영주권 신청을 관리하는 시스템입니다. 다음 세 가지 주요 프로그램을 포함합니다:</p>
         <ul class="program-grid" id="guideProgramUl">
-            <li class="program-card"><strong>연방 숙련직 프로그램 (FSWP):</strong> 해외 숙련직 경력 최소 1년(최근 10년 이내), CLB 7 이상, TEER 0·1·2·3 직군. 선발 점수 67점 이상 필요.</li>
-            <li class="program-card"><strong>연방 기술직 프로그램 (FSTP):</strong> 기술직 경력 최소 2년(최근 5년 이내). 취업 오퍼(1년 이상) 또는 Red Seal 등 자격증 필요. CLB 5 이상.</li>
-            <li class="program-card"><strong>캐나다 경험 이민 (CEC):</strong> 캐나다 내 TEER 0~3 경력 최소 1년(최근 3년 이내). TEER 0·1은 CLB 7, TEER 2·3은 CLB 5 이상.</li>
+            <li class="program-card">
+                <strong>연방 숙련직 프로그램 (FSWP):</strong> 해외 숙련직 경력 최소 1년(최근 10년 이내), CLB 7 이상, TEER 0·1·2·3 직군. 선발 점수 67점 이상 필요.
+                <div class="program-mini-stats">
+                    <span class="mini-stat">CLB 7+</span>
+                    <span class="mini-stat">1yr+ exp</span>
+                    <span class="mini-stat">TEER 0-3</span>
+                </div>
+            </li>
+            <li class="program-card">
+                <strong>연방 기술직 프로그램 (FSTP):</strong> 기술직 경력 최소 2년(최근 5년 이내). 취업 오퍼(1년 이상) 또는 Red Seal 등 자격증 필요. CLB 5 이상.
+                <div class="program-mini-stats">
+                    <span class="mini-stat">CLB 5+</span>
+                    <span class="mini-stat">2yr+ exp</span>
+                    <span class="mini-stat">TEER 2-5</span>
+                </div>
+            </li>
+            <li class="program-card">
+                <strong>캐나다 경험 이민 (CEC):</strong> 캐나다 내 TEER 0~3 경력 최소 1년(최근 3년 이내). TEER 0·1은 CLB 7, TEER 2·3은 CLB 5 이상.
+                <div class="program-mini-stats">
+                    <span class="mini-stat">CLB 5-7+</span>
+                    <span class="mini-stat">1yr+ CAN</span>
+                    <span class="mini-stat">TEER 0-3</span>
+                </div>
+            </li>
         </ul>
 
         <div class="clb-section">
@@ -1052,6 +561,656 @@
         </div>
     </div>
 
+    <!-- CTA Banner -->
+    <div class="cta-banner" id="cta-banner">
+        <p data-i18n="ctaBannerText">이제 기초를 이해했다면, 내 CRS 점수를 확인해보세요!</p>
+        <a href="#calculator" class="cta-banner-btn" data-i18n="ctaBannerBtn">내 점수 계산하기 ↓</a>
+    </div>
+
+    <!-- Comprehensive Assessment & Strategy Section -->
+    <div class="card" id="calculator">
+        <h2 data-i18n="calcH2">맞춤형 이민 루트 진단 & CRS 계산기</h2>
+        <p data-i18n-html="calcP">기본 정보와 선호도를 입력하면 <b>Express Entry, PNP, Pilot 프로그램</b> 중 당신에게 가장 유리한 최적의 경로를 데이터 기반으로 추천해드립니다.</p>
+
+        <!-- Wizard Progress Bar -->
+        <div class="wizard-progress">
+            <div class="wizard-step active" data-step="1" onclick="goToStep(1)"><span class="step-num">1</span><span class="step-label">인적정보</span></div>
+            <div class="wizard-line"></div>
+            <div class="wizard-step disabled" data-step="2" onclick="goToStep(2)"><span class="step-num">2</span><span class="step-label">학력</span></div>
+            <div class="wizard-line"></div>
+            <div class="wizard-step disabled" data-step="3" onclick="goToStep(3)"><span class="step-num">3</span><span class="step-label">언어</span></div>
+            <div class="wizard-line"></div>
+            <div class="wizard-step disabled" data-step="4" onclick="goToStep(4)"><span class="step-num">4</span><span class="step-label">경력</span></div>
+            <div class="wizard-line"></div>
+            <div class="wizard-step disabled" data-step="5" onclick="goToStep(5)"><span class="step-num">5</span><span class="step-label">가산점</span></div>
+            <div class="wizard-line"></div>
+            <div class="wizard-step disabled" data-step="6" onclick="goToStep(6)"><span class="step-num">6</span><span class="step-label">선호도</span></div>
+            <div class="wizard-line"></div>
+            <div class="wizard-step disabled" data-step="7" onclick="goToStep(7)"><span class="step-num">7</span><span class="step-label">시뮬레이션</span></div>
+        </div>
+
+        <!-- Section 1: 기본 인적 정보 -->
+        <div class="form-accordion" id="acc1">
+            <div class="acc-header" id="acc-header1" role="button" tabindex="0" aria-expanded="true" aria-controls="acc-body1" onclick="goToStep(1)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();goToStep(1)}">
+                <span class="acc-num">1</span>
+                <div style="flex:1;">
+                    <div style="font-weight:700;" data-i18n="acc1Title">기본 인적 정보</div>
+                    <div class="acc-sub" data-i18n="acc1Sub">Personal Information</div>
+                </div>
+                <span id="acc-arrow1">▲</span>
+            </div>
+            <div class="acc-body" id="acc-body1" role="region" aria-labelledby="acc-header1">
+                <div class="tip-panel">
+                    <div class="tip-panel-toggle" onclick="toggleTip(1)">
+                        <span data-i18n="tipToggleLabel">💡 알고 가기</span>
+                        <span class="tip-arrow" id="tip-arrow1">▼</span>
+                    </div>
+                    <div class="tip-panel-body collapsed" id="tip-body1">
+                        <strong data-i18n="tip1Title">나이 점수와 결혼 여부</strong>
+                        <div data-i18n-html="tip1Body"></div>
+                    </div>
+                </div>
+                <div class="calc-grid">
+                    <div class="input-group">
+                        <label data-i18n="labelBirthYear">출생 연도</label>
+                        <input type="number" id="birthYear" data-i18n-placeholder="placeholderBirthYear" placeholder="예: 1992" oninput="calcAge()" />
+                    </div>
+                    <div class="input-group">
+                        <label data-i18n="labelBirthMonth">출생 월</label>
+                        <select id="birthMonth" onchange="calcAge()">
+                            <option value="1">1월</option><option value="2">2월</option><option value="3">3월</option>
+                            <option value="4">4월</option><option value="5">5월</option><option value="6">6월</option>
+                            <option value="7">7월</option><option value="8">8월</option><option value="9">9월</option>
+                            <option value="10">10월</option><option value="11">11월</option><option value="12">12월</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label data-i18n="labelAge">만 나이 (자동계산)</label>
+                        <div class="auto-val" id="ageDisplay" data-i18n="ageDefault">출생 연도/월 입력 후 자동 계산</div>
+                    </div>
+                    <div class="input-group">
+                        <label data-i18n="labelMarital">결혼 여부</label>
+                        <select id="maritalStatus" onchange="toggleSpouseSection()">
+                            <option value="single">미혼 (Single)</option>
+                            <option value="married">기혼 (Married)</option>
+                        </select>
+                    </div>
+                    <div class="input-group" id="spouseAccompanyDiv" style="display:none;">
+                        <label data-i18n="labelSpouseAcc">배우자 동반 여부</label>
+                        <select id="spouseAccompany">
+                            <option value="yes">동반 예정</option>
+                            <option value="no">비동반 (점수 산정 제외)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label data-i18n="labelDependents">부양 자녀 수</label>
+                        <select id="dependents">
+                            <option value="0">없음</option>
+                            <option value="1">1명</option>
+                            <option value="2">2명</option>
+                            <option value="3">3명 이상</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label data-i18n="labelCanadaStatus">현재 캐나다 체류 상태</label>
+                        <select id="canadaStatus">
+                            <option value="none">없음 (해외 거주)</option>
+                            <option value="student">학생 비자</option>
+                            <option value="work">워크퍼밋</option>
+                            <option value="visitor">방문자 비자</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Spouse Section (moved inside Step 1) -->
+                <div id="spouseSection" style="display:none; border:1px solid var(--border-color); border-radius:16px; padding:24px; margin-top:16px; background:rgba(10,37,64,0.02);">
+                    <h3 style="margin-bottom:16px; color:var(--primary);" data-i18n="spouseSectionTitle">배우자 정보 (동반하는 경우)</h3>
+                    <div class="calc-grid">
+                        <div class="input-group">
+                            <label data-i18n="labelSpouseEdu">배우자 최종 학력</label>
+                            <select id="spouseEducation">
+                                <option value="0">선택 안 함</option>
+                                <option value="highschool">고등학교 졸업</option>
+                                <option value="oneyear">1년 과정 대학</option>
+                                <option value="twoyear">2년 과정 대학</option>
+                                <option value="bachelor">학사 학위</option>
+                                <option value="master">석사/박사 학위</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label data-i18n="labelSpouseLang">배우자 영어 CLB 레벨</label>
+                            <select id="spouseLanguage">
+                                <option value="0">선택 안 함 / CLB 4 이하</option>
+                                <option value="5">CLB 5</option>
+                                <option value="6">CLB 6</option>
+                                <option value="7">CLB 7</option>
+                                <option value="8">CLB 8</option>
+                                <option value="9">CLB 9 이상</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label data-i18n="labelSpouseExp">배우자 캐나다 경력</label>
+                            <select id="spouseCanadianExp">
+                                <option value="0">없음</option>
+                                <option value="1">1년</option>
+                                <option value="2">2년</option>
+                                <option value="3">3년</option>
+                                <option value="4">4년</option>
+                                <option value="5">5년 이상</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Section 2: 학력 정보 -->
+        <div class="form-accordion" id="acc2">
+            <div class="acc-header" id="acc-header2" role="button" tabindex="0" aria-expanded="false" aria-controls="acc-body2" onclick="goToStep(2)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();goToStep(2)}">
+                <span class="acc-num">2</span>
+                <div style="flex:1;">
+                    <div style="font-weight:700;" data-i18n="acc2Title">학력 정보</div>
+                    <div class="acc-sub" data-i18n="acc2Sub">Education</div>
+                </div>
+                <span id="acc-arrow2">▼</span>
+            </div>
+            <div class="acc-body acc-body-closed" id="acc-body2" role="region" aria-labelledby="acc-header2">
+                <div class="tip-panel">
+                    <div class="tip-panel-toggle" onclick="toggleTip(2)">
+                        <span data-i18n="tipToggleLabel">💡 알고 가기</span>
+                        <span class="tip-arrow" id="tip-arrow2">▼</span>
+                    </div>
+                    <div class="tip-panel-body collapsed" id="tip-body2">
+                        <strong data-i18n="tip2Title">학력별 CRS 점수</strong>
+                        <div data-i18n-html="tip2Body"></div>
+                    </div>
+                </div>
+                <div class="calc-grid">
+                    <div class="input-group">
+                        <label data-i18n="labelEdu">최종 학력</label>
+                        <select id="education">
+                            <option value="0">학력을 선택하세요</option>
+                            <option value="highschool">고등학교 졸업</option>
+                            <option value="oneyear">1년 과정 대학 졸업 (1-year college)</option>
+                            <option value="twoyear">2년 과정 대학 졸업 (2-year college)</option>
+                            <option value="bachelor">학사 학위 (3년 이상)</option>
+                            <option value="two_or_more">2개 이상의 학위 (하나가 3년 이상)</option>
+                            <option value="master">석사 학위</option>
+                            <option value="phd">박사 학위</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label data-i18n="labelEduCountry">학위 취득 국가</label>
+                        <select id="eduCountry">
+                            <option value="abroad">해외</option>
+                            <option value="canada">캐나다</option>
+                            <option value="both">해외+캐나다 복수</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label data-i18n="labelEca">ECA 평가 완료 여부 (해외 학위)</label>
+                        <select id="ecaDone">
+                            <option value="no">아니오</option>
+                            <option value="yes">예, 완료</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label data-i18n="labelCanStudy">캐나다 내 학업 유무</label>
+                        <select id="canadianStudy">
+                            <option value="0">없음</option>
+                            <option value="15">1~2년 과정 졸업</option>
+                            <option value="30">3년 이상 또는 석/박사 졸업</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: 언어 성적 -->
+        <div class="form-accordion" id="acc3">
+            <div class="acc-header" id="acc-header3" role="button" tabindex="0" aria-expanded="false" aria-controls="acc-body3" onclick="goToStep(3)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();goToStep(3)}">
+                <span class="acc-num">3</span>
+                <div style="flex:1;">
+                    <div style="font-weight:700;" data-i18n="acc3Title">언어 성적</div>
+                    <div class="acc-sub" data-i18n="acc3Sub">Language Proficiency</div>
+                </div>
+                <span id="acc-arrow3">▼</span>
+            </div>
+            <div class="acc-body acc-body-closed" id="acc-body3" role="region" aria-labelledby="acc-header3">
+                <div class="tip-panel">
+                    <div class="tip-panel-toggle" onclick="toggleTip(3)">
+                        <span data-i18n="tipToggleLabel">💡 알고 가기</span>
+                        <span class="tip-arrow" id="tip-arrow3">▼</span>
+                    </div>
+                    <div class="tip-panel-body collapsed" id="tip-body3">
+                        <strong data-i18n="tip3Title">CLB란? CLB 9+ 왜 중요한가?</strong>
+                        <div data-i18n-html="tip3Body"></div>
+                    </div>
+                </div>
+                <div class="calc-grid">
+                    <div class="input-group">
+                        <label data-i18n="labelLangTest">영어 시험 종류</label>
+                        <select id="langTest" onchange="updateLangPlaceholders()">
+                            <option value="IELTS">IELTS General Training</option>
+                            <option value="CELPIP">CELPIP General</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label id="langLLabel">듣기 (L) — IELTS 점수</label>
+                        <input type="number" id="langL" placeholder="예: 8.0" step="0.5" min="0" max="9" oninput="calcCLB()" />
+                    </div>
+                    <div class="input-group">
+                        <label id="langRLabel">읽기 (R) — IELTS 점수</label>
+                        <input type="number" id="langR" placeholder="예: 7.0" step="0.5" min="0" max="9" oninput="calcCLB()" />
+                    </div>
+                    <div class="input-group">
+                        <label id="langWLabel">쓰기 (W) — IELTS 점수</label>
+                        <input type="number" id="langW" placeholder="예: 7.0" step="0.5" min="0" max="9" oninput="calcCLB()" />
+                    </div>
+                    <div class="input-group">
+                        <label id="langSLabel">말하기 (S) — IELTS 점수</label>
+                        <input type="number" id="langS" placeholder="예: 7.0" step="0.5" min="0" max="9" oninput="calcCLB()" />
+                    </div>
+                    <div class="input-group">
+                        <label data-i18n="labelClbRes">CLB 자동계산 결과</label>
+                        <div class="auto-val" id="clbDisplay" data-i18n="clbDefault">언어 점수 입력 후 자동 계산</div>
+                    </div>
+                </div>
+                <div style="margin-top:16px; padding-top:16px; border-top:1px dashed var(--border-color);">
+                    <div style="font-weight:700; margin-bottom:12px; color:var(--text-muted);" data-i18n="labelFrench">불어 성적 (선택)</div>
+                    <div class="calc-grid">
+                        <div class="input-group">
+                            <label data-i18n="labelFrenchTest">불어 시험 종류</label>
+                            <select id="frenchTest" onchange="toggleFrenchSection()">
+                                <option value="none">없음</option>
+                                <option value="TEF">TEF Canada</option>
+                                <option value="TCF">TCF Canada</option>
+                            </select>
+                        </div>
+                        <div class="input-group" id="frenchClbDiv" style="display:none;">
+                            <label data-i18n="labelFrenchClb">불어 CLB 레벨</label>
+                            <select id="frenchCLB">
+                                <option value="0">CLB 4 이하</option>
+                                <option value="5">CLB 5~6</option>
+                                <option value="7">CLB 7~8</option>
+                                <option value="9">CLB 9 이상</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4: 경력 정보 -->
+        <div class="form-accordion" id="acc4">
+            <div class="acc-header" id="acc-header4" role="button" tabindex="0" aria-expanded="false" aria-controls="acc-body4" onclick="goToStep(4)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();goToStep(4)}">
+                <span class="acc-num">4</span>
+                <div style="flex:1;">
+                    <div style="font-weight:700;" data-i18n="acc4Title">경력 정보</div>
+                    <div class="acc-sub" data-i18n="acc4Sub">Work Experience & Job Offer</div>
+                </div>
+                <span id="acc-arrow4">▼</span>
+            </div>
+            <div class="acc-body acc-body-closed" id="acc-body4" role="region" aria-labelledby="acc-header4">
+                <div class="tip-panel">
+                    <div class="tip-panel-toggle" onclick="toggleTip(4)">
+                        <span data-i18n="tipToggleLabel">💡 알고 가기</span>
+                        <span class="tip-arrow" id="tip-arrow4">▼</span>
+                    </div>
+                    <div class="tip-panel-body collapsed" id="tip-body4">
+                        <strong data-i18n="tip4Title">NOC/TEER 체계와 경력 점수</strong>
+                        <div data-i18n-html="tip4Body"></div>
+                    </div>
+                </div>
+                <div style="font-weight:600; margin-bottom:12px; color:var(--primary);" data-i18n="canExpTitle">캐나다 내 경력</div>
+                <div class="calc-grid">
+                    <div class="input-group">
+                        <label data-i18n="labelCanExpY">캐나다 숙련직 경력 (년)</label>
+                        <select id="canadianExpYears">
+                            <option value="0">없음</option>
+                            <option value="1">1년</option>
+                            <option value="2">2년</option>
+                            <option value="3">3년</option>
+                            <option value="4">4년</option>
+                            <option value="5">5년 이상</option>
+                        </select>
+                    </div>
+                    <div class="input-group noc-search-group">
+                        <label data-i18n="labelCanNoc">캐나다 직업 NOC 코드</label>
+                        <input type="text" id="canadianNOCSearch" data-i18n-placeholder="nocSearchPlaceholder" placeholder="직업명/키워드 입력 (영문, 예: Software Engineer)" oninput="searchNOCInline('canadian')" onblur="hideNOCDropdown('canadian')" autocomplete="off" />
+                        <div id="canadianNOCDrop" class="noc-inline-drop" style="display:none;"></div>
+                        <input type="hidden" id="canadianNOC" value="" />
+                    </div>
+                    <div class="input-group">
+                        <label data-i18n="labelTeerDisplay">TEER / 직업명 (자동표시)</label>
+                        <div class="auto-val" id="canadianTEER" data-i18n="teerDefault">직업명 검색 후 선택하면 자동 표시</div>
+                    </div>
+                </div>
+                <div style="font-weight:600; margin:16px 0 12px; color:var(--primary); padding-top:16px; border-top:1px dashed var(--border-color);" data-i18n="foreignExpTitle">해외 경력</div>
+                <div class="calc-grid">
+                    <div class="input-group">
+                        <label data-i18n="labelForeignExpY">해외 숙련직 경력 (최근 10년)</label>
+                        <select id="foreignExpYears">
+                            <option value="0">없음</option>
+                            <option value="1">1~2년</option>
+                            <option value="3">3년 이상</option>
+                        </select>
+                    </div>
+                    <div class="input-group noc-search-group">
+                        <label data-i18n="labelForeignNoc">해외 직업 NOC 코드</label>
+                        <input type="text" id="foreignNOCSearch" data-i18n-placeholder="nocSearchPlaceholder" placeholder="직업명/키워드 입력 (영문, 예: Software Engineer)" oninput="searchNOCInline('foreign')" onblur="hideNOCDropdown('foreign')" autocomplete="off" />
+                        <div id="foreignNOCDrop" class="noc-inline-drop" style="display:none;"></div>
+                        <input type="hidden" id="foreignNOC" value="" />
+                    </div>
+                    <div class="input-group">
+                        <label data-i18n="labelTeerDisplay">TEER / 직업명 (자동표시)</label>
+                        <div class="auto-val" id="foreignTEER" data-i18n="teerDefault">직업명 검색 후 선택하면 자동 표시</div>
+                    </div>
+                </div>
+                <div style="font-weight:600; margin:16px 0 12px; color:var(--primary); padding-top:16px; border-top:1px dashed var(--border-color);" data-i18n="jobOfferTitle">잡오퍼 (Job Offer)</div>
+                <p id="jobOfferNotice" data-i18n="jobOfferNotice" style="font-size:0.82rem; color:var(--text-sub); margin:-4px 0 12px; padding:8px 12px; background:var(--glass-bg); border-radius:8px; border-left:3px solid var(--accent);">⚠️ 2025년 3월 25일부로 잡오퍼 CRS 가산점이 폐지됐습니다. 프로그램 자격 판단용으로만 활용됩니다.</p>
+                <div class="calc-grid">
+                    <div class="input-group">
+                        <label data-i18n="labelHasJob">잡오퍼 보유 여부 (자격 판단용)</label>
+                        <select id="hasJobOffer" onchange="toggleJobOfferSection()">
+                            <option value="no">없음</option>
+                            <option value="yes_regular">있음 (일반 숙련직, TEER 1-3)</option>
+                            <option value="yes_senior">있음 (시니어 매니저, TEER 0)</option>
+                        </select>
+                    </div>
+                    <div class="input-group" id="employerPNPDiv" style="display:none;">
+                        <label data-i18n="labelEmpPnp">고용주 PNP 연계 가능 여부</label>
+                        <select id="employerPNP">
+                            <option value="no">아니오</option>
+                            <option value="yes">예</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 5: 가산점 요소 -->
+        <div class="form-accordion" id="acc5">
+            <div class="acc-header" id="acc-header5" role="button" tabindex="0" aria-expanded="false" aria-controls="acc-body5" onclick="goToStep(5)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();goToStep(5)}">
+                <span class="acc-num">5</span>
+                <div style="flex:1;">
+                    <div style="font-weight:700;" data-i18n="acc5Title">가산점 요소</div>
+                    <div class="acc-sub" data-i18n="acc5Sub">Additional Points</div>
+                </div>
+                <span id="acc-arrow5">▼</span>
+            </div>
+            <div class="acc-body acc-body-closed" id="acc-body5" role="region" aria-labelledby="acc-header5">
+                <div class="tip-panel">
+                    <div class="tip-panel-toggle" onclick="toggleTip(5)">
+                        <span data-i18n="tipToggleLabel">💡 알고 가기</span>
+                        <span class="tip-arrow" id="tip-arrow5">▼</span>
+                    </div>
+                    <div class="tip-panel-body collapsed" id="tip-body5">
+                        <strong data-i18n="tip5Title">가산점 항목 정리</strong>
+                        <div data-i18n-html="tip5Body"></div>
+                    </div>
+                </div>
+                <div class="calc-grid">
+                    <div class="input-group">
+                        <label data-i18n="labelSibling">캐나다 내 형제/자매 거주</label>
+                        <select id="sibling">
+                            <option value="0">아니오</option>
+                            <option value="15">예 (시민/영주권자)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label data-i18n="labelPnp">주정부 이민 (PNP) 노미네이션</label>
+                        <select id="hasPNP">
+                            <option value="0">없음</option>
+                            <option value="600">있음 (+600점)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label data-i18n="labelTrade">기술직 자격 보유 (FST 해당)</label>
+                        <select id="tradeOccupation">
+                            <option value="no">아니오</option>
+                            <option value="yes">예 (Red Seal 등)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 6: 이민 선호도 -->
+        <div class="form-accordion" id="acc6">
+            <div class="acc-header" id="acc-header6" role="button" tabindex="0" aria-expanded="false" aria-controls="acc-body6" onclick="goToStep(6)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();goToStep(6)}">
+                <span class="acc-num">6</span>
+                <div style="flex:1;">
+                    <div style="font-weight:700;" data-i18n="acc6Title">이민 선호도</div>
+                    <div class="acc-sub" data-i18n="acc6Sub">Preferences & Profile</div>
+                </div>
+                <span id="acc-arrow6">▼</span>
+            </div>
+            <div class="acc-body acc-body-closed" id="acc-body6" role="region" aria-labelledby="acc-header6">
+                <div class="tip-panel">
+                    <div class="tip-panel-toggle" onclick="toggleTip(6)">
+                        <span data-i18n="tipToggleLabel">💡 알고 가기</span>
+                        <span class="tip-arrow" id="tip-arrow6">▼</span>
+                    </div>
+                    <div class="tip-panel-body collapsed" id="tip-body6">
+                        <strong data-i18n="tip6Title">주정부 선발 방식</strong>
+                        <div data-i18n-html="tip6Body"></div>
+                    </div>
+                </div>
+                <div class="calc-grid">
+                    <div class="input-group">
+                        <label data-i18n="labelProvince">선호 거주 지역</label>
+                        <select id="targetProvince">
+                            <option value="any">상관 없음 (전 지역)</option>
+                            <option value="ON">온타리오 (OINP)</option>
+                            <option value="BC">브리티시 컬럼비아 (BC PNP)</option>
+                            <option value="AB">알버타 (AAIP)</option>
+                            <option value="SK">사스카추완 (SINP)</option>
+                            <option value="MB">마니토바 (MPNP)</option>
+                            <option value="QC">퀘벡 (PEQ/QSWP)</option>
+                            <option value="NS">노바스코샤 (NSNP)</option>
+                            <option value="NB">뉴브런즈윅 (NBPNP)</option>
+                            <option value="PEI">PEI (PEI PNP)</option>
+                            <option value="NL">뉴펀들랜드 (NLPNP)</option>
+                            <option value="YT">유콘 (YNP)</option>
+                            <option value="NT">노스웨스트 준주 (NTNP)</option>
+                            <option value="NU">누나부트 (NUNP)</option>
+                            <option value="Atlantic">아틀란틱 지역 (AIP)</option>
+                            <option value="Rural">외곽 지역 (RNIP/RCIP)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label data-i18n="labelRural">농촌/소도시 정착 의향</label>
+                        <select id="ruralWilling">
+                            <option value="no">아니오</option>
+                            <option value="yes">예</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label data-i18n="labelAtlantic">아틀란틱 지역 정착 의향</label>
+                        <select id="atlanticWilling">
+                            <option value="no">아니오</option>
+                            <option value="yes">예</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label data-i18n="labelOccGroup">현재 직종 카테고리</label>
+                        <select id="occupationGroup">
+                            <option value="others">기타 일반 숙련직</option>
+                            <option value="Healthcare">의료/보건 (Healthcare)</option>
+                            <option value="STEM">IT/공학 (STEM)</option>
+                            <option value="Trades">기술 생산직 (Trades)</option>
+                            <option value="Transport">운송 (Transport)</option>
+                            <option value="Agriculture">농축산 (Agriculture)</option>
+                            <option value="Education">교육 (Education)</option>
+                            <option value="French">불어 우수자 (French)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label data-i18n="labelSalary">현재 연봉 (캐나다 달러)</label>
+                        <select id="currentSalary">
+                            <option value="0">정보 없음</option>
+                            <option value="40000">CA$40,000 미만</option>
+                            <option value="60000">CA$40,000~60,000</option>
+                            <option value="80000">CA$60,000~80,000</option>
+                            <option value="100000">CA$80,000~100,000</option>
+                            <option value="120000">CA$100,000 이상</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label data-i18n="labelBusiness">비즈니스 이민 관심 여부</label>
+                        <select id="businessIntent">
+                            <option value="no">아니오</option>
+                            <option value="yes">예</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 7: 전략 시뮬레이션 -->
+        <div class="form-accordion" id="acc7">
+            <div class="acc-header" id="acc-header7" role="button" tabindex="0" aria-expanded="false" aria-controls="acc-body7" onclick="goToStep(7)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();goToStep(7)}">
+                <span class="acc-num">7</span>
+                <div style="flex:1;">
+                    <div style="font-weight:700;" data-i18n="acc7Title">전략 시뮬레이션</div>
+                    <div class="acc-sub" data-i18n="acc7Sub">What-if Strategy Simulation</div>
+                </div>
+                <span id="acc-arrow7">▼</span>
+            </div>
+            <div class="acc-body acc-body-closed" id="acc-body7" role="region" aria-labelledby="acc-header7">
+                <div class="tip-panel">
+                    <div class="tip-panel-toggle" onclick="toggleTip(7)">
+                        <span data-i18n="tipToggleLabel">💡 알고 가기</span>
+                        <span class="tip-arrow" id="tip-arrow7">▼</span>
+                    </div>
+                    <div class="tip-panel-body collapsed" id="tip-body7">
+                        <strong data-i18n="tip7Title">시뮬레이션 옵션 안내</strong>
+                        <div data-i18n-html="tip7Body"></div>
+                    </div>
+                </div>
+                <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:16px;" data-i18n="simP">아래 옵션을 선택하면 분석 결과에서 시나리오별 점수 향상 시뮬레이션을 확인할 수 있습니다.</p>
+                <div class="calc-grid">
+                    <div class="input-group">
+                        <label data-i18n="labelSimIelts">IELTS 재응시 의향</label>
+                        <select id="willingRetakeIELTS">
+                            <option value="no">아니오</option>
+                            <option value="yes">예</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label data-i18n="labelSimFrench">불어 학습 의향</label>
+                        <select id="canStudyFrench">
+                            <option value="no">아니오</option>
+                            <option value="yes">예</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label data-i18n="labelSimExp">추가 경력 계획 (1년 내)</label>
+                        <select id="planMoreWork">
+                            <option value="no">아니오</option>
+                            <option value="yes">예</option>
+                        </select>
+                    </div>
+                    <div class="input-group" id="spouseIELTSDiv" style="display:none;">
+                        <label data-i18n="labelSimSpouse">배우자 IELTS 응시 의향</label>
+                        <select id="spouseIELTS">
+                            <option value="no">아니오</option>
+                            <option value="yes">예</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label data-i18n="labelSimEmp">고용주 변경 가능 여부</label>
+                        <select id="canChangeEmployer">
+                            <option value="no">아니오</option>
+                            <option value="yes">예</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Spacer to prevent bottom nav from covering content -->
+        <div class="wizard-bottom-spacer"></div>
+
+        <!-- Fixed Bottom Wizard Navigation Bar -->
+        <div id="wizardBottomNav" class="wizard-bottom-nav" style="display:none;">
+            <button type="button" id="wizBottomPrev" class="wizard-bottom-btn" onclick="goToStep(currentStep - 1)">&larr; 이전</button>
+            <div class="wizard-bottom-center">
+                <span id="wizBottomStep" class="wizard-bottom-step">Step 1 / 7</span>
+                <button type="button" id="wizResetBtn" class="wizard-reset-btn" onclick="resetForm()" title="초기화">↺</button>
+                <div id="wizBottomScore" class="mini-score">
+                    <span class="mini-score-label">CRS</span>
+                    <span class="mini-score-num">--</span>
+                </div>
+            </div>
+            <button type="button" id="wizBottomNext" class="wizard-bottom-btn" onclick="goToStep(currentStep + 1)">다음 &rarr;</button>
+        </div>
+
+        <!-- Strategy Dashboard Results -->
+        <div id="strategyResults" style="display:none; margin-top:40px; border-top:2px solid var(--primary); padding-top:40px;">
+            <div class="section-title">
+                <h2 style="justify-content:center;">AI 맞춤형 전략 리포트</h2>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="stat-card">
+                    <span class="stat-label">나의 CRS 점수</span>
+                    <span id="res-crs" class="stat-value">-</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">합격권과의 격차</span>
+                    <span id="res-gap" class="stat-value">-</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">성공 확률</span>
+                    <span id="res-prob" class="stat-value" style="font-size:1.5rem;">-</span>
+                </div>
+                <div class="stat-card ai-analysis-btn" id="btn-ai-analysis" onclick="showAIAnalysis()">
+                    <div class="ai-btn-glow"></div>
+                    <span class="ai-btn-badge" data-i18n="aiAnalysisLabel">다음 단계</span>
+                    <span class="ai-btn-content">
+                        <svg class="ai-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L9.5 8.5 3 10l5 4-1.5 7L12 17.5 17.5 21 16 14l5-4-6.5-1.5Z"/></svg>
+                        <span class="stat-value" data-i18n="aiAnalysisBtn">AI 분석</span>
+                    </span>
+                    <span class="ai-btn-sub" data-i18n="aiAnalysisSub">맞춤 경로 추천 받기</span>
+                </div>
+            </div>
+
+            <div id="scoreBreakdown" style="margin-bottom:30px;">
+                <!-- Score breakdown chart injected here -->
+            </div>
+
+            <div id="recommendation-paths" class="articles-grid recommendation-path">
+                <!-- Recommended paths will be injected here -->
+            </div>
+
+            <div id="strategy-cards-section" style="display:none; margin:30px 0;">
+                <div class="strategy-pipeline">
+                    <div class="strategy-pipeline-score"><span id="pipelineScore">-</span></div>
+                    <div class="strategy-pipeline-arrow">→</div>
+                    <div class="strategy-pipeline-chip">AI 분석</div>
+                    <div class="strategy-pipeline-arrow">→</div>
+                    <div class="strategy-pipeline-chip" id="pipelineLabel">전략별 점수 상승 예상</div>
+                </div>
+                <div id="strategy-cards-grid" class="strategy-cards-grid"></div>
+            </div>
+
+            <div id="strategic-advice" class="advice-box">
+                <!-- Detailed advice will be injected here -->
+            </div>
+            <div class="wizard-bottom-spacer"></div>
+        </div>
+    </div>
+
+    <!-- Latest Draws Section -->
+    <div class="card" id="latest-draws">
+        <h2 id="drawsH2" data-i18n="drawsH2">익스프레스 엔트리 최신 선발 결과</h2>
+        <p id="drawsDesc" data-i18n="drawsP">최근 IRCC에서 발표한 익스프레스 엔트리 초청(ITA) 결과입니다. 본인의 점수와 최신 컷오프를 비교해 보세요.</p>
+        <div id="drawsTableWrap"></div>
+    </div>
+
     <!-- Latest Articles Section -->
     <div id="articles">
         <h2 style="color: var(--text-main); border-bottom: none; margin-bottom: 20px; font-size: 1.8rem;" data-i18n="articlesH2">최신 이민 뉴스 및 가이드</h2>
@@ -1125,15 +1284,15 @@
     <p data-i18n="footerRights">&copy; <span id="copyrightYear">2026</span> Canada PR Builder. All rights reserved.</p>
     <div class="footer-links">
         <a href="#home" data-i18n="navHome">홈</a>
-        <a href="#guide" data-i18n="navGuide">EE</a>
-        <a href="#pnp-guide" data-i18n="navPNP">PNP</a>
+        <a href="#immigration-basics" data-i18n="navBasics">이민 기초</a>
+        <a href="#guide" data-i18n="navGuide">가이드</a>
         <a href="privacy.html" data-i18n="footerPrivacy">개인정보처리방침</a>
         <a href="#contact" data-i18n="footerContact">고객센터</a>
     </div>
 </footer>
 
 <!-- Update ?v= when deploying changes to bust browser cache -->
-<script src="main.js?v=1.0.7" defer></script>
+<script src="main.js?v=1.1.0" defer></script>
 
 </body>
 </html>
