@@ -1096,6 +1096,7 @@ const articlesMeta = [
 
 // --- Express Entry Draw Data ---
 const drawsData = [
+    { isoDate: '2026-03-03', date: { ko: '2026년 3월 3일', en: 'Mar 3, 2026' }, type: 'cec', label: { ko: '캐나다 경험 이민 (CEC)', en: 'Canadian Experience Class (CEC)' }, invited: 4000, cutoff: 508 },
     { isoDate: '2026-03-02', date: { ko: '2026년 3월 2일', en: 'Mar 2, 2026' }, type: 'pnp', label: { ko: '주정부 이민 (PNP)', en: 'Provincial Nominee Program (PNP)' }, invited: 264, cutoff: 710, effectiveCutoff: 110 },
     { isoDate: '2026-02-20', date: { ko: '2026년 2월 20일', en: 'Feb 20, 2026' }, type: 'healthcare', label: { ko: '헬스케어 & 소셜 서비스', en: 'Healthcare & Social Services' }, invited: 4000, cutoff: 467 },
     { isoDate: '2026-02-19', date: { ko: '2026년 2월 19일', en: 'Feb 19, 2026' }, type: 'special',    label: { ko: '신설 의사 카테고리', en: 'Physician Category (New)' }, invited: 391, cutoff: 169 },
