@@ -30,6 +30,13 @@ const SCORE_BREAKDOWN_MAX = {
 const articlesData = {
     ko: [
         {
+            title: "3월 CEC 드로우 #400 — 4,000명 초청, CRS 508점",
+            badge: "CEC 드로우",
+            date: "2026년 3월 3일",
+            summary: "2026년 3월 3일, 캐나다 경험 이민(CEC) 카테고리에서 4,000명이 초청됐습니다. CRS 컷오프 508점으로, 올해 12번째 드로우이자 역대 400번째 익스프레스 엔트리 드로우입니다.",
+            content: `<p>2026년 3월 3일, IRCC는 올해 12번째 익스프레스 엔트리 드로우이자 역사적인 <b>400번째 드로우</b>를 실시했습니다. <b>캐나다 경험 이민(CEC)</b> 카테고리에서 <b>4,000명</b>에게 초청장(ITA)이 발급됐으며 CRS 컷오프는 <b>508점</b>입니다.</p><h3>주요 포인트</h3><ul><li><b>초청 규모:</b> 4,000명 — 2월 17일 CEC 드로우(6,000명) 대비 소폭 감소.</li><li><b>CRS 컷오프:</b> 508점 — 2월 CEC 드로우와 동일 수준 유지.</li><li><b>풀 규모:</b> 3월 1일 기준 232,534명이 Express Entry 풀에 등록.</li><li><b>2026년 누적:</b> 올해 총 약 39,112명에게 ITA 발급.</li></ul><h3>CEC 자격 요건</h3><ul><li>최근 3년 내 캐나다 내 <b>1년 이상</b>의 숙련직(NOC TEER 0~3) 경력.</li><li>영어 CLB 7(TEER 0~2) 또는 CLB 5(TEER 3) 이상.</li><li>캐나다 내 거주 및 합법적 취업 상태.</li></ul><h3>전략 포인트</h3><p>CRS 508점이 2회 연속 유지되고 있어 500~510점대 후보자들의 경쟁이 치열합니다. 501~600점 구간 후보자가 14,031명으로 2월 중순 대비 2,761명 감소하여 다음 드로우에서는 컷오프가 소폭 하락할 가능성도 있습니다. IELTS 재시험을 통한 CLB 향상이 가장 효과적인 점수 상승 전략입니다.</p>`
+        },
+        {
             title: "3월 첫 PNP 드로우 — 264명 초청, 실질 CRS 약 110점",
             badge: "PNP",
             date: "2026년 3월 2일",
@@ -83,7 +90,7 @@ const articlesData = {
             badge: "전략 가이드",
             date: "2026년 2월 26일",
             summary: "헬스케어, 프랑스어, CEC, PNP, 의사 카테고리까지 — 2026년 실제 드로우 데이터를 바탕으로 내게 유리한 이민 경로를 분석합니다.",
-            content: `<p>2026년 2월 한 달간의 드로우 데이터를 분석하면 <b>카테고리 기반 선발</b>이 이민 전략의 핵심임을 알 수 있습니다.</p><h3>2월 드로우 총정리</h3><ul><li><b>의사 카테고리 (02/19):</b> 391명 · CRS 169점 — 역대 최저권</li><li><b>프랑스어 (02/06):</b> 8,500명 · CRS 400점 — 역대 최대 규모</li><li><b>CEC (02/17):</b> 6,000명 · CRS 508점 — 캐나다 경력자</li><li><b>헬스케어 (02/20):</b> 4,000명 · CRS 467점 — 의료·복지직</li><li><b>PNP (02/16, 02/03):</b> 각 279명·423명 · 789점·749점</li></ul><h3>나에게 맞는 전략</h3><p>① 의료직 종사자 → 의사/헬스케어 카테고리 우선 검토<br>② 프랑스어 CLB 7 달성 가능 → 프랑스어 카테고리 목표<br>③ 캐나다 내 1년 이상 경력 → CEC 경로 집중<br>④ 특정 주와 연계된 고용주 → PNP 전략<br>위 CRS 계산기로 현재 점수를 확인하고 AI 루트 분석을 실행해 보세요.</p>`
+            content: `<p>2026년 2~3월 드로우 데이터를 분석하면 <b>카테고리 기반 선발</b>이 이민 전략의 핵심임을 알 수 있습니다.</p><h3>최근 드로우 총정리</h3><ul><li><b>CEC (03/03):</b> 4,000명 · CRS 508점 — 역대 400번째 드로우</li><li><b>PNP (03/02):</b> 264명 · CRS 710점 — 실질 약 110점</li><li><b>헬스케어 (02/20):</b> 4,000명 · CRS 467점 — 의료·복지직</li><li><b>의사 카테고리 (02/19):</b> 391명 · CRS 169점 — 역대 최저권</li><li><b>CEC (02/17):</b> 6,000명 · CRS 508점 — 캐나다 경력자</li><li><b>프랑스어 (02/06):</b> 8,500명 · CRS 400점 — 역대 최대 규모</li></ul><h3>나에게 맞는 전략</h3><p>① 의료직 종사자 → 의사/헬스케어 카테고리 우선 검토<br>② 프랑스어 CLB 7 달성 가능 → 프랑스어 카테고리 목표<br>③ 캐나다 내 1년 이상 경력 → CEC 경로 집중<br>④ 특정 주와 연계된 고용주 → PNP 전략<br>위 CRS 계산기로 현재 점수를 확인하고 AI 루트 분석을 실행해 보세요.</p>`
         },
         {
             title: "Express Entry 2026년 연간 초청 목표 11만 명 — 역대 최대 규모",
@@ -129,6 +136,13 @@ const articlesData = {
         }
     ],
     en: [
+        {
+            title: "CEC Draw #400: 4,000 Invited at CRS 508",
+            badge: "CEC Draw",
+            date: "Mar 3, 2026",
+            summary: "On March 3, 2026, IRCC held its 12th Express Entry draw of the year — and the historic 400th draw overall — inviting 4,000 CEC candidates at a CRS cut-off of 508.",
+            content: `<p>On March 3, 2026, IRCC conducted the <b>400th Express Entry draw</b> in history, targeting the <b>Canadian Experience Class (CEC)</b>. A total of <b>4,000 invitations</b> were issued at a CRS cut-off of <b>508 points</b>.</p><h3>Key Points</h3><ul><li><b>Invitations:</b> 4,000 — down from 6,000 in the February 17 CEC draw.</li><li><b>CRS cut-off:</b> 508 — same level as the previous CEC draw.</li><li><b>Pool size:</b> 232,534 candidates in the Express Entry pool as of March 1, 2026.</li><li><b>2026 cumulative:</b> Approximately 39,112 ITAs issued this year.</li></ul><h3>CEC Requirements</h3><ul><li>At least <b>1 year</b> of skilled Canadian work experience (NOC TEER 0–3) in the past 3 years.</li><li>English CLB 7 (TEER 0–2) or CLB 5 (TEER 3) or higher.</li><li>Currently living and working legally in Canada.</li></ul><h3>Strategy</h3><p>With CRS 508 holding steady across two consecutive CEC draws, candidates in the 500–510 range face tight competition. The 501–600 score bracket has shrunk to 14,031 candidates — down 2,761 from mid-February — suggesting cut-offs may dip slightly in upcoming draws. Retaking IELTS to boost CLB scores remains the most effective strategy for CRS improvement.</p>`
+        },
         {
             title: "First March PNP Draw: 264 Invited at Effective CRS ~110",
             badge: "PNP",
@@ -182,8 +196,8 @@ const articlesData = {
             title: "2026 Category-Based Selection Guide: Which Path is Right for You?",
             badge: "Strategy Guide",
             date: "Feb 26, 2026",
-            summary: "From Healthcare to French, CEC, PNP, and the new Physician category — use February's real draw data to identify your best immigration pathway.",
-            content: `<p>February 2026's draw results confirm that <b>category-based selection</b> is now the dominant feature of Express Entry strategy.</p><h3>February 2026 Draw Summary</h3><ul><li><b>Physicians (Feb 19):</b> 391 invited · CRS 169 — historic low</li><li><b>French (Feb 6):</b> 8,500 invited · CRS 400 — record volume</li><li><b>CEC (Feb 17):</b> 6,000 invited · CRS 508 — Canadian work exp.</li><li><b>Healthcare (Feb 20):</b> 4,000 invited · CRS 467 — medical & social</li><li><b>PNP (Feb 16, Feb 3):</b> 279 & 423 invited · 789 & 749 pts</li></ul><h3>Choose Your Path</h3><p>① Medical professionals → Check Physician or Healthcare category eligibility first<br>② Can achieve French NCLC 7 → Prioritize French-language category<br>③ 1+ year Canadian work experience → Focus on CEC<br>④ Employer in a specific province → Pursue PNP strategy<br>Use the CRS Calculator above to find your score and run the AI route analysis.</p>`
+            summary: "From Healthcare to French, CEC, PNP, and the new Physician category — use the latest draw data to identify your best immigration pathway.",
+            content: `<p>Recent draw results from February–March 2026 confirm that <b>category-based selection</b> is now the dominant feature of Express Entry strategy.</p><h3>Latest Draw Summary</h3><ul><li><b>CEC (Mar 3):</b> 4,000 invited · CRS 508 — historic 400th draw</li><li><b>PNP (Mar 2):</b> 264 invited · CRS 710 — effective ~110</li><li><b>Healthcare (Feb 20):</b> 4,000 invited · CRS 467 — medical & social</li><li><b>Physicians (Feb 19):</b> 391 invited · CRS 169 — historic low</li><li><b>CEC (Feb 17):</b> 6,000 invited · CRS 508 — Canadian work exp.</li><li><b>French (Feb 6):</b> 8,500 invited · CRS 400 — record volume</li></ul><h3>Choose Your Path</h3><p>① Medical professionals → Check Physician or Healthcare category eligibility first<br>② Can achieve French NCLC 7 → Prioritize French-language category<br>③ 1+ year Canadian work experience → Focus on CEC<br>④ Employer in a specific province → Pursue PNP strategy<br>Use the CRS Calculator above to find your score and run the AI route analysis.</p>`
         },
         {
             title: "Express Entry 2026 Annual Target: 110,000 Invitations — Record High",
