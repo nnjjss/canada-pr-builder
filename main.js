@@ -30,6 +30,20 @@ const SCORE_BREAKDOWN_MAX = {
 const articlesData = {
     ko: [
         {
+            title: "3월 첫 PNP 드로우 — 264명 초청, 실질 CRS 약 110점",
+            badge: "PNP",
+            date: "2026년 3월 2일",
+            summary: "2026년 3월 첫 익스프레스 엔트리 드로우에서 PNP 후보 264명이 초청됐습니다. CRS 컷오프 710점(PNP 600점 제외 시 약 110점)으로 올해 최저 실질 컷오프를 기록했습니다.",
+            content: `<p>2026년 3월 2일, IRCC는 올해 11번째 익스프레스 엔트리 드로우이자 5번째 <b>주정부 이민(PNP)</b> 드로우를 실시했습니다. 총 <b>264명</b>에게 초청장(ITA)이 발급됐으며, CRS 컷오프는 <b>710점</b>입니다.</p><h3>주요 포인트</h3><ul><li><b>실질 CRS 약 110점:</b> PNP 600점 가산점을 제외하면 역대 최저 수준의 실질 컷오프.</li><li><b>타이브레이킹:</b> 2025년 8월 7일 18:02:56 UTC 이전 프로필 등록자 대상.</li><li><b>풀 규모:</b> 3월 1일 기준 Express Entry 풀에 232,534명이 등록 상태.</li></ul><h3>전략 포인트</h3><p>PNP 드로우 초청 규모가 소폭 줄었지만, 실질 컷오프가 매우 낮아 주정부 노미네이션만 받으면 사실상 ITA가 확정됩니다. 특정 주의 인력 수요 직종에 해당된다면 NOI(관심 표명서) 제출을 적극 검토하세요.</p>`
+        },
+        {
+            title: "2026 익스프레스 엔트리 카테고리 대폭 개편 — 5개 신규 카테고리 추가",
+            badge: "정책 변경",
+            date: "2026년 2월 18일",
+            summary: "이민부 장관이 2026년 카테고리 기반 선발 개편을 발표했습니다. 의사·연구원·고위관리자·운송직·군인 등 5개 신규 카테고리가 추가되고, 최소 경력 요건이 1년으로 상향됐습니다.",
+            content: `<p>2026년 2월 18일, 이민부 장관 Lena Metlege Diab는 <b>Express Entry 카테고리 기반 선발</b>의 대폭 개편을 발표했습니다.</p><h3>신규 카테고리 (5개)</h3><ul><li><b>캐나다 경력 의사:</b> NOC 31100~31102, 캐나다 내 12개월 이상 경력 필수.</li><li><b>캐나다 경력 연구원·고위관리자:</b> 12개월 이상 캐나다 근무 경력.</li><li><b>운송직:</b> 조종사·항공정비사·검사관 등, 캐나다 또는 해외 12개월 경력.</li><li><b>숙련 군인:</b> 외국군 10년 이상 복무 + 캐나다 군 3년 잡오퍼 + 2년제 이상 학력.</li></ul><h3>기존 카테고리 갱신</h3><ul><li><b>헬스케어 & 사회서비스:</b> 간호사·치과의사·약사·심리사 등 유지.</li><li><b>기술직(Trades):</b> 목수·배관공·기계공 등 유지.</li><li><b>프랑스어 우수자:</b> 지속 운영.</li></ul><h3>주요 변경사항</h3><p>모든 직업 카테고리의 <b>최소 경력 요건이 6개월에서 1년으로 상향</b>되었습니다. 또한 농업·식품 카테고리는 2026년에 폐지되었습니다. IRCC는 "양적 성장"에서 "핵심 인력 타겟팅"으로 전환하고 있습니다.</p>`
+        },
+        {
             title: "신설 '의사 카테고리' 첫 드로우 — CRS 169점, 2021년 이후 역대 최저",
             badge: "신설 카테고리",
             date: "2026년 2월 19일",
@@ -115,6 +129,20 @@ const articlesData = {
         }
     ],
     en: [
+        {
+            title: "First March PNP Draw: 264 Invited at Effective CRS ~110",
+            badge: "PNP",
+            date: "Mar 2, 2026",
+            summary: "The first Express Entry draw of March 2026 invited 264 PNP candidates at a CRS cut-off of 710 — an effective base score of approximately 110 points.",
+            content: `<p>On March 2, 2026, IRCC held the 11th Express Entry draw of the year and the 5th <b>Provincial Nominee Program (PNP)</b> draw, issuing <b>264 invitations</b> at a CRS cut-off of <b>710 points</b>.</p><h3>Key Points</h3><ul><li><b>Effective CRS ~110:</b> Excluding the 600-point PNP bonus, this is one of the lowest effective cut-offs on record.</li><li><b>Tie-breaking:</b> Applied to profiles created before August 7, 2025 at 18:02:56 UTC.</li><li><b>Pool size:</b> 232,534 candidates in the Express Entry pool as of March 1, 2026.</li></ul><h3>Strategy</h3><p>While the invitation volume was smaller, the extremely low effective cut-off means a provincial nomination virtually guarantees an ITA. If your occupation matches a province's in-demand list, submitting a Notice of Interest (NOI) should be a top priority.</p>`
+        },
+        {
+            title: "2026 Express Entry Overhaul: 5 New Categories Added",
+            badge: "Policy Change",
+            date: "Feb 18, 2026",
+            summary: "Immigration Minister announced major changes to category-based selection for 2026, adding physicians, researchers, senior managers, transport workers, and military recruits. Minimum work experience increased to 1 year.",
+            content: `<p>On February 18, 2026, Immigration Minister Lena Metlege Diab announced a major overhaul of <b>Express Entry category-based selection</b> for 2026.</p><h3>New Categories (5)</h3><ul><li><b>Physicians with Canadian Work Experience:</b> NOC 31100–31102, 12+ months Canadian experience required.</li><li><b>Researchers & Senior Managers:</b> 12+ months Canadian work experience.</li><li><b>Transport Occupations:</b> Pilots, aircraft mechanics, inspectors — 12 months Canadian or foreign experience.</li><li><b>Skilled Military Recruits:</b> 10+ years foreign military service + 3-year Canadian Armed Forces job offer + 2-year post-secondary credential.</li></ul><h3>Renewed Categories</h3><ul><li><b>Healthcare & Social Services:</b> Nurses, dentists, pharmacists, psychologists — continued.</li><li><b>Trades:</b> Carpenters, plumbers, machinists — continued.</li><li><b>French-Language Proficiency:</b> Ongoing.</li></ul><h3>Key Changes</h3><p>The <b>minimum work experience for all occupational categories increased from 6 months to 1 year</b>. The agriculture/agri-food category has been retired for 2026. IRCC is shifting from volume-driven growth to targeted talent attraction.</p>`
+        },
         {
             title: "New Physician Category: First Draw Hits Historic Low CRS of 169",
             badge: "New Category",
@@ -1036,6 +1064,8 @@ function isNewArticle(pubDate) {
 }
 
 const articlesMeta = [
+    { type: 'pnp',        pubDate: '2026-03-02' },
+    { type: 'news',       pubDate: '2026-02-18' },
     { type: 'special',    pubDate: '2026-02-19' },
     { type: 'french',     pubDate: '2026-02-06' },
     { type: 'cec',        pubDate: '2026-02-17' },
@@ -1052,6 +1082,7 @@ const articlesMeta = [
 
 // --- Express Entry Draw Data ---
 const drawsData = [
+    { isoDate: '2026-03-02', date: { ko: '2026년 3월 2일', en: 'Mar 2, 2026' }, type: 'pnp', label: { ko: '주정부 이민 (PNP)', en: 'Provincial Nominee Program (PNP)' }, invited: 264, cutoff: 710, effectiveCutoff: 110 },
     { isoDate: '2026-02-20', date: { ko: '2026년 2월 20일', en: 'Feb 20, 2026' }, type: 'healthcare', label: { ko: '헬스케어 & 소셜 서비스', en: 'Healthcare & Social Services' }, invited: 4000, cutoff: 467 },
     { isoDate: '2026-02-19', date: { ko: '2026년 2월 19일', en: 'Feb 19, 2026' }, type: 'special',    label: { ko: '신설 의사 카테고리', en: 'Physician Category (New)' }, invited: 391, cutoff: 169 },
     { isoDate: '2026-02-17', date: { ko: '2026년 2월 17일', en: 'Feb 17, 2026' }, type: 'cec',        label: { ko: '캐나다 경험 이민 (CEC)', en: 'Canadian Experience Class (CEC)' }, invited: 6000, cutoff: 508 },
