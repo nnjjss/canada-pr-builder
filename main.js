@@ -30,6 +30,13 @@ const SCORE_BREAKDOWN_MAX = {
 const articlesData = {
     ko: [
         {
+            title: "3월 프랑스어 드로우 #401 — 5,500명 초청, CRS 397점 (최근 1년 최저)",
+            badge: "프랑스어",
+            date: "2026년 3월 4일",
+            summary: "2026년 3월 4일, 프랑스어 우수자 카테고리에서 5,500명이 초청됐습니다. CRS 컷오프 397점은 최근 1년 이내 가장 낮은 수준으로, IRCC의 프랑코폰 이민 확대 의지를 재확인합니다.",
+            content: `<p>2026년 3월 4일, IRCC는 올해 13번째 익스프레스 엔트리 드로우이자 역사적인 <b>401번째 드로우</b>를 실시했습니다. <b>프랑스어 우수자(French-Language Proficiency)</b> 카테고리에서 <b>5,500명</b>에게 초청장(ITA)이 발급됐으며, CRS 컷오프는 <b>397점</b>으로 최근 1년 이내 최저 수준을 기록했습니다.</p><h3>주요 포인트</h3><ul><li><b>초청 규모:</b> 5,500명 — 2월 6일 프랑스어 드로우(8,500명) 대비 소폭 감소.</li><li><b>CRS 컷오프:</b> 397점 — 최근 1년 중 가장 낮은 컷오프.</li><li><b>타이브레이킹:</b> 2025년 10월 10일 18:18:20 UTC 이전 프로필 등록자 대상.</li><li><b>72시간 3연속 드로우:</b> 3월 2일 PNP → 3월 3일 CEC(#400) → 3월 4일 프랑스어(#401) 연속 실시.</li></ul><h3>프랑스어 카테고리 자격 요건</h3><ul><li>TEF Canada 또는 TCF Canada에서 <b>NCLC 7 이상</b>(읽기·쓰기·듣기·말하기 4개 영역 모두).</li><li>영어 CLB 5 이상 충족 필수.</li><li>Express Entry 풀 등록 상태 유지.</li></ul><h3>전략 포인트</h3><p>IRCC는 2027년까지 퀘벡 외 지역 신규 영주권자의 <b>9.5%를 프랑코폰</b>으로 채우겠다는 목표를 추진 중입니다. 3월 4일 드로우(CRS 397점)는 2월 6일(400점)보다도 낮아 프랑스어 카테고리의 경쟁력이 더욱 높아지고 있습니다. 현재 TEF 준비 중이라면 NCLC 7 달성이 올해 가장 효율적인 이민 전략 중 하나입니다.</p>`
+        },
+        {
             title: "3월 CEC 드로우 #400 — 4,000명 초청, CRS 508점",
             badge: "CEC 드로우",
             date: "2026년 3월 3일",
@@ -88,9 +95,9 @@ const articlesData = {
         {
             title: "2026년 카테고리 선발 완전 정복 — 내 직종에 맞는 경로 찾기",
             badge: "전략 가이드",
-            date: "2026년 2월 26일",
+            date: "2026년 3월 4일",
             summary: "헬스케어, 프랑스어, CEC, PNP, 의사 카테고리까지 — 2026년 실제 드로우 데이터를 바탕으로 내게 유리한 이민 경로를 분석합니다.",
-            content: `<p>2026년 2~3월 드로우 데이터를 분석하면 <b>카테고리 기반 선발</b>이 이민 전략의 핵심임을 알 수 있습니다.</p><h3>최근 드로우 총정리</h3><ul><li><b>CEC (03/03):</b> 4,000명 · CRS 508점 — 역대 400번째 드로우</li><li><b>PNP (03/02):</b> 264명 · CRS 710점 — 실질 약 110점</li><li><b>헬스케어 (02/20):</b> 4,000명 · CRS 467점 — 의료·복지직</li><li><b>의사 카테고리 (02/19):</b> 391명 · CRS 169점 — 역대 최저권</li><li><b>CEC (02/17):</b> 6,000명 · CRS 508점 — 캐나다 경력자</li><li><b>프랑스어 (02/06):</b> 8,500명 · CRS 400점 — 역대 최대 규모</li></ul><h3>나에게 맞는 전략</h3><p>① 의료직 종사자 → 의사/헬스케어 카테고리 우선 검토<br>② 프랑스어 CLB 7 달성 가능 → 프랑스어 카테고리 목표<br>③ 캐나다 내 1년 이상 경력 → CEC 경로 집중<br>④ 특정 주와 연계된 고용주 → PNP 전략<br>위 CRS 계산기로 현재 점수를 확인하고 AI 루트 분석을 실행해 보세요.</p>`
+            content: `<p>2026년 2~3월 드로우 데이터를 분석하면 <b>카테고리 기반 선발</b>이 이민 전략의 핵심임을 알 수 있습니다.</p><h3>최근 드로우 총정리</h3><ul><li><b>프랑스어 (03/04):</b> 5,500명 · CRS 397점 — 최근 1년 최저 컷오프</li><li><b>CEC (03/03):</b> 4,000명 · CRS 508점 — 역대 400번째 드로우</li><li><b>PNP (03/02):</b> 264명 · CRS 710점 — 실질 약 110점</li><li><b>헬스케어 (02/20):</b> 4,000명 · CRS 467점 — 의료·복지직</li><li><b>의사 카테고리 (02/19):</b> 391명 · CRS 169점 — 역대 최저권</li><li><b>CEC (02/17):</b> 6,000명 · CRS 508점 — 캐나다 경력자</li><li><b>프랑스어 (02/06):</b> 8,500명 · CRS 400점 — 역대 최대 규모</li></ul><h3>나에게 맞는 전략</h3><p>① 의료직 종사자 → 의사/헬스케어 카테고리 우선 검토<br>② 프랑스어 CLB 7 달성 가능 → 프랑스어 카테고리 목표<br>③ 캐나다 내 1년 이상 경력 → CEC 경로 집중<br>④ 특정 주와 연계된 고용주 → PNP 전략<br>위 CRS 계산기로 현재 점수를 확인하고 AI 루트 분석을 실행해 보세요.</p>`
         },
         {
             title: "Express Entry 2026년 연간 초청 목표 11만 명 — 역대 최대 규모",
@@ -136,6 +143,13 @@ const articlesData = {
         }
     ],
     en: [
+        {
+            title: "French Draw #401: 5,500 Invited at CRS 397 — Lowest Cut-off in Over a Year",
+            badge: "French Language",
+            date: "Mar 4, 2026",
+            summary: "On March 4, 2026, the French-Language Proficiency draw invited 5,500 candidates at a CRS cut-off of 397 — the lowest of any draw in more than 12 months, underscoring Canada's drive to grow its Francophone population outside Québec.",
+            content: `<p>On March 4, 2026, IRCC conducted the 13th Express Entry draw of the year — and the <b>401st draw overall</b> — inviting <b>5,500 candidates</b> under the <b>French-Language Proficiency</b> category. The CRS cut-off of <b>397 points</b> is the lowest recorded in more than a year.</p><h3>Key Points</h3><ul><li><b>Invitations:</b> 5,500 — slightly fewer than the February 6 French draw (8,500).</li><li><b>CRS cut-off:</b> 397 — lowest cut-off of any Express Entry draw in over 12 months.</li><li><b>Tie-breaking:</b> Profiles created before October 10, 2025 at 18:18:20 UTC.</li><li><b>72-hour sprint:</b> IRCC held three consecutive draws — PNP (Mar 2), CEC #400 (Mar 3), French #401 (Mar 4).</li></ul><h3>French-Language Proficiency Requirements</h3><ul><li>TEF Canada or TCF Canada score of <b>NCLC 7+</b> in all four abilities (reading, writing, listening, speaking).</li><li>English CLB 5 or higher is also required.</li><li>Active Express Entry profile.</li></ul><h3>Why This Matters</h3><p>IRCC is targeting <b>9.5% of new permanent residents outside Québec to be Francophone by 2027</b>. The CRS 397 cut-off — lower than the February French draw at 400 — confirms that this category consistently offers the most accessible pathway for anyone who can achieve NCLC 7. If you are learning French, the TEF Canada NCLC 7 milestone is one of the most impactful investments you can make in your PR journey right now.</p>`
+        },
         {
             title: "CEC Draw #400: 4,000 Invited at CRS 508",
             badge: "CEC Draw",
@@ -195,9 +209,9 @@ const articlesData = {
         {
             title: "2026 Category-Based Selection Guide: Which Path is Right for You?",
             badge: "Strategy Guide",
-            date: "Feb 26, 2026",
+            date: "Mar 4, 2026",
             summary: "From Healthcare to French, CEC, PNP, and the new Physician category — use the latest draw data to identify your best immigration pathway.",
-            content: `<p>Recent draw results from February–March 2026 confirm that <b>category-based selection</b> is now the dominant feature of Express Entry strategy.</p><h3>Latest Draw Summary</h3><ul><li><b>CEC (Mar 3):</b> 4,000 invited · CRS 508 — historic 400th draw</li><li><b>PNP (Mar 2):</b> 264 invited · CRS 710 — effective ~110</li><li><b>Healthcare (Feb 20):</b> 4,000 invited · CRS 467 — medical & social</li><li><b>Physicians (Feb 19):</b> 391 invited · CRS 169 — historic low</li><li><b>CEC (Feb 17):</b> 6,000 invited · CRS 508 — Canadian work exp.</li><li><b>French (Feb 6):</b> 8,500 invited · CRS 400 — record volume</li></ul><h3>Choose Your Path</h3><p>① Medical professionals → Check Physician or Healthcare category eligibility first<br>② Can achieve French NCLC 7 → Prioritize French-language category<br>③ 1+ year Canadian work experience → Focus on CEC<br>④ Employer in a specific province → Pursue PNP strategy<br>Use the CRS Calculator above to find your score and run the AI route analysis.</p>`
+            content: `<p>Recent draw results from February–March 2026 confirm that <b>category-based selection</b> is now the dominant feature of Express Entry strategy.</p><h3>Latest Draw Summary</h3><ul><li><b>French (Mar 4):</b> 5,500 invited · CRS 397 — lowest cut-off in over a year</li><li><b>CEC (Mar 3):</b> 4,000 invited · CRS 508 — historic 400th draw</li><li><b>PNP (Mar 2):</b> 264 invited · CRS 710 — effective ~110</li><li><b>Healthcare (Feb 20):</b> 4,000 invited · CRS 467 — medical & social</li><li><b>Physicians (Feb 19):</b> 391 invited · CRS 169 — historic low</li><li><b>CEC (Feb 17):</b> 6,000 invited · CRS 508 — Canadian work exp.</li><li><b>French (Feb 6):</b> 8,500 invited · CRS 400 — record volume</li></ul><h3>Choose Your Path</h3><p>① Medical professionals → Check Physician or Healthcare category eligibility first<br>② Can achieve French NCLC 7 → Prioritize French-language category<br>③ 1+ year Canadian work experience → Focus on CEC<br>④ Employer in a specific province → Pursue PNP strategy<br>Use the CRS Calculator above to find your score and run the AI route analysis.</p>`
         },
         {
             title: "Express Entry 2026 Annual Target: 110,000 Invitations — Record High",
@@ -1096,6 +1110,7 @@ const articlesMeta = [
 
 // --- Express Entry Draw Data ---
 const drawsData = [
+    { isoDate: '2026-03-04', date: { ko: '2026년 3월 4일', en: 'Mar 4, 2026' }, type: 'french', label: { ko: '프랑스어 우수자', en: 'French-Language Proficiency' }, invited: 5500, cutoff: 397 },
     { isoDate: '2026-03-03', date: { ko: '2026년 3월 3일', en: 'Mar 3, 2026' }, type: 'cec', label: { ko: '캐나다 경험 이민 (CEC)', en: 'Canadian Experience Class (CEC)' }, invited: 4000, cutoff: 508 },
     { isoDate: '2026-03-02', date: { ko: '2026년 3월 2일', en: 'Mar 2, 2026' }, type: 'pnp', label: { ko: '주정부 이민 (PNP)', en: 'Provincial Nominee Program (PNP)' }, invited: 264, cutoff: 710, effectiveCutoff: 110 },
     { isoDate: '2026-02-20', date: { ko: '2026년 2월 20일', en: 'Feb 20, 2026' }, type: 'healthcare', label: { ko: '헬스케어 & 소셜 서비스', en: 'Healthcare & Social Services' }, invited: 4000, cutoff: 467 },
