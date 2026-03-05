@@ -30,6 +30,13 @@ const SCORE_BREAKDOWN_MAX = {
 const articlesData = {
     ko: [
         {
+            title: "3월 5일 고위 관리자·임원 카테고리 첫 드로우 #402 — 250명 초청, CRS 429점",
+            badge: "신설 카테고리",
+            date: "2026년 3월 5일",
+            summary: "2026년 3월 5일, 캐나다 경력 고위 관리자·임원을 대상으로 한 카테고리 드로우에서 250명이 초청됐습니다. CRS 컷오프 429점으로 해당 카테고리 첫 번째 드로우입니다.",
+            content: `<p>2026년 3월 5일, IRCC는 <b>캐나다 경력 고위 관리자 및 임원진(Senior Managers & Officials with Canadian Work Experience)</b>을 대상으로 한 신설 카테고리의 첫 번째 익스프레스 엔트리 드로우(#402)를 실시했습니다. 총 <b>250명</b>에게 초청장(ITA)이 발급됐으며 CRS 컷오프는 <b>429점</b>입니다.</p><h3>주요 포인트</h3><ul><li><b>초청 규모:</b> 250명 — 신설 카테고리 특성상 풀 규모가 작아 소규모 드로우로 시작.</li><li><b>CRS 컷오프:</b> 429점 — 일반 선발(520점대) 대비 약 90점 낮은 수준.</li><li><b>드로우 번호:</b> 역대 402번째 익스프레스 엔트리 드로우.</li><li><b>4일 연속 드로우:</b> 3월 2일 PNP → 3월 3일 CEC → 3월 4일 프랑스어 → 3월 5일 고위 관리직 연속 실시.</li></ul><h3>해당 직종 (주요 NOC)</h3><ul><li><b>고위 정부 관리자 및 공무원(NOC 00011):</b> 연방·지방정부 고위직.</li><li><b>금융·통신·비즈니스 서비스 수석 관리자(NOC 00012):</b> CFO, VP급 이상.</li><li><b>보건·교육·사회서비스 수석 관리자(NOC 00013):</b> 병원장, 학교 교장 이상.</li><li><b>무역·방송·서비스업 수석 관리자(NOC 00014).</b></li><li><b>건설·운송·생산·유틸리티 수석 관리자(NOC 00015).</b></li></ul><h3>지원 요건</h3><ul><li>캐나다 내 <b>고위 관리직(NOC TEER 0, Major Group 00)에서 1년 이상 경력</b> 필수.</li><li>영어 CLB 7 이상 또는 프랑스어 NCLC 7 이상.</li><li>Express Entry 풀 등록 상태 유지.</li></ul><h3>전략 포인트</h3><p>이 카테고리는 캐나다 내 고위 임원급 경력자를 대상으로 하여 초청 규모는 작지만 CRS 컷오프가 일반 선발보다 현저히 낮습니다. 429점은 CEC(508점), 일반(524점)과 비교해 큰 이점입니다. 현재 캐나다에서 VP·이사·부장급 이상으로 근무 중이라면 NOC 코드가 00011~00015에 해당하는지 반드시 확인하세요. IRCC는 향후 드로우 빈도와 규모를 확대할 가능성이 높습니다.</p>`
+        },
+        {
             title: "3월 프랑스어 드로우 #401 — 5,500명 초청, CRS 397점 (최근 1년 최저)",
             badge: "프랑스어",
             date: "2026년 3월 4일",
@@ -95,9 +102,9 @@ const articlesData = {
         {
             title: "2026년 카테고리 선발 완전 정복 — 내 직종에 맞는 경로 찾기",
             badge: "전략 가이드",
-            date: "2026년 3월 4일",
-            summary: "헬스케어, 프랑스어, CEC, PNP, 의사 카테고리까지 — 2026년 실제 드로우 데이터를 바탕으로 내게 유리한 이민 경로를 분석합니다.",
-            content: `<p>2026년 2~3월 드로우 데이터를 분석하면 <b>카테고리 기반 선발</b>이 이민 전략의 핵심임을 알 수 있습니다.</p><h3>최근 드로우 총정리</h3><ul><li><b>프랑스어 (03/04):</b> 5,500명 · CRS 397점 — 최근 1년 최저 컷오프</li><li><b>CEC (03/03):</b> 4,000명 · CRS 508점 — 역대 400번째 드로우</li><li><b>PNP (03/02):</b> 264명 · CRS 710점 — 실질 약 110점</li><li><b>헬스케어 (02/20):</b> 4,000명 · CRS 467점 — 의료·복지직</li><li><b>의사 카테고리 (02/19):</b> 391명 · CRS 169점 — 역대 최저권</li><li><b>CEC (02/17):</b> 6,000명 · CRS 508점 — 캐나다 경력자</li><li><b>프랑스어 (02/06):</b> 8,500명 · CRS 400점 — 역대 최대 규모</li></ul><h3>나에게 맞는 전략</h3><p>① 의료직 종사자 → 의사/헬스케어 카테고리 우선 검토<br>② 프랑스어 CLB 7 달성 가능 → 프랑스어 카테고리 목표<br>③ 캐나다 내 1년 이상 경력 → CEC 경로 집중<br>④ 특정 주와 연계된 고용주 → PNP 전략<br>위 CRS 계산기로 현재 점수를 확인하고 AI 루트 분석을 실행해 보세요.</p>`
+            date: "2026년 3월 5일",
+            summary: "고위 관리자·임원, 헬스케어, 프랑스어, CEC, PNP, 의사 카테고리까지 — 2026년 실제 드로우 데이터를 바탕으로 내게 유리한 이민 경로를 분석합니다.",
+            content: `<p>2026년 2~3월 드로우 데이터를 분석하면 <b>카테고리 기반 선발</b>이 이민 전략의 핵심임을 알 수 있습니다.</p><h3>최근 드로우 총정리</h3><ul><li><b>고위 관리자·임원 (03/05):</b> 250명 · CRS 429점 — 해당 카테고리 첫 드로우</li><li><b>프랑스어 (03/04):</b> 5,500명 · CRS 397점 — 최근 1년 최저 컷오프</li><li><b>CEC (03/03):</b> 4,000명 · CRS 508점 — 역대 400번째 드로우</li><li><b>PNP (03/02):</b> 264명 · CRS 710점 — 실질 약 110점</li><li><b>헬스케어 (02/20):</b> 4,000명 · CRS 467점 — 의료·복지직</li><li><b>의사 카테고리 (02/19):</b> 391명 · CRS 169점 — 역대 최저권</li><li><b>CEC (02/17):</b> 6,000명 · CRS 508점 — 캐나다 경력자</li><li><b>프랑스어 (02/06):</b> 8,500명 · CRS 400점 — 역대 최대 규모</li></ul><h3>나에게 맞는 전략</h3><p>① 캐나다 VP·이사·부장급(NOC 000xx) → 고위 관리자·임원 카테고리 최우선<br>② 의료직 종사자 → 의사/헬스케어 카테고리 우선 검토<br>③ 프랑스어 CLB 7 달성 가능 → 프랑스어 카테고리 목표<br>④ 캐나다 내 1년 이상 경력 → CEC 경로 집중<br>⑤ 특정 주와 연계된 고용주 → PNP 전략<br>위 CRS 계산기로 현재 점수를 확인하고 AI 루트 분석을 실행해 보세요.</p>`
         },
         {
             title: "Express Entry 2026년 연간 초청 목표 11만 명 — 역대 최대 규모",
@@ -143,6 +150,13 @@ const articlesData = {
         }
     ],
     en: [
+        {
+            title: "Senior Managers & Officials Draw #402 — First-Ever: 250 Invited at CRS 429",
+            badge: "New Category",
+            date: "Mar 5, 2026",
+            summary: "On March 5, 2026, IRCC held the inaugural Express Entry draw for Senior Managers & Officials with Canadian work experience. Only 250 invitations were issued at a CRS cut-off of 429 — roughly 90 points below the general draw threshold.",
+            content: `<p>On March 5, 2026, IRCC conducted the <b>402nd Express Entry draw</b> in history, becoming the first-ever draw for the <b>Senior Managers & Officials with Canadian Work Experience</b> category. A total of <b>250 invitations</b> were issued at a CRS cut-off of <b>429 points</b>.</p><h3>Key Points</h3><ul><li><b>Invitations:</b> 250 — small pool size reflects the narrow eligibility criteria for senior-level NOC TEER 0 managers.</li><li><b>CRS cut-off:</b> 429 — approximately 90 points below the general draw (524) and 79 points below the latest CEC draw (508).</li><li><b>Draw number:</b> Historic 402nd Express Entry draw overall.</li><li><b>Four consecutive draws:</b> IRCC held draws on March 2 (PNP), 3 (CEC), 4 (French), and 5 (Senior Managers) — an unprecedented four-day streak.</li></ul><h3>Eligible Occupations (Key NOCs)</h3><ul><li><b>Senior Government Managers & Officials (NOC 00011):</b> Federal/provincial deputy ministers, senior executives.</li><li><b>Senior Managers — Financial, Communications & Business Services (NOC 00012):</b> CFO, VP-level and above.</li><li><b>Senior Managers — Health, Education & Social Services (NOC 00013):</b> Hospital CEOs, university presidents.</li><li><b>Senior Managers — Trade, Broadcasting & Other Services (NOC 00014).</b></li><li><b>Senior Managers — Construction, Transportation, Production & Utilities (NOC 00015).</b></li></ul><h3>Eligibility Requirements</h3><ul><li><b>1+ year of Canadian work experience</b> in a senior management role (NOC TEER 0, Major Group 00).</li><li>English CLB 7+ or French NCLC 7+.</li><li>Active Express Entry profile.</li></ul><h3>Why This Matters</h3><p>The 429 CRS cut-off is a significant advantage for senior executives in Canada who may not score high enough for general or CEC draws. If you hold a VP, Director, or equivalent title and your NOC falls in the 000xx range, you should immediately verify your eligibility and update your Express Entry profile. As the pool for this category grows, IRCC is expected to increase draw frequency and volume in future rounds.</p>`
+        },
         {
             title: "French Draw #401: 5,500 Invited at CRS 397 — Lowest Cut-off in Over a Year",
             badge: "French Language",
@@ -1110,6 +1124,7 @@ const articlesMeta = [
 
 // --- Express Entry Draw Data ---
 const drawsData = [
+    { isoDate: '2026-03-05', date: { ko: '2026년 3월 5일', en: 'Mar 5, 2026' }, type: 'management', label: { ko: '고위 관리자·임원 (캐나다 경력)', en: 'Senior Managers & Officials (Canadian Exp.)' }, invited: 250, cutoff: 429 },
     { isoDate: '2026-03-04', date: { ko: '2026년 3월 4일', en: 'Mar 4, 2026' }, type: 'french', label: { ko: '프랑스어 우수자', en: 'French-Language Proficiency' }, invited: 5500, cutoff: 397 },
     { isoDate: '2026-03-03', date: { ko: '2026년 3월 3일', en: 'Mar 3, 2026' }, type: 'cec', label: { ko: '캐나다 경험 이민 (CEC)', en: 'Canadian Experience Class (CEC)' }, invited: 4000, cutoff: 508 },
     { isoDate: '2026-03-02', date: { ko: '2026년 3월 2일', en: 'Mar 2, 2026' }, type: 'pnp', label: { ko: '주정부 이민 (PNP)', en: 'Provincial Nominee Program (PNP)' }, invited: 264, cutoff: 710, effectiveCutoff: 110 },
@@ -2196,6 +2211,10 @@ function isEligibleForDraw(draw, profile) {
             if (profile.occupationGroup === 'Transport')
                 return { eligible: true, reason: '' };
             return { eligible: false, reason: isKo ? '운송직 해당자만' : 'Transport occupations only' };
+        case 'management':
+            if (profile.canadianExpYears >= 1)
+                return { eligible: true, reason: '' };
+            return { eligible: false, reason: isKo ? '캐나다 고위 관리직 경력 1년 이상 필요' : 'Requires 1+ yr Canadian senior management exp.' };
         default:
             return { eligible: true, reason: '' };
     }
