@@ -30,6 +30,13 @@ const SCORE_BREAKDOWN_MAX = {
 const articlesData = {
     ko: [
         {
+            title: "3월 16일 PNP 드로우 #403 — 362명 초청, 실질 CRS 약 142점",
+            badge: "PNP",
+            date: "2026년 3월 16일",
+            summary: "2026년 3월 16일, 주정부 이민(PNP) 연계 드로우에서 362명이 초청됐습니다. CRS 컷오프 742점(PNP 600점 제외 시 실질 약 142점)으로 올해 15번째, PNP 6번째 드로우입니다.",
+            content: `<p>2026년 3월 16일, IRCC는 역대 <b>403번째 익스프레스 엔트리 드로우</b>를 실시했습니다. <b>주정부 이민(PNP)</b> 연계 카테고리에서 총 <b>362명</b>에게 초청장(ITA)이 발급됐으며, CRS 컷오프는 <b>742점</b>입니다.</p><h3>주요 포인트</h3><ul><li><b>실질 CRS 약 142점:</b> PNP 600점 가산점을 제외한 실질 컷오프 — 3월 2일 PNP 드로우(실질 110점) 대비 소폭 상승.</li><li><b>초청 규모:</b> 362명 — 3월 2일 PNP(264명) 대비 소폭 증가.</li><li><b>타이브레이킹:</b> 2025년 10월 5일 20:35:25 UTC 이전 프로필 등록자 대상.</li><li><b>2026년 누적:</b> 올해 총 45,224명에게 ITA 발급 완료.</li><li><b>현재 풀 규모:</b> 3월 15일 기준 231,362명이 Express Entry 풀에 등록.</li></ul><h3>PNP 전략 포인트</h3><p>PNP 노미네이션을 받으면 CRS에 600점이 자동 부여돼 ITA 획득이 사실상 확정됩니다. 실질 컷오프 142점은 여전히 매우 낮은 수준으로, 특정 주의 인력 수요 직종에 해당하거나 주정부 연계 고용주가 있다면 NOI(관심 표명서) 제출을 적극 검토하세요. BC PNP, OINP(온타리오), SINP(사스카추완) 등이 대표적인 주정부 프로그램입니다.</p>`
+        },
+        {
             title: "3월 5일 고위 관리자·임원 카테고리 첫 드로우 #402 — 250명 초청, CRS 429점",
             badge: "신설 카테고리",
             date: "2026년 3월 5일",
@@ -104,7 +111,7 @@ const articlesData = {
             badge: "전략 가이드",
             date: "2026년 3월 5일",
             summary: "고위 관리자·임원, 헬스케어, 프랑스어, CEC, PNP, 의사 카테고리까지 — 2026년 실제 드로우 데이터를 바탕으로 내게 유리한 이민 경로를 분석합니다.",
-            content: `<p>2026년 2~3월 드로우 데이터를 분석하면 <b>카테고리 기반 선발</b>이 이민 전략의 핵심임을 알 수 있습니다.</p><h3>최근 드로우 총정리</h3><ul><li><b>고위 관리자·임원 (03/05):</b> 250명 · CRS 429점 — 해당 카테고리 첫 드로우</li><li><b>프랑스어 (03/04):</b> 5,500명 · CRS 397점 — 최근 1년 최저 컷오프</li><li><b>CEC (03/03):</b> 4,000명 · CRS 508점 — 역대 400번째 드로우</li><li><b>PNP (03/02):</b> 264명 · CRS 710점 — 실질 약 110점</li><li><b>헬스케어 (02/20):</b> 4,000명 · CRS 467점 — 의료·복지직</li><li><b>의사 카테고리 (02/19):</b> 391명 · CRS 169점 — 역대 최저권</li><li><b>CEC (02/17):</b> 6,000명 · CRS 508점 — 캐나다 경력자</li><li><b>프랑스어 (02/06):</b> 8,500명 · CRS 400점 — 역대 최대 규모</li></ul><h3>나에게 맞는 전략</h3><p>① 캐나다 VP·이사·부장급(NOC 000xx) → 고위 관리자·임원 카테고리 최우선<br>② 의료직 종사자 → 의사/헬스케어 카테고리 우선 검토<br>③ 프랑스어 CLB 7 달성 가능 → 프랑스어 카테고리 목표<br>④ 캐나다 내 1년 이상 경력 → CEC 경로 집중<br>⑤ 특정 주와 연계된 고용주 → PNP 전략<br>위 CRS 계산기로 현재 점수를 확인하고 AI 루트 분석을 실행해 보세요.</p>`
+            content: `<p>2026년 2~3월 드로우 데이터를 분석하면 <b>카테고리 기반 선발</b>이 이민 전략의 핵심임을 알 수 있습니다.</p><h3>최근 드로우 총정리</h3><ul><li><b>PNP (03/16):</b> 362명 · CRS 742점 — 실질 약 142점</li><li><b>고위 관리자·임원 (03/05):</b> 250명 · CRS 429점 — 해당 카테고리 첫 드로우</li><li><b>프랑스어 (03/04):</b> 5,500명 · CRS 397점 — 최근 1년 최저 컷오프</li><li><b>CEC (03/03):</b> 4,000명 · CRS 508점 — 역대 400번째 드로우</li><li><b>PNP (03/02):</b> 264명 · CRS 710점 — 실질 약 110점</li><li><b>헬스케어 (02/20):</b> 4,000명 · CRS 467점 — 의료·복지직</li><li><b>의사 카테고리 (02/19):</b> 391명 · CRS 169점 — 역대 최저권</li><li><b>CEC (02/17):</b> 6,000명 · CRS 508점 — 캐나다 경력자</li><li><b>프랑스어 (02/06):</b> 8,500명 · CRS 400점 — 역대 최대 규모</li></ul><h3>나에게 맞는 전략</h3><p>① 캐나다 VP·이사·부장급(NOC 000xx) → 고위 관리자·임원 카테고리 최우선<br>② 의료직 종사자 → 의사/헬스케어 카테고리 우선 검토<br>③ 프랑스어 CLB 7 달성 가능 → 프랑스어 카테고리 목표<br>④ 캐나다 내 1년 이상 경력 → CEC 경로 집중<br>⑤ 특정 주와 연계된 고용주 → PNP 전략<br>위 CRS 계산기로 현재 점수를 확인하고 AI 루트 분석을 실행해 보세요.</p>`
         },
         {
             title: "Express Entry 2026년 연간 초청 목표 11만 명 — 역대 최대 규모",
@@ -150,6 +157,13 @@ const articlesData = {
         }
     ],
     en: [
+        {
+            title: "PNP Draw #403 — 362 Invited, Effective CRS ~142 (Mar 16, 2026)",
+            badge: "PNP",
+            date: "Mar 16, 2026",
+            summary: "On March 16, 2026, IRCC issued 362 invitations in the 15th Express Entry draw of the year — the 6th PNP draw of 2026. The CRS cut-off was 742 (effective ~142 excluding the 600-point PNP bonus).",
+            content: `<p>On March 16, 2026, IRCC conducted the <b>403rd Express Entry draw</b> in history, issuing <b>362 Invitations to Apply (ITAs)</b> under the <b>Provincial Nominee Program (PNP)</b> category. The CRS cut-off stood at <b>742 points</b>.</p><h3>Key Points</h3><ul><li><b>Effective CRS ~142:</b> Subtracting the 600-point PNP bonus, the underlying score required is approximately 142 — slightly higher than the March 2 PNP draw (~110).</li><li><b>Invitations:</b> 362 — up from 264 in the March 2 PNP draw.</li><li><b>Tie-breaking:</b> Profiles submitted before October 5, 2025 at 20:35:25 UTC.</li><li><b>2026 cumulative:</b> IRCC has now issued 45,224 ITAs so far in 2026.</li><li><b>Pool size:</b> 231,362 candidates as of March 15, 2026.</li></ul><h3>Strategy Takeaway</h3><p>Receiving a provincial nomination automatically adds 600 CRS points, making an ITA virtually guaranteed. An effective cut-off of ~142 remains extremely low, meaning almost any candidate with a valid PNP nomination will receive an invitation regardless of their base CRS score. If you work for an employer in a specific province or your occupation is in demand provincially, submitting a Notice of Interest (NOI) through BC PNP, OINP (Ontario), SINP (Saskatchewan), or another stream is the most direct pathway to permanent residence in 2026.</p>`
+        },
         {
             title: "Senior Managers & Officials Draw #402 — First-Ever: 250 Invited at CRS 429",
             badge: "New Category",
@@ -1124,6 +1138,7 @@ const articlesMeta = [
 
 // --- Express Entry Draw Data ---
 const drawsData = [
+    { isoDate: '2026-03-16', date: { ko: '2026년 3월 16일', en: 'Mar 16, 2026' }, type: 'pnp',        label: { ko: '주정부 이민 (PNP)', en: 'Provincial Nominee Program (PNP)' }, invited: 362,  cutoff: 742, effectiveCutoff: 142 },
     { isoDate: '2026-03-05', date: { ko: '2026년 3월 5일', en: 'Mar 5, 2026' }, type: 'management', label: { ko: '고위 관리자·임원 (캐나다 경력)', en: 'Senior Managers & Officials (Canadian Exp.)' }, invited: 250, cutoff: 429 },
     { isoDate: '2026-03-04', date: { ko: '2026년 3월 4일', en: 'Mar 4, 2026' }, type: 'french', label: { ko: '프랑스어 우수자', en: 'French-Language Proficiency' }, invited: 5500, cutoff: 397 },
     { isoDate: '2026-03-03', date: { ko: '2026년 3월 3일', en: 'Mar 3, 2026' }, type: 'cec', label: { ko: '캐나다 경험 이민 (CEC)', en: 'Canadian Experience Class (CEC)' }, invited: 4000, cutoff: 508 },
