@@ -30,6 +30,27 @@ const SCORE_BREAKDOWN_MAX = {
 const articlesData = {
     ko: [
         {
+            title: "3월 18일 프랑스어 드로우 #405 — 4,000명 초청, CRS 393점 역대 최저",
+            badge: "프랑스어",
+            date: "2026년 3월 18일",
+            summary: "2026년 3월 18일, 프랑스어 우수자 카테고리 드로우에서 4,000명이 초청됐습니다. CRS 컷오프 393점은 프랑스어 드로우 역대 최저이자 익스프레스 엔트리 전체에서도 최근 1년여 만에 처음으로 400점 아래로 내려간 수치입니다.",
+            content: `<p>2026년 3월 18일, IRCC는 <b>405번째 익스프레스 엔트리 드로우</b>이자 올해 세 번째 <b>프랑스어 우수자(French-Language Proficiency)</b> 드로우를 실시했습니다. 총 <b>4,000명</b>에게 초청장(ITA)이 발급됐으며, CRS 컷오프는 <b>393점</b>으로 프랑스어 카테고리 드로우 역대 최저이자 익스프레스 엔트리 전체를 통틀어 최근 1년 이상 만에 처음으로 400점 미만을 기록했습니다.</p><h3>주요 포인트</h3><ul><li><b>초청 규모:</b> 4,000명</li><li><b>CRS 컷오프:</b> 393점 — 2월 6일(400점) → 3월 4일(397점) → 3월 18일(393점)으로 3회 연속 하락.</li><li><b>타이브레이킹:</b> 2025년 12월 29일 12:47:31 UTC 이전 프로필 등록자 대상.</li><li><b>2026년 프랑스어 드로우 누적:</b> 2월 6일(8,500명) + 3월 4일(5,500명) + 3월 18일(4,000명) = 18,000명 초청.</li></ul><h3>프랑스어 카테고리 자격 요건</h3><ul><li>TEF Canada 또는 TCF Canada에서 <b>NCLC 7 이상</b>(읽기·쓰기·듣기·말하기 4개 영역 모두).</li><li>영어 CLB 5 이상 충족 필수.</li><li>Express Entry 풀 등록 상태 유지.</li></ul><h3>전략 포인트</h3><p>CRS 393점은 IRCC가 퀘벡 외 지역 프랑코폰 이민 목표(2027년까지 9.5%)를 달성하기 위해 드로우 규모와 빈도를 계속 확대하고 있다는 강력한 신호입니다. 현재 TEF/TCF를 준비 중이라면 NCLC 7 달성이 2026년 가장 효율적인 영주권 취득 전략 중 하나입니다. 프랑스어 B2 수준이면 충분히 도전할 수 있는 점수입니다.</p>`
+        },
+        {
+            title: "3월 17일 CEC 드로우 #404 — 4,000명 초청, CRS 507점 (18개월 만에 최저)",
+            badge: "CEC 드로우",
+            date: "2026년 3월 17일",
+            summary: "2026년 3월 17일, 캐나다 경험 이민(CEC) 드로우에서 4,000명이 초청됐습니다. CRS 컷오프 507점은 약 18개월(2024년 9월) 만에 가장 낮은 수준입니다.",
+            content: `<p>2026년 3월 17일, IRCC는 <b>404번째 익스프레스 엔트리 드로우</b>를 실시해 <b>캐나다 경험 이민(CEC)</b> 카테고리에서 <b>4,000명</b>에게 초청장(ITA)을 발급했습니다. CRS 컷오프는 <b>507점</b>으로 약 18개월(2024년 9월) 만에 가장 낮은 CEC 컷오프를 기록했습니다.</p><h3>주요 포인트</h3><ul><li><b>초청 규모:</b> 4,000명</li><li><b>CRS 컷오프:</b> 507점 — 3월 3일 CEC 드로우(508점) 대비 1점 추가 하락, 2024년 9월 이후 최저.</li><li><b>드로우 시각:</b> 2026년 3월 17일 10:44:46 UTC.</li><li><b>타이브레이킹:</b> 2025년 5월 11일 18:57:31 UTC 이전 프로필 등록자 대상.</li></ul><h3>CEC 자격 요건</h3><ul><li>최근 3년 내 캐나다 내 <b>1년 이상</b>의 숙련직(NOC TEER 0~3) 경력.</li><li>영어 CLB 7(TEER 0~2) 또는 CLB 5(TEER 3) 이상.</li><li>캐나다 내 거주 및 합법적 취업 상태.</li></ul><h3>전략 포인트</h3><p>CEC 컷오프가 507점으로 소폭 하락하며 하락 추세가 이어지고 있습니다. 500~510점 구간 후보자라면 이번 드로우를 기준으로 ITA 수령 가능성이 높아지고 있습니다. 언어 점수(CLB) 향상 또는 캐나다 경력 추가로 CRS를 끌어올리는 것이 가장 직접적인 전략입니다.</p>`
+        },
+        {
+            title: "3월 18일 OINP 6개 스트림 드로우 — 1,243명 초청, 마스터·박사 스트림 재개",
+            badge: "OINP",
+            date: "2026년 3월 18일",
+            summary: "2026년 3월 18일, 온타리오주(OINP)가 6개 스트림에 걸쳐 총 1,243명에게 초청장을 발급했습니다. 마스터 대학원(582명)·박사 대학원(525명) 스트림이 2024년 9월 이후 처음으로 재개됐습니다.",
+            content: `<p>2026년 3월 18일, 온타리오주 이민 프로그램(OINP)이 <b>6개 스트림</b>에 걸쳐 총 <b>1,243명</b>에게 초청장(ITA)을 발급했습니다. 특히 <b>마스터 대학원 스트림</b>과 <b>박사 대학원 스트림</b>이 2024년 9월 이후 처음으로 재개되어 주목받고 있습니다.</p><h3>스트림별 초청 현황</h3><ul><li><b>마스터 대학원(Masters Graduate):</b> 582명, 컷오프 30점 이상</li><li><b>박사 대학원(PhD Graduate):</b> 525명, 컷오프 49점 이상</li><li><b>고용주 잡오퍼 – 해외 근로자(의사):</b> 97명, 컷오프 36점 이상 (NOC 31100·31101·31102)</li><li><b>REDI 파일럿 – 해외 근로자:</b> 11명, 컷오프 47점 이상</li><li><b>REDI 파일럿 – 국제 학생:</b> 17명, 컷오프 61점 이상</li><li><b>REDI 파일럿 – 수요 직종:</b> 11명, 컷오프 30점 이상</li></ul><h3>주요 포인트</h3><ul><li><b>프로필 창:</b> 2025년 7월 2일~2026년 3월 16일 23:59 사이에 생성·증명된 프로필 대상.</li><li><b>신청 마감:</b> 마스터·박사 스트림은 초청 후 14일, 고용주·REDI 스트림은 17일 이내 신청.</li><li><b>마스터 스트림 자격:</b> 캐나다 내 합법 체류(취업·학업 퍼밋), 54개 적격 NOC 코드 중 하나에서 캐나다 경력 필요.</li><li><b>박사 스트림 자격:</b> 캐나다 내 합법 체류, 47개 적격 NOC 코드(관리·과학·공학·의료·교육 등) 해당.</li><li><b>REDI 파일럿 지역 요건:</b> 랜아크(Lanark) 또는 리즈앤그렌빌(Leeds and Grenville) 카운티 내 잡오퍼 필수.</li></ul><h3>이번 드로우에서 선발하지 않은 스트림</h3><p>인적 자본 우선(Human Capital Priorities), 프랑스어 숙련 근로자, 기술직, 일반 고용주 잡오퍼(의사·REDI 제외) 스트림은 이번 드로우에 포함되지 않았습니다.</p><h3>전략 포인트</h3><p>온타리오 주립 대학원 졸업자라면 마스터·박사 스트림 재개는 놓치면 안 될 기회입니다. OINP 스트림을 통해 주정부 노미네이션을 받으면 Express Entry CRS에 600점이 추가되어 ITA 획득이 사실상 확정됩니다. 의사(NOC 31100~31102)로 온타리오에서 근무 중이라면 고용주 잡오퍼(의사) 스트림도 함께 검토하세요.</p>`
+        },
+        {
             title: "3월 16일 PNP 드로우 #403 — 362명 초청, 실질 CRS 약 142점",
             badge: "PNP",
             date: "2026년 3월 16일",
@@ -157,6 +178,27 @@ const articlesData = {
         }
     ],
     en: [
+        {
+            title: "French Draw #405 (Mar 18) — 4,000 Invited at Record-Low CRS 393",
+            badge: "French Language",
+            date: "Mar 18, 2026",
+            summary: "On March 18, 2026, IRCC issued 4,000 invitations in the French-Language Proficiency draw. The CRS cut-off of 393 is the lowest ever for a French-category draw and marks the first time any Express Entry round has dipped below 400 in over a year.",
+            content: `<p>On March 18, 2026, IRCC conducted the <b>405th Express Entry draw</b> — the third French-Language Proficiency draw of 2026 — issuing <b>4,000 invitations</b> at a CRS cut-off of <b>393 points</b>. This is the lowest cut-off ever recorded for a French-category draw, and the first time any Express Entry round has fallen below 400 in more than a year.</p><h3>Key Points</h3><ul><li><b>Invitations:</b> 4,000</li><li><b>CRS cut-off:</b> 393 — continuing a three-draw declining trend: Feb 6 (400) → Mar 4 (397) → Mar 18 (393).</li><li><b>Tie-breaking:</b> Profiles created before December 29, 2025 at 12:47:31 UTC.</li><li><b>2026 French draw totals:</b> Feb 6 (8,500) + Mar 4 (5,500) + Mar 18 (4,000) = 18,000 invitations issued to French-proficiency candidates.</li></ul><h3>French-Language Proficiency Requirements</h3><ul><li>TEF Canada or TCF Canada score of <b>NCLC 7+</b> in all four abilities (reading, writing, listening, speaking).</li><li>English CLB 5 or higher is also required.</li><li>Active Express Entry profile.</li></ul><h3>Why This Matters</h3><p>A CRS cut-off of 393 signals that IRCC is aggressively expanding French-category draws to meet its target of <b>9.5% Francophone newcomers outside Québec by 2027</b>. With cut-offs declining across three consecutive draws, French language proficiency is now the single most impactful variable for most candidates below CRS 500. French B2 proficiency is sufficient to achieve NCLC 7.</p>`
+        },
+        {
+            title: "CEC Draw #404 (Mar 17) — 4,000 Invited at CRS 507, Lowest in 18 Months",
+            badge: "CEC Draw",
+            date: "Mar 17, 2026",
+            summary: "On March 17, 2026, IRCC issued 4,000 CEC invitations at a CRS cut-off of 507 — the lowest CEC cut-off since September 2024 and continuing a downward trend from the March 3 draw at 508.",
+            content: `<p>On March 17, 2026, IRCC conducted the <b>404th Express Entry draw</b>, issuing <b>4,000 Invitations to Apply (ITAs)</b> under the <b>Canadian Experience Class (CEC)</b> category. The CRS cut-off of <b>507 points</b> is the lowest for a CEC draw since approximately September 2024 — an 18-month low.</p><h3>Key Points</h3><ul><li><b>Invitations:</b> 4,000</li><li><b>CRS cut-off:</b> 507 — down 1 point from the March 3 CEC draw (508); lowest CEC cut-off in roughly 18 months.</li><li><b>Draw time:</b> March 17, 2026 at 10:44:46 UTC.</li><li><b>Tie-breaking:</b> Profiles created before May 11, 2025 at 18:57:31 UTC.</li></ul><h3>CEC Requirements</h3><ul><li>At least <b>1 year</b> of skilled Canadian work experience (NOC TEER 0–3) within the past 3 years.</li><li>English CLB 7 (TEER 0–2) or CLB 5 (TEER 3) or higher.</li><li>Currently residing and working legally in Canada.</li></ul><h3>Strategy</h3><p>With CEC cut-offs trending downward (508 → 507), candidates in the 500–510 range are now within striking distance of an invitation. If you are working in Canada on a valid permit, verify your NOC TEER classification and consider an IELTS/CELPIP retake to push your CRS above 507. Each additional CLB point in your weakest ability can add 3–6 CRS points.</p>`
+        },
+        {
+            title: "OINP Mar 18 — 1,243 Invited Across 6 Streams; Masters & PhD Streams Return",
+            badge: "OINP",
+            date: "Mar 18, 2026",
+            summary: "On March 18, 2026, Ontario (OINP) issued 1,243 invitations across 6 streams. The Masters Graduate (582) and PhD Graduate (525) streams returned for the first time since September 2024.",
+            content: `<p>On March 18, 2026, the Ontario Immigrant Nominee Program (OINP) issued a total of <b>1,243 invitations</b> across <b>6 targeted streams</b>. The headline news is the return of the <b>Masters Graduate</b> and <b>PhD Graduate</b> streams — the first draws for these streams since September 2024.</p><h3>Draw Breakdown</h3><ul><li><b>Masters Graduate:</b> 582 invitations — score threshold 30+</li><li><b>PhD Graduate:</b> 525 invitations — score threshold 49+</li><li><b>Employer Job Offer – Foreign Worker (Physicians):</b> 97 invitations — score threshold 36+ (NOC 31100, 31101, 31102)</li><li><b>REDI Pilot – Foreign Worker:</b> 11 invitations — score threshold 47+</li><li><b>REDI Pilot – International Student:</b> 17 invitations — score threshold 61+</li><li><b>REDI Pilot – In-Demand Skills:</b> 11 invitations — score threshold 30+</li></ul><h3>Key Details</h3><ul><li><b>Profile window:</b> Profiles must have been created and attested between July 2, 2025 and March 16, 2026 at 11:59 p.m.</li><li><b>Application deadline:</b> 14 calendar days for Masters/PhD streams; 17 days for Employer Job Offer and REDI streams.</li><li><b>Masters stream eligibility:</b> Currently residing in Canada with a valid work or study permit; Canadian work experience in one of 54 eligible NOC codes.</li><li><b>PhD stream eligibility:</b> Currently residing in Canada with a valid work or study permit; NOC must fall within 47 eligible codes spanning management, sciences, engineering, healthcare, and education.</li><li><b>REDI Pilot requirement:</b> Job offer must be located in Lanark or Leeds and Grenville counties.</li></ul><h3>Streams Not Drawn This Round</h3><p>Human Capital Priorities, French-Speaking Skilled Worker, Skilled Trades, and the general Employer Job Offer streams (excluding physicians and REDI) did not issue invitations on March 18.</p><h3>Strategy Takeaway</h3><p>For Ontario graduate students and recent alumni, the return of the Masters and PhD streams is a significant opportunity. An OINP nomination adds 600 CRS points, virtually guaranteeing an Express Entry ITA. Physicians (NOC 31100–31102) working in Ontario should also review eligibility for the Employer Job Offer – Physicians stream, which had a low score threshold of 36.</p>`
+        },
         {
             title: "PNP Draw #403 — 362 Invited, Effective CRS ~142 (Mar 16, 2026)",
             badge: "PNP",
@@ -1138,6 +1180,8 @@ const articlesMeta = [
 
 // --- Express Entry Draw Data ---
 const drawsData = [
+    { isoDate: '2026-03-18', date: { ko: '2026년 3월 18일', en: 'Mar 18, 2026' }, type: 'french',     label: { ko: '프랑스어 우수자', en: 'French-Language Proficiency' }, invited: 4000, cutoff: 393 },
+    { isoDate: '2026-03-17', date: { ko: '2026년 3월 17일', en: 'Mar 17, 2026' }, type: 'cec',        label: { ko: '캐나다 경험 이민 (CEC)', en: 'Canadian Experience Class (CEC)' }, invited: 4000, cutoff: 507 },
     { isoDate: '2026-03-16', date: { ko: '2026년 3월 16일', en: 'Mar 16, 2026' }, type: 'pnp',        label: { ko: '주정부 이민 (PNP)', en: 'Provincial Nominee Program (PNP)' }, invited: 362,  cutoff: 742, effectiveCutoff: 142 },
     { isoDate: '2026-03-05', date: { ko: '2026년 3월 5일', en: 'Mar 5, 2026' }, type: 'management', label: { ko: '고위 관리자·임원 (캐나다 경력)', en: 'Senior Managers & Officials (Canadian Exp.)' }, invited: 250, cutoff: 429 },
     { isoDate: '2026-03-04', date: { ko: '2026년 3월 4일', en: 'Mar 4, 2026' }, type: 'french', label: { ko: '프랑스어 우수자', en: 'French-Language Proficiency' }, invited: 5500, cutoff: 397 },
