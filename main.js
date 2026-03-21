@@ -37,18 +37,18 @@ const articlesData = {
             content: `<p>2026년 3월 18일, IRCC는 <b>405번째 익스프레스 엔트리 드로우</b>이자 올해 세 번째 <b>프랑스어 우수자(French-Language Proficiency)</b> 드로우를 실시했습니다. 총 <b>4,000명</b>에게 초청장(ITA)이 발급됐으며, CRS 컷오프는 <b>393점</b>으로 프랑스어 카테고리 드로우 역대 최저이자 익스프레스 엔트리 전체를 통틀어 최근 1년 이상 만에 처음으로 400점 미만을 기록했습니다.</p><h3>주요 포인트</h3><ul><li><b>초청 규모:</b> 4,000명</li><li><b>CRS 컷오프:</b> 393점 — 2월 6일(400점) → 3월 4일(397점) → 3월 18일(393점)으로 3회 연속 하락.</li><li><b>타이브레이킹:</b> 2025년 12월 29일 12:47:31 UTC 이전 프로필 등록자 대상.</li><li><b>2026년 프랑스어 드로우 누적:</b> 2월 6일(8,500명) + 3월 4일(5,500명) + 3월 18일(4,000명) = 18,000명 초청.</li></ul><h3>프랑스어 카테고리 자격 요건</h3><ul><li>TEF Canada 또는 TCF Canada에서 <b>NCLC 7 이상</b>(읽기·쓰기·듣기·말하기 4개 영역 모두).</li><li>영어 CLB 5 이상 충족 필수.</li><li>Express Entry 풀 등록 상태 유지.</li></ul><h3>전략 포인트</h3><p>CRS 393점은 IRCC가 퀘벡 외 지역 프랑코폰 이민 목표(2027년까지 9.5%)를 달성하기 위해 드로우 규모와 빈도를 계속 확대하고 있다는 강력한 신호입니다. 현재 TEF/TCF를 준비 중이라면 NCLC 7 달성이 2026년 가장 효율적인 영주권 취득 전략 중 하나입니다. 프랑스어 B2 수준이면 충분히 도전할 수 있는 점수입니다.</p>`
         },
         {
-            title: "3월 17일 CEC 드로우 #404 — 4,000명 초청, CRS 507점 (18개월 만에 최저)",
-            badge: "CEC 드로우",
-            date: "2026년 3월 17일",
-            summary: "2026년 3월 17일, 캐나다 경험 이민(CEC) 드로우에서 4,000명이 초청됐습니다. CRS 컷오프 507점은 약 18개월(2024년 9월) 만에 가장 낮은 수준입니다.",
-            content: `<p>2026년 3월 17일, IRCC는 <b>404번째 익스프레스 엔트리 드로우</b>를 실시해 <b>캐나다 경험 이민(CEC)</b> 카테고리에서 <b>4,000명</b>에게 초청장(ITA)을 발급했습니다. CRS 컷오프는 <b>507점</b>으로 약 18개월(2024년 9월) 만에 가장 낮은 CEC 컷오프를 기록했습니다.</p><h3>주요 포인트</h3><ul><li><b>초청 규모:</b> 4,000명</li><li><b>CRS 컷오프:</b> 507점 — 3월 3일 CEC 드로우(508점) 대비 1점 추가 하락, 2024년 9월 이후 최저.</li><li><b>드로우 시각:</b> 2026년 3월 17일 10:44:46 UTC.</li><li><b>타이브레이킹:</b> 2025년 5월 11일 18:57:31 UTC 이전 프로필 등록자 대상.</li></ul><h3>CEC 자격 요건</h3><ul><li>최근 3년 내 캐나다 내 <b>1년 이상</b>의 숙련직(NOC TEER 0~3) 경력.</li><li>영어 CLB 7(TEER 0~2) 또는 CLB 5(TEER 3) 이상.</li><li>캐나다 내 거주 및 합법적 취업 상태.</li></ul><h3>전략 포인트</h3><p>CEC 컷오프가 507점으로 소폭 하락하며 하락 추세가 이어지고 있습니다. 500~510점 구간 후보자라면 이번 드로우를 기준으로 ITA 수령 가능성이 높아지고 있습니다. 언어 점수(CLB) 향상 또는 캐나다 경력 추가로 CRS를 끌어올리는 것이 가장 직접적인 전략입니다.</p>`
-        },
-        {
             title: "3월 18일 OINP 6개 스트림 드로우 — 1,243명 초청, 마스터·박사 스트림 재개",
             badge: "OINP",
             date: "2026년 3월 18일",
             summary: "2026년 3월 18일, 온타리오주(OINP)가 6개 스트림에 걸쳐 총 1,243명에게 초청장을 발급했습니다. 마스터 대학원(582명)·박사 대학원(525명) 스트림이 2024년 9월 이후 처음으로 재개됐습니다.",
             content: `<p>2026년 3월 18일, 온타리오주 이민 프로그램(OINP)이 <b>6개 스트림</b>에 걸쳐 총 <b>1,243명</b>에게 초청장(ITA)을 발급했습니다. 특히 <b>마스터 대학원 스트림</b>과 <b>박사 대학원 스트림</b>이 2024년 9월 이후 처음으로 재개되어 주목받고 있습니다.</p><h3>스트림별 초청 현황</h3><ul><li><b>마스터 대학원(Masters Graduate):</b> 582명, 컷오프 30점 이상</li><li><b>박사 대학원(PhD Graduate):</b> 525명, 컷오프 49점 이상</li><li><b>고용주 잡오퍼 – 해외 근로자(의사):</b> 97명, 컷오프 36점 이상 (NOC 31100·31101·31102)</li><li><b>REDI 파일럿 – 해외 근로자:</b> 11명, 컷오프 47점 이상</li><li><b>REDI 파일럿 – 국제 학생:</b> 17명, 컷오프 61점 이상</li><li><b>REDI 파일럿 – 수요 직종:</b> 11명, 컷오프 30점 이상</li></ul><h3>주요 포인트</h3><ul><li><b>프로필 창:</b> 2025년 7월 2일~2026년 3월 16일 23:59 사이에 생성·증명된 프로필 대상.</li><li><b>신청 마감:</b> 마스터·박사 스트림은 초청 후 14일, 고용주·REDI 스트림은 17일 이내 신청.</li><li><b>마스터 스트림 자격:</b> 캐나다 내 합법 체류(취업·학업 퍼밋), 54개 적격 NOC 코드 중 하나에서 캐나다 경력 필요.</li><li><b>박사 스트림 자격:</b> 캐나다 내 합법 체류, 47개 적격 NOC 코드(관리·과학·공학·의료·교육 등) 해당.</li><li><b>REDI 파일럿 지역 요건:</b> 랜아크(Lanark) 또는 리즈앤그렌빌(Leeds and Grenville) 카운티 내 잡오퍼 필수.</li></ul><h3>이번 드로우에서 선발하지 않은 스트림</h3><p>인적 자본 우선(Human Capital Priorities), 프랑스어 숙련 근로자, 기술직, 일반 고용주 잡오퍼(의사·REDI 제외) 스트림은 이번 드로우에 포함되지 않았습니다.</p><h3>전략 포인트</h3><p>온타리오 주립 대학원 졸업자라면 마스터·박사 스트림 재개는 놓치면 안 될 기회입니다. OINP 스트림을 통해 주정부 노미네이션을 받으면 Express Entry CRS에 600점이 추가되어 ITA 획득이 사실상 확정됩니다. 의사(NOC 31100~31102)로 온타리오에서 근무 중이라면 고용주 잡오퍼(의사) 스트림도 함께 검토하세요.</p>`
+        },
+        {
+            title: "3월 17일 CEC 드로우 #404 — 4,000명 초청, CRS 507점 (18개월 만에 최저)",
+            badge: "CEC 드로우",
+            date: "2026년 3월 17일",
+            summary: "2026년 3월 17일, 캐나다 경험 이민(CEC) 드로우에서 4,000명이 초청됐습니다. CRS 컷오프 507점은 약 18개월(2024년 9월) 만에 가장 낮은 수준입니다.",
+            content: `<p>2026년 3월 17일, IRCC는 <b>404번째 익스프레스 엔트리 드로우</b>를 실시해 <b>캐나다 경험 이민(CEC)</b> 카테고리에서 <b>4,000명</b>에게 초청장(ITA)을 발급했습니다. CRS 컷오프는 <b>507점</b>으로 약 18개월(2024년 9월) 만에 가장 낮은 CEC 컷오프를 기록했습니다.</p><h3>주요 포인트</h3><ul><li><b>초청 규모:</b> 4,000명</li><li><b>CRS 컷오프:</b> 507점 — 3월 3일 CEC 드로우(508점) 대비 1점 추가 하락, 2024년 9월 이후 최저.</li><li><b>드로우 시각:</b> 2026년 3월 17일 10:44:46 UTC.</li><li><b>타이브레이킹:</b> 2025년 5월 11일 18:57:31 UTC 이전 프로필 등록자 대상.</li></ul><h3>CEC 자격 요건</h3><ul><li>최근 3년 내 캐나다 내 <b>1년 이상</b>의 숙련직(NOC TEER 0~3) 경력.</li><li>영어 CLB 7(TEER 0~2) 또는 CLB 5(TEER 3) 이상.</li><li>캐나다 내 거주 및 합법적 취업 상태.</li></ul><h3>전략 포인트</h3><p>CEC 컷오프가 507점으로 소폭 하락하며 하락 추세가 이어지고 있습니다. 500~510점 구간 후보자라면 이번 드로우를 기준으로 ITA 수령 가능성이 높아지고 있습니다. 언어 점수(CLB) 향상 또는 캐나다 경력 추가로 CRS를 끌어올리는 것이 가장 직접적인 전략입니다.</p>`
         },
         {
             title: "3월 16일 PNP 드로우 #403 — 362명 초청, 실질 CRS 약 142점",
@@ -58,11 +58,39 @@ const articlesData = {
             content: `<p>2026년 3월 16일, IRCC는 역대 <b>403번째 익스프레스 엔트리 드로우</b>를 실시했습니다. <b>주정부 이민(PNP)</b> 연계 카테고리에서 총 <b>362명</b>에게 초청장(ITA)이 발급됐으며, CRS 컷오프는 <b>742점</b>입니다.</p><h3>주요 포인트</h3><ul><li><b>실질 CRS 약 142점:</b> PNP 600점 가산점을 제외한 실질 컷오프 — 3월 2일 PNP 드로우(실질 110점) 대비 소폭 상승.</li><li><b>초청 규모:</b> 362명 — 3월 2일 PNP(264명) 대비 소폭 증가.</li><li><b>타이브레이킹:</b> 2025년 10월 5일 20:35:25 UTC 이전 프로필 등록자 대상.</li><li><b>2026년 누적:</b> 올해 총 45,224명에게 ITA 발급 완료.</li><li><b>현재 풀 규모:</b> 3월 15일 기준 231,362명이 Express Entry 풀에 등록.</li></ul><h3>PNP 전략 포인트</h3><p>PNP 노미네이션을 받으면 CRS에 600점이 자동 부여돼 ITA 획득이 사실상 확정됩니다. 실질 컷오프 142점은 여전히 매우 낮은 수준으로, 특정 주의 인력 수요 직종에 해당하거나 주정부 연계 고용주가 있다면 NOI(관심 표명서) 제출을 적극 검토하세요. BC PNP, OINP(온타리오), SINP(사스카추완) 등이 대표적인 주정부 프로그램입니다.</p>`
         },
         {
+            title: "2026 이민부 연간 계획 발표 — TR 43% 감축·PR 38만 명·프랑코폰 10.5%",
+            badge: "이민 정책",
+            date: "2026년 3월 13일",
+            summary: "IRCC가 2026-27 연간 계획을 발표했습니다. 임시 거주자(TR) 신규 입국을 43% 감축하고 영주권(PR) 연간 목표를 38만 명으로 유지하며, 임시 근로자 3만 3천 명을 위한 TR→PR 특별 전환 경로를 확인했습니다.",
+            content: `<p>2026년 3월 13일, IRCC(캐나다 이민·난민·시민권부)가 <b>2026-27 연간 이민 부서 계획(Departmental Plan)</b>을 공식 발표했습니다. 이 계획은 2026~2028 이민 수준 계획(Immigration Levels Plan)을 구체화한 문서로, 캐나다 이민 정책의 방향을 종합적으로 확인할 수 있습니다.</p><h3>핵심 내용</h3><ul><li><b>PR 목표 38만 명 유지:</b> 2026~2028년 매년 영주권자 38만 명 수용, 경제 이민이 전체의 64%(2027~2028년) 차지.</li><li><b>TR 신규 입국 43% 감축:</b> 임시 거주자(유학생·취업 허가자) 신규 입국이 2025년 673,650명에서 2026년 385,000명으로 대폭 감소.</li><li><b>임시 거주자 비율 5% 이하 목표:</b> 2027년 말까지 캐나다 전체 인구 대비 임시 거주자 비율을 5% 미만으로 감축.</li><li><b>TR→PR 특별 전환 경로:</b> 2026~2027년에 걸쳐 임시 근로자 3만 3천 명을 PR로 전환하는 일회성 프로그램 운영.</li><li><b>프랑코폰 이민 확대:</b> 퀘벡 외 지역 프랑스어권 이민자 비율을 2028년까지 10.5%로 상향.</li><li><b>148,000명 NPR→PR 가속:</b> 현재 비영주 거주자(NPR) 중 148,000명을 2026~2027년 중 PR로 전환 가속.</li></ul><h3>이민자에게 미치는 영향</h3><ul><li><b>Express Entry 카테고리 드로우 확대:</b> 경제 이민 비중 증가로 카테고리 기반 드로우(프랑스어·헬스케어·STEM 등)가 더욱 활발해질 전망.</li><li><b>유학생·취업 비자 축소:</b> 신규 TR 입국 감소로 유학생 및 취업 비자 승인율이 하락할 가능성.</li><li><b>기존 TR 보유자 기회:</b> 캐나다 내 이미 체류 중인 임시 근로자라면 TR→PR 전환 경로 대상이 될 수 있어 빠른 준비 필요.</li></ul><h3>전략 포인트</h3><p>IRCC의 방향은 명확합니다: <b>신규 입국은 줄이고 기존 체류자를 PR로 흡수</b>합니다. 캐나다 내 취업 비자로 근무 중이라면 TR→PR 전환 경로(농업·환대산업·운송·의료·농촌 지역 우선)를 적극 검토하세요. 동시에 Express Entry CRS 점수를 높여 카테고리 드로우를 통한 PR 취득을 병행하는 이중 전략이 가장 효과적입니다.</p>`
+        },
+        {
+            title: "Bill C-12 상원 통과 — 역대 최대 규모 이민법 개편, 어떻게 달라지나",
+            badge: "이민 정책",
+            date: "2026년 3월 12일",
+            summary: "이민·국경 강화법(Bill C-12)이 2026년 3월 12일 상원 3독회를 통과했습니다. 이민 신청 처리 일시 중단 권한, 망명 자격 변경, 개인정보 공유 규정 등 중대한 변화가 포함됩니다.",
+            content: `<p>2026년 3월 12일, 캐나다 상원이 <b>Bill C-12 「캐나다 이민 시스템 및 국경 강화법(Strengthening Canada's Immigration System and Borders Act)」</b>을 수정안과 함께 3독회 통과시켰습니다. 법안은 현재 하원에서 상원 수정안 검토 중으로, 최종 왕실 재가 후 발효됩니다.</p><h3>3대 핵심 변경 사항</h3><ul><li><b>① 행정부 긴급 권한 부여:</b> 총독(Governor in Council)이 이민 신청 접수·처리를 일시 중단하거나 종료할 수 있는 권한을 갖습니다. 취업 허가·학생 비자·방문 비자·영주권 비자 등 이민 서류를 취소·정지·변경할 수 있으며, 임시 거주자에게 추가 조건을 부과할 수 있습니다.</li><li><b>② 망명 신청 자격 변경:</b> 2020년 6월 24일 이후 캐나다 입국 후 1년 이상 경과 후 망명 신청한 경우, 이민·난민 위원회(IRB) 정식 심리 대신 '출국 전 위험 평가(PRRA)'로 처리됩니다. PRRA는 본국 송환 시 위험만 평가하는 간소화 절차입니다.</li><li><b>③ 개인정보 공유 확대:</b> IRCC가 개인 정보(신원·체류 상태·발급 서류 등)를 다른 정부 기관 및 정부 통제 법인과 공유할 수 있습니다. 단, 상원 수정안에 따라 캐나다 시민권자·영주권자의 정보는 공유 범위에서 제외됩니다.</li></ul><h3>상원 수정안 주요 내용</h3><ul><li>시민권자·영주권자 정보 보호 조항 추가 (Senator Paulette Senior 발의).</li><li>법 발효 후 5년마다 신청 거절 건수·PRRA 결과를 의회에 보고하는 의무화 (Senator Tony Dean 발의).</li></ul><h3>이민자에게 미치는 영향</h3><ul><li><b>Express Entry 지원자:</b> 카테고리 드로우·일반 선발 등 정규 경로에는 큰 영향 없음. 이미 ITA를 받고 PR 신청 진행 중인 경우도 적용 제외.</li><li><b>임시 거주자(유학생·취업 비자):</b> 행정부 긴급 권한 발동 시 취업·학업 허가 정지·취소 가능성 있음. 현재는 정규 운영 중.</li><li><b>망명 신청자:</b> 2020년 6월 이후 입국자로 1년 이상 경과 후 신청한 경우 PRRA 대상 가능성.</li></ul><h3>전략 포인트</h3><p>현재 Express Entry를 통한 PR 신청 절차는 정상 운영 중입니다. Bill C-12는 주로 임시 비자·국경 통제·망명 시스템을 대상으로 하므로, 정규 이민 경로(EE·PNP·AIP 등)를 통한 지원자에게는 직접적인 영향이 제한적입니다. 단, 임시 근로자·유학생이라면 체류 상태를 철저히 유지하고 PR 전환을 서두르는 것이 중요합니다.</p>`
+        },
+        {
+            title: "TR→PR 신규 경로 개시 — 임시 근로자 3만 3천 명, 영주권 취득 기회",
+            badge: "새 이민 경로",
+            date: "2026년 3월 6일",
+            summary: "IRCC가 2026년 3월 초, 임시 근로자 3만 3천 명을 대상으로 한 일회성 TR→PR 전환 경로를 조용히 개시했습니다. 농업·환대·운송·의료·농촌 지역 종사자 우선, 세부 지침은 2026년 4월 발표 예정입니다.",
+            content: `<p>2026년 3월 초, IRCC가 <b>임시 거주자 → 영주권자(TR to PR) 일회성 특별 전환 경로</b>를 조용히 개시했습니다. 이 프로그램은 2026~2027년에 걸쳐 <b>3만 3천 명</b>의 임시 외국인 근로자(TFW)에게 영주권 취득 기회를 제공하며, 신청 접수는 이미 시작됐습니다.</p><h3>대상 업종 및 우선 분야</h3><ul><li><b>농업(Agriculture):</b> 농장 근로자, 계절 농업 근로자.</li><li><b>환대 산업(Hospitality):</b> 호텔·레스토랑·관광 분야.</li><li><b>운송(Transportation):</b> 트럭 운전사, 버스 운전사 등.</li><li><b>의료·돌봄(Healthcare &amp; Caring Professions):</b> 간병인, 요양보호사 등.</li><li><b>농촌 지역 종사자:</b> 소도시·농촌 지역 기반 근로자 우선.</li></ul><h3>예상 자격 요건 (세부 지침 4월 발표 예정)</h3><ul><li>유효한 임시 취업 허가(Temporary Foreign Worker Program 또는 International Mobility Program) 보유.</li><li>캐나다 내 실제 근무 중.</li><li>합법적 체류 상태 유지.</li><li>캐나다 내 취업 경력, 최근 세금 신고(NOA·T4), 언어 성적(해당 시), 지역 정착 증거.</li><li>장기 고용·지역사회 연계·인력 부족 분야 종사자 우선.</li></ul><h3>준비 서류 목록</h3><ul><li>유효한 취업 허가증 및 갱신 이력.</li><li>급여 명세서(Pay Stubs) 및 세금 신고 서류(T4·NOA).</li><li>언어 시험 성적(IELTS·CELPIP 등, 해당 시).</li><li>캐나다 거주 및 지역사회 참여 증빙(임대 계약서, 지역 활동 증명 등).</li><li>고용주 지원 서한(필요 시).</li></ul><h3>타임라인</h3><ul><li><b>2026년 3월:</b> 프로그램 조용히 개시, 일부 신청 접수 시작.</li><li><b>2026년 4월:</b> 직종 목록·세부 기준·신청 절차 공식 발표 예정.</li><li><b>2026~2027년:</b> 3만 3천 개 PR 슬롯 순차 배분.</li></ul><h3>전략 포인트</h3><p>IRCC는 <b>이미 캐나다에 뿌리를 내린 사람들을 우선 영주권자로 전환</b>한다는 방침입니다. 현재 임시 취업 허가로 캐나다에서 일하고 있다면 지금 당장 서류를 정리하세요. 4월 공식 발표 전에 미리 고용 기록, 세금 신고, 거주 증빙을 갖춰두면 신청 속도에서 유리합니다. Express Entry와 병행 추진이 가능하다면 두 경로를 동시에 준비하는 것이 최선입니다.</p>`
+        },
+        {
             title: "3월 5일 고위 관리자·임원 카테고리 첫 드로우 #402 — 250명 초청, CRS 429점",
             badge: "신설 카테고리",
             date: "2026년 3월 5일",
             summary: "2026년 3월 5일, 캐나다 경력 고위 관리자·임원을 대상으로 한 카테고리 드로우에서 250명이 초청됐습니다. CRS 컷오프 429점으로 해당 카테고리 첫 번째 드로우입니다.",
             content: `<p>2026년 3월 5일, IRCC는 <b>캐나다 경력 고위 관리자 및 임원진(Senior Managers & Officials with Canadian Work Experience)</b>을 대상으로 한 신설 카테고리의 첫 번째 익스프레스 엔트리 드로우(#402)를 실시했습니다. 총 <b>250명</b>에게 초청장(ITA)이 발급됐으며 CRS 컷오프는 <b>429점</b>입니다.</p><h3>주요 포인트</h3><ul><li><b>초청 규모:</b> 250명 — 신설 카테고리 특성상 풀 규모가 작아 소규모 드로우로 시작.</li><li><b>CRS 컷오프:</b> 429점 — 일반 선발(520점대) 대비 약 90점 낮은 수준.</li><li><b>드로우 번호:</b> 역대 402번째 익스프레스 엔트리 드로우.</li><li><b>4일 연속 드로우:</b> 3월 2일 PNP → 3월 3일 CEC → 3월 4일 프랑스어 → 3월 5일 고위 관리직 연속 실시.</li></ul><h3>해당 직종 (주요 NOC)</h3><ul><li><b>고위 정부 관리자 및 공무원(NOC 00011):</b> 연방·지방정부 고위직.</li><li><b>금융·통신·비즈니스 서비스 수석 관리자(NOC 00012):</b> CFO, VP급 이상.</li><li><b>보건·교육·사회서비스 수석 관리자(NOC 00013):</b> 병원장, 학교 교장 이상.</li><li><b>무역·방송·서비스업 수석 관리자(NOC 00014).</b></li><li><b>건설·운송·생산·유틸리티 수석 관리자(NOC 00015).</b></li></ul><h3>지원 요건</h3><ul><li>캐나다 내 <b>고위 관리직(NOC TEER 0, Major Group 00)에서 1년 이상 경력</b> 필수.</li><li>영어 CLB 7 이상 또는 프랑스어 NCLC 7 이상.</li><li>Express Entry 풀 등록 상태 유지.</li></ul><h3>전략 포인트</h3><p>이 카테고리는 캐나다 내 고위 임원급 경력자를 대상으로 하여 초청 규모는 작지만 CRS 컷오프가 일반 선발보다 현저히 낮습니다. 429점은 CEC(508점), 일반(524점)과 비교해 큰 이점입니다. 현재 캐나다에서 VP·이사·부장급 이상으로 근무 중이라면 NOC 코드가 00011~00015에 해당하는지 반드시 확인하세요. IRCC는 향후 드로우 빈도와 규모를 확대할 가능성이 높습니다.</p>`
+        },
+        {
+            title: "2026년 카테고리 선발 완전 정복 — 내 직종에 맞는 경로 찾기",
+            badge: "전략 가이드",
+            date: "2026년 3월 5일",
+            summary: "고위 관리자·임원, 헬스케어, 프랑스어, CEC, PNP, 의사 카테고리까지 — 2026년 실제 드로우 데이터를 바탕으로 내게 유리한 이민 경로를 분석합니다.",
+            content: `<p>2026년 2~3월 드로우 데이터를 분석하면 <b>카테고리 기반 선발</b>이 이민 전략의 핵심임을 알 수 있습니다.</p><h3>최근 드로우 총정리</h3><ul><li><b>PNP (03/16):</b> 362명 · CRS 742점 — 실질 약 142점</li><li><b>고위 관리자·임원 (03/05):</b> 250명 · CRS 429점 — 해당 카테고리 첫 드로우</li><li><b>프랑스어 (03/04):</b> 5,500명 · CRS 397점 — 최근 1년 최저 컷오프</li><li><b>CEC (03/03):</b> 4,000명 · CRS 508점 — 역대 400번째 드로우</li><li><b>PNP (03/02):</b> 264명 · CRS 710점 — 실질 약 110점</li><li><b>헬스케어 (02/20):</b> 4,000명 · CRS 467점 — 의료·복지직</li><li><b>의사 카테고리 (02/19):</b> 391명 · CRS 169점 — 역대 최저권</li><li><b>CEC (02/17):</b> 6,000명 · CRS 508점 — 캐나다 경력자</li><li><b>프랑스어 (02/06):</b> 8,500명 · CRS 400점 — 역대 최대 규모</li></ul><h3>나에게 맞는 전략</h3><p>① 캐나다 VP·이사·부장급(NOC 000xx) → 고위 관리자·임원 카테고리 최우선<br>② 의료직 종사자 → 의사/헬스케어 카테고리 우선 검토<br>③ 프랑스어 CLB 7 달성 가능 → 프랑스어 카테고리 목표<br>④ 캐나다 내 1년 이상 경력 → CEC 경로 집중<br>⑤ 특정 주와 연계된 고용주 → PNP 전략<br>위 CRS 계산기로 현재 점수를 확인하고 AI 루트 분석을 실행해 보세요.</p>`
         },
         {
             title: "3월 프랑스어 드로우 #401 — 5,500명 초청, CRS 397점 (최근 1년 최저)",
@@ -86,11 +114,11 @@ const articlesData = {
             content: `<p>2026년 3월 2일, IRCC는 올해 11번째 익스프레스 엔트리 드로우이자 5번째 <b>주정부 이민(PNP)</b> 드로우를 실시했습니다. 총 <b>264명</b>에게 초청장(ITA)이 발급됐으며, CRS 컷오프는 <b>710점</b>입니다.</p><h3>주요 포인트</h3><ul><li><b>실질 CRS 약 110점:</b> PNP 600점 가산점을 제외하면 역대 최저 수준의 실질 컷오프.</li><li><b>타이브레이킹:</b> 2025년 8월 7일 18:02:56 UTC 이전 프로필 등록자 대상.</li><li><b>풀 규모:</b> 3월 1일 기준 Express Entry 풀에 232,534명이 등록 상태.</li></ul><h3>전략 포인트</h3><p>PNP 드로우 초청 규모가 소폭 줄었지만, 실질 컷오프가 매우 낮아 주정부 노미네이션만 받으면 사실상 ITA가 확정됩니다. 특정 주의 인력 수요 직종에 해당된다면 NOI(관심 표명서) 제출을 적극 검토하세요.</p>`
         },
         {
-            title: "2026 익스프레스 엔트리 카테고리 대폭 개편 — 5개 신규 카테고리 추가",
-            badge: "정책 변경",
-            date: "2026년 2월 18일",
-            summary: "이민부 장관이 2026년 카테고리 기반 선발 개편을 발표했습니다. 의사·연구원·고위관리자·운송직·군인 등 5개 신규 카테고리가 추가되고, 최소 경력 요건이 1년으로 상향됐습니다.",
-            content: `<p>2026년 2월 18일, 이민부 장관 Lena Metlege Diab는 <b>Express Entry 카테고리 기반 선발</b>의 대폭 개편을 발표했습니다.</p><h3>신규 카테고리 (5개)</h3><ul><li><b>캐나다 경력 의사:</b> NOC 31100~31102, 캐나다 내 12개월 이상 경력 필수.</li><li><b>캐나다 경력 연구원·고위관리자:</b> 12개월 이상 캐나다 근무 경력.</li><li><b>운송직:</b> 조종사·항공정비사·검사관 등, 캐나다 또는 해외 12개월 경력.</li><li><b>숙련 군인:</b> 외국군 10년 이상 복무 + 캐나다 군 3년 잡오퍼 + 2년제 이상 학력.</li></ul><h3>기존 카테고리 갱신</h3><ul><li><b>헬스케어 & 사회서비스:</b> 간호사·치과의사·약사·심리사 등 유지.</li><li><b>기술직(Trades):</b> 목수·배관공·기계공 등 유지.</li><li><b>프랑스어 우수자:</b> 지속 운영.</li></ul><h3>주요 변경사항</h3><p>모든 직업 카테고리의 <b>최소 경력 요건이 6개월에서 1년으로 상향</b>되었습니다. 또한 농업·식품 카테고리는 2026년에 폐지되었습니다. IRCC는 "양적 성장"에서 "핵심 인력 타겟팅"으로 전환하고 있습니다.</p>`
+            title: "헬스케어·사회서비스 4,000명 초청 — CRS 467점",
+            badge: "헬스케어",
+            date: "2026년 2월 20일",
+            summary: "헬스케어 및 사회서비스 카테고리 드로우에서 4,000명이 초청됐습니다. 간호사·의료기사·사회복지사 등 관련 직종이 대상입니다.",
+            content: `<p>2026년 2월 20일 실시된 <b>헬스케어 및 사회서비스(Healthcare & Social Services)</b> 카테고리 드로우에서 <b>4,000명</b>이 초청됐으며 CRS 컷오프는 <b>467점</b>이었습니다.</p><h3>해당 직종 (주요 NOC)</h3><ul><li><b>등록 간호사(NOC 31301):</b> 병원·장기요양시설 근무자.</li><li><b>의료기사·방사선사(NOC 32101~32109):</b> 진단영상·임상병리 등.</li><li><b>사회복지사(NOC 41300):</b> 복지기관·학교·병원 근무자.</li><li><b>약사·치과위생사(NOC 31120, 32111):</b> 의료지원 전문직.</li></ul><h3>전략 포인트</h3><p>헬스케어 카테고리는 CRS 점수 요건이 일반 선발보다 낮고, 캐나다의 고령화 사회 진입으로 인해 수요가 장기적으로 지속될 가능성이 높습니다. 해당 직종 종사자라면 해외 자격증 캐나다 인증(면허 취득) 절차를 선행하는 것이 중요합니다.</p>`
         },
         {
             title: "신설 '의사 카테고리' 첫 드로우 — CRS 169점, 2021년 이후 역대 최저",
@@ -100,11 +128,11 @@ const articlesData = {
             content: `<p>2026년 2월 19일, IRCC는 <b>캐나다 경력 의사(Physicians with Canadian Work Experience)</b>를 대상으로 하는 신설 카테고리의 첫 번째 드로우를 실시했습니다. 총 391명에게 초청장(ITA)이 발급됐으며, CRS 컷오프는 <b>169점</b>으로 2021년 이후 역대 최저 수준입니다.</p><h3>주요 대상 직종</h3><ul><li><b>일반의 및 가정의(NOC 31102):</b> 캐나다 내 병원·클리닉 근무 경력자.</li><li><b>전문의(NOC 31100):</b> 내과·외과·정신과 등 전문 분야 의사.</li><li><b>레지던트(NOC 31101):</b> 캐나다 의과대학 수련 중인 의사.</li></ul><h3>지원 요건</h3><p>캐나다 내 1년 이상의 의사 경력과 NOC 31100~31102에 해당하는 직종이어야 하며, 언어 CLB 7 이상을 충족해야 합니다. 이 컷오프는 캐나다 의료 인력난 해소를 위한 특단의 조치로, 향후 유사 드로우가 추가 실시될 가능성이 높습니다.</p>`
         },
         {
-            title: "프랑스어 우수자 8,500명 대규모 선발 — CRS 400점, 일반 선발 대비 100점 절감",
-            badge: "프랑스어",
-            date: "2026년 2월 6일",
-            summary: "2월 6일 프랑스어 카테고리 드로우에서 역대 최대 규모인 8,500명이 초청됐습니다. CRS 400점은 같은 시기 일반 선발 대비 100점 이상 낮습니다.",
-            content: `<p>2026년 2월 6일 실시된 <b>프랑스어 우수자(French-Language Proficiency)</b> 드로우는 단일 드로우 기준 역대 최대 규모인 <b>8,500명</b>을 초청하며 CRS 컷오프 <b>400점</b>을 기록했습니다.</p><h3>프랑스어 카테고리 자격 요건</h3><ul><li>TEF Canada 또는 TCF Canada 시험에서 <b>NCLC 7 이상</b>(읽기·쓰기·듣기·말하기 모두).</li><li>영어 CLB 5 이상 충족 필수.</li><li>Express Entry 풀 등록 상태 유지.</li></ul><h3>왜 유리한가</h3><p>프랑스어 카테고리는 CRS 점수와 무관하게 언어 능력만으로 경쟁하는 구조입니다. 8,500명이라는 초청 규모는 IRCC가 퀘벡 외 지역의 프랑코폰 이민을 적극 장려하고 있다는 신호이며, 향후 드로우에서도 대규모 선발이 이어질 전망입니다.</p>`
+            title: "2026 익스프레스 엔트리 카테고리 대폭 개편 — 5개 신규 카테고리 추가",
+            badge: "정책 변경",
+            date: "2026년 2월 18일",
+            summary: "이민부 장관이 2026년 카테고리 기반 선발 개편을 발표했습니다. 의사·연구원·고위관리자·운송직·군인 등 5개 신규 카테고리가 추가되고, 최소 경력 요건이 1년으로 상향됐습니다.",
+            content: `<p>2026년 2월 18일, 이민부 장관 Lena Metlege Diab는 <b>Express Entry 카테고리 기반 선발</b>의 대폭 개편을 발표했습니다.</p><h3>신규 카테고리 (5개)</h3><ul><li><b>캐나다 경력 의사:</b> NOC 31100~31102, 캐나다 내 12개월 이상 경력 필수.</li><li><b>캐나다 경력 연구원·고위관리자:</b> 12개월 이상 캐나다 근무 경력.</li><li><b>운송직:</b> 조종사·항공정비사·검사관 등, 캐나다 또는 해외 12개월 경력.</li><li><b>숙련 군인:</b> 외국군 10년 이상 복무 + 캐나다 군 3년 잡오퍼 + 2년제 이상 학력.</li></ul><h3>기존 카테고리 갱신</h3><ul><li><b>헬스케어 & 사회서비스:</b> 간호사·치과의사·약사·심리사 등 유지.</li><li><b>기술직(Trades):</b> 목수·배관공·기계공 등 유지.</li><li><b>프랑스어 우수자:</b> 지속 운영.</li></ul><h3>주요 변경사항</h3><p>모든 직업 카테고리의 <b>최소 경력 요건이 6개월에서 1년으로 상향</b>되었습니다. 또한 농업·식품 카테고리는 2026년에 폐지되었습니다. IRCC는 "양적 성장"에서 "핵심 인력 타겟팅"으로 전환하고 있습니다.</p>`
         },
         {
             title: "CEC 6,000명 대규모 드로우 — 캐나다 경력자의 황금 기회",
@@ -114,32 +142,11 @@ const articlesData = {
             content: `<p>2026년 2월 17일 실시된 <b>캐나다 경험 이민(Canadian Experience Class, CEC)</b> 드로우에서 <b>6,000명</b>이 초청됐으며 CRS 컷오프는 <b>508점</b>이었습니다.</p><h3>CEC 자격 요건</h3><ul><li>최근 3년 내 캐나다 내 <b>1년 이상</b>의 숙련직(NOC TEER 0~3) 경력.</li><li>영어 CLB 7(TEER 0~2) 또는 CLB 5(TEER 3) 이상.</li><li>캐나다 내 거주 및 합법적 취업 상태.</li></ul><h3>전략 포인트</h3><p>CEC는 Express Entry 3개 스트림 중 가장 빠른 처리 속도(평균 6개월 이내)를 자랑합니다. 현재 워크퍼밋으로 캐나다에서 근무 중이라면 경력 기산일을 확인하고, CLB 점수 향상으로 CRS를 최대화하는 것이 핵심 전략입니다.</p>`
         },
         {
-            title: "헬스케어·사회서비스 4,000명 초청 — CRS 467점",
-            badge: "헬스케어",
-            date: "2026년 2월 20일",
-            summary: "헬스케어 및 사회서비스 카테고리 드로우에서 4,000명이 초청됐습니다. 간호사·의료기사·사회복지사 등 관련 직종이 대상입니다.",
-            content: `<p>2026년 2월 20일 실시된 <b>헬스케어 및 사회서비스(Healthcare & Social Services)</b> 카테고리 드로우에서 <b>4,000명</b>이 초청됐으며 CRS 컷오프는 <b>467점</b>이었습니다.</p><h3>해당 직종 (주요 NOC)</h3><ul><li><b>등록 간호사(NOC 31301):</b> 병원·장기요양시설 근무자.</li><li><b>의료기사·방사선사(NOC 32101~32109):</b> 진단영상·임상병리 등.</li><li><b>사회복지사(NOC 41300):</b> 복지기관·학교·병원 근무자.</li><li><b>약사·치과위생사(NOC 31120, 32111):</b> 의료지원 전문직.</li></ul><h3>전략 포인트</h3><p>헬스케어 카테고리는 CRS 점수 요건이 일반 선발보다 낮고, 캐나다의 고령화 사회 진입으로 인해 수요가 장기적으로 지속될 가능성이 높습니다. 해당 직종 종사자라면 해외 자격증 캐나다 인증(면허 취득) 절차를 선행하는 것이 중요합니다.</p>`
-        },
-        {
             title: "2월 PNP 드로우 2회 실시 — 실질 기준 CRS 약 149~189점",
             badge: "PNP",
             date: "2026년 2월 16일 / 2월 3일",
             summary: "2월 중 두 차례 PNP 드로우가 실시됐습니다. PNP 600점 가산점을 제외한 실질 CRS는 각각 약 189점, 149점 수준입니다.",
             content: `<p>2026년 2월에는 두 차례의 <b>주정부 이민 연계(PNP) 드로우</b>가 실시됐습니다.</p><ul><li><b>2월 16일:</b> 279명 초청, CRS 컷오프 789점 (PNP 600점 제외 시 실질 189점)</li><li><b>2월 3일:</b> 423명 초청, CRS 컷오프 749점 (PNP 600점 제외 시 실질 149점)</li></ul><h3>PNP란?</h3><p>각 주정부가 독자적으로 이민자를 추천(노미네이션)하면 CRS에 600점이 자동 부여되어 ITA 획득이 사실상 확정됩니다. 주별로 추천 기준이 다르며, BC PNP·OINP(온타리오)·SINP(사스카추완) 등이 대표적입니다.</p><h3>전략 포인트</h3><p>PNP 노미네이션을 받으면 CRS 점수와 관계없이 ITA를 받을 수 있습니다. 특정 주에 고용주가 있거나, 해당 주의 인력 수요 직종에 해당된다면 NOI(관심 표명서) 제출을 통한 PNP 접근이 가장 효율적인 전략입니다.</p>`
-        },
-        {
-            title: "2026년 카테고리 선발 완전 정복 — 내 직종에 맞는 경로 찾기",
-            badge: "전략 가이드",
-            date: "2026년 3월 5일",
-            summary: "고위 관리자·임원, 헬스케어, 프랑스어, CEC, PNP, 의사 카테고리까지 — 2026년 실제 드로우 데이터를 바탕으로 내게 유리한 이민 경로를 분석합니다.",
-            content: `<p>2026년 2~3월 드로우 데이터를 분석하면 <b>카테고리 기반 선발</b>이 이민 전략의 핵심임을 알 수 있습니다.</p><h3>최근 드로우 총정리</h3><ul><li><b>PNP (03/16):</b> 362명 · CRS 742점 — 실질 약 142점</li><li><b>고위 관리자·임원 (03/05):</b> 250명 · CRS 429점 — 해당 카테고리 첫 드로우</li><li><b>프랑스어 (03/04):</b> 5,500명 · CRS 397점 — 최근 1년 최저 컷오프</li><li><b>CEC (03/03):</b> 4,000명 · CRS 508점 — 역대 400번째 드로우</li><li><b>PNP (03/02):</b> 264명 · CRS 710점 — 실질 약 110점</li><li><b>헬스케어 (02/20):</b> 4,000명 · CRS 467점 — 의료·복지직</li><li><b>의사 카테고리 (02/19):</b> 391명 · CRS 169점 — 역대 최저권</li><li><b>CEC (02/17):</b> 6,000명 · CRS 508점 — 캐나다 경력자</li><li><b>프랑스어 (02/06):</b> 8,500명 · CRS 400점 — 역대 최대 규모</li></ul><h3>나에게 맞는 전략</h3><p>① 캐나다 VP·이사·부장급(NOC 000xx) → 고위 관리자·임원 카테고리 최우선<br>② 의료직 종사자 → 의사/헬스케어 카테고리 우선 검토<br>③ 프랑스어 CLB 7 달성 가능 → 프랑스어 카테고리 목표<br>④ 캐나다 내 1년 이상 경력 → CEC 경로 집중<br>⑤ 특정 주와 연계된 고용주 → PNP 전략<br>위 CRS 계산기로 현재 점수를 확인하고 AI 루트 분석을 실행해 보세요.</p>`
-        },
-        {
-            title: "Express Entry 2026년 연간 초청 목표 11만 명 — 역대 최대 규모",
-            badge: "뉴스",
-            date: "2026년 1월 15일",
-            summary: "IRCC가 2026년 Express Entry 초청 목표를 11만 명으로 발표했습니다. 카테고리별 선발 비중이 대폭 확대됩니다.",
-            content: `<p>IRCC는 2026년 Express Entry를 통해 총 <b>110,000명</b>을 초청하겠다는 연간 계획을 발표했습니다. 이는 2025년 대비 약 15% 증가한 수치입니다.</p><h3>주요 변경 사항</h3><ul><li><b>카테고리별 선발 비중 확대:</b> 전체 초청의 60% 이상을 카테고리 드로우로 실시.</li><li><b>일반(No Program Specified) 드로우 축소:</b> CRS 고득점자 위주의 일반 드로우 빈도 감소.</li><li><b>신규 카테고리 추가:</b> 의사, 농업·식품 분야 카테고리 신설 예정.</li></ul><h3>전략적 시사점</h3><p>CRS 점수만으로 경쟁하는 시대는 저물고 있습니다. 자신의 직종·언어·경력이 어떤 카테고리에 해당하는지 파악하고, 해당 카테고리의 드로우 주기와 컷오프를 추적하는 것이 핵심 전략입니다.</p>`
         },
         {
             title: "BC PNP Tech 스트림 — IT 직종 우선 초청 확대",
@@ -149,11 +156,25 @@ const articlesData = {
             content: `<p>브리티시 컬럼비아(BC)주는 2026년부터 <b>BC PNP Tech 스트림</b> 대상 NOC 코드를 <b>35개</b>로 확대하고, 드로우 빈도를 월 2회로 늘렸습니다.</p><h3>주요 대상 직종</h3><ul><li><b>소프트웨어 엔지니어(NOC 21231)</b></li><li><b>데이터베이스 분석가(NOC 21223)</b></li><li><b>UX/UI 디자이너(NOC 21233)</b></li><li><b>정보보안 분석가(NOC 21220)</b></li></ul><h3>지원 절차</h3><p>BC주 고용주로부터 1년 이상의 잡오퍼를 받고 Express Entry 프로필을 등록한 후, BC PNP에 별도 신청합니다. 노미네이션을 받으면 CRS 600점이 추가됩니다. IT 업계 종사자라면 가장 현실적인 PR 경로입니다.</p>`
         },
         {
+            title: "프랑스어 우수자 8,500명 대규모 선발 — CRS 400점, 일반 선발 대비 100점 절감",
+            badge: "프랑스어",
+            date: "2026년 2월 6일",
+            summary: "2월 6일 프랑스어 카테고리 드로우에서 역대 최대 규모인 8,500명이 초청됐습니다. CRS 400점은 같은 시기 일반 선발 대비 100점 이상 낮습니다.",
+            content: `<p>2026년 2월 6일 실시된 <b>프랑스어 우수자(French-Language Proficiency)</b> 드로우는 단일 드로우 기준 역대 최대 규모인 <b>8,500명</b>을 초청하며 CRS 컷오프 <b>400점</b>을 기록했습니다.</p><h3>프랑스어 카테고리 자격 요건</h3><ul><li>TEF Canada 또는 TCF Canada 시험에서 <b>NCLC 7 이상</b>(읽기·쓰기·듣기·말하기 모두).</li><li>영어 CLB 5 이상 충족 필수.</li><li>Express Entry 풀 등록 상태 유지.</li></ul><h3>왜 유리한가</h3><p>프랑스어 카테고리는 CRS 점수와 무관하게 언어 능력만으로 경쟁하는 구조입니다. 8,500명이라는 초청 규모는 IRCC가 퀘벡 외 지역의 프랑코폰 이민을 적극 장려하고 있다는 신호이며, 향후 드로우에서도 대규모 선발이 이어질 전망입니다.</p>`
+        },
+        {
             title: "OINP 고용주 잡오퍼 스트림 — 온타리오 취업자 필독",
             badge: "PNP",
             date: "2026년 2월 5일",
             summary: "온타리오 OINP가 고용주 잡오퍼 스트림을 통해 1,200명을 초청했습니다. 토론토·오타와 소재 기업 취업자에게 유리합니다.",
             content: `<p>온타리오 이민자 추천 프로그램(OINP)은 2026년 2월 <b>고용주 잡오퍼(Employer Job Offer)</b> 스트림에서 <b>1,200명</b>에게 노미네이션 초청장을 발급했습니다.</p><h3>스트림 종류</h3><ul><li><b>Foreign Worker Stream:</b> 해외 거주 숙련 인력 (NOC TEER 0~3).</li><li><b>International Student Stream:</b> 온타리오 대학 졸업생.</li><li><b>In-Demand Skills Stream:</b> 농업·건설·운송 등 TEER 4~5 직종.</li></ul><h3>핵심 요건</h3><p>온타리오 소재 고용주로부터 정규직 잡오퍼가 필수입니다. 잡오퍼의 임금이 해당 직종 중위 임금 이상이어야 하며, 고용주는 OINP 등록 요건을 충족해야 합니다. 노미네이션 시 CRS 600점이 추가됩니다.</p>`
+        },
+        {
+            title: "캐나다 정착 첫 6개월 — 실전 생활 가이드",
+            badge: "가이드",
+            date: "2026년 2월 1일",
+            summary: "SIN 발급부터 은행 개설, 건강보험, 주거, 취업까지. PR 랜딩 후 반드시 해야 할 일을 순서대로 정리했습니다.",
+            content: `<p>PR 카드를 받고 캐나다에 도착한 후 <b>첫 6개월</b>은 정착의 골든 타임입니다.</p><h3>도착 후 즉시 (1~2주)</h3><ul><li><b>SIN(사회보험번호) 발급:</b> Service Canada 센터 방문 또는 온라인 신청.</li><li><b>은행 계좌 개설:</b> TD, RBC, BMO 등 주요 은행. 신분증 + PR 카드 필요.</li><li><b>핸드폰 개통:</b> Bell, Rogers, Telus 또는 알뜰폰(Freedom, Koodo).</li></ul><h3>1~3개월</h3><ul><li><b>건강보험(OHIP/MSP 등) 등록:</b> 주별로 대기 기간 상이 (온타리오 3개월 대기).</li><li><b>운전면허 전환:</b> 한국 면허 → 주별 교환 절차 확인.</li><li><b>임시 주거 → 장기 렌트:</b> 크레딧 히스토리 구축 시작.</li></ul><h3>3~6개월</h3><ul><li><b>취업 활동:</b> LinkedIn, Indeed Canada, 주정부 Job Bank 활용.</li><li><b>세금 신고 준비:</b> CRA 등록 + T4 수령 대비.</li><li><b>언어 향상:</b> LINC(무료 영어 교육) 프로그램 등록.</li></ul>`
         },
         {
             title: "프랑스어 학습 전략 — TEF 시험 NCLC 7 달성 로드맵",
@@ -170,11 +191,11 @@ const articlesData = {
             content: `<p><b>대서양 이민 프로그램(Atlantic Immigration Program, AIP)</b>은 2022년 정규 프로그램으로 전환되어 Nova Scotia, New Brunswick, PEI, Newfoundland & Labrador 4개 주에서 운영됩니다.</p><h3>자격 요건</h3><ul><li>대서양 4개 주 소재 <b>지정 고용주</b>로부터 정규직 잡오퍼.</li><li>최근 5년 내 1년 이상 경력 (NOC TEER 0~4).</li><li>영어/프랑스어 CLB 4 이상 (TEER 0~3) 또는 CLB 5 (TEER 4).</li><li>고등학교 졸업 이상 학력.</li></ul><h3>장점</h3><p>AIP는 Express Entry와 별도의 경로로, CRS 점수 경쟁 없이 PR을 취득할 수 있습니다. 처리 기간은 평균 12~18개월이며, 고용주 지정(designation) 절차가 간소화되어 중소기업도 적극 참여하고 있습니다.</p>`
         },
         {
-            title: "캐나다 정착 첫 6개월 — 실전 생활 가이드",
-            badge: "가이드",
-            date: "2026년 2월 1일",
-            summary: "SIN 발급부터 은행 개설, 건강보험, 주거, 취업까지. PR 랜딩 후 반드시 해야 할 일을 순서대로 정리했습니다.",
-            content: `<p>PR 카드를 받고 캐나다에 도착한 후 <b>첫 6개월</b>은 정착의 골든 타임입니다.</p><h3>도착 후 즉시 (1~2주)</h3><ul><li><b>SIN(사회보험번호) 발급:</b> Service Canada 센터 방문 또는 온라인 신청.</li><li><b>은행 계좌 개설:</b> TD, RBC, BMO 등 주요 은행. 신분증 + PR 카드 필요.</li><li><b>핸드폰 개통:</b> Bell, Rogers, Telus 또는 알뜰폰(Freedom, Koodo).</li></ul><h3>1~3개월</h3><ul><li><b>건강보험(OHIP/MSP 등) 등록:</b> 주별로 대기 기간 상이 (온타리오 3개월 대기).</li><li><b>운전면허 전환:</b> 한국 면허 → 주별 교환 절차 확인.</li><li><b>임시 주거 → 장기 렌트:</b> 크레딧 히스토리 구축 시작.</li></ul><h3>3~6개월</h3><ul><li><b>취업 활동:</b> LinkedIn, Indeed Canada, 주정부 Job Bank 활용.</li><li><b>세금 신고 준비:</b> CRA 등록 + T4 수령 대비.</li><li><b>언어 향상:</b> LINC(무료 영어 교육) 프로그램 등록.</li></ul>`
+            title: "Express Entry 2026년 연간 초청 목표 11만 명 — 역대 최대 규모",
+            badge: "뉴스",
+            date: "2026년 1월 15일",
+            summary: "IRCC가 2026년 Express Entry 초청 목표를 11만 명으로 발표했습니다. 카테고리별 선발 비중이 대폭 확대됩니다.",
+            content: `<p>IRCC는 2026년 Express Entry를 통해 총 <b>110,000명</b>을 초청하겠다는 연간 계획을 발표했습니다. 이는 2025년 대비 약 15% 증가한 수치입니다.</p><h3>주요 변경 사항</h3><ul><li><b>카테고리별 선발 비중 확대:</b> 전체 초청의 60% 이상을 카테고리 드로우로 실시.</li><li><b>일반(No Program Specified) 드로우 축소:</b> CRS 고득점자 위주의 일반 드로우 빈도 감소.</li><li><b>신규 카테고리 추가:</b> 의사, 농업·식품 분야 카테고리 신설 예정.</li></ul><h3>전략적 시사점</h3><p>CRS 점수만으로 경쟁하는 시대는 저물고 있습니다. 자신의 직종·언어·경력이 어떤 카테고리에 해당하는지 파악하고, 해당 카테고리의 드로우 주기와 컷오프를 추적하는 것이 핵심 전략입니다.</p>`
         }
     ],
     en: [
@@ -186,18 +207,18 @@ const articlesData = {
             content: `<p>On March 18, 2026, IRCC conducted the <b>405th Express Entry draw</b> — the third French-Language Proficiency draw of 2026 — issuing <b>4,000 invitations</b> at a CRS cut-off of <b>393 points</b>. This is the lowest cut-off ever recorded for a French-category draw, and the first time any Express Entry round has fallen below 400 in more than a year.</p><h3>Key Points</h3><ul><li><b>Invitations:</b> 4,000</li><li><b>CRS cut-off:</b> 393 — continuing a three-draw declining trend: Feb 6 (400) → Mar 4 (397) → Mar 18 (393).</li><li><b>Tie-breaking:</b> Profiles created before December 29, 2025 at 12:47:31 UTC.</li><li><b>2026 French draw totals:</b> Feb 6 (8,500) + Mar 4 (5,500) + Mar 18 (4,000) = 18,000 invitations issued to French-proficiency candidates.</li></ul><h3>French-Language Proficiency Requirements</h3><ul><li>TEF Canada or TCF Canada score of <b>NCLC 7+</b> in all four abilities (reading, writing, listening, speaking).</li><li>English CLB 5 or higher is also required.</li><li>Active Express Entry profile.</li></ul><h3>Why This Matters</h3><p>A CRS cut-off of 393 signals that IRCC is aggressively expanding French-category draws to meet its target of <b>9.5% Francophone newcomers outside Québec by 2027</b>. With cut-offs declining across three consecutive draws, French language proficiency is now the single most impactful variable for most candidates below CRS 500. French B2 proficiency is sufficient to achieve NCLC 7.</p>`
         },
         {
-            title: "CEC Draw #404 (Mar 17) — 4,000 Invited at CRS 507, Lowest in 18 Months",
-            badge: "CEC Draw",
-            date: "Mar 17, 2026",
-            summary: "On March 17, 2026, IRCC issued 4,000 CEC invitations at a CRS cut-off of 507 — the lowest CEC cut-off since September 2024 and continuing a downward trend from the March 3 draw at 508.",
-            content: `<p>On March 17, 2026, IRCC conducted the <b>404th Express Entry draw</b>, issuing <b>4,000 Invitations to Apply (ITAs)</b> under the <b>Canadian Experience Class (CEC)</b> category. The CRS cut-off of <b>507 points</b> is the lowest for a CEC draw since approximately September 2024 — an 18-month low.</p><h3>Key Points</h3><ul><li><b>Invitations:</b> 4,000</li><li><b>CRS cut-off:</b> 507 — down 1 point from the March 3 CEC draw (508); lowest CEC cut-off in roughly 18 months.</li><li><b>Draw time:</b> March 17, 2026 at 10:44:46 UTC.</li><li><b>Tie-breaking:</b> Profiles created before May 11, 2025 at 18:57:31 UTC.</li></ul><h3>CEC Requirements</h3><ul><li>At least <b>1 year</b> of skilled Canadian work experience (NOC TEER 0–3) within the past 3 years.</li><li>English CLB 7 (TEER 0–2) or CLB 5 (TEER 3) or higher.</li><li>Currently residing and working legally in Canada.</li></ul><h3>Strategy</h3><p>With CEC cut-offs trending downward (508 → 507), candidates in the 500–510 range are now within striking distance of an invitation. If you are working in Canada on a valid permit, verify your NOC TEER classification and consider an IELTS/CELPIP retake to push your CRS above 507. Each additional CLB point in your weakest ability can add 3–6 CRS points.</p>`
-        },
-        {
             title: "OINP Mar 18 — 1,243 Invited Across 6 Streams; Masters & PhD Streams Return",
             badge: "OINP",
             date: "Mar 18, 2026",
             summary: "On March 18, 2026, Ontario (OINP) issued 1,243 invitations across 6 streams. The Masters Graduate (582) and PhD Graduate (525) streams returned for the first time since September 2024.",
             content: `<p>On March 18, 2026, the Ontario Immigrant Nominee Program (OINP) issued a total of <b>1,243 invitations</b> across <b>6 targeted streams</b>. The headline news is the return of the <b>Masters Graduate</b> and <b>PhD Graduate</b> streams — the first draws for these streams since September 2024.</p><h3>Draw Breakdown</h3><ul><li><b>Masters Graduate:</b> 582 invitations — score threshold 30+</li><li><b>PhD Graduate:</b> 525 invitations — score threshold 49+</li><li><b>Employer Job Offer – Foreign Worker (Physicians):</b> 97 invitations — score threshold 36+ (NOC 31100, 31101, 31102)</li><li><b>REDI Pilot – Foreign Worker:</b> 11 invitations — score threshold 47+</li><li><b>REDI Pilot – International Student:</b> 17 invitations — score threshold 61+</li><li><b>REDI Pilot – In-Demand Skills:</b> 11 invitations — score threshold 30+</li></ul><h3>Key Details</h3><ul><li><b>Profile window:</b> Profiles must have been created and attested between July 2, 2025 and March 16, 2026 at 11:59 p.m.</li><li><b>Application deadline:</b> 14 calendar days for Masters/PhD streams; 17 days for Employer Job Offer and REDI streams.</li><li><b>Masters stream eligibility:</b> Currently residing in Canada with a valid work or study permit; Canadian work experience in one of 54 eligible NOC codes.</li><li><b>PhD stream eligibility:</b> Currently residing in Canada with a valid work or study permit; NOC must fall within 47 eligible codes spanning management, sciences, engineering, healthcare, and education.</li><li><b>REDI Pilot requirement:</b> Job offer must be located in Lanark or Leeds and Grenville counties.</li></ul><h3>Streams Not Drawn This Round</h3><p>Human Capital Priorities, French-Speaking Skilled Worker, Skilled Trades, and the general Employer Job Offer streams (excluding physicians and REDI) did not issue invitations on March 18.</p><h3>Strategy Takeaway</h3><p>For Ontario graduate students and recent alumni, the return of the Masters and PhD streams is a significant opportunity. An OINP nomination adds 600 CRS points, virtually guaranteeing an Express Entry ITA. Physicians (NOC 31100–31102) working in Ontario should also review eligibility for the Employer Job Offer – Physicians stream, which had a low score threshold of 36.</p>`
+        },
+        {
+            title: "CEC Draw #404 (Mar 17) — 4,000 Invited at CRS 507, Lowest in 18 Months",
+            badge: "CEC Draw",
+            date: "Mar 17, 2026",
+            summary: "On March 17, 2026, IRCC issued 4,000 CEC invitations at a CRS cut-off of 507 — the lowest CEC cut-off since September 2024 and continuing a downward trend from the March 3 draw at 508.",
+            content: `<p>On March 17, 2026, IRCC conducted the <b>404th Express Entry draw</b>, issuing <b>4,000 Invitations to Apply (ITAs)</b> under the <b>Canadian Experience Class (CEC)</b> category. The CRS cut-off of <b>507 points</b> is the lowest for a CEC draw since approximately September 2024 — an 18-month low.</p><h3>Key Points</h3><ul><li><b>Invitations:</b> 4,000</li><li><b>CRS cut-off:</b> 507 — down 1 point from the March 3 CEC draw (508); lowest CEC cut-off in roughly 18 months.</li><li><b>Draw time:</b> March 17, 2026 at 10:44:46 UTC.</li><li><b>Tie-breaking:</b> Profiles created before May 11, 2025 at 18:57:31 UTC.</li></ul><h3>CEC Requirements</h3><ul><li>At least <b>1 year</b> of skilled Canadian work experience (NOC TEER 0–3) within the past 3 years.</li><li>English CLB 7 (TEER 0–2) or CLB 5 (TEER 3) or higher.</li><li>Currently residing and working legally in Canada.</li></ul><h3>Strategy</h3><p>With CEC cut-offs trending downward (508 → 507), candidates in the 500–510 range are now within striking distance of an invitation. If you are working in Canada on a valid permit, verify your NOC TEER classification and consider an IELTS/CELPIP retake to push your CRS above 507. Each additional CLB point in your weakest ability can add 3–6 CRS points.</p>`
         },
         {
             title: "PNP Draw #403 — 362 Invited, Effective CRS ~142 (Mar 16, 2026)",
@@ -207,11 +228,39 @@ const articlesData = {
             content: `<p>On March 16, 2026, IRCC conducted the <b>403rd Express Entry draw</b> in history, issuing <b>362 Invitations to Apply (ITAs)</b> under the <b>Provincial Nominee Program (PNP)</b> category. The CRS cut-off stood at <b>742 points</b>.</p><h3>Key Points</h3><ul><li><b>Effective CRS ~142:</b> Subtracting the 600-point PNP bonus, the underlying score required is approximately 142 — slightly higher than the March 2 PNP draw (~110).</li><li><b>Invitations:</b> 362 — up from 264 in the March 2 PNP draw.</li><li><b>Tie-breaking:</b> Profiles submitted before October 5, 2025 at 20:35:25 UTC.</li><li><b>2026 cumulative:</b> IRCC has now issued 45,224 ITAs so far in 2026.</li><li><b>Pool size:</b> 231,362 candidates as of March 15, 2026.</li></ul><h3>Strategy Takeaway</h3><p>Receiving a provincial nomination automatically adds 600 CRS points, making an ITA virtually guaranteed. An effective cut-off of ~142 remains extremely low, meaning almost any candidate with a valid PNP nomination will receive an invitation regardless of their base CRS score. If you work for an employer in a specific province or your occupation is in demand provincially, submitting a Notice of Interest (NOI) through BC PNP, OINP (Ontario), SINP (Saskatchewan), or another stream is the most direct pathway to permanent residence in 2026.</p>`
         },
         {
+            title: "IRCC 2026 Departmental Plan: 43% TR Cut, 380K PR Target & 33,000 TR-to-PR Pathway",
+            badge: "Immigration Policy",
+            date: "Mar 13, 2026",
+            summary: "IRCC released its 2026-27 Departmental Plan, confirming 380,000 annual PR admissions, a 43% reduction in new temporary resident arrivals, and a one-time TR-to-PR conversion pathway for 33,000 workers.",
+            content: `<p>On March 13, 2026, IRCC released its official <b>2026-27 Departmental Plan</b>, providing a comprehensive roadmap for Canadian immigration priorities over the next three years and formalizing the 2026–2028 Immigration Levels Plan targets.</p><h3>Key Highlights</h3><ul><li><b>PR Target: 380,000/year (2026–2028):</b> Permanent resident admissions remain stable at 380,000 annually, with the economic category growing to 64% of all admissions by 2027–2028.</li><li><b>43% Drop in New TR Arrivals:</b> New temporary resident arrivals are set to fall from 673,650 in 2025 to just 385,000 in 2026, a 43% reduction affecting international students and temporary workers.</li><li><b>TR Population Target Below 5%:</b> Canada aims to reduce its temporary resident share of the total population to below 5% by end of 2027.</li><li><b>TR-to-PR Pathway for 33,000:</b> A one-time program will convert 33,000 temporary workers to permanent residents across 2026–2027, focusing on agriculture, hospitality, transport, healthcare, and rural communities.</li><li><b>148,000 NPR-to-PR Acceleration:</b> 148,000 current non-permanent residents will be fast-tracked to PR over 2026–2027.</li><li><b>Francophone Immigration to 10.5%:</b> Outside Quebec, Francophone admissions will reach 10.5% of total by 2028.</li></ul><h3>What This Means for You</h3><ul><li><b>Express Entry applicants:</b> More category-based draws expected as the economic immigration share grows.</li><li><b>International students &amp; new work permit holders:</b> Expect lower approval rates as new TR arrivals are capped.</li><li><b>Existing temporary workers in Canada:</b> The TR-to-PR pathway represents a significant opportunity — start gathering documents now.</li></ul><h3>Strategic Takeaway</h3><p>IRCC's message is clear: <b>reduce new arrivals, fast-track existing residents to PR</b>. If you're already in Canada on a work permit, explore both the TR-to-PR pathway and Express Entry category draws simultaneously for the best odds of obtaining PR in 2026.</p>`
+        },
+        {
+            title: "Bill C-12 Passes Senate — Canada's Biggest Immigration Overhaul in Decades",
+            badge: "Immigration Policy",
+            date: "Mar 12, 2026",
+            summary: "Bill C-12, the Strengthening Canada's Immigration System and Borders Act, passed third reading in the Senate on March 12, 2026. The bill gives the government power to pause immigration processing, overhaul the asylum system, and expand information sharing.",
+            content: `<p>On March 12, 2026, Canada's Senate passed <b>Bill C-12 (Strengthening Canada's Immigration System and Borders Act)</b> at third reading with amendments. The legislation now returns to the House of Commons for review of Senate amendments before receiving Royal Assent.</p><h3>Three Major Changes</h3><ul><li><b>① Executive Emergency Powers:</b> The Governor in Council gains authority to cease, pause, or terminate the processing of immigration applications; cancel, suspend, or vary documents such as work permits, study permits, and visitor visas; and impose conditions on temporary residents.</li><li><b>② Asylum System Reform:</b> Individuals who entered Canada after June 24, 2020 and waited more than one year before making a refugee claim may no longer receive a full IRB hearing. Instead, their cases will be assessed through a Pre-Removal Risk Assessment (PRRA).</li><li><b>③ Expanded Information Sharing:</b> IRCC gains authority to share personal information (identity, status, documents issued) with other government agencies and government-controlled corporations. Senate amendment: Canadian citizens and permanent residents are excluded from these sharing provisions.</li></ul><h3>Senate Amendments</h3><ul><li>Citizens and PRs excluded from information sharing provisions (Senator Paulette Senior).</li><li>Annual reporting to Parliament on ineligible refugee claims and PRRA outcomes, starting 5 years after the Act comes into force (Senator Tony Dean).</li></ul><h3>Impact on Immigrants</h3><ul><li><b>Express Entry applicants:</b> Regular immigration pathways (EE, PNP, AIP) are not directly affected. If you already have an ITA and are in the PR application process, this bill does not apply to your application.</li><li><b>Temporary residents (students, workers):</b> Under the new emergency powers, work/study permits could theoretically be suspended — though no such action has been announced.</li><li><b>Asylum seekers:</b> Those who entered post-June 2020 and delayed claiming asylum for over a year face higher risk of PRRA-only processing.</li></ul><h3>Strategic Takeaway</h3><p>For Express Entry candidates pursuing PR through established pathways, Bill C-12 has limited direct impact. However, temporary residents and international students should prioritize securing PR through Express Entry or provincial pathways as early as possible, given the increased executive discretion this bill creates.</p>`
+        },
+        {
+            title: "Canada Launches TR-to-PR Pathway for 33,000 Temporary Workers",
+            badge: "New Pathway",
+            date: "Mar 6, 2026",
+            summary: "IRCC quietly launched a one-time TR-to-PR pathway in early March 2026, offering permanent residency to 33,000 temporary foreign workers across 2026–2027. Agriculture, hospitality, transport, healthcare, and rural workers are prioritized. Full details expected in April.",
+            content: `<p>In early March 2026, IRCC quietly soft-launched a <b>one-time Temporary Resident to Permanent Resident (TR-to-PR) pathway</b> for <b>33,000 temporary foreign workers</b> across 2026 and 2027. Although a formal program guide has not yet been published, applications are already being accepted, with comprehensive details expected in April 2026.</p><h3>Priority Sectors</h3><ul><li><b>Agriculture:</b> Farm workers, seasonal agricultural workers.</li><li><b>Hospitality:</b> Hotel, restaurant, and tourism workers.</li><li><b>Transportation:</b> Truck drivers, bus drivers, logistics workers.</li><li><b>Healthcare &amp; Caring Professions:</b> Personal support workers, caregivers.</li><li><b>Rural Communities:</b> Workers based in small cities and rural areas are especially prioritized.</li></ul><h3>Expected Eligibility Requirements</h3><ul><li>Valid temporary work permit (TFWP or IMP).</li><li>Currently working in Canada.</li><li>Maintained legal status in Canada.</li><li>Proof of Canadian work experience, tax filings (T4/NOA), language test results (if applicable).</li><li>Evidence of community ties and local settlement.</li></ul><h3>Documents to Prepare Now</h3><ul><li>Work permits and renewal history.</li><li>Pay stubs and tax records (T4, Notice of Assessment).</li><li>Language test results (IELTS, CELPIP, TEF, TCF).</li><li>Proof of residence and community involvement (lease agreements, community letters).</li><li>Employer support letter (if available).</li></ul><h3>Timeline</h3><ul><li><b>March 2026:</b> Program soft-launched, some applications being accepted.</li><li><b>April 2026:</b> Official occupation list, criteria, and application process to be published.</li><li><b>2026–2027:</b> 33,000 PR spots distributed over two years.</li></ul><h3>Strategic Takeaway</h3><p>This pathway is designed for workers who have <b>already built roots in Canada</b>. If you're currently in Canada on a temporary work permit, start organizing your documents immediately. Having clean employment records, tax filings, and proof of community ties ready before the April announcement will give you a head start. Consider pursuing this pathway alongside Express Entry category draws for maximum chances of obtaining PR in 2026.</p>`
+        },
+        {
             title: "Senior Managers & Officials Draw #402 — First-Ever: 250 Invited at CRS 429",
             badge: "New Category",
             date: "Mar 5, 2026",
             summary: "On March 5, 2026, IRCC held the inaugural Express Entry draw for Senior Managers & Officials with Canadian work experience. Only 250 invitations were issued at a CRS cut-off of 429 — roughly 90 points below the general draw threshold.",
             content: `<p>On March 5, 2026, IRCC conducted the <b>402nd Express Entry draw</b> in history, becoming the first-ever draw for the <b>Senior Managers & Officials with Canadian Work Experience</b> category. A total of <b>250 invitations</b> were issued at a CRS cut-off of <b>429 points</b>.</p><h3>Key Points</h3><ul><li><b>Invitations:</b> 250 — small pool size reflects the narrow eligibility criteria for senior-level NOC TEER 0 managers.</li><li><b>CRS cut-off:</b> 429 — approximately 90 points below the general draw (524) and 79 points below the latest CEC draw (508).</li><li><b>Draw number:</b> Historic 402nd Express Entry draw overall.</li><li><b>Four consecutive draws:</b> IRCC held draws on March 2 (PNP), 3 (CEC), 4 (French), and 5 (Senior Managers) — an unprecedented four-day streak.</li></ul><h3>Eligible Occupations (Key NOCs)</h3><ul><li><b>Senior Government Managers & Officials (NOC 00011):</b> Federal/provincial deputy ministers, senior executives.</li><li><b>Senior Managers — Financial, Communications & Business Services (NOC 00012):</b> CFO, VP-level and above.</li><li><b>Senior Managers — Health, Education & Social Services (NOC 00013):</b> Hospital CEOs, university presidents.</li><li><b>Senior Managers — Trade, Broadcasting & Other Services (NOC 00014).</b></li><li><b>Senior Managers — Construction, Transportation, Production & Utilities (NOC 00015).</b></li></ul><h3>Eligibility Requirements</h3><ul><li><b>1+ year of Canadian work experience</b> in a senior management role (NOC TEER 0, Major Group 00).</li><li>English CLB 7+ or French NCLC 7+.</li><li>Active Express Entry profile.</li></ul><h3>Why This Matters</h3><p>The 429 CRS cut-off is a significant advantage for senior executives in Canada who may not score high enough for general or CEC draws. If you hold a VP, Director, or equivalent title and your NOC falls in the 000xx range, you should immediately verify your eligibility and update your Express Entry profile. As the pool for this category grows, IRCC is expected to increase draw frequency and volume in future rounds.</p>`
+        },
+        {
+            title: "2026 Category-Based Selection Guide: Which Path is Right for You?",
+            badge: "Strategy Guide",
+            date: "Mar 4, 2026",
+            summary: "From Healthcare to French, CEC, PNP, and the new Physician category — use the latest draw data to identify your best immigration pathway.",
+            content: `<p>Recent draw results from February–March 2026 confirm that <b>category-based selection</b> is now the dominant feature of Express Entry strategy.</p><h3>Latest Draw Summary</h3><ul><li><b>French (Mar 4):</b> 5,500 invited · CRS 397 — lowest cut-off in over a year</li><li><b>CEC (Mar 3):</b> 4,000 invited · CRS 508 — historic 400th draw</li><li><b>PNP (Mar 2):</b> 264 invited · CRS 710 — effective ~110</li><li><b>Healthcare (Feb 20):</b> 4,000 invited · CRS 467 — medical & social</li><li><b>Physicians (Feb 19):</b> 391 invited · CRS 169 — historic low</li><li><b>CEC (Feb 17):</b> 6,000 invited · CRS 508 — Canadian work exp.</li><li><b>French (Feb 6):</b> 8,500 invited · CRS 400 — record volume</li></ul><h3>Choose Your Path</h3><p>① Medical professionals → Check Physician or Healthcare category eligibility first<br>② Can achieve French NCLC 7 → Prioritize French-language category<br>③ 1+ year Canadian work experience → Focus on CEC<br>④ Employer in a specific province → Pursue PNP strategy<br>Use the CRS Calculator above to find your score and run the AI route analysis.</p>`
         },
         {
             title: "French Draw #401: 5,500 Invited at CRS 397 — Lowest Cut-off in Over a Year",
@@ -235,11 +284,11 @@ const articlesData = {
             content: `<p>On March 2, 2026, IRCC held the 11th Express Entry draw of the year and the 5th <b>Provincial Nominee Program (PNP)</b> draw, issuing <b>264 invitations</b> at a CRS cut-off of <b>710 points</b>.</p><h3>Key Points</h3><ul><li><b>Effective CRS ~110:</b> Excluding the 600-point PNP bonus, this is one of the lowest effective cut-offs on record.</li><li><b>Tie-breaking:</b> Applied to profiles created before August 7, 2025 at 18:02:56 UTC.</li><li><b>Pool size:</b> 232,534 candidates in the Express Entry pool as of March 1, 2026.</li></ul><h3>Strategy</h3><p>While the invitation volume was smaller, the extremely low effective cut-off means a provincial nomination virtually guarantees an ITA. If your occupation matches a province's in-demand list, submitting a Notice of Interest (NOI) should be a top priority.</p>`
         },
         {
-            title: "2026 Express Entry Overhaul: 5 New Categories Added",
-            badge: "Policy Change",
-            date: "Feb 18, 2026",
-            summary: "Immigration Minister announced major changes to category-based selection for 2026, adding physicians, researchers, senior managers, transport workers, and military recruits. Minimum work experience increased to 1 year.",
-            content: `<p>On February 18, 2026, Immigration Minister Lena Metlege Diab announced a major overhaul of <b>Express Entry category-based selection</b> for 2026.</p><h3>New Categories (5)</h3><ul><li><b>Physicians with Canadian Work Experience:</b> NOC 31100–31102, 12+ months Canadian experience required.</li><li><b>Researchers & Senior Managers:</b> 12+ months Canadian work experience.</li><li><b>Transport Occupations:</b> Pilots, aircraft mechanics, inspectors — 12 months Canadian or foreign experience.</li><li><b>Skilled Military Recruits:</b> 10+ years foreign military service + 3-year Canadian Armed Forces job offer + 2-year post-secondary credential.</li></ul><h3>Renewed Categories</h3><ul><li><b>Healthcare & Social Services:</b> Nurses, dentists, pharmacists, psychologists — continued.</li><li><b>Trades:</b> Carpenters, plumbers, machinists — continued.</li><li><b>French-Language Proficiency:</b> Ongoing.</li></ul><h3>Key Changes</h3><p>The <b>minimum work experience for all occupational categories increased from 6 months to 1 year</b>. The agriculture/agri-food category has been retired for 2026. IRCC is shifting from volume-driven growth to targeted talent attraction.</p>`
+            title: "Healthcare & Social Services Draw: 4,000 Invited at CRS 467",
+            badge: "Healthcare",
+            date: "Feb 20, 2026",
+            summary: "The Healthcare & Social Services category draw on Feb 20 invited 4,000 candidates at CRS 467, targeting nurses, allied health workers, and social workers.",
+            content: `<p>The <b>Healthcare & Social Services</b> category draw on February 20, 2026 invited <b>4,000 candidates</b> at a CRS cut-off of <b>467 points</b>.</p><h3>Key Eligible NOC Codes</h3><ul><li><b>Registered Nurses (NOC 31301):</b> Hospital, long-term care facilities.</li><li><b>Medical Radiation Technologists (NOC 32121):</b> Diagnostic imaging.</li><li><b>Social Workers (NOC 41300):</b> Community, school, and hospital settings.</li><li><b>Pharmacists & Dental Hygienists (NOC 31120, 32111):</b> Allied health professionals.</li></ul><h3>Strategy</h3><p>The healthcare category consistently draws at lower cut-offs than general draws. With Canada's aging population, demand in this sector is structurally long-term. Foreign healthcare workers should prioritize credential recognition (provincial licensing) as the first step.</p>`
         },
         {
             title: "New Physician Category: First Draw Hits Historic Low CRS of 169",
@@ -249,11 +298,11 @@ const articlesData = {
             content: `<p>On February 19, 2026, IRCC held the inaugural draw for <b>Physicians with Canadian Work Experience</b>, inviting <b>391 candidates</b> with a historic CRS cut-off of just <b>169 points</b> — the second lowest on record since 2021.</p><h3>Eligible Occupations</h3><ul><li><b>General Practitioners & Family Physicians (NOC 31102):</b> Working in Canadian hospitals or clinics.</li><li><b>Specialist Physicians (NOC 31100):</b> Internal medicine, surgery, psychiatry, etc.</li><li><b>Residents (NOC 31101):</b> Physicians in Canadian medical residency programs.</li></ul><h3>Requirements</h3><p>Candidates need at least 1 year of Canadian physician experience in NOC 31100–31102 and a minimum CLB 7 in English. This draw signals IRCC's urgent push to address Canada's physician shortage. More draws under this category are expected.</p>`
         },
         {
-            title: "Record-Breaking French Draw: 8,500 Invited at CRS 400",
-            badge: "French Language",
-            date: "Feb 6, 2026",
-            summary: "The February 6 French-language draw invited a record 8,500 candidates at a CRS cut-off of 400 — over 100 points below typical general draws.",
-            content: `<p>The <b>French-Language Proficiency</b> draw on February 6, 2026 set a new record with <b>8,500 invitations</b> issued at a CRS cut-off of <b>400 points</b>.</p><h3>Eligibility Requirements</h3><ul><li>TEF Canada or TCF Canada score of <b>NCLC 7+</b> in all four abilities.</li><li>English CLB 5 or higher also required.</li><li>Active Express Entry profile.</li></ul><h3>Why This Matters</h3><p>The French-language category operates on language ability alone, independent of CRS score. The massive 8,500-person draw signals a strong IRCC commitment to growing Francophone communities outside Québec. This category consistently offers the lowest cut-off scores and should be a priority for anyone who can reach NCLC 7.</p>`
+            title: "2026 Express Entry Overhaul: 5 New Categories Added",
+            badge: "Policy Change",
+            date: "Feb 18, 2026",
+            summary: "Immigration Minister announced major changes to category-based selection for 2026, adding physicians, researchers, senior managers, transport workers, and military recruits. Minimum work experience increased to 1 year.",
+            content: `<p>On February 18, 2026, Immigration Minister Lena Metlege Diab announced a major overhaul of <b>Express Entry category-based selection</b> for 2026.</p><h3>New Categories (5)</h3><ul><li><b>Physicians with Canadian Work Experience:</b> NOC 31100–31102, 12+ months Canadian experience required.</li><li><b>Researchers & Senior Managers:</b> 12+ months Canadian work experience.</li><li><b>Transport Occupations:</b> Pilots, aircraft mechanics, inspectors — 12 months Canadian or foreign experience.</li><li><b>Skilled Military Recruits:</b> 10+ years foreign military service + 3-year Canadian Armed Forces job offer + 2-year post-secondary credential.</li></ul><h3>Renewed Categories</h3><ul><li><b>Healthcare & Social Services:</b> Nurses, dentists, pharmacists, psychologists — continued.</li><li><b>Trades:</b> Carpenters, plumbers, machinists — continued.</li><li><b>French-Language Proficiency:</b> Ongoing.</li></ul><h3>Key Changes</h3><p>The <b>minimum work experience for all occupational categories increased from 6 months to 1 year</b>. The agriculture/agri-food category has been retired for 2026. IRCC is shifting from volume-driven growth to targeted talent attraction.</p>`
         },
         {
             title: "CEC Mega Draw: 6,000 Invited — Opportunity for Canadian Work Experience Holders",
@@ -263,32 +312,11 @@ const articlesData = {
             content: `<p>The <b>Canadian Experience Class (CEC)</b> draw on February 17, 2026 invited <b>6,000 candidates</b> at a CRS cut-off of <b>508 points</b>.</p><h3>CEC Requirements</h3><ul><li>At least <b>1 year</b> of skilled Canadian work experience (NOC TEER 0–3) in the past 3 years.</li><li>English CLB 7 (TEER 0–2) or CLB 5 (TEER 3) or higher.</li><li>Currently living and working legally in Canada.</li></ul><h3>Strategy</h3><p>CEC is the fastest Express Entry stream (average processing under 6 months). If you're on a work permit in Canada, check your work history start date, maximize CLB scores, and ensure your NOC code is correctly classified. The 6,000-person draw confirms CEC remains a primary pathway in 2026.</p>`
         },
         {
-            title: "Healthcare & Social Services Draw: 4,000 Invited at CRS 467",
-            badge: "Healthcare",
-            date: "Feb 20, 2026",
-            summary: "The Healthcare & Social Services category draw on Feb 20 invited 4,000 candidates at CRS 467, targeting nurses, allied health workers, and social workers.",
-            content: `<p>The <b>Healthcare & Social Services</b> category draw on February 20, 2026 invited <b>4,000 candidates</b> at a CRS cut-off of <b>467 points</b>.</p><h3>Key Eligible NOC Codes</h3><ul><li><b>Registered Nurses (NOC 31301):</b> Hospital, long-term care facilities.</li><li><b>Medical Radiation Technologists (NOC 32121):</b> Diagnostic imaging.</li><li><b>Social Workers (NOC 41300):</b> Community, school, and hospital settings.</li><li><b>Pharmacists & Dental Hygienists (NOC 31120, 32111):</b> Allied health professionals.</li></ul><h3>Strategy</h3><p>The healthcare category consistently draws at lower cut-offs than general draws. With Canada's aging population, demand in this sector is structurally long-term. Foreign healthcare workers should prioritize credential recognition (provincial licensing) as the first step.</p>`
-        },
-        {
             title: "Two PNP Draws in February — Effective CRS ~149–189 Points",
             badge: "PNP",
             date: "Feb 16 / Feb 3, 2026",
             summary: "Two PNP draws were held in February 2026. Excluding the 600-point provincial nomination bonus, the effective CRS benchmarks were approximately 189 and 149 points.",
             content: `<p>Two <b>Provincial Nominee Program (PNP)</b> draws were held in February 2026:</p><ul><li><b>Feb 16:</b> 279 invitations · CRS cut-off 789 pts (effective ~189 excl. PNP bonus)</li><li><b>Feb 3:</b> 423 invitations · CRS cut-off 749 pts (effective ~149 excl. PNP bonus)</li></ul><h3>How PNP Works</h3><p>When a province nominates you, 600 points are automatically added to your CRS, virtually guaranteeing an ITA regardless of your base score. Each province has its own criteria — BC PNP, OINP (Ontario), and SINP (Saskatchewan) are among the most active.</p><h3>Strategy</h3><p>If you have a Canadian employer or skills matching a specific province's demand, submit a Notice of Interest (NOI) and pursue the employer-linked PNP stream. It bypasses the CRS competition entirely and is the most reliable path for those with mid-range scores.</p>`
-        },
-        {
-            title: "2026 Category-Based Selection Guide: Which Path is Right for You?",
-            badge: "Strategy Guide",
-            date: "Mar 4, 2026",
-            summary: "From Healthcare to French, CEC, PNP, and the new Physician category — use the latest draw data to identify your best immigration pathway.",
-            content: `<p>Recent draw results from February–March 2026 confirm that <b>category-based selection</b> is now the dominant feature of Express Entry strategy.</p><h3>Latest Draw Summary</h3><ul><li><b>French (Mar 4):</b> 5,500 invited · CRS 397 — lowest cut-off in over a year</li><li><b>CEC (Mar 3):</b> 4,000 invited · CRS 508 — historic 400th draw</li><li><b>PNP (Mar 2):</b> 264 invited · CRS 710 — effective ~110</li><li><b>Healthcare (Feb 20):</b> 4,000 invited · CRS 467 — medical & social</li><li><b>Physicians (Feb 19):</b> 391 invited · CRS 169 — historic low</li><li><b>CEC (Feb 17):</b> 6,000 invited · CRS 508 — Canadian work exp.</li><li><b>French (Feb 6):</b> 8,500 invited · CRS 400 — record volume</li></ul><h3>Choose Your Path</h3><p>① Medical professionals → Check Physician or Healthcare category eligibility first<br>② Can achieve French NCLC 7 → Prioritize French-language category<br>③ 1+ year Canadian work experience → Focus on CEC<br>④ Employer in a specific province → Pursue PNP strategy<br>Use the CRS Calculator above to find your score and run the AI route analysis.</p>`
-        },
-        {
-            title: "Express Entry 2026 Annual Target: 110,000 Invitations — Record High",
-            badge: "News",
-            date: "Jan 15, 2026",
-            summary: "IRCC announced a 2026 Express Entry target of 110,000 invitations — up 15% from 2025. Category-based draws will dominate.",
-            content: `<p>IRCC has announced an annual target of <b>110,000 Express Entry invitations</b> for 2026, a ~15% increase over 2025.</p><h3>Key Changes</h3><ul><li><b>Category-based draws dominate:</b> Over 60% of invitations will be through category draws.</li><li><b>Fewer general draws:</b> No-program-specified draws will become less frequent.</li><li><b>New categories:</b> Physician and agriculture/food processing categories added.</li></ul><h3>Strategic Implications</h3><p>The era of competing purely on CRS score is fading. The new priority is identifying which category matches your occupation, language, and experience — then tracking that category's draw frequency and cut-off trends.</p>`
         },
         {
             title: "BC PNP Tech Stream — Expanded IT Occupation Priority",
@@ -298,11 +326,25 @@ const articlesData = {
             content: `<p>British Columbia has expanded the <b>BC PNP Tech Stream</b> to <b>35 eligible NOC codes</b> and increased draw frequency to twice monthly in 2026.</p><h3>Key Eligible Occupations</h3><ul><li><b>Software Engineers (NOC 21231)</b></li><li><b>Database Analysts (NOC 21223)</b></li><li><b>UX/UI Designers (NOC 21233)</b></li><li><b>Information Security Analysts (NOC 21220)</b></li></ul><h3>Application Process</h3><p>Obtain a job offer of 1+ year from a BC employer, register an Express Entry profile, then apply separately to BC PNP. If nominated, 600 CRS points are added automatically. For IT professionals, this is the most practical PR pathway.</p>`
         },
         {
+            title: "Record-Breaking French Draw: 8,500 Invited at CRS 400",
+            badge: "French Language",
+            date: "Feb 6, 2026",
+            summary: "The February 6 French-language draw invited a record 8,500 candidates at a CRS cut-off of 400 — over 100 points below typical general draws.",
+            content: `<p>The <b>French-Language Proficiency</b> draw on February 6, 2026 set a new record with <b>8,500 invitations</b> issued at a CRS cut-off of <b>400 points</b>.</p><h3>Eligibility Requirements</h3><ul><li>TEF Canada or TCF Canada score of <b>NCLC 7+</b> in all four abilities.</li><li>English CLB 5 or higher also required.</li><li>Active Express Entry profile.</li></ul><h3>Why This Matters</h3><p>The French-language category operates on language ability alone, independent of CRS score. The massive 8,500-person draw signals a strong IRCC commitment to growing Francophone communities outside Québec. This category consistently offers the lowest cut-off scores and should be a priority for anyone who can reach NCLC 7.</p>`
+        },
+        {
             title: "OINP Employer Job Offer Stream — Must-Read for Ontario Workers",
             badge: "PNP",
             date: "Feb 5, 2026",
             summary: "Ontario's OINP invited 1,200 through the Employer Job Offer stream. Ideal for those working with Toronto or Ottawa employers.",
             content: `<p>The Ontario Immigrant Nominee Program (OINP) issued <b>1,200 nomination invitations</b> through the <b>Employer Job Offer</b> stream in February 2026.</p><h3>Stream Types</h3><ul><li><b>Foreign Worker Stream:</b> Skilled workers abroad (NOC TEER 0–3).</li><li><b>International Student Stream:</b> Ontario post-secondary graduates.</li><li><b>In-Demand Skills Stream:</b> Agriculture, construction, transport (TEER 4–5).</li></ul><h3>Key Requirements</h3><p>A full-time job offer from an Ontario employer is mandatory. The offered wage must meet or exceed the median for the occupation, and the employer must meet OINP registration requirements. Nomination adds 600 CRS points.</p>`
+        },
+        {
+            title: "First 6 Months in Canada — Practical Settlement Guide",
+            badge: "Guide",
+            date: "Feb 1, 2026",
+            summary: "From SIN to banking, health insurance, housing, and employment — everything you need to do after PR landing, in order.",
+            content: `<p>The <b>first 6 months</b> after arriving in Canada with PR status are your golden settlement window.</p><h3>Immediately (Week 1–2)</h3><ul><li><b>Get your SIN:</b> Visit Service Canada or apply online.</li><li><b>Open a bank account:</b> TD, RBC, BMO — bring ID + PR card.</li><li><b>Get a phone plan:</b> Bell, Rogers, Telus, or budget carriers (Freedom, Koodo).</li></ul><h3>Months 1–3</h3><ul><li><b>Health insurance:</b> Register for OHIP/MSP (varies by province; Ontario has 3-month wait).</li><li><b>Driver's license:</b> Check provincial exchange agreements for your country.</li><li><b>Long-term housing:</b> Start building credit history for rental applications.</li></ul><h3>Months 3–6</h3><ul><li><b>Job search:</b> LinkedIn, Indeed Canada, provincial Job Banks.</li><li><b>Tax prep:</b> Register with CRA, prepare for T4 slips.</li><li><b>Language improvement:</b> Enroll in LINC (free English classes).</li></ul>`
         },
         {
             title: "French Language Strategy — Roadmap to TEF NCLC 7",
@@ -319,11 +361,11 @@ const articlesData = {
             content: `<p>The <b>Atlantic Immigration Program (AIP)</b> became a permanent program in 2022, operating in Nova Scotia, New Brunswick, PEI, and Newfoundland & Labrador.</p><h3>Eligibility</h3><ul><li>Full-time job offer from a <b>designated employer</b> in Atlantic Canada.</li><li>1+ year work experience in the past 5 years (NOC TEER 0–4).</li><li>CLB 4+ (TEER 0–3) or CLB 5 (TEER 4).</li><li>High school diploma or equivalent.</li></ul><h3>Advantages</h3><p>AIP operates separately from Express Entry — no CRS score competition. Processing takes 12–18 months on average, and the employer designation process has been simplified, enabling more small businesses to participate.</p>`
         },
         {
-            title: "First 6 Months in Canada — Practical Settlement Guide",
-            badge: "Guide",
-            date: "Feb 1, 2026",
-            summary: "From SIN to banking, health insurance, housing, and employment — everything you need to do after PR landing, in order.",
-            content: `<p>The <b>first 6 months</b> after arriving in Canada with PR status are your golden settlement window.</p><h3>Immediately (Week 1–2)</h3><ul><li><b>Get your SIN:</b> Visit Service Canada or apply online.</li><li><b>Open a bank account:</b> TD, RBC, BMO — bring ID + PR card.</li><li><b>Get a phone plan:</b> Bell, Rogers, Telus, or budget carriers (Freedom, Koodo).</li></ul><h3>Months 1–3</h3><ul><li><b>Health insurance:</b> Register for OHIP/MSP (varies by province; Ontario has 3-month wait).</li><li><b>Driver's license:</b> Check provincial exchange agreements for your country.</li><li><b>Long-term housing:</b> Start building credit history for rental applications.</li></ul><h3>Months 3–6</h3><ul><li><b>Job search:</b> LinkedIn, Indeed Canada, provincial Job Banks.</li><li><b>Tax prep:</b> Register with CRA, prepare for T4 slips.</li><li><b>Language improvement:</b> Enroll in LINC (free English classes).</li></ul>`
+            title: "Express Entry 2026 Annual Target: 110,000 Invitations — Record High",
+            badge: "News",
+            date: "Jan 15, 2026",
+            summary: "IRCC announced a 2026 Express Entry target of 110,000 invitations — up 15% from 2025. Category-based draws will dominate.",
+            content: `<p>IRCC has announced an annual target of <b>110,000 Express Entry invitations</b> for 2026, a ~15% increase over 2025.</p><h3>Key Changes</h3><ul><li><b>Category-based draws dominate:</b> Over 60% of invitations will be through category draws.</li><li><b>Fewer general draws:</b> No-program-specified draws will become less frequent.</li><li><b>New categories:</b> Physician and agriculture/food processing categories added.</li></ul><h3>Strategic Implications</h3><p>The era of competing purely on CRS score is fading. The new priority is identifying which category matches your occupation, language, and experience — then tracking that category's draw frequency and cut-off trends.</p>`
         }
     ]
 };
@@ -1181,6 +1223,7 @@ const articlesMeta = [
 // --- Express Entry Draw Data ---
 const drawsData = [
     { isoDate: '2026-03-18', date: { ko: '2026년 3월 18일', en: 'Mar 18, 2026' }, type: 'french',     label: { ko: '프랑스어 우수자', en: 'French-Language Proficiency' }, invited: 4000, cutoff: 393 },
+    { isoDate: '2026-03-18', date: { ko: '2026년 3월 18일', en: 'Mar 18, 2026' }, type: 'oinp',       label: { ko: 'OINP 6개 스트림 (온타리오 주정부)', en: 'OINP 6 Streams (Ontario PNP)' }, invited: 1243, cutoff: null },
     { isoDate: '2026-03-17', date: { ko: '2026년 3월 17일', en: 'Mar 17, 2026' }, type: 'cec',        label: { ko: '캐나다 경험 이민 (CEC)', en: 'Canadian Experience Class (CEC)' }, invited: 4000, cutoff: 507 },
     { isoDate: '2026-03-16', date: { ko: '2026년 3월 16일', en: 'Mar 16, 2026' }, type: 'pnp',        label: { ko: '주정부 이민 (PNP)', en: 'Provincial Nominee Program (PNP)' }, invited: 362,  cutoff: 742, effectiveCutoff: 142 },
     { isoDate: '2026-03-05', date: { ko: '2026년 3월 5일', en: 'Mar 5, 2026' }, type: 'management', label: { ko: '고위 관리자·임원 (캐나다 경력)', en: 'Senior Managers & Officials (Canadian Exp.)' }, invited: 250, cutoff: 429 },
@@ -2308,8 +2351,11 @@ function renderDrawsTable(profileOrScore) {
         const labelStr = draw.label[isKo ? 'ko' : 'en'];
         const invitedStr = draw.invited.toLocaleString() + (isKo ? '명' : ' ITAs');
 
+        const isOINP = draw.type === 'oinp';
         let cutoffStr;
-        if (isPNP) {
+        if (isOINP || draw.cutoff === null) {
+            cutoffStr = isKo ? '스트림별 상이' : 'Stream-specific';
+        } else if (isPNP) {
             const eff = isKo
                 ? `<span class="draw-effective">(실질 ~${draw.effectiveCutoff}점)</span>`
                 : `<span class="draw-effective">(effective ~${draw.effectiveCutoff})</span>`;
@@ -2321,7 +2367,9 @@ function renderDrawsTable(profileOrScore) {
         let compareTd = '';
         if (hasScore) {
             const elig = isEligibleForDraw(draw, profile);
-            if (!elig.eligible) {
+            if (isOINP) {
+                compareTd = `<td><span class="draw-compare draw-compare--ineligible">${isKo ? '— 주정부 별도 심사' : '— Provincial review'}</span></td>`;
+            } else if (!elig.eligible) {
                 // User doesn't meet category requirements
                 compareTd = `<td><span class="draw-compare draw-compare--ineligible" title="${elig.reason}">— ${elig.reason}</span></td>`;
             } else {
